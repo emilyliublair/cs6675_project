@@ -1,0 +1,12 @@
+Question: 
+    Extra credit (max # of processes): OK to comment out code and print final result?For the final extra credit question, if I comment out the part 4 code (maximum possible allocated memory) I get the right answer for max # of processes, however if I leave it in, I get a much smaller answer, which I think occurs due to all the allocated memory. Thus to leave in both code segments I would need to use malloc() and keep an array of pointers to later call free() on in the part 4 code to free up the allocated memory. However, the size of that array would have to be hardcoded, which requires me to know the maximum possible size of allocated memory in the first place.I don't want to comment out the part 4 code since I don't want to prioritize extra credit over it, so is it fine if I comment out the extra credit code and have it print out the answer you would get if you run it in isolation (with part 4 code commented out)? I can explain my reasoning via commentslab0
+
+    Student Answer: 
+    You can fork the process and exit it to clean up the alloc’d memory. You can also negatively allocate memory using sbrk.Additionally you can allocate the memory after counting the processes.~ An instructor (Rohan Natansh Bafna) endorsed this answer ~
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

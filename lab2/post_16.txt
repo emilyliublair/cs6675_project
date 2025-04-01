@@ -1,0 +1,12 @@
+Question: 
+    Getting incorrect output on test 10My forktest output matches, I am passing all tests in usertest.c and all tests on the auto grader except for test 10 where I get the "incorrect output" error. Does anyone know what functionality test 10 tests or have any ideas on how to debug the issue?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @306_f1Anonymous Atom1 month agoI am getting a hard fault for test 10..0@306_f2Ranjani Rajeswari Koushik1 month agoSame exact problem. TA's said it might be a guard page issue, not sure though.0
+    

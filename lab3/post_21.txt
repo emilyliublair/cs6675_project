@@ -1,0 +1,12 @@
+Question: 
+    Test Case #41 Lab 3Hi,My partner and I are currently failing test 41, it's currently timing out and we aren't sure what is going wrong. This is some of the stuff we have done so far:In all our functions in thread.c we are checking if any argument that is a pointer (like start_routine, cond, s, and m) goes beyond kernbase and return a -1 if it doeskeep track of how many waiters we have for condvar and we only signal if there is someone waitingwe make sure that if setpark is called twice, we don't remove any lost wakeup that occurred since the previous setpark callwe tested condvar using a producer consumer queue and that seemed to be working finefor mutex we make sure that releasing a lock that was already released failsfor mutex we make sure that acquiring a lock that was already acquired failsverify that mutex is acquired at the beginning of cond_waitAny pointers/guidance or anything additional that we should test/keep in mind would be very much appreciated, thank you so much!lab3
+
+    Student Answer: 
+    For anyone having similar issues with this or other condvar tests, you genuinely may need to just check everything in lots of places. We went over condvars, mutexes, and park functions and ended up fixing error conditions, checking if locks were held, and some init stuff. This specifically was most likely a mutex problem not a condition variable problem for us.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

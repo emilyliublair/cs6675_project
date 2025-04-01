@@ -1,0 +1,12 @@
+Question: 
+    Parked StateWhen we park, should we be using the SLEEPING state that has already been made, or should we make a new state specifically for parking? In other words, do we want wakeup1 to be able to wake up a parked process and do we want unpark to be able to wake up a sleeping process?lab3
+
+    Student Answer: 
+    Use the sleeping state. I recommend using the sleep() function however the wakeup1 function will not work but you can reference it for ideas about how to wake up a process.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @509_f1Anonymous Poet7 days agoWhy would creating a new state not work? Is it because unpark should wake any sleeping process on a channel, regardless of if it was put to sleep by park or not? I think in that case, you could just check in unpark if the process on that channel is either asleep or in the new state to wake it up and it would be valid.0
+    

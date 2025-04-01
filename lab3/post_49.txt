@@ -1,0 +1,12 @@
+Question: 
+    Spinlock requirementsDoes the userspace spinlock need to ensure that a thread won’t be starved while trying to acquire the lock, or is it sufficient to ensure mutual exclusion?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    By starved do you mean a user thread tried to acquire a spinlock but never does because another thread that has the lock never releases? This livelock is an issue of the userland programmer. It should be sufficient to ensure mutual exclusion.
+
+    Followup Discussions:
+    
+    

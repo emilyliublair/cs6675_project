@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Where to put the result of e820 callThe README says that the call must be done when the system is in real mode (which is 16-bits). (1) What does the addressable space look like at this point? (2) Refer thex86 memory mapto see what region of memory is guaranteed by the processor to be available for use.Does xv6 override different areas of memoryxv6 loads the kernel at a fixed address in physical memory (refer to Figure 2-2 of the xv6 manual). Does this overlap with the region you found to dump the e820 records?can we just hardcode itYes, you can hardcode the address at which you dumped e820 records and replace uses of the macro PHYSTOP with a variableWe will be covering some of this during today’s supervised lab. Please attend!
+
+    Followup Discussions:
+    
+    

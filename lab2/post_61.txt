@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    You are supposed to compare the output after a specific line, because initialization can produce different results.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

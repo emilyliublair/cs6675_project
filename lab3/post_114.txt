@@ -1,0 +1,12 @@
+Question: 
+    Lab 3: Round Robin with PriorityHello,I'm a bit confused on how to implement Round Robin with priority. I asked a TA and they said we just always schedule higher priority tasks first. The part where I get confused is what happens if we only have one task with the highest priority. I know we are supposed to run the process with the next highest priority, but do we run all the processes with the next highest priority or just one then go run the one with highest priority?Thanks for the help!lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Higher priority processes always take priority over lower priority processes, even if they were just scheduled.
+
+    Followup Discussions:
+    @362_f1Anonymous Atom4 weeks agoSo in that case do we literally just let Round Robin only give the highest priority process CPU time?0Ved Thiru4 weeks agoYes; any other solution and you would effectively be providing the high-priority process with the same priority as a lower-priority process.good comment0Anonymous Atom4 weeks agoOk great, def got confused at office hours earlier this week then!0
+    

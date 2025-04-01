@@ -1,0 +1,12 @@
+Question: 
+    What priority and scheduler should newly created threads have?I originally had the default implementation of scheduler and I ended up being able to pass thread cases 27 to 30. However, after implementing the priority FIFO and Round Robin schedulers, the Thread Library now seems to fail 27 to 30 (it also fails 23 now). What might be the cause of this? Should thread priority and scheduler be set to 0 and Round Robin by default?I've attached locks to every shared variable write+read that I can find.lab3
+
+    Student Answer: 
+    It should be the defaults
+
+    Instructor Answer: 
+    Yes new thread/ processes should be Round Robin with priority 0. How do we allocate new processes? Maybe set the default there
+
+    Followup Discussions:
+    @511_f1Anonymous Calc6 days agoDoes scheduler implementation affect cases 27-30? I'm having the same issue with the locks as well.0
+    

@@ -1,0 +1,12 @@
+Question: 
+    Lab 2 cprintfIn lab 1, we had a more fleshed out cprintf that supported all format types of stdio's printf, but in lab 2, cprintf only supports %d, %x, %p, %s. Can we copy lab 1's cprintf into lab 2 or possibly future labs?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    I don’t think you’ll ever need that extra functionality, but feel free to do so if you wish.
+
+    Followup Discussions:
+    
+    

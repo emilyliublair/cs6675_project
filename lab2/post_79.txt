@@ -1,0 +1,12 @@
+Question: 
+    lab2_pgcopy() clarifications.1. Can we modify the parameters oflab2_pgcopy, or do we need to keep them unchanged for grading compatibility?2. To meet the lab requirements, do we simply need to calllab2_pgcopywhenever a page is copied, regardless of its implementation? Or does our actual COW logic need to be implemented within this function?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Do not modify it.Simply call it whenever a page is copied.
+
+    Followup Discussions:
+    
+    

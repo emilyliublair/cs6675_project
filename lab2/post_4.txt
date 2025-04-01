@@ -1,0 +1,12 @@
+Question: 
+    Passing all testcases except 6 and 8I'm passing all testcases except 6 and 8, and I am also passing all the usertests. For test case 6, I am timing out and for testcase 8, it gave the wrong output. I am stuck on where to go from here.lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @321_f1Anonymous Poet1 month agoI hardfaulted for both 6 and 8 so I'm not sure my fix would be exactly yours, but I fixed it by changing how I handle kernel writes to user pages.0@321_f2Richard Alexander Barrezueta1 month agoI believe these tests check whether the kernel can write to user pages (which the autograder expects to happen for read and pipe syscalls, where the error code should be 0x3). Timing out may stem from a panic (where the process should have been killed), or where the tlb for a va should have been flushed, but wasn’t, after changing the corresponding pte.2
+    

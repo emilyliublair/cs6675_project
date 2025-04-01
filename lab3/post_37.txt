@@ -1,0 +1,12 @@
+Question: 
+    Lab3 extra credit exit time populationFor the extra credit assignment, we're supposed to create a sys_call that populates a struct with information about that process. One of the metrics is exit_time. How can we populate exit_time information for a process that hasn't exited yet?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Both the exit_time and response_time metrics can only be populated once the process has exited. So feel free the appropriate function that deals with this and update both the metrics there
+
+    Followup Discussions:
+    
+    

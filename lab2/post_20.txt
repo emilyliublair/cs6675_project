@@ -1,0 +1,12 @@
+Question: 
+    Do we need to call lab2_pgzero on the global zero page?We are currently creating our zero page as an array of zeros in our vm.c rather than by allocating a page and zeroing it, so we are not calling lab2_pgzero for the initial page. Would this result in any problems with the autograder?lab2
+
+    Student Answer: 
+    This approach seems to match the initial output in forktest_expected_output_complete so it should be correct.~ An instructor (Rohan Natansh Bafna) endorsed this answer ~
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @302_f1Anonymous Calc1 month agoI just allocd a zero page and saved the ppn for that in my kmem and initialized this page during the main init process and passed the auto grader cases. Is that not what we're supposed to do?0@302_f2Anonymous Gear1 month agoI passed the autograder by memseting the initial 0 zero page. I was told by a TA that you are not supposed to call lab2_pgzero on the global zero page, but I don't know if it actually affects the autograder.2
+    

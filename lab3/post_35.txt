@@ -1,0 +1,12 @@
+Question: 
+    spinlock_release failure specificationfor spinlock_release if we called it on a spinlock that was already unlocked to begin with should that result in failure or would it not matter?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Doesn't matter
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,12 @@
+Question: 
+    Handling Preemption on WakeupThe wakeup() function is always called with a lock acquired, so running the yield function on wakeup causes the panic("sched locks") because sched is called from yield. As far as I understand we must preempt in this case so how should we go about doing that? Not sure how this would work while still ensuring that we immediately switch to the new process thats runnable. All the potential solutions I can think of either delay the preemption to after the lock is held or create data races.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Hi is this in the context of implementing the schedulers? If you change the priority/ policy of a process to be higher than yourself, yielding should be sufficient to "preempt" since your scheduler should now just run the new process.
+
+    Followup Discussions:
+    @502_f1Anonymous Gear1 week agoI don't think you have to pre-empt on wakeup1Rohit Hari7 days agoI'll take this to be true unless I find out otherwise but some confirmation from the instructors would be helpful.0
+    

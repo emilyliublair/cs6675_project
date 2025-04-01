@@ -1,0 +1,12 @@
+Question: 
+    Mapping multiple virtual address to same physical addressIn virtual memory why is the lower memory and higher memory (at Kernbase) all mapped to 0-4MB? I know we've talked about this a lot but was hoping to understand a bit more why this is something that happens.lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Before paging is setup, the bootloader loads the kernel into low address space. Specifically, this is the_startsymbol which is set toV2P(entry)in entry.S.entryis set toKERNLINKin the linker script (kernel.ld). If we do the math, this equals0x100000(well below 4MB).Now, when the kernel enables paging (also inentry.S), it still has to continue running code in low address space until it executes thejmpinstruction to themainfunction (which is present in high address space, specificallyKERNLINK + EXTMEM).So, we need both the lower and higher memory to be mapped to 0-4MB to ensure this transition tomaincan happen without a page fault. If we hadn’t mapped the low address space, then it would’ve page faulted right after.Have a go at answering some of the questions in the supervised lab handouts to test your understanding!~ An instructor (Alexey Tumanov) endorsed this answer ~
+
+    Followup Discussions:
+    
+    

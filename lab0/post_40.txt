@@ -1,0 +1,12 @@
+Question: 
+    Make ErrorDid anyone else get this? If so, how did you solve it?[25%] Generating bootblock/bin/sh: 1: ../../bootblock/tools/sign.pl: not foundbootblock/CMakeFiles/buildboot.dir/build.make:65: recipe for target 'bootblock/bootblock' failedmake[2]: *** [bootblock/bootblock] Error 127make[2]: *** Deleting file 'bootblock/bootblock'CMakeFiles/Makefile2:218: recipe for target 'bootblock/CMakeFiles/buildboot.dir/all' failedmake[1]: *** [bootblock/CMakeFiles/buildboot.dir/all] Error 2Makefile:83: recipe for target 'all' failedmake: *** [all] Error 2lab0
+
+    Student Answer: 
+    run `git config --global core.autocrlf false` to make git use LF line endings rather than CRLF line ends. (or other config level)You will need to reclone repo after doing so.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

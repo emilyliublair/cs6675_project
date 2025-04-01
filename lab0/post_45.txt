@@ -1,0 +1,12 @@
+Question: 
+    Rosetta Issue Fix for M1 UsersIf you're getting the "Rosetta error: Unimplemented syscall number 282" issue, here's the fix (or at least what worked for me).Open Docker DesktopGo to Settings -> GeneralUncheck "Use Rosetta for x86/amd64 emulation on Apple Silicon"Restart DockerPray it workslab0~ An instructor (Rohan Natansh Bafna) endorsed this note ~
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

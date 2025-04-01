@@ -1,0 +1,12 @@
+Question: 
+    mov vs movlDoes it matter whether I use mov vs movl in my assembly? I tried both of them and I don't seem to see any difference in my output. I see fromherethat the size of the data item is normally inferred from the assembly code. Is it okay to use either?edit: I mean movw instead of movllab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Yes, it’s ok to use either. If you take a look at bootblock.asm (which is a disassembly of the bootblock, so not necessarily the same as the original assembly file) you should see that they both assemble to the same instruction, if you are referring to a 32 bit register. (If you are referring to a 16-bit register, like %ax instead of %eax, you’ll see that mov gets turned into movw instead of movl).
+
+    Followup Discussions:
+    
+    

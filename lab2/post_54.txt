@@ -1,0 +1,12 @@
+Question: 
+    Invalid OpcodeI'm getting traps for invalid opcode. Has anyone encountered this before? Does anyone know what might be causing this?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Some sort of memory corruption must be happening, either in a process’s code section or on its stack (since the stack stores return addresses). But without more details it’s hard to tell why.
+
+    Followup Discussions:
+    @244_f1Anonymous Mouse1 month agoAre you facing this issue while trying to implement part 2 (lazy zero page allocation)? I'm having the same issue, can't seem to figure out what's causing it but something that seems relevant is the fact that the value of my instruction pointer in my trap frame is 0x0, which is definitely not right0Rohan Natansh Bafna1 month agoIt could be right. Since programs in xv6 are loaded at the bottom of the address space, 0 usually points to executable code, and oftentimes it points directly to main, which makes 0 the elf entry point.good comment1
+    

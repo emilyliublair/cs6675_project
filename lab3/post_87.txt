@@ -1,0 +1,12 @@
+Question: 
+    Thread group owner exec()What will happen to a thread group owner's children if it calls exec() and starts a new thread group? Does this count as "a thread group owner exists before its children" which should be undefined?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    It’s undefined.
+
+    Followup Discussions:
+    
+    

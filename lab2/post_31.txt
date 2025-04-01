@@ -1,0 +1,12 @@
+Question: 
+    Excessive Deallocation TestHello, I wrote a test case to check if my implementation handles excessive deallocation (Calling sbrk with a large negative number) and it currently Page Faults with error code 4. I've tried debugging with GDB several times and can't find anything that looks off.Any insights on if I need to do extra work to handle this case would be super appreciated. I have not modified sbrk() in any way.lab2
+
+    Student Answer: 
+    Are you freeing still in use pages? I think err 4 is reading from a page that doesn't have the user bit set.
+
+    Instructor Answer: 
+    Did you deallocate so much memory that you deallocated part (or all) of your code?
+
+    Followup Discussions:
+    @280_f1Anonymous Poet1 month agoYep that was exactly what was happening. Didn't think about that when I wrote the tests, but that was in fact the issue. I'm fairly confident my error has something to do with sbrk being called in certain circumstances. I sbrked a lot of memory, wrote to it, forked, sbrked more memory, wrote again, and the test passes. Just sorta at a loss on what I'm doing wrong here.0
+    

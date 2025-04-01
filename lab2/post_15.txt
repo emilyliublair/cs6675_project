@@ -1,0 +1,12 @@
+Question: 
+    Running Usertests.cHow can I run usertest.c? Is it ran from inside xv6? When I run 'ls' inside xv6, I cannot see it, nor do I see a usertests executable in the build directory.lab2
+
+    Student Answer: 
+    Ended up figuring it out. You add usertests.c and echo.c to the CMakeLists.txt and make. When you ls, you should see it there now.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    1 endorsed followup comment@308_f1Richard Alexander Barrezueta1 month agoAlso make sure to “make clean” then “make” after running usertest, to reset the file system. I’ve heard there’s another fast way to reset the file system but I don’t remember.~ An instructor (Sukrit Kumar) thinks this is a good comment ~1Anonymous Calc1 month agoyou can also go into the user directory and remove the fs.img0Richard Alexander Barrezueta1 month agoThat’s the one. Thank you, I’ll remember it for next lab0
+    

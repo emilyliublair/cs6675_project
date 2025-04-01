@@ -1,0 +1,12 @@
+Question: 
+    Part 3: Odd behavior with kernel ram functionI have written corresponding code in the kernel in-order to find the records written from code that I have written in bootasm.S. Looking at it high level it seems fine but caused xv6 to be stuck in a boot-loop. I used GDB to inspect what was happening in my kernel code and I am having a hard time trying to figure out what is happening. For example, when I first get into my function i set some unsigned int to zero. But when I use GDB and run "info locals" or "p <variable_name>" its giving me "variable_name = 65684". This happens to a couple of other variables that I initialize in the beginning of the function. Any thoughts?lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @102_f1Rohan Natansh Bafna2 months agoCould you send a few screenshots of your gdb session, C code, and the disassembly (the relevant portion of /xv6/build/kernel/kernel.asm) in a private post? It's kind of hard to figure out what might have happened just from that description.good comment0Anonymous Beaker2 months agoThis same thing is happening to me except I also commented out all my code and restarted the docker container, its still looping through the "Booting from Hard Disk.." screen, any ideas on how to fix?1Anonymous Helix2 months agoYou might have a bad state because of the bootloop. I think you should do make clean or fully delete your build directory and re-make the project.0Anonymous Comp2 months agoI found doing all of the above, plus rebuilding the container helped.0
+    

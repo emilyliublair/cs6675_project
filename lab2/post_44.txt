@@ -1,0 +1,12 @@
+Question: 
+    Trouble using GDB on usertests.cI'm trying to step through using gdb on usertests.c because it seems like something that should be working in that file is not doing what it should be. However, I don't think I am doing this right. I try getting the symbols using file user/_usertests and then set a break point at main but it doesn't seem like I can step through it. I try continuing but it just never hits another break point. Does anyone know what I might be doing wrong?lab2
+
+    Student Answer: 
+    Everything you did up to setting the breakpoint in main looks good, but once you do that, make sure you actually run usertests in the xv6 shell, then you should hit the breakpoint in gdb.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

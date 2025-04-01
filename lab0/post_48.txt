@@ -1,0 +1,12 @@
+Question: 
+    Supervised Lab InfoHi all,Tomorrow (Wednesday, 01/08) we’ll be having our first supervised lab session. In this session we’ll be going over how to set up your development environment and discussing common tools that you can use to complete lab assignments. Please make an effort to attend this lab (and all others!) - it’ll help reduce your workload burden immensely and get you up and running with xv6 hacking much faster.ImportantIf you are registered for Lab SectionCS-3210-C02(CRN 35098) you will be meeting in Skiles 257 instead of MRDC 3403.To recap, there are four Supervised Lab sections for this course. They all meet at at 6:30 PM on Wednesdays in the following locations:CS-3210-C01 meets in Skiles 170CS-3210-C02andCS-3210-D02 meet in Skiles 257CS-3210-C03 meets in ES&T L1175 (the Ford building, across from Klaus)CS-3210-D01 meets in Skiles 156See you there!lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @7_f1Alexey Tumanov3 months agoplease note, as a reminder, if you're registered for theC02supervised lab section, you will go toSkiles 257. Everyone else, the locations in the announcement above match your registration information.good comment0
+    

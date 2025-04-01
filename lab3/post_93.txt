@@ -1,0 +1,12 @@
+Question: 
+    Part 5 lostwakeupIf a process calls setpart and then a wakeup occurs for that channel in between that and the process calling park, should we just immediately return 0 and not go to sleep.lab3
+
+    Student Answer: 
+    We should return 1 and not go to sleep.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @403_f1Anonymous Beaker3 weeks agoAlso if unpark finds 0 processes sleeping on the channel, is that a failure which should return -1, or should it just return 0 since it woke up zero processes0Tianyi Yu3 weeks agoShould just be 00
+    

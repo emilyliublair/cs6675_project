@@ -1,0 +1,12 @@
+Question: 
+    Extra CreditIs it ok if there is a residual temporary folder that was used to test maximum files per directory after running limits?lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Yep, that’s okay. Cleaning up any files you may create isn’t mandatory, but it’s a good bonus exercise if you’d like to give it a try.
+
+    Followup Discussions:
+    @27_f1Erel Ozen3 months agoCan we get a rough estimate of the number of files we can expect? I am getting an answer with my code, but I have no idea if it's in the right ballpark.0
+    

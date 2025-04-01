@@ -1,0 +1,12 @@
+Question: 
+    pass test 35 but not test 33anyone have any insight as to why i might be passing test case 35 but not test case 33?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Like the comments say, you should be able to park without first setparking, and that should put you to sleep on channel chan.
+
+    Followup Discussions:
+    @595_f1Emma Lawton4 days agoare you dependent on setpark?0Anonymous Atom4 days agohmm, as in if my implementation right now relies on setpark, and without setpark being introduced in a sequence of park and unpark calls, certain fields and conditions might be inaccurate?0Emma Lawton4 days agoYep exactly what I was getting at0@595_f2Anonymous Helix4 days agoMake sure you can do the sequence park unpark as you shouldn't need to setpark in order to unpark.0
+    

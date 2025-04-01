@@ -1,0 +1,12 @@
+Question: 
+    References for the Zero pageWhy do we have to track the references to the zero page (my code only started working once I started doing this)?I have my CoW implementation working and I was thinking that if the references to the zero page are maintained at 1 and we never increase or decrease it we would never try to write to that page with the automatic write if the references on a page are 1 (mainly because we cant write to that page triggering a CoW write with 1 reference).I couldn't think of any case where we would write to the lazy zero page since whenever we create a new process that process if it gets written to would simply create a new page. And if we were to fork off of a process which was referencing a lazy zero page that fork would set the original pa/ppn of the lazy zero page to be a CoW page now. Once we write to this new forked child process it would create its own new page and the references to the lazy zero page would go back to 1.Is this only a problem because a program could theoretically access the lazy zero page and trigger a write on it?(Im not sure if this makes sense how I've described it)lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @291_f1Anonymous Poet1 month agoI think theoretically you shouldn't have to. Maybe it's something with your logic for freeing pages that causes problems unless you have ref counts?0Anonymous Scale1 month agoYea i'm thinking the same thing. It works with the autograder so im not really sure what the problem is but I'll try to debug stuff.0
+    

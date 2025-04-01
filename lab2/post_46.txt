@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    0x1000 is the guard page and it should be pointed to the global zero_page. 0x0 and 0x2000 however are stack and data/text pages and should not point to the global zero_page. You may need to change the behavior of your exec.c to achieve this. You can also look at clearpteu for some things you may need to do regarding the guard page (hint: it should always stay unwritable!)
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

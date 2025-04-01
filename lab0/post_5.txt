@@ -1,0 +1,12 @@
+Question: 
+    helloworld running into panicI've implemented limits.c with the extra credit and I'm getting numbers for max processes and max files per dir that make sense. But when I go to run helloworld now, I run into the same panic as the one that happens at the end of max files. Is this expected behavior? If not, what should I be looking to resolve?lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @75_f1Andrew Boeger2 months agoSince helloworld creates a file, then if you already created the maximum files in a directory, you will immediately hit a panic when you run helloworld after limits. You can either close/clean up files to free-up Inodes.0Anonymous Scale2 months agoYep that makes a lot of sense. Is there a command that I can use to (I'm thinking like rm) to clear out fs.img?0Andrew Boeger2 months agoIt was explained to me in Lab that you can actually comment out your logic for creating files and just leave a hardcoded answer (found via your logic) as a print statement - They just glance at the logic and final answer as proof.0Rohan Natansh Bafna2 months agoYou can rm fs.img and then run make again to regenerate itgood comment0
+    

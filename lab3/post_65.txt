@@ -1,0 +1,12 @@
+Question: 
+    Edge cases for Clone to testI was wondering if anyone knew of any good edge cases to test for clone? I am currently not passing cases 11-13 and 15-17 and not really sure what to test (all hardfaults).I have tested created a bunch of clones, writing to a global variable in a cloned thread and checking it in the parent, opening and closing file descriptors in the child and parent and checking if the changes have taken place, changing the current working directory and checking in the parent, and changing the size of a process in the child and checking if that has applied to the parent.I suspect it has something to do with stack copying or exiting but I am not really sure how to write a usertest for those. Any tips would be appreciated!lab3
+
+    Student Answer: 
+    try returning from the function where clone is called with the clone
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @496_f1Anonymous Comp1 week agoWhat is the expected behavior for this case? I ran it where parent creates a clone, then the clone creates a clone and if that clone's pid == 0, then it will return. The result is that it just never goes into the code it was supposed to execute otherwise which I believe is expected?0Killian Patrick Vetter1 week agoreturn from clone should act exactly as the parent returning. It should continue from the line after the function call0Anonymous Comp1 week agoIssue turned out to be incorrect behavior in wait, which I didn't use in my test cases as I used waitpid for that instead.0Anonymous Gear1 week agoI think I'm having a similar problem, I'm not sure though and any guidance would be appreciated!Whenever my clone runs, I set eax for the new proc's trapframe to be 0. However, in my test cases, I never see the return value being 0 (it never enters my if statement for the child case). Is this kinda similar to what your problem was and if so how did you fix it. I'm only failing case 12.0Anonymous Comp1 week agoUnfortunately I never faced that issue as my clone functionality was fine but I was cleaning up processes incorrectly in wait. I thought that it had to be the TG owner to be handled, but only the freeing of the pgdir is required by the TG owner.I would try stepping through in gdb to see where the value gets lost.0@496_f2Anonymous Scale6 days agoWere you able to pass 17? if so, what did you change?0Anonymous Comp6 days agoIt turns out my wait function was broken since I accidentally added something regarding thread group owners that I shouldn't have in a spot that was not appropriate.1
+    

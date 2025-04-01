@@ -1,0 +1,12 @@
+Question: 
+    Is it OK if my limits prints out allocuvm out of memory before the memory limit?Is it OK if my limits command prints out "allocuvm out of memory" before the"Maximum Memory Size: 0x00000000"?lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Yes, that message comes from the kernel.
+
+    Followup Discussions:
+    @25_f1Tianyi Yu3 months agoThe memory size is supposed to be non-zero right0Andrej Vrtanoski3 months agoYes the size of memory should be > 0, the string 0x00000000 is just a placeholder value.good comment0
+    

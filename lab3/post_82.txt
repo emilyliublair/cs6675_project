@@ -1,0 +1,12 @@
+Question: 
+    Negative size received from traversing the stackCurrently I traverse the parent stack using ebp and calculate the stack size using:int oldsz = final_ebp - current_ebp;Usually, this gives me the proper size but I've noticed that sometimes it gives me a negative size and I'm not really sure why. Is this behavior not supposed to happen, or am I just supposed to return -1 when it does?I am currently testing using these values:void *stack = malloc(6000);pid = clone(stack, 5000);lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @435_f1Shourik Banerjee3 weeks agoNever mind, I was doing some incorrect casting which resulted in the stacks not being copied properly. This mean that the EBP chain was wrong in children trying to clone children.0
+    

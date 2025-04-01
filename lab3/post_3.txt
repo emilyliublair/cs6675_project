@@ -1,0 +1,12 @@
+Question: 
+    waitinfo input pointer validity?When we implement waitinfo / other syscalls is it on the kernel to verify that the pointer is not a null pointer? Since in xv6 0x0 is valid userspac ememlab3
+
+    Student Answer: 
+    yes
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @621_f1Anonymous Poet19 hours agocan you explain why since 0x0 is valid memory?0Anonymous Gear19 hours agoidk2
+    

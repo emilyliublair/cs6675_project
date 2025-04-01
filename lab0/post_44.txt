@@ -1,0 +1,12 @@
+Question: 
+    Docker Instance has no contentsFor some context, I’m a Windows user, using Git Bash, and modified the docker.sh file, line 49, todocker run --rm -it --name=“xv6” -v “${ROOT_DIR}//“://xv6 -w=”//xv6” jackwolfard/cs3210:latestto get around the following error:However, when I run ./scripts/docker.sh and start the xv6 container, there's nothing in the directory:and I'm thus unable to follow the rest of the setup guide.lab0
+
+    Student Answer: 
+    .
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @11_f1Rohan Natansh Bafna3 months agoI would suggest using WSL in lieu of Git Bash, as that’s what we recommend in this course.good comment0
+    

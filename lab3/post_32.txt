@@ -1,0 +1,12 @@
+Question: 
+    Confusion on Conditional VariableI believe that because a conditional variable depends on a condition, its struct should have an element that tracks this condition; however, I am not sure how the autograder would use this field. In my implementation, after cond_init, a user would be able to set the condition in the conditional variable to true or false, which would affect the behavior of cond_wait. I just don’t know if the autograder will interact with this in the way I expect.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @555_f1Anonymous Beaker5 days agoThe autograder is very loose in its conditional checks so you should write some good local tests. I suspect the autograder is really only checking the return values.0
+    

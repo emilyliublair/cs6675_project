@@ -1,0 +1,12 @@
+Question: 
+    Why does the xv6 have the limit of 0xFE00000 as the maximum usable address?The xv6 manual says the following "Note that if a machine has more than 2 Gbyte of physical memory, xv6 can use only the memory that fits between KERNBASE and 0xFE00000". Why does the xv6 have the limit of 0xFE00000 as the maximum usable address?lab1
+
+    Student Answer: 
+    It might have to do with this: from Figure 2-2 in the textbook, all physical addresses between 0xFE000000 and 4GB are reserved for "Memory-mapped 32-bit I/O devices".~ An instructor (Pau Sum) endorsed this answer ~
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @113_f1Anonymous Helix2 months agoYep, I saw that but that figure mentions address 0xFE000000 while the caption says 0xFE00000 (order of magnitude different). Is this a typo?1Anonymous Helix2 months agoAnd if it is a typo, which address is correct?0Nathan Prashant Duggal2 months ago0xFE000000 (6 zeros) is correct~ An instructor (Rohan Natansh Bafna) thinks this is a good comment ~3
+    

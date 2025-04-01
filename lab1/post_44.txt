@@ -1,0 +1,12 @@
+Question: 
+    Testing backtraceBecause we are writing backtrace.c in the kernel, I know to test it we have to write a user space program. I am wondering how to actually do this however. Would we add backtrace as a new syscall, or is there another preferred method?lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Not everything needs to be tested in user space. The reason we emphasize being able to write user programs is because in later labs, you will be creating or changing modules affected system calls. The best way to test system calls is by calling them from one or multiple user programs to identify edge cases that you may have missed.However, the backtrace function you are implementing is a kernel-level feature used by the kernel only. Thus, it is perfectly okay to test it just within the kernel. An easy way to do this is calling it in certain places in you are familiar with what the function stack should look like.In general, if you are adding a system call or changing some subsystem that a user interfaces with via system calls (ex: virtual memory, files, etc.), then you should test by writing user space programs. If you are writing a feature that will only be seen by the kernel, then you can simply test in kernel space in some existing file where you deem fit. Note that these are not hard rules, just general pointers (ex: you may need to test/debug a system call by making changes to kernel space, not just writing a user program).
+
+    Followup Discussions:
+    
+    

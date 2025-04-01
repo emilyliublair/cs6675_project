@@ -1,0 +1,12 @@
+Question: 
+    How is the handwritten portion graded?I passed all the autograder test cases but I have a few lines of debug code / print statements (which have been commented out) in the submission. Should I delete these and resubmit or is it ok as is?lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    It’s okay as it is
+
+    Followup Discussions:
+    
+    

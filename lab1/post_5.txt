@@ -1,0 +1,12 @@
+Question: 
+    Seg fault at 0x1000c _start of Entry.SWhenever I try to run gdb on the kernel i get a seg fault on0x0010000c in ?? ()which i believe is _start from Entry.S.Could this be from changes made to bootasm.S when implementing part 3 or would it be a problem with backtrace.c because I'm only failing test 1-3 and test 7 with timeout/hardfault?lab1
+
+    Student Answer: 
+    solved
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @161_f1Rohan Natansh Bafna2 months agoCan you send a screenshot of what happens in gdb when you get the segfault?good comment0Anonymous Mouse2 months ago0Rohan Natansh Bafna2 months agoHow did you run gdb? Did you typegdb /xv6/build/kernel/kernel?You need to debug your OS through qemu; the instructions for doing so are athttps://github.gatech.edu/cs3210-spring2025/xv6/tree/lab0?tab=readme-ov-file#debugging-user-space-programs. Just don’t run thefilecommand if you want to debug kernel space.good comment0Anonymous Mouse2 months agoI started qemu with the -g flag and in a separate terminal I attached the docker instance and ran gdb in /xv6/build0Rohan Natansh Bafna2 months agoOkay, it looks like gdb somehow got misconfigured on your container. If you run the commandecho add-auto-load-safe-path /xv6/build/.gdbinit >/root/.gdbinitfrom within Docker, then gdb should work properly. Although, to be safe I would just close both Docker terminals and reopen them. This will create a fresh container from the Docker image we provide you and should reset gdb’s configuration.good comment0
+    

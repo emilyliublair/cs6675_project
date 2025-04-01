@@ -1,0 +1,12 @@
+Question: 
+    Part 1: Test Case 7We pass all test cases except for 7, wondering if anyone had any insight on this situation.Thanks!lab3
+
+    Student Answer: 
+    Our FIFO queue was incorrect so we weren't actually doing FIFO. Hopefully this helps someone!
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

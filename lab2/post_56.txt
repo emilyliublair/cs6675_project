@@ -1,0 +1,24 @@
+Question: 
+    mycpu(), copyuvm(), lab2_pgcopy(), forktest.c1.#0  panic (s=0x801089aa "unknown apicid\n") at /xv6/kernel/src/console.c:123#1  0x80104e0a in mycpu () at /xv6/kernel/src/proc.c:52#2  0x80105c8d in pushcli () at /xv6/kernel/src/spinlock.c:108#3  0x80105af7 in acquire (lk=0x8014a280 <ref_lock>) at /xv6/kernel/src/spinlock.c:29#4  0x801036f4 in kfree (v=0x8014f000 "") at /xv6/kernel/src/kalloc.c:78#5  0x80103695 in freerange (vstart=0x8014e120, vend=0x80400000) at /xv6/kernel/src/kalloc.c:63#6  0x80103648 in kinit1 (vstart=0x8014e120, vend=0x80400000) at /xv6/kernel/src/kalloc.c:47#7  0x801043dd in main () at /xv6/kernel/src/main.c:22run code snippetVisit Manage Class to disable runnable code snippets×I am stuck at the boot process after adding a spinlock. I am doing acquire() and release() but it seems that it's stuck at acquire(0 and never reaches release(). I don't understand what the error message is trying to tell me.apicid = lapicid();// APIC IDs are not guaranteed to be contiguous. Maybe we should have// a reverse map, or reserve a register to store &cpus[i].for(i =0; i < ncpu; ++i) {if(cpus[i].apicid == apicid)return&cpus[i];
+  }
+  panic("unknown apicid\n");run code snippetVisit Manage Class to disable runnable code snippets×It seems that mycpu() couldn't find the current local apic id? But why? Is it related to the fact that acquire() disable interrupts? How should I handle this?2.copyuvm(pde_t *pgdir, uint sz)
+{
+  ..
+  for(i = 0; i < sz; i += PGSIZE){
+    ...
+  }
+  ..
+}If I am understanding this correctly, we always starting from virtual address 0 when copying the page table of a parent process. But we don't know if virtual address 0 is mapped by this parent process, no? Why aren't we looping through the parent's page table instead and mapping each entry?3.Does the argument "user_va" of lab2_pgcopy() and lab2_pgzero() correspond to the virtual address of the user process that caused the page fault? I stepped through my code with gdb but I can't seem to find the expected value of forktest.4.Is there a way for me to step through forktest.c with gdb?lab2
+
+    Student Answer: 
+    Like the memlock, you can create a use_lock boolean which gets set in kinit2
+
+    Instructor Answer: 
+    I think lapicinit() needs to have been called first for the APIC calls to succeed.Looping through the parent’s page table and mapping every entry would be a more robust solution, but for simplicity xv6 is designed to always map the virtual addresses [0, sz) and nothing else.Yes; you can look atforktest_expected_cow.outandforktest_expected_complete.outto see the what values you should be passing in are.We don’t provide a copy of the ELF file that forktest uses so you would have to step instruction by instruction using thesicommand. It might be easier to instead set a breakpoint attrap()to capture all the ways in which the user program interacts with the kernel (by syscalls or page faults) as that is usually what matters most in this lab.
+
+    Followup Discussions:
+    @240_f1Anonymous Poet2 months agoFor 1 I tried calling lapicinit() before kinit1() but I am still stuck at the same place with the same error.For 3 I know what the expected values are from forktest_expected_cow.out, but when I break inside my page fault handler, I can't find the correct address by looking at all of the register values, the trap frame, myproc(), or mycpu().0Rohan Natansh Bafna2 months agoI think you also need mpinit() to be called first. I honestly recommend just initializing the locks near the end of main(); for instance kalloc and kfree only start using locks once kinit2() has been called.The CR2 register holds the faulting virtual address on a page fault.good comment1Anonymous Poet1 month ago3: I am ''
+PGTRAP: err: 0x7, va = 0x2f6c
+PGCOPY: 0x2000
+PGTRAP: err: 0x7, va = 0x2f60pgtrap prints out the faulting virtual address (value in cr2) but it is different from the virtual address that pgcopy prints. I can't find the value 0x2000 in anywhere.0Rohan Natansh Bafna1 month agoJust round the addresses down to the nearest page-aligned address. (Use thePGROUNDDOWNmacro)good comment1
+    

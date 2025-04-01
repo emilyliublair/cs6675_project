@@ -1,0 +1,12 @@
+Question: 
+    ImportsAre we allowed to modify our imports in the C files at all?lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    You shouldn’t need to, but you are allowed to if you want. Make sure what you’re including is in the include/ or user/include/ directories (not kernel/include).~ An instructor (Alexey Tumanov) endorsed this answer ~
+
+    Followup Discussions:
+    @19_f1Erel Ozen3 months agoHow do we import stdio.h? Do we just make a copy of it into user/include?0Rohan Natansh Bafna3 months agoXv6 doesn't provide any form of the C standard library, so there is no stdio.h. The declarations for the user library functions are in user.h.good comment0
+    

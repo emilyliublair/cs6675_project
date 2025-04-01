@@ -1,0 +1,12 @@
+Question: 
+    xv6 Setup: Common Issues + SolutionsHey everyone,With lab 0 now released, we thought it would be helpful to send out a list of common issues + fixes for various xv6 setup issues that you all may have encountered on Wednesday.Rosetta Issues on MacWe’ve update the xv6 Docker image, so simply re-cloning the repo should fix any Rosetta-related issues. However, if you still see Rosetta-related errors when trying to start xv6, then do the following:Open Docker desktopNavigate to Docker Settings > GeneralUncheck the “Use Rosetta for x86/amd64 emulation on Apple Silicon” optionWindows Setup IssuesThere are two common issues that we observed on Windows systems.Window auto-converting to CRLF line endings, which interfere with the ability to execute xv6’s setup scripts. We have already updated the.gitattributeson the repo, which means if you re-clone the repo this issue should be resolved. However, if this doesn’t work, then you can manually create a.gitattributesfile in the root of your repo and simply add\* text=auto eol=lf. You can also disable this behavior globally by runninggit config --global core.autocrlf falsebefore you clone the repo.It is imperative that you use WSL with Ubuntu for running the setup scripts/docker container, as alternatives (such as Git Bash) have proven to be unreliable.These should cover most of the common setup problems across both OSes. If you still run into issues after this post, then please make follow-up Piazza post or stop by office hours, as you’ll need a working xv6 to complete lab 0.lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,12 @@
+Question: 
+    call report_pagefaultYou must also call the following function whenever you receive a pagefault:lab2_report_pagefault(struct trapframe *tf);Are we supposed to call this whenever there is a pagefault (trap number = 14) or whenever there is a valid copy on write page fault?For example, if the faulting address for a page fault is a kernel space address, should we still call lab2_report_pagefault()?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Whenever there is a pagefault in general
+
+    Followup Discussions:
+    
+    

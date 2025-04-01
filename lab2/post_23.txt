@@ -1,0 +1,12 @@
+Question: 
+    Usertests Failing at PreemptWhen running usertests everything passes up to preempt, but suddenly stops. Any ideas why this might be happening?lab2
+
+    Student Answer: 
+    Preempt should fail becausethe ability to preempt gets disabled in the bottom of trap :)
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

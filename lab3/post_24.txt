@@ -1,0 +1,12 @@
+Question: 
+    Autograder Timing OutThe autograder timed out after 45ish minutes - what do we do in this case?lab3
+
+    Student Answer: 
+    It's been timing out for me as well and I don't think its my fault as earlier tonight, I had a TA re-run my submission and it ran correctly the second time. Maybe it has to do with a lot of people submitting right now.
+
+    Instructor Answer: 
+    Have triggered a re-run
+
+    Followup Discussions:
+    
+    

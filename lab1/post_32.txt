@@ -1,0 +1,12 @@
+Question: 
+    Hand graded lab portion clarificationWhat exactly is being assessed during hand grading? Syntax and documentation?Thanks!lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    We will check that your implementation handles certain edge cases that are a little tricky to autograde.~ An instructor (Alexey Tumanov) endorsed this answer ~
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,12 @@
+Question: 
+    x86.hdo we need to understand the gcc inline assemblyin x86.h?lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    It’s nice to know, for good ol’ curiosity sake
+
+    Followup Discussions:
+    
+    

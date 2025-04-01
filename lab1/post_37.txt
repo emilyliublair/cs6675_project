@@ -1,0 +1,21 @@
+Question: 
+    Using gdb with xv6I’m trying to get a better idea at how an xv6 stack looks like, so I wrote a simple program that consists of 3 nested function calls and looked at it with gdb. I can provide the source code if needed since it isn’t directly related to the lab.When setting breakpoints and stepping through instructions, I noticed that gdb seems to be displaying the instruction currently being executed incorrectly.For example, when the breakpoint forfunc3in the program I wrote is reached (after I ran the program from the xv6 cli), gdb should show the instruction at0x6a <func3+6>but instead shows that at0x21a <strchr+19>.x/ialso shows the instruction at the incorrect address, as shown below.(gdb) c
+Continuing.
+[  1b:6a]0x21a<strchr+19>:       add    BYTE PTR [eax],bh
+
+Breakpoint1, func3 () at /xv6/user/src/test_scripts/callstack.c:2727int x =3;
+(gdb) disas
+Dump of assembler codeforfunctionfunc3:0x00000064<+0>:     push   ebp0x00000065<+1>:     mov    ebp,esp0x00000067<+3>:     sub    esp,0x18=>0x0000006a<+6>:     mov    DWORD PTR [ebp-0xc],0x30x00000071<+13>:    sub    esp,0x40x00000074<+16>:    push   DWORD PTR [ebp-0xc]0x00000077<+19>:    push0x80b0x0000007c<+24>:    push0x10x0000007e<+26>:    call0x679<printf>0x00000083<+31>:    add    esp,0x100x00000086<+34>:    nop0x00000087<+35>:    leave0x00000088<+36>:    ret    
+End of assembler dump.
+(gdb) x/i0x21c<strchr+21>:   inc    ebp
+(gdb) x/i$eip=>0x6a<func3+6>:      mov    DWORD PTR [ebp-0xc],0x3run code snippetVisit Manage Class to disable runnable code snippets×Any clues as to why this is happening? Is there some sort of desync between gdb and the compiled program somehow? Thanks.lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    I'm not 100% sure, but the most likely scenario is that another process is executing, so the instructions in memory don't line up with the executable file that gdb has loaded, causing gdb to be confused. Since the addresses here are all very low, it's pretty likely that the address you set a breakpoint at is used by a different process to store code as well.When you press enter after typing a command into the shell, the shell forks, runs some code, and then calls exec to start running the command you entered. Gdb probably caught that breakpoint in that child process before it exec'd callstack.Since this lab is almost entirely kernel code, and backtrace is a kernel-space function, I recommend you examine the kernel instead of user processes; you won't have to deal with issue then.
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,12 @@
+Question: 
+    ls fails for newly created directoriesAfter I create a directory (either through a user program or from the shell viamkdir), every time I attempt to calllsfor that directory, it fails.Example:$ ls(Regular ls output for /)$ mkdir tmp$ ls /tmpexec: failexec ls failed$ cd tmp$ lsexec: failexec ls failedI'm kind of curious why this happens. Looking briefly intols.cit seems like there might be some permission issues?lab0
+
+    Student Answer: 
+    Try ../ls.I think it's because the ls executable is only in the main directory and not directly accessible when you traverse down the file tree. This should execute the ls executable from one directory down.~ An instructor (Rohan Natansh Bafna) endorsed this answer ~
+
+    Instructor Answer: 
+    The student answer is right, the shell always executes files in the current directory.I don’t know exactly why ls didn’t work the first time, but a common issue happens when you mistype a command, press backspace, and then try to correct it; xv6’s sh doesn’t handle backspaces correctly, treating them as just the ASCII character 0x08/^H instead of properly removing the last character from the input line. The terminal window correctly interprets the backspace character, though, so what you see as “ls” might actually have been, say, “ld^Hs” internally
+
+    Followup Discussions:
+    
+    

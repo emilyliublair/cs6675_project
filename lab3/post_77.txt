@@ -1,0 +1,21 @@
+Question: 
+    Test 17Does anyone know what the clone limit tests are checking for? I have tried passing in wrong pointers, multiple clones, running out of memory, etc. Not sure what 17 is looking for as I pass everything else.lab4lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Looks like you passed the test. Nice work :)
+
+    Followup Discussions:
+    @444_f1Anonymous Comp3 weeks agoHave you checked how the shared resource is handled?0Anonymous Atom3 weeks agowhat do you mean. what shared resource?0Anonymous Comp3 weeks agoCloned processes share several resources with their parent, namely:Virtual address space (shared memory)File descriptor tableCurrent working directory0Anonymous Atom3 weeks agoyeah all this is already protected.0@444_f2Anonymous Atom3 weeks ago“Looks like you passed the test. Nice work 😃”Uhh no I actually didnt pass itbasically i reran the same code without changed and it worked for some reason. Might be a concurrency problem / race condition so I would still appreciate tips.0Elton Leander Pinto3 weeks agoHave you written any tests that check if memory is being shared properly by threads?good comment0Anonymous Atom3 weeks agoYeah, both on the global and local scope. Both behave as expected. Is this test checking for memory stuff?0Elton Leander Pinto3 weeks agoWhat does your test look like?good comment0Anonymous Atom3 weeks ago“” this is not the real test, i have edited it to protect my solution / code. here is some psuedocodeish of what I am testing. “”intglobal_var =0;intmain(intargc,char* argv){intlocal_var =0;for(inti =0; i <50; i++)
+    {void*stack=malloc(4096);intres = clone(stack,4096);if(res ==0)
+        {
+            local_var +=1; 
+            global_var +=1;printf(1,"PID: %d, Local: %d, Global: %d\m", getpid(), local_var, global_int); 
+        }else{
+            wait(); 
+        }
+    }exit(); 
+}run code snippetVisit Manage Class to disable runnable code snippets×0Elton Leander Pinto3 weeks agoSo, this test doesn't verify that the change propagated over to the parent. You should try printing the value of these variables in the parent.good comment0Anonymous Atom3 weeks agoHmm interesting, thanks for the input I will check that. How is this a clone limit test though? I thought clone limit would mean like excess allocation or something.0Shourik Banerjee1 week agoShould the local variable change also be in the parent? I thought it was a stack variable so it shoudln't?0@444_f3Anonymous Helix2 weeks agoDid you figure out what was the problem? Having the same issue (timeout/hardfault)0Anonymous Atom1 week agoa long time ago it didnt work at all.we changed nothing. then it started working partially (sometimes).again, we changed nothing.  now it works every time.only thing we did was implement waitpid() and implement part 3. even though TA said waitpid() isnt required, just try implementing it. maybe itll work.0
+    

@@ -1,0 +1,12 @@
+Question: 
+    Passing forktest and all usertests but autograder times outWe are currently matching the expected output for forktest and all the usertests pass, however, when we submit to autograder it times out for every test. Additionally, when we make the project in release mode, the boot fails with a panic for an unexpected trap 6. Anyone have any issues similar to this? Thankslab2
+
+    Student Answer: 
+    We currently have the same issue. No clue how to fix it, though, unfortunately.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @305_f1Anonymous Gear1 month agoSame here0Anonymous Comp1 month agoWorked with a TA for a while on it today in office hours and we couldn't seem to figure it out. Don't really know what could be causing the strange behavior and why release mode would make a difference.0
+    

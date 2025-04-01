@@ -1,0 +1,17 @@
+Question: 
+    free_stack_and_exit scheduler modeMy partner and I are working on Part 3, and we noticed this comment in free_stack_and_exit.S:/*
+ * Frees the stack and calls exit() safely.
+ *
+ * PRECONDITION: The thread should be in the lowest-priority RR scheduler mode
+ * before calling this function
+ */run code snippetVisit Manage Class to disable runnable code snippets×However, there is no mention of this in the README, and another student mentioned that a TA told them to ignore this in office hours. Is this something that we should be worrying about, or can we ignore this?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @554_f1Anonymous Atom5 days agoThere's no test cases on gradescope for it being supposed to fail if the scheduler is switched1
+    

@@ -1,0 +1,12 @@
+Question: 
+    Cond_Signal and FilesCouple questions.For shared resources, do we need a lock around modifying the files themselves, or just modifying the array containing the file pointers (ofiles)?Do we return -1 if cond_signal doesn’t find any thread to wake up?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Just returning 0 is fine.
+
+    Followup Discussions:
+    @536_f1Anonymous Atom5 days agoThe files have their own ftable which is locking so I assume we don't need to touch it.0
+    

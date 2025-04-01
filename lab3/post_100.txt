@@ -1,0 +1,12 @@
+Question: 
+    Cloning user stack1. When creating the user stack for a new thread, if the parent is not the thread group owner, should we still copy the parent thread's stack instead that of the thread group owner?2. Are we supposed to walk though all page tables of the current process to find the guard page to determine the start of the user stack? I would assume that with all user stacks of a thread group in the same address space, only the thread group owner's user stack is adjacent to a guard page, and there doesn't seem to be a way to determine the start of the parent's user stack (if it's not the thread group owner)?3. User stacks have a fixed size of 4K by default. Does this mean we shouldn't allow stack_size to be greater than 4K? If stack_size is less than 4K but is greater than the actual size of the parent's user stack (the parent is using less than 4K of its user stack), we should still proceed to clone the stack, right?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    You only copy the stack of the direct parentFrom bullet (1), if you only copy the stack of the direct parent, there is information from the process that called clone() that tells you how to find the start of the parent's stack.stack_size can be greater than 4K. and yes
+
+    Followup Discussions:
+    
+    

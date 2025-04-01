@@ -1,0 +1,12 @@
+Question: 
+    Test Case 38!Hey guys,Hope that none of you run into this error, but I wanted to document my teammate and I's struggle. We were only failing test case 38 and it was not an issue with our conditional variables. It was a specific behavior in park that we missed in our testing. After some debugging and referencing a specific thread about test case 35 and the sequence setpid, unpark, setpark, park, we finally passed 38 and all of the park tests!I really hope this helps someone!lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @527_f1Killian Patrick Vetter6 days agoWhat is the thread about test case #35 you are referring to?0Anonymous Calc6 days ago@406This is the primary one, but there are more I referenced which you can find by searching 35 in the search bar.0
+    

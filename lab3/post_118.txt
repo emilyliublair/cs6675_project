@@ -1,0 +1,12 @@
+Question: 
+    Copying stack for CloneI'm struggling to understand this note in clone:NOTE: Clone sets up its stack to be logically equivalent to its parents, however it cannot just memcpy the stack. What do you know about stacks that limits you from doing this (think back to lab1's backtrace)? How must clone adjust?Is this referring to the user stack of the process, if so, how does the kernel access the user stack since only kstack is saved within the proc struct? Should the entire stack be copied or should only stack_size be copied to the new stack? Any help understanding this part of clone would be very helpful.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @351_f1Tianyi Yu4 weeks agoI see someone else is modifying the student answer, so I'll put my response here.Remember that in Lab 1 backtrace, we were able to walk up the stack using ebp & esp? That same information should be available to you in the trap frame during the syscall. Of course, now the clone needs to handle the stack copying in kstack, but the catch is that ebps are still pointing to points in the parent stack frame if you just copy the whole thing over to the new kstack location.2Anonymous Comp4 weeks agoOk that makes sense, so the passed in stack pointer is supposed to be the new kernel stack, and not the user stack, correct?0Tianyi Yu4 weeks agoActually no. The passed-in pointer is the place to put your user stack, but you actually need to modify the kernel-translated addresses of the space. To my understanding, when the kernel accesses user memory, it always translates it using uva2ka found in vm.c. That's why we need to perform the address translation as well and modify the stack in kernel space.1Anonymous Atom3 weeks agoI'm confused. Does this mean we are copying the parent's kstack as the new thread's user stack? Aren't kernel stack and user stack different?0Anonymous Calc3 weeks agoAfaik we’re copying the parent’s user stack to the new thread’s user stack. It’s possible to deduce where the parent’s user stack is through what’s available to you from a system call.0
+    

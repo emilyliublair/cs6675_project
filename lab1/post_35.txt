@@ -1,0 +1,22 @@
+Question: 
+    Conflicting typesIn file includedfrom/usr/include/stdlib.h:32,from/xv6/kernel/src/backtrace.c:4:/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:209:23: error: conflicting typesfor'size_t'; have'unsigned int'209| typedef __SIZE_TYPE__ size_t;
+      |                       ^~~~~~
+In file includedfrom/xv6/include/asm/x86.h:5,from/xv6/kernel/src/backtrace.c:1:/xv6/include/types.h:4:25: note: previous declarationof'size_t'withtype'size_t'{aka'long unsigned int'}4| typedef unsigned long   size_t;
+      |                         ^~~~~~/xv6/kernel/src/backtrace.c:5:12: error: extra tokens at endof#undef directive [-Werror]5| #undef exit(int)
+      |            ^
+In file includedfrom/xv6/kernel/src/console.c:11,from/xv6/kernel/src/backtrace.c:6:/xv6/kernel/include/defs.h:106:17: error: conflicting typesfor'exit'; have'void(void)'106|voidexit(void);
+      |                 ^~~~
+In file includedfrom/xv6/kernel/src/backtrace.c:4:/usr/include/stdlib.h:624:13: note: previous declarationof'exit'withtype'void(int)'624| externvoidexit (int __status) __THROW __attribute__ ((__noreturn__));
+      |             ^~~~
+cc1: all warnings being treatedaserrors
+make[2]: *** [kernel/CMakeFiles/kernelobjs.dir/build.make:146: kernel/CMakeFiles/kernelobjs.dir/src/backtrace.c.o]Error1make[1]: *** [CMakeFiles/Makefile2:304: kernel/CMakeFiles/kernelobjs.dir/all]Error2make: *** [Makefile:91: all]Error2run code snippetVisit Manage Class to disable runnable code snippets×I tried to includestdlib.hto callmalloc()andfree()but I am getting conflict types. Tried toundefthe conflicting types but it didn’t help. Am I not supposed to usestdlib? I saw that there’s amalloc()andfree()inulib.cbut I assume I’m not supposed to use it since that’s for user programs? What should I do instead?lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    stdlib.h is a header file provided by your host OS (that's why it's in /usr/include, not the xv6 directory tree). Don't include it; xv6 is compiled freestanding, which means you can't use header files or libraries from your host OS.I saw that there’s amalloc()andfree()inulib.cbut I assume I’m not supposed to use it since that’s for user programs?Yes, these functions ultimately call sbrk, which is a system call that changes the size of the current user process; they won't help you allocate memory for the kernel even if you did call them.What should I do instead?You don't need to dynamically allocate memory for this lab, or for any of the labs in this course. Everything you need to do can (and really should) be done using static allocations, whether that's on the stack or in globally defined variables.
+
+    Followup Discussions:
+    
+    

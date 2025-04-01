@@ -1,0 +1,12 @@
+Question: 
+    How to break in init.c?GDB seems to not allow me to break in init.c. When I do `b init.c:23` to break within the loop it says it isn't defined and if I say yes to trigger it on future library load it still never triggers. Is there a way to solve this?lab2
+
+    Student Answer: 
+    You would have to change your symbol table by doingfile user/_initin gdb before setting the breakpoint. Notice that you can’t add any kernel breakpoints after this, and existing kernel breakpoints will become ineffective.~ An instructor (Rohan Natansh Bafna) endorsed this answer ~
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @191_f1Rohan Natansh Bafna2 months agoAnd you can runfile kernel/kernelto switch back to the kernel’s symbol table.good comment1@191_f2Andrew Boeger2 months agoIs there a way to adjust the make file to have both kernel and user source files embedded with debug symbols? Obviously it's quite tricky to debug if once you move between Kernel/User you lose all debugging.0Rohan Natansh Bafna2 months agoThere is probably some way to merge two the symbol tables of two already-linked ELF files together but if you do so you’ll end up with conflicts between symbols in each of the ELF files. That would be a fun project to do if you want to learn more about the ELF spec, but personally I would not touch whatever you come up with with a 10 foot pole because it would inevitably be, like, VERY cursed.Gdb supports some scripting functionality IIRC, so you could create a script that switches to the appropriate ELF file and registers the breakpoints you want. I don’t know of any better way to deal with this issue though.good comment0
+    

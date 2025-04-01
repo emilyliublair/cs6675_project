@@ -1,0 +1,13 @@
+Question: 
+    Malloc never fails which defeats the point of lazy page allocation and COWI am trying to pass the mem test provided in usertests.c. This test case attempts to keep requesting more memory with malloc until the system runs out. When you call malloc, because we have lazy allocation, malloc returns without errors and just gives the address of the zero page (since it uses sbrk under the hood).If you try writing to this page (which is COW), there will be a page fault which allocates a new physical page, so everything resumes as normal. However, if there is no physical memory left, the COW will fail and the page trap handler will need to kill the process.This changes the behavior of user space allocators like malloc. Before, malloc would fail if the user requested memory but the system did not have any.  However, now malloc will not fail since it always gets what it wants (as long as the requested number will keep its va < KERNBASE). The process will instead exit() once physical memory is depleted when handeling COW related page faults.How can you get around this? If you check beforehand that there is enough memory to back up malloc’s or sbrk’s requests, does that not make lazy allocation useless? (since you will not be able to allocate more virtual pages than physical frames to back them up).lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    How can you get around this?What real world OSs do is swap to disk to gain a larger pool of memory to use, and if that fails as well (if the swap space is filled or there is no swap space to begin with), they will start killing processes to free up memory. Look up the OOM killer on Linux if you’re interested.For your lab 2 implementation, your existing approach is correct. Don’t check whether you have enough physical memory to back the copied zero page during malloc() or sbrk(); as you said, it defeats the point of lazy zero page allocation.
+
+    Followup Discussions:
+    @241_f1Anonymous Helix2 months agoFor your lab 2 implementation, your existing approach is correct.
+Does this not change binary compatibility then? Before, malloc() would fail in the code flow before the process would get killed. Now, the process will get killed resulting in a difference in behavior.This also means that the mem test provided in usertests.c will no longer pass. Is this the desired behaviour?0Rohan Natansh Bafna2 months agoYou’re right that it does technically break binary compatibility, but out of memory failures is something of an exception to that rule. Killing the process is the expected behavior.good comment0
+    

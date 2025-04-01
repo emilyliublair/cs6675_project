@@ -1,0 +1,12 @@
+Question: 
+    TLB invalidate specificationsWhat param does the invlpg function accept? Is it a virtual address, and does it have to be left shifted to be 32 bits? Or is it the pte?lab2
+
+    Student Answer: 
+    seems like it should be a virtual address as a void pointer~ An instructor (Sukrit Kumar) endorsed this answer ~
+
+    Instructor Answer: 
+    think about what TLB is, it's a map, mapping what? VFN to pte, right? So it takes something that can be translated to a VFN on input. A virtual address will do.
+
+    Followup Discussions:
+    
+    

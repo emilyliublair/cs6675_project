@@ -1,0 +1,12 @@
+Question: 
+    Part 2 design fails in exec()I am a bit confused about how to move forward on my part 2. I have made allocuvm only assign a pre allocated 0 page that is read only to all requests. When the page is written to, it will go through the page fault workflow that I made for part 1.However, this fails in exec() since interrupts are disabled there, so my page fault interrupt handler never gets called and the page is never made writeable. I am not sure how you can get allocuvm to always assign read only pages and then have the rest of the kernel still work.lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Why do you need an interrupt to cause the CoW logic to run? You’re in control of the kernel code—why not just copy the page when you need to manually?
+
+    Followup Discussions:
+    
+    

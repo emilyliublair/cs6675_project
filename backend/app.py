@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from datetime import datetime
 from bson import ObjectId
+from vector_rag import intake_question
 from init import connect_to_mongo
 
 app = Flask(__name__)
@@ -9,9 +10,6 @@ CORS(app)
 
 # MongoDB connection
 posts_collection = connect_to_mongo()
-
-# Pinecone initialization
-# vector_rag = connect_to_pinecone()
 
 # Helper function to convert MongoDB ObjectId to string
 def serialize_post(post):
@@ -48,10 +46,11 @@ def create_post():
 def get_post(id):
     try:
         result = posts_collection.find_one(filter=ObjectId(id))
-
+        
+        # llm_response = intake_question(result.description)
 
         
-        return jsonify(serialize_post(result))
+        return jsonify({'post': serialize_post(result), 'answer': llm_response})
     except Exception as e:
         return jsonify({"error": str(e)}), 500  
     

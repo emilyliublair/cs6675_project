@@ -51,35 +51,3 @@ export const fetchPost = async (
     throw error;
   }
 };
-
-export const searchPosts = async (
-  query: string,
-  top_k: number = 5
-): Promise<{
-  results: Array<{
-    score: number;
-    metadata: {
-      post_id: string;
-      title: string;
-      author: string;
-    };
-  }>;
-  posts: Post[];
-}> => {
-  try {
-    const response = await fetch(`${API_URL}/search`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ query, top_k }),
-    });
-    if (!response.ok) {
-      throw new Error("Failed to search posts");
-    }
-    return await response.json();
-  } catch (error) {
-    console.error("Error searching posts:", error);
-    throw error;
-  }
-};

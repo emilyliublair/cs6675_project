@@ -2,7 +2,7 @@ from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
 from dotenv import load_dotenv
 import os
-import pinecone
+from pinecone import Pinecone
 
 load_dotenv()
 
@@ -16,13 +16,10 @@ def connect_to_mongo():
     except ConnectionFailure as e:
         print(f"Could not connect to MongoDB: {e}")
 
-# def connect_to_pinecone():
-#     try:
-#         pinecone.init(
-#             api_key=os.getenv("PINECONE_API_KEY"),
-#             environment=os.getenv("PINECONE_ENVIRONMENT")
-#         )
-#         vector_rag = VectorRAG()
-#         return vector_rag
-#     except Exception as e:
-#         print(f"Could not initialize Pinecone: {e}")
+def connect_to_pinecone():
+    try:
+        pineAPI = os.getenv("PINECONE_API")
+        pc = Pinecone(api_key=pineAPI)
+        return pc
+    except Exception as e:
+        print(f"Could not initialize Pinecone: {e}")

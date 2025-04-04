@@ -1,0 +1,12 @@
+Question: 
+    Should we be passing any autograder tests with a working COW fork implementation only?I currently have a working Part 1 (COW fork) implementation that allows me to boot into xv6 without any apparent issues and also perfectly matches the output in forktest_expected_cow.out. However, I'm still failing every test case on Gradescope with a "Test failed: incorrect output" message. Is this normal (since I haven't done Part 2 yet) or should I expect to pass some cases with just Part 1 implemented?lab2
+
+    Student Answer: 
+    Nevermind I fixed it 😀
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @250_f1Anonymous Poet1 month agoWhat were the additional edge cases you considered?4Anonymous Atom1 month agoFollowing up on this.0Anonymous Comp1 month agoTry thinking about how you are handling your permissions on the guard page, that's what messed us up1Anonymous Poet1 month agoNot sure about cases 2-4, and 7, but for me 6 and 8 were about kernel writing to user pages.0@250_f2Anonymous Calc1 month agoAlso wondering how you got them to work3Anonymous Calc1 month agoI was incorrectly copying the lazy zero page (@196_f1)0
+    

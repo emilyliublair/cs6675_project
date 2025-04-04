@@ -1,0 +1,12 @@
+Question: 
+    Clone Return ValueMy clone function isn't returning 0 in the child even after setting the np->tf->eax to 0. I'm checking this with an if statement similar to how fork tests work. Is there something I'm obviously missing? I've tried stepping through in GDB but haven't been able to find anything that is obviously wrong, the proc just gets cleaned up in exit and never performs the print statements inside the child pid check. I'm also passing all of the clone cases except 12.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Have you tried testing in a user space program to check the return value of both the child and the parent? Also make sure you set the eax to 0 after you copy the parents trap frame to the new cloned thread
+
+    Followup Discussions:
+    @516_f1Anonymous Poet6 days agoHi, I’ve ran a few user space tests where I set up a clone and then have an if statement for return value 0, but the if statement never seems to execute.Do I need to change the context of the new process at all, right now it still goes to forkret0Anonymous Atom5 days agoDid you end up fixing this? I also pass all of clone except case 12 and my clone doesn't return 0 in the child for some reason. I clear eax after copying the trap frame0Anonymous Poet5 days agoNope, I’m still struggling with this, going tot rt to go to office hours either today or tomorrow but have a pretty packed schedule.0Anonymous Poet5 days agoHey I think I figured it out, check your syscall.c file for any places where you might be using bad/0 values if you recently cloned something.0
+    

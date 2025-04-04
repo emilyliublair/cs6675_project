@@ -1,0 +1,12 @@
+Question: 
+    Part 2, test case 11,12,13Anyone has insight on test case 11-13? I've passed others but these.  Thanks!lab3
+
+    Student Answer: 
+    Did you ever figure out your issue? I'm failing 12 and 14. Have a feeling that 14 is supposed to return -1 and I'm just missing something there but would be interested to know if you fixed 12!
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @381_f1Anonymous Poet3 weeks agoDid you fail them due to a timeout/hardfault or incorrect output?0Anonymous Calc3 weeks agoWe were hard faulting on 12 and getting an incorrect output on 14, but we fixed it!0Anonymous Poet3 weeks agoOh, do you know what issue you had with 12?0Anonymous Calc3 weeks agoWe had an issue with our stack where the child stack was not copying the last return address. We found this out by making a function to compare parent and child stack and it caused us to trap. Hopefully that helps!0Anonymous Beaker3 weeks agoAny more info on this? I am passing everything from 1-21 minus 12.0Killian Patrick Vetter3 weeks agoWhat was causing your issue on 14?0Anonymous Poet3 weeks agoI was having trouble when exiting out of a program that created a thread that spawn a thread of its own, it panicked from filewrite when calling sched after exiting out of main. Once I handled exit i was able to pass 12,16, and 170Anonymous Scale1 week agoIf you're still having an issue with 12 we just fixed it by figuring out that the error happens when you clone a clone. We used gdb to better diagnose what was going wrong and were able to fix it. I am still failing 21 however, does anyone have any guidance on this?0
+    

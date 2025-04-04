@@ -1,0 +1,12 @@
+Question: 
+    Unexpected TRAPunexpected trap 14 from cpu 0 eip 80108dcc (cr2=0x246c)cpu with apicid 0: panic: trap0x80107d8c 0x80100068 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0Hi! I put the backtrace call in the kalloc method, but received the above error. I have tried debugging with GDB but can't quite find where the issue lies. Is there any advice for how to move forward?lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    An unexpected trap like this suggests a page fault at address 0x246c (according to the cr2 register printed from the output). I would suggest using gdb to set a breakpoint at the instruction address x80108dcc and seeing which line is causing the page fault.At a high level, it’s likely that your backtrace is terminating too late or otherwise incorrectly implemented and it’s dereferencing an address it’s not supposed to.
+
+    Followup Discussions:
+    
+    

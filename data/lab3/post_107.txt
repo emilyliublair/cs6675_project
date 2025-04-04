@@ -1,0 +1,12 @@
+Question: 
+    Thread Exclusion Promises does the kernel make with regard to threadsIs it the kernel's job to ensure exclusion when making changes to the pgdir for example? In lab I was told that when two processes are writing to the same file it can interleave, so what is and is not allowed to overlap with regard to the shared resources.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    I may not have been precise enough when I said that writes and reads can interleave; individual reads and writes still need to be atomic (the kernel locks the underlying inode or pipe), but there’s no built-in mechanism to enforce an ordering between multiple reads/writes if two processes have opened the same file. From the kernel’s perspective, nothing about the files will end up incoherent because of this (e.g. the size always matches the amount of data written), but the user processes might observe corrupted data inside the files; it is their responsibility to synchronize appropriately so that this doesn’t happen.The kernel must ensure that concurrent reading or modification of shared resources never leave said resource in an incoherent state (that the kernel cares about). For instance, sbrk() must be completely atomic because if it weren’t and two threads sbrk()ed at the same time, then the size field of the process struct might not match the number of allocated pages, which is an invariant that the kernel assumes is true. But if two processes write to the same address at the same time, causing a data race, nothing about that can affect the kernel, so we allow it and leave it up to the user processes to synchronize.
+
+    Followup Discussions:
+    @376_f1Alexey Tumanov3 weeks agowe're going to cover atomicity and ordering in file systems after spring break. It's a conceptually challenging topic, because, as I mentioned in class (and also echoed by Rohan's answer above), atomicity is relative, not absolute. We will study this in more detail in the context of file systems and making file system state mutation -- atomic.Stay tuned.good comment0
+    

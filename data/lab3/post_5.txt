@@ -1,0 +1,12 @@
+Question: 
+    Atomic variablesCan we use non-atomic types (int, etc) with atomic instructions (atomic_store, etc) safely?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Yes—just make sure that all accesses to these variables are atomic.
+
+    Followup Discussions:
+    
+    

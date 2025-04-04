@@ -1,0 +1,12 @@
+Question: 
+    Autograder timeoutMy submission has been running in the autograder for almost 30 minutes. I figure one of the testcases is stick in a loop or something but I have never had the autograder run this long before. When I previously had hard fault or timeout issues the autograder usually ended after 7-8 minutes. Has the timeout been extended or is this a glitch?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    I reran it for you
+
+    Followup Discussions:
+    @531_f1Anonymous Comp6 days agoCan my teammate and I get ours rerun please as well because it's been running for 35 mins?0
+    

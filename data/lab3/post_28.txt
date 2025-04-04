@@ -1,0 +1,12 @@
+Question: 
+    I/O time in Lab 3 Extra Credit schedinfoFor the extra credit, What does the time spent waiting for and executing I/O (io_timecomponent of theschedinfostruct) mean? Is it the ticks spent by a process in the SLEEPING state?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    In xv6, IO time can be considered as the time that is taken to wait and execute IO resources, and since sleep is used to handle this in xv6 than this would be a valid approach. IO time is not the main focus of the extra credit assignment so getting an approximation for this should be sufficient.
+
+    Followup Discussions:
+    
+    

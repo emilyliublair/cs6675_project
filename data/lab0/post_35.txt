@@ -1,0 +1,12 @@
+Question: 
+    submit.sh not working?I am trying to run submit.sh but I get an error message saying permission denied. It also appears that I do not have execute privileges because when I run 'ls -lart' it says the privileges are read only for me.Can this be fixed?lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Run chmod +x scripts/submit.sh . This should give you execute permissions on the script.
+
+    Followup Discussions:
+    
+    

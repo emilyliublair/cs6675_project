@@ -1,0 +1,12 @@
+Question: 
+    Tests 5 and 10Does anyone know what tests 5 and 10 test for? I am passing every other test except for those two. Things I have done:Changing the priority / scheduler of a child to preempt current processChanging the priority / scheduler of current process to preemptYielding after timer interrupt only if its RRChecking if there is a better process to run at timer interrupt if its FIFOUsing arrival time to order FIFOI heard that test 5 checks for decreasing your current priority to preempt, but from all my own tests, my code displays this functionality.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

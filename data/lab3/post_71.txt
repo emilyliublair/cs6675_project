@@ -1,0 +1,12 @@
+Question: 
+    Test case 21I am passing all checkpoint tests except for 21, does anyone have an idea where the problem may lie in?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    I see that you're passing the test-case now with your latest submission.
+
+    Followup Discussions:
+    @453_f1Anonymous Poet1 week agoDid you figure out what was wrong with it by any chance? That's the last part I have to finish before being done with parts 1 and 2, I'm trying to work on part 3 but the TA told me to finish out 1 and 2 before trying to do it.0Anonymous Beaker1 week agoDid you use argptr? I was using that function incorrectly, when i fixed it I passed 211
+    

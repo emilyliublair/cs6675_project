@@ -1,0 +1,12 @@
+Question: 
+    How to use GDB to notify me when a certain address has it's value changed?I'm trying to watch when the value at (pte_t *) 0x0 is changed. However, I can't just use the watch command in gdb because that doesn't notify me when the value changes since there are points where the value clearly changes yet it doesn't notify me (tested through watching other variables and checking this address, different values at different points).Is there any way for me to track when this address is changed?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @237_f1Rohan Natansh Bafna2 months agoThis sounds like an X/Y problem (https://xyproblem.info/) to me. What exactly are you trying to accomplish by doing this? (And why  are you trying to interpret address 0 as a PTE?)good comment0Shourik Banerjee1 month agoYeah I was 0 allocating incorrectly. I don't know if I've fixed the problem (I think I have because I can't think of a way my new solution breaks), but now I trap with error code 0 which I don't know why it happens.0
+    

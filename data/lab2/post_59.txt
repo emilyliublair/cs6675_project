@@ -1,0 +1,12 @@
+Question: 
+    Seeing unexpected "zombie!" on forktest and the same page fault over and over againSee the screenshot from above. I've made it so "After COW" prints after my copy on write functionality completes in the trap handler. This is immediately followed by a break statement to exit the trap handler.For some reason, I'm immediately encountering a page fault after test1 starts and then seeing a "zombie!" in my console. It keeps restarting test1 after "zombie!" prints, and this continues indefinitely.Does anyone have any idea why this might be happening?lab2
+
+    Student Answer: 
+    .
+
+    Instructor Answer: 
+    You probably forgot to invalidate the TLB (this situation usually happens because pid 1’s stack gets overwritten by its child process and a return address is changed to the region of code where it prints out “zombie!”)
+
+    Followup Discussions:
+    @235_f1David M Nuthakki2 months agoI'm in the same team as the author and I've looked through my code and I think I'm already doing that? I can submit what I have so far but you'll see that we're invalidating the tlb every time that we change the permissions of the page or reassign the physical address. Is there an another case we might be missing?0Rohan Natansh Bafna2 months agoSo, I had this happen to me when I was doing lab 2, and it was because I had assumed that one of the PTEs that I was modifying wasn’t in the active page directory, so I didn’t invalidate the TLB. It was active though, which caused the memory corruption.It might help double checking that you haven’t made a similar false assumption. Other than that, I suggest stepping through the entire user program manually (and beware that its memory might not be as it seems) to figure out what page may have been corrupted, and what other process may share that physical page.good comment2@235_f2Anonymous Atom1 month agoDid you end up solving this? I am having the same issue, but I am pretty sure I invalidated the TLB entry in dealloc and my trap handler. Is there more than one pte I need to edit/invalidate at once that I am missing?0
+    

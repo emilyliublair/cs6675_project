@@ -1,0 +1,12 @@
+Question: 
+    Counting Ticks For Statistics PrecisionHow precise do we have to be in counting the ticks for the currently executing process? I try to update ticks in various places for keeping track of stats like exec_time and wait_time but due to the fact that ticks is a discrete variable, there are sometimes when you run it where the total time of io_time + wait_time + exec_time is greater than response_time.Is this okay or is there a way to guarantee that it is always equal?Edit: nevermind this is an initialization issuelab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Resolved
+
+    Followup Discussions:
+    
+    

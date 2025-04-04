@@ -1,0 +1,12 @@
+Question: 
+    QEMU frozen at boot when giving it more than 2G of RAMI’m running into this strange bug where whenever I tell QEMU to boot with 2GB or more RAM using the-moption, it just gets stuck on “Booting from Hard Disk…” indefinitely. Any value under 2GB does not trigger the issue, and my code is running fine - a correct value is detected for any amount of RAM I throw at it. Could this be a bug in qemu or Docker?lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    This happens when the kernel fails to boot. QEMU will try to reboot it indefinitely.I would say use gdb to step through your phystop calculation routine, and then inspect its value. It should give you an idea of why. The student comment below could be one potential cause of the issue (but there are others).
+
+    Followup Discussions:
+    1 endorsed followup comment@160_f1Anonymous Atom2 months agoI had the same issue, but it had to do with how I was passing the total usable memory to the kernel. XV6 can only use 2GB of memory, so passing a value higher than this to the kernel could be causing your instance to hang.~ An instructor (Elton Leander Pinto) thinks this is a good comment ~2
+    

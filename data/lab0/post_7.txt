@@ -1,0 +1,12 @@
+Question: 
+    Are we allowed to write new syscalls?I'm currently working on the last extra credit question and, to the best of my knowledge, none of the syscalls provided by xv6 provide enough information for us to determine how many/which processes are currently running. Are we allowed to make our own new syscall to retrieve this information? Or do our code changes need to be limited to userspace only?lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    The extra credit assignment can be solved without needed to add additional system calls. I would suggest looking into the kernel code and how the kernel handles allocation of new processes, maybe it might give you a hint towards the limit for the number of processes.
+
+    Followup Discussions:
+    @66_f1Syed Hamza Qadri2 months agoThanks for clarifying. Small follow up: does the solution need to involve actively creating as many processes as possible at runtime, or can it be something as simple as getting a constant from somewhere like a header file and using that?0Andrej Vrtanoski2 months agoYour program should stress test the process capacity in xv6, you cannot simply hard code your answer. It is an extra credit question after all. Use the constant to just verify your solution is close to the limit, since you can't exactly hit the limit.good comment1
+    

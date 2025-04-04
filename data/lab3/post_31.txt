@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @557_f1Anonymous Calc5 days agoMaybe check for deadlocking/infinite sleeping? Wait has to acquire and release a mutex, and also makes it a call that makes it sleep.0Anonymous Poet5 days agoHow do you use cond? We literally just use it as a pointer for the chan in park.0Anonymous Calc5 days agoI had a conditional variable in the struct, but I didn't use any pointers to the channel since chan is just any void*0Anonymous Poet5 days agoAlso should we consider the case where the mutex is not held when calling cond_wait? Like it should not wait if the mutex is not held?0Anonymous Calc5 days agoThey don't test for it in the autograder but I'm not sure0
+    

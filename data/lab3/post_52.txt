@@ -1,0 +1,12 @@
+Question: 
+    In what part of Lab3 are data-races a problem?The lab3 description states "any OS code should be free of memory leaks anddata-races". I'm wondering as to what exactly the scope of this statement is, specifically in the context of data-races.One problem I could see is argint() behaving in a racy way in the context of sbrks in the same thread group. But does this mean that ineverysyscall that uses an argument we have to atomize accesses to the sz shared resource? I feel like most racy interactions between argint() and sbrk come down to poor userspace programming.This remains true for most other racy interactions I can think of that don't cause some other explicit problem, like a memory leak. So I suppose my question is should we be looking to prevent data races only in the instances where they cause other problems, or is the hand grading going to check that we prevent data races just for the sake of preventing data races?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Data races should be avoided if it violates correctness properties ofthe kernel.For example, in chdir. If you don't prevent the data race, then the kernel could end up in a state where the cached inode is in an inconsistent state (double free, double dup, depends on the order of execution).
+
+    Followup Discussions:
+    @520_f1Nathan Prashant Duggal4 days agoElton for specifically chdir I don't understand how that's possible. The entirety of sys_chdir is wrapped in a begin_op/end_op, so wouldn't all accesses to the cwd be atomized anyways? What do you mean by the cached inode?0
+    

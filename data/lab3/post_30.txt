@@ -1,0 +1,12 @@
+Question: 
+    Test Cases 25-30I'm having an issue with my clone method where it doesn't return 0 in the child. I haven't been able to fix it yet and this causes me to fail test case 12. I'm also failing 26-30. I was wondering if it's possible to pass 26-30 even with my issue in clone. I don't want to burn submissions if this won't work.lab3
+
+    Student Answer: 
+    update resolved
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

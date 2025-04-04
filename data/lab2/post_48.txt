@@ -1,0 +1,12 @@
+Question: 
+    general protection fault (trap 13 err 0)I am getting a general protection error near the end of running both forktest-xv6-qemu and xv6-qemu. It happens after a page trap and the instruction generating this exception is anininstruction.forktest-xv6-qemu general protection fault instruction:forktest-xv6-qemu error output (after trap):xv6-qemu general protection fault instruction and trap frame:xv6-qemu error output (after page copy):xv6-qemu trapframe of page trap before trap 13, CPL=3:Fromthisit seems that one possibility is that the error is caused by CPL>IOPL during the execution ofin. But it seems that CPL is supposed to be 3. When running forktest-xv6-qemu, the output I get is missing one pgzero call before the line “3: I am ‘’”, so there’s definitely something wrong, but I’m not sure how to go about debugging this.lab2
+
+    Student Answer: 
+    I was getting a similar thing in xv6-qemu and it was because I was allocating zero-page references for the code and stack pages in exec(), which resulted in writing bad things to the zero page and a general prot fault that looks pretty much what like what you're getting in your second to last screenshot. To debug this I would recommend figuring out where exactly the page corresponding to the faulting address (0x1a0c) gets allocated and making sure it's getting allocated and mapped correctly/expectedly.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

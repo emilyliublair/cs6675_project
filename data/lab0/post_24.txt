@@ -1,0 +1,12 @@
+Question: 
+    Extracredit Out of inodesWhen running my program for extra credit to calculate the maximum number of files in a directory I'm hitting the limit of inodes set in the operating system and am not able to stress the number of files that can be in a directory. Should I increase the maximum number of inodes or is this the limit I should be hitting?lab0
+
+    Student Answer: 
+    I received this response on a private piazza post:You may print out the number of files that are being generated as the program is being run. We will clarify this.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

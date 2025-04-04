@@ -1,0 +1,12 @@
+Question: 
+    Locking cwd before using it in iputOur current implementation uses cwd as a shared resource. We always lock before any references to cwd. However, if we lock before using cwd in the iput call during exit, it creates a sched lock issue when running workload.c. I believe it has something to do with iput going to sleep which goes into sched, meaning that it holds the sharedresourcelock in sched (the extra lock).Are we required to lock cwd when calling iput? My worry is that if we leave it unlocked, then a data race could occur. However, if we leave it locked, it causes the aforementioned sched lock panic.Edit: If anyone is having an issue see@568lab3
+
+    Student Answer: 
+    There are 2 locking mechanisms in the kernel. Compare the 2 locking mechanisms and why sched panics.From previous comment// Worried about this as well. While sleeping the lock cannot be held
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @571_f1Nathan Prashant Duggal5 days agoIf the exit is called from a thread which isnt the thread group owner, because the cwd may be used by the owner or other threads, the iput shouldnt even be called at all, right? The other case is the exit being called on a thread group owner, in which case the behavior is undefined anyways, so you probably dont need to lock then either.0Shourik Banerjee5 days agoYeah realized this in the other thread I made. I'm curious if there's anything with the other iput call. As far as I see locking before that one hasn't broken anything for me, but idk, maybe if you test extensively it would?0Nathan Prashant Duggal5 days agoWhat is the other iput?0Shourik Banerjee5 days agoIn sys_chdir0Nathan Prashant Duggal5 days ago@520Probably have to in some capacity.0Shourik Banerjee5 days agoYeah I lock there and it doesn't sched lock as far as I can tell so it's probably okay to lock there0
+    

@@ -1,0 +1,12 @@
+Question: 
+    stab_info function addressThe stab info struct holds a field called eip_fn_addr. Is this the same as the base pointer for that function call or is it something else?lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    eip_fn_addr refers to the address of the start of the function (i.e. the value of the instruction pointer – eip – when the function is called).
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,12 @@
+Question: 
+    Different docker.sh in lab1 branch?When trying to rebase the lab1 branch I ran into a merge conflict in docker.sh. It seems like the new branch modified the file to be a one-liner,docker run --rm -it --name="xv6" -v ${PWD}/:/xv6 -w="/xv6" jackwolfard/cs3210:latestThis doesn't seem to have--pullor--attachlogic. Should I accept this incoming change?lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Resolved
+
+    Followup Discussions:
+    @73_f1Rohan Natansh Bafna2 months agoWhy are you trying to rebase lab1? The labs are independent. You can just switch to the lab1 branch and start there; you don’t need to work off of what you did in lab 0.good comment0Yirou Wang2 months agoI see, thanks for clarifying!0Rohan Natansh Bafna2 months agoNo problem, glad it’s cleared up :)good comment0Yirou Wang2 months agoI think I did rebase because the canvas announcement said to dogit pull -r origin lab1, which rebases lab1 on top of whatever I have locally0Ved Thiru2 months agoEdited the announcement. Sorry about the confusion!good comment0
+    

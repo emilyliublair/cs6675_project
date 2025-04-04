@@ -1,0 +1,12 @@
+Question: 
+    Triple Fault for Clone when sharing files (sometimes)Currently, I have a version of clone that runs about 90% of the time. We are using locks for a shared file data structure. However, sometimes, when running local tests involving clone, a triple fault occurs. This only occurs sometimes.lab3
+
+    Student Answer: 
+    Are you using waitpid? If not is it possible that the parent thread is exiting and freeing the kstack causing the os to reboot or triple fault?
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @452_f1Sukrit Kumar3 weeks agoAre you using thread groups (+locks) to control access to all the shared resources ?Also try looking at using waitpid as well that might help issues with clone and when the thread group owner is exitinggood comment0Shourik Banerjee2 weeks agoWe are, we don't use wait nor waitpid in our testing code so not sure if that's the issue. It kind of just loops and creates clones and if the clone was created, it'll immediately exit. Maybe on the last iteration or something the parent manages to exit first?0
+    

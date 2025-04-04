@@ -1,0 +1,12 @@
+Question: 
+    Separate Checkpoint GradescopeReadme for Lab 3 says:On Gradescope you will find two assignments:Lab 3 - Checkpoint (Tests 1-21)Lab 3 (All tests)Currently I'm only seeing one assignment on the gradescope.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    good catch, lab spec corrected. Only one gradescope assignment for lab3. The checkpoint bonus will be calculated by the autograder script based on the percentage of tests 1-21 passed by the deadline (per the updated spec).I will make an announcement about this in class. So stay tuned.
+
+    Followup Discussions:
+    
+    

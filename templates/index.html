@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PiazzaHut</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <img src="{{ url_for('static', filename='bron.webp') }}" alt="goat" class="header-image">
+    <div class="container">
+        <h1>Enter Question</h1>
+        <form method="POST">
+            <textarea name="input_text" placeholder="Type your Question..."></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        {% if output_text %}
+            <div class="output-box">
+                <h2>AI answer:</h2>
+                <p>{{ output_text }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

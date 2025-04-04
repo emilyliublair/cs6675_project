@@ -1,0 +1,12 @@
+Question: 
+    Is the most recent or the active submission the one graded?Which submission is the one that is graded for the labs, the active submission, or the most recent submission?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Activate the submission you want us to grade
+
+    Followup Discussions:
+    @585_f1Anonymous Poet4 days agoif we submit after the deadline, but activate a submission from before the deadline, do we still get the late penalty?0Elton Leander Pinto4 days agoNo you will not get a late penalty for thatgood comment0
+    

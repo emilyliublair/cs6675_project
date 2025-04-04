@@ -1,0 +1,15 @@
+Question: 
+    Lab 0 Extra Credit ClarificationDue to the limitations of xv6 and how it allocates inodes when generating the filesystem, the program that you will write for the maximum number of files in a directory will ultimately panic the kernel. This is intended. But, it also prevents you from printing the final value without causing a kernel panic.Instead, simplyprint out the final result that you achieved from the test case. You can get this number by incrementally printing the number of files that are being generated until the program ultimately panics. Comment out the code that panics but do not remove it. Since when we are handgrading, we will focus more on your methodology and implementation rather than the final number as this will change based on your design and number of inodes already allocated for xv6.If there are any more questions that need clarification, feel free to comment below.lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @48_f1Anonymous Calc2 months agoAfter commenting out the line that panics, can I modify that method to return 0 to signify the limit is reached?0Varun Mehrotra2 months agoDon’t worry about changing the kernel (you’ll be doing that enough in later labs). If it panics, then it’s okay because that’s the expected behavior. Just ensure you are keeping track of the number of files being created as you go so you can reach a final answer.good comment1Anonymous Calc2 months agoJust wanted to confirm so I can calculate the max files last and don't have to follow the order of the sample output (max memory -> max files -> max process)?$ limits 
+Maximum Memory Size: 0x0000
+Maximum Number of Files Per Directory: 0
+Maximum Number of Processes: 00Varun Mehrotra2 months agoYes, you can calculate the results in whatever order you’d like.good comment0
+    

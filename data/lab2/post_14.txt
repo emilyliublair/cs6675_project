@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @309_f1Anonymous Comp1 month agoTest case 9 has to do with reaching limits of memory as kallocing a page in the trap handler will fail. Not sure about 10.0Anonymous Helix1 month agowould I panic or just exit the process in this case?0Shourik Banerjee1 month agoKill the process0Anonymous Helix1 month agoWithin the trap.c file I am checking to see whenever I do kalloc if it returns 0. If it does I kill the process and then I break. Is this enough? I already had this code but am not passing 9 or 100Anonymous Atom1 month agoI'm in the same situation -- have you found anything?0Anonymous Comp1 month agoAre you properly invalidating the TLB?0
+    

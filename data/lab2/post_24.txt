@@ -1,0 +1,12 @@
+Question: 
+    Passing Test Case 11We're passing every test case except for test 11. Does anyone happen to have any insights? We are considering lazy allocating vs eagerly allocating in exec.c and killing the process for various different error handling in our trap handler. We're thinking this test may be due to COW, but we aren't sure of what else to consider :( Any pointers will be super helpful!lab2
+
+    Student Answer: 
+    nvm we got it :)
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @293_f1Anonymous Calc1 month agofor reference if anyone is having the same issue, keep in mind what can happen with the guard page on the stack2Richard Alexander Barrezueta1 month agoThank you so much, this is what we needed to pass 11.0@293_f2David M Nuthakki1 month agoHow did you guys go about fixing the other test cases? I'm currently failing 2,3,4 and 8,9,10. Any advice would be appreciated0Anonymous Poet1 month agoAre you passing everything in usertests.c? That kind of helped us find what was wrong for a couple of the test cases0David M Nuthakki1 month agoYeah Im passing everything it in currently which is really confusing me. Only ones that aren't are mem because it's supposed to go on forever if implemented correctly and preempt because it's disabled0Anonymous Calc1 month agoAnother thing that helped us was making sure everything matched the project spec on github and for lazy zeroing specifically, making sure to understand what happens during exec1Anonymous Atom1 month agoDid you guys ever hard-fault/timeout on tests 2-6 and 8? We pass usertests up to mem, pass forktest, pass some our own written tests. Not sure where to go from here :(0Anonymous Calc1 month agoWhenever a test case was a hard-fault/timeout it seemed to be from hitting a panic. Maybe try to test and see if you can replicate that? Possibly check that you're freeing pages correctly?0Anonymous Comp1 month ago9 to me seems to be about reaching near maximum capacity memory wise as I noticed that that was the only test case to fail a kalloc.6 and 8 seem to be about kernel writing to a user page.0Richard Alexander Barrezueta1 month agoWhen you switch into a syscall (fork, exec, read, etc.) or a pgfault, is this now the kernel trying to access a user memory? I’m trying to understand what other edge cases we need since 6 and 8 are the last ones we’re missing.0Anonymous Comp1 month agoRead and Write are the kernel trying to access user page faults. Basically you have to handle an additional error code other than 0x7.0
+    

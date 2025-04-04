@@ -1,0 +1,14 @@
+Question: 
+    Understanding Expected output for forktestPGTRAP: err: 0x7, va = 0x2f6c
+PGCOPY: 0x2000
+PGTRAP: err: 0x7, va = 0x2f60Forktest's expected output for COW has several accesses that look like this with a PGTRAP->PGCOPY->PGTRAP. Why does the second PGTRAP occur? Shouldn't the PGCOPY prevent there from being an issue for the process to access the memory?lab2
+
+    Student Answer: 
+    They are trapping on a different virtual address, so it is a separate page fault on accessing a separate page. With forktest, it seems to me that they write to a page which triggers a copy, and then the ref count for the page is now 1, which to make writeable requires a trap.~ An instructor (Rohan Natansh Bafna) endorsed this answer ~
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

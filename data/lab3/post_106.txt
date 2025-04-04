@@ -1,0 +1,12 @@
+Question: 
+    Part 1, tests 1-3Our scheduling code is failing tests 1-3 as well as 9 for part 1, and we aren't sure what is causing this. We have tested that the scheduler properly prioritizes based on fifo/rr, priority level, etc. We've also tested that it does preempt, but we're worried we've missed a situation in which it should yield. Any recommendations for what to check or test?lab3
+
+    Student Answer: 
+    Tests 1-3 check default round robin behaviors (eg does your process yield after one time quantum)Test 9 checks if your process yields when you set a child with a higher priority than you.This is based on my own experience with the autograder, so it may not fully encompass everything that it tests for. But it should be a good place to start.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @378_f1Anonymous Beaker4 weeks agoOh you're so right round robin doesn't yield anymore. Thank you so much!0Anonymous Scale4 weeks agoTianyi Yu:  🐐🐐1
+    

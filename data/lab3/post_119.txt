@@ -1,0 +1,12 @@
+Question: 
+    Passing all test cases for Part 1 except #9We are passing all of the test cases for Part 1 (which I believe are just 1-10) except for #9. Does anyone have insight into what we might be messing up? Thanks.lab3
+
+    Student Answer: 
+    I had the same behavior as you. Are you checking if you are yielding when your current running process's priority has been lowered and a more suitable process is runnable?
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @348_f1Anonymous Atom1 month agoOh the priority of the process can change?0Tianyi Yu1 month agoYeah through setscheduler?0Anonymous Atom1 month agoI see ok I was under the assumption that once you set a process's priority it's unchanging0
+    

@@ -1,0 +1,12 @@
+Question: 
+    Should we be passing any autograder tests with a working COW fork implementation only?I currently have a working Part 1 (COW fork) implementation that allows me to boot into xv6 without any apparent issues and also perfectly matches the output in forktest_expected_cow.out. However, I'm still failing every test case on Gradescope with a "Test failed: incorrect output" message. Is this normal (since I haven't done Part 2 yet) or should I expect to pass some cases with just Part 1 implemented?lab2
+
+    Student Answer: 
+    Yes according to@221my group also had this and for some of the tests we were printing stuff we shouldn’t when killing processes.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @251_f1Anonymous Poet1 month agoI was talking to some people today who said they were able to pass some test cases with only part 1 implemented.1@251_f2David M Nuthakki1 month agoI am in the same spot as you are and I am able to pass cases 9-12 on the autograder without part 2 finished.1
+    

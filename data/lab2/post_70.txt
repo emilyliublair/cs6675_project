@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    When a system call is invoked sometimes it needs to write to user space. We should have seen some of these in lab 0, like read(). However you should go through the xv6 manual to make sure you have an extensive list. You should make sure these syscalls won’t fall through your trap handling.
+
+    Instructor Answer: 
+    What have you thought of so far?
+
+    Followup Discussions:
+    @217_f1Anonymous Helix1 month agoI think file descriptors are stored in user space memory, so all related syscalls (open(), close(), pipe(), dup()) in addition to read?0Tianyi Yu1 month agoI don’t think close() would belong to that group, but you are on the right track0
+    

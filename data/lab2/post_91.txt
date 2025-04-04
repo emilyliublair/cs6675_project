@@ -1,0 +1,12 @@
+Question: 
+    Mapping multiple virtual address to same physical addressIn virtual memory why is the lower memory and higher memory (at Kernbase) all mapped to 0-4MB? I know we've talked about this a lot but was hoping to understand a bit more why this is something that happens.lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    I just uploaded it. You can find it in the Media Gallery. The video is from when I took the class (way back in Fall 2020), delivered by David Devecsery, who taught the course at the time.
+
+    Followup Discussions:
+    
+    

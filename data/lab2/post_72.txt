@@ -1,0 +1,12 @@
+Question: 
+    Non-Present Page QuestionI am trying to figure out what to do when dealing with a page thats not present, would I just kill the process, or am I supposed to go into memory and put it into a page frame? How would I go about doing that if thats the case?lab2
+
+    Student Answer: 
+    I think you just kill the process (default option)~ An instructor (Elton Leander Pinto) endorsed this answer ~
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

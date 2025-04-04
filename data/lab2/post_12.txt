@@ -1,0 +1,12 @@
+Question: 
+    panic when running usertests.c writetest1()I am currently passing tests 1-5, 8, and 10 (other tests fail with incorrect output) along with forktest and every test in usertests except forwritetest1()passing.When runningwritetest1(), I hit apanic: balloc: out of blockswhen roughly halfway through writing the big file (index 0x4C out of MAXFILE iterations).Attached below is the screenshot of the error, with thewrite idx: 0x%xprints solely for testing purposes.Any guidance would be extremely helpful, thank you!lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

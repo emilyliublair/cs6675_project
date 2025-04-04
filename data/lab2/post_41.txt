@@ -1,0 +1,12 @@
+Question: 
+    What are bits 7 and 8 for the pte flag?The xv6 simply has them greyed out so I assume we can't use them, but I'm curious what they are actually used for.lab2
+
+    Student Answer: 
+    In the x86 page table entry (PTE) format, bits 7 and 8 are reserved for the CPU and typically have specific meanings:Bit 7 (PTE_PS - Page Size)In a Page Directory Entry (PDE): Indicates if the entry maps a 4MB page instead of a normal page table.In a PTE: Typically unused and reserved.Bit 8 (PTE_G - Global Page)Marks the page as global, meaning it remains in the TLB across context switches (if CR4.PGE is set).Why are they greyed out in xv6?xv6 only supports 4KB pages (so bit 7 is unused).xv6 does not use global pages, making bit 8 unused as well.Summary: Bit 7 is for large pages (not used in xv6), and bit 8 is for global pages (not needed in xv6).
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

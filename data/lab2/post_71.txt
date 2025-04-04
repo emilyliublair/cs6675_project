@@ -1,0 +1,12 @@
+Question: 
+    Guard page in kernel modeWhat should occur if a kernel syscall attempts to write to the guard page?lab2
+
+    Student Answer: 
+    There should be no syscall that would want to write to a user guard page
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @216_f1Elton Leander Pinto2 months agoWhat do you mean by “kernel syscall” exactly?good comment0Elton Leander Pinto2 months agoRemember that the syscall is the interfaceuserspaceuses to request the kernel to do something on their behalf.good comment0
+    

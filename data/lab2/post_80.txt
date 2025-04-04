@@ -1,0 +1,12 @@
+Question: 
+    kfree and pages with multiple referencesGiven that we want to perform a copy on write operation, we have multiple processes that might point to the same page at the same time. When one of these processes calls exit(), there follows several functions called that I observed through gdb: deallocuvm, freevm, and kfree. I noticed that kfree is taking the page and making it available to be allocated by kalloc; however, would it be correct to assume that if other processes are using this page, that freeing it would be a mistake?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Yes, you shouldn't free a page that is in-use.
+
+    Followup Discussions:
+    
+    

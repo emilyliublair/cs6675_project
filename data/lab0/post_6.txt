@@ -1,0 +1,12 @@
+Question: 
+    fork-exec questionwhats the deal with the whole fork-exec thing. If Im planning on making a new process entirely why copy everything from the current process to the newly made one just to overwrite with exec. Am I missing something?lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    great question! And you're going to fix this in lab2 by adding COW support.
+
+    Followup Discussions:
+    @70_f1Rohan Natansh Bafna2 months agoTo add on, if you’re interested, this StackOverflow answer (as well as the article it links to on the history of Unix) gives some good historical context on how the fork-exec model developed:https://unix.stackexchange.com/a/136673In a nutshell, fork and exec were originally thought of and implemented independently in Unix, and the design was propagated through its successors. Before copy-on-write forking was implemented, there were other system calls that combined the functionalities of the two efficiently, but I don’t think they’re used much anymoregood comment1
+    

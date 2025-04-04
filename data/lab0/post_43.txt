@@ -1,0 +1,12 @@
+Question: 
+    Windows: Segmentation fault when trying to run docker.shFor context, I am on a windows machine using the git bash terminal.I am able to do all steps up until./scripts/docker.shI got rid of the comment (# run container and mount the pwd as /xv6) just in case.I also modified the docker.sh docker run statement to:winpty docker run --rm -it --name="xv6"-v"${ROOT_DIR}//"://xv6-w="//xv6"jackwolfard/cs3210:latestrun code snippetVisit Manage Class to disable runnable code snippets×had to prefix with winpty because i am using mintty and MSYSWhen I execute the shell in git bash, I get this error:This is also my first time using Docker, and just downloaded the version for windows, and followed instructions for set up.Any solutions or people experiencing this problem?lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @12_f1Trevor Riley Kenji Goo3 months agoI will also try to do this in WSL.0Trevor Riley Kenji Goo3 months agodidnt work on my existing platform,installed ubuntu on WSL,make sure to enable WSL ubuntu switch is enabled in docker desktop~ An instructor (Elton Leander Pinto) thinks this is a good comment ~1
+    

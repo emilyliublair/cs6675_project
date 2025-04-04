@@ -1,0 +1,12 @@
+Question: 
+    Autograder Failed to Execute CorrectlyThis happened twice today and I can't submit can I please get some help on what to do?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @447_f1David M Nuthakki3 weeks agoOk so I got it to work this time but it ate 2 of our submissions which wasn't our fault, can we please get these back?0
+    

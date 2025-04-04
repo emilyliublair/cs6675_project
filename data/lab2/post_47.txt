@@ -1,0 +1,12 @@
+Question: 
+    Extra PGCOPY: 0x2000 printed when running test caseI'm working on COW currently and all my output matches the expected output file but I have an extra PGCOPY: 0x2000 printed at the bottom for each case. I'm wondering why does this occur?lab2
+
+    Student Answer: 
+    If a page was marked COW before does that mean that it will remain COW forever in the future?
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @256_f1Anonymous Mouse1 month agoThanks for the response. I unmarked COW during trap so I don't think that the case.0Tianyi Yu1 month agoIt seems that this is happening even before the test starts. 0x2000 is the user stack page so it may need to be handled specially, and it should not be pointing to the global zero page. Can you tell me how you're currently handling the user stack page?0Anonymous Mouse1 month agoWhat I did is getting the fault virtual address and its page table entry. Allocate a new memory for the new page table entry to point to, modify the flags and decrement the reference to the original physical address.0Tianyi Yu1 month agoYou should have a special process for the first 3 pages allocated in exec.c, so you’ll definitely need to have handling for that. The process you described is good for the rest of the pages though.1Anonymous Comp1 month agoHey, I also had this problem and sat down with it for a couple of minutes. Without trying to divulge too much, this is what I'd recommend:Consider the order in which you're doing things. When you have a COW and consider your edge cases, think about what you're doing in those cases.If you did it like I did and you have a data structure to track pertinent information, consider how you index into said structure andwhen. When you update the info, is your index the same after you update it?0@256_f2Anonymous Calc1 month agoJust following up on this, I'm having the same issue, how did you end up fixing it? I allocated the pages in exec and had COW working correctly, but after adding zero allocation now I'm copying too many times. Thanks in advance!0Anonymous Mouse1 month agoI'm still facing the same issue unfortunately, might need to make another post because I went to office hours and still couldn’t figure it out.1
+    

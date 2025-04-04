@@ -1,0 +1,12 @@
+Question: 
+    FIFO preemption clarificationIf a FIFO process is currently running and another FIFO process with the same priority but earlier initial creation time becomes available (e.g. after finishing sleeping), should the currently running process be preempted?Currently failing some tests including test 9 and I'm wondering whether this is the issue - my current code does preempt in this case.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Yes, if another FIFO proc with earlier queue position becomes available (hence being the highest priority process assuming all have equal priorirty), we will yield the current process and allow this new proc to run.
+
+    Followup Discussions:
+    
+    

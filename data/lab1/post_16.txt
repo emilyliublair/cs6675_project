@@ -1,0 +1,12 @@
+Question: 
+    Confused on how to test Part 3What would it mean for it to fail? What would it mean for it to pass? I've played around with the -m flag and can't really see anything different going on when running. I've used GDB too and I get some values but I don't really know how to check whether the values are what I should be seeing or not?My code is currently failing test cases 3 and 7. Not sure why it is failing case 3 since it used to pass case 3 before starting part 3, but I assume that the issues are related.From previous Piazza threads, case 7 seems to be more physical memory than virtual, but my code seems to boot fine when I use 2GB with the -m flag. Not sure what I should be looking for.lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    One thing to be careful about: being able to boot successfully does not mean that your solution is correct. It just means that your phystop calculation routine doesn’t cause a seg fault.For further verification, you can do the following:Check that your value of PHYSTOP in virtual address space is in the same ball-park as -m. So, if you set -m 2G, then your PHYSTOP value must be close to 2GUse the user-space program you wrote in Lab 0 to find the maximum amount of memory a process can allocate with your change. Does this match what you expect, based off your reading of the xv6 memory map (Figure2-2, xv6 manual)?
+
+    Followup Discussions:
+    @135_f1Anonymous Scale2 months agoJust a follow up for students who run into issues: just because one hex value is greater than another does not necessarily mean that the code sees that value as greater than the other because printing out the hex value ignores the sign of the integer.0Elton Leander Pinto2 months agoBasically, be careful about integer overflow 😃 Use gdb to see if you have an overflow.good comment1
+    

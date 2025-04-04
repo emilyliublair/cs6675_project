@@ -1,0 +1,12 @@
+Question: 
+    How to delete usertests.ran?Right now everytime I want to run ./usertests I `make clean`then `make` since if I don't usertests will preemptively exit because usertests.ran exists. Is there an easier way to remove this file in xv6?lab2
+
+    Student Answer: 
+    You can delete fs.img inside build/userYou can also do make clean
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

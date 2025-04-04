@@ -1,0 +1,12 @@
+Question: 
+    Refcount spinlockI have a question about when to acquire and release the spinlock for refcount in CoW. I feel like we have normally been taught to acquire right before the access and release right after, however, I feel like there could be a scenario where accessing and writing to refcount in separate locks could lead to another process using the wrong refcount value, so maybe I should only use one spinlock that is acquired at the beginning of CoW and released at the end? But at the same time, I can't think of a specific scenario in which this would happen, so I'm not sure if this is an actual concern.lab2
+
+    Student Answer: 
+    Any sections where you read a value, write a value, or rely on a value from a read value (ie an if statement that uses the value as the condition) should be in a critical section.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @320_f1Anonymous Beaker1 month agoI asked a TA and he said we would only need to lock when reading from/writing to a shared resource. The actual use of the value can be outside a critical section.0Anonymous Comp1 month agoHmm I've gotten different information from a TA.0
+    

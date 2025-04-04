@@ -1,6 +1,7 @@
-export type Post = {
-  name: string;
+export interface Post {
+  _id?: string;
   title: string;
-  publishDate: Date;
   description: string;
-};
+  name: string;
+  publishDate: Date;
+}

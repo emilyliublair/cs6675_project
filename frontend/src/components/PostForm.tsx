@@ -1,19 +1,13 @@
 "use client";
 
-import { Post } from "@/@types/type";
-import { Dispatch, SetStateAction, useState } from "react";
+import { createPost } from "@/utils/api";
+import { useState } from "react";
 
 type PostFormProps = {
-  posts: Post[];
-  setPosts: Dispatch<SetStateAction<Post[]>>;
   toggleView: () => void;
 };
 
-export default function PostForm({
-  posts,
-  setPosts,
-  toggleView,
-}: PostFormProps) {
+export default function PostForm({ toggleView }: PostFormProps) {
   const [formData, setFormData] = useState<{
     name: string;
     title: string;
@@ -26,11 +20,9 @@ export default function PostForm({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const newPost: Post = {
-      ...formData,
-      publishDate: new Date(),
-    };
-    setPosts([...posts, newPost]);
+
+    createPost(formData);
+
     toggleView();
   };
 

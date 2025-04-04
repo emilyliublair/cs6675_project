@@ -3,12 +3,26 @@
 import { Post } from "@/@types/type";
 import PostForm from "@/components/PostForm";
 import QuestionCard from "@/components/QuestionCard";
+import { fetchPosts } from "@/utils/api";
 import { Plus } from "lucide-react";
-import { useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
-export default function Home() {
+const Home = () => {
   const [showAddPost, setShowAddPost] = useState<boolean>(false);
   const [posts, setPosts] = useState<Post[]>([]);
+
+  useEffect(() => {
+    const loadPosts = async () => {
+      try {
+        const fetchedPosts = await fetchPosts();
+        setPosts(fetchedPosts);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    loadPosts();
+  }, []);
 
   const toggleAddView = () => {
     setShowAddPost(!showAddPost);
@@ -24,13 +38,7 @@ export default function Home() {
           <Plus className="" /> <span>New Question</span>
         </button>
       </div>
-      {showAddPost && (
-        <PostForm
-          posts={posts}
-          setPosts={setPosts}
-          toggleView={toggleAddView}
-        />
-      )}
+      {showAddPost && <PostForm toggleView={toggleAddView} />}
       <div className="space-y-4">
         {posts.map((currPost: Post, idx: number) => {
           return <QuestionCard key={idx} {...currPost} />;
@@ -38,4 +46,14 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
+
+const SuspenseHome = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Home></Home>
+    </Suspense>
+  );
+};
+
+export default SuspenseHome;

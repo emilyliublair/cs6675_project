@@ -163,7 +163,7 @@ for lab in labs:
     cur_raw_docs = format_for_rag(cur_parsed, lab)
     records.extend(cur_raw_docs)
 
-print("Proccesed ", num_docs, "documents")
+# print("Proccesed ", num_docs, "documents")
 
 
 batch_size = 96
@@ -171,9 +171,9 @@ dense_index = pc.Index(index_name)
 for i in range(0, len(records), batch_size):
     batch = records[i:i+batch_size]
     dense_index.upsert_records("example-namespace", batch)
-    print(f"Upserted batch {i//batch_size + 1} ({len(batch)} records)")
+    # print(f"Upserted batch {i//batch_size + 1} ({len(batch)} records)")
 
-print(f"Total records upserted: {len(records)}")
+# print(f"Total records upserted: {len(records)}")
 
 stats = dense_index.describe_index_stats()
-print(stats)
+# print(stats)

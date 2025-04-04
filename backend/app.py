@@ -47,8 +47,7 @@ def get_post(id):
     try:
         result = posts_collection.find_one(filter=ObjectId(id))
         
-        # llm_response = intake_question(result.description)
-
+        llm_response = intake_question(result['description'])
         
         return jsonify({'post': serialize_post(result), 'answer': llm_response})
     except Exception as e:

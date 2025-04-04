@@ -5,3 +5,8 @@ export interface Post {
   name: string;
   publishDate: Date;
 }
+
+export interface Answer {
+  title: string;
+  description: string;
+}

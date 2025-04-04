@@ -16,6 +16,7 @@ const Home = () => {
       try {
         const fetchedPosts = await fetchPosts();
         setPosts(fetchedPosts);
+        console.log(fetchedPosts);
       } catch (err) {
         console.log(err);
       }

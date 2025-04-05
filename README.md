@@ -1,3 +1,5 @@
+Github Repo: https://github.com/emilyliublair/cs6675_project/
+
 # How to run
 
 To run this properly, you must serve both the frontend and backend. 

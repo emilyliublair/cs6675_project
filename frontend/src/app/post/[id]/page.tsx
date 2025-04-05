@@ -1,6 +1,6 @@
 "use client";
 
-import { Answer, Post } from "@/@types/type";
+import { Post } from "@/@types/type";
 import AnswerCard from "@/components/AnswerCard";
 import QuestionCard from "@/components/QuestionCard";
 import { fetchPost } from "@/utils/api";

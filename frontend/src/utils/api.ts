@@ -1,4 +1,4 @@
-import { Answer, Post } from "@/@types/type";
+import { Post } from "@/@types/type";
 
 const API_URL = "http://localhost:8001";
 

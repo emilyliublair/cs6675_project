@@ -1,5 +1,3 @@
-import { Answer } from "@/@types/type";
-
 export default function AnswerCard({ answer }: { answer: string }) {
   return (
     <div className="card mb-4">

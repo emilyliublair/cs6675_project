@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 type PostDetail = {
   post: Post;
-  answer: Answer;
+  answer: string;
 };
 
 export default function PostDetails({
@@ -54,7 +54,7 @@ export default function PostDetails({
     <div className="max-w-4xl mx-auto p-6">
       <QuestionCard {...postDetail.post} />
 
-      <AnswerCard {...postDetail.answer} />
+      <AnswerCard answer={postDetail.answer} />
     </div>
   );
 }

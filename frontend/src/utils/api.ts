@@ -39,7 +39,7 @@ export const createPost = async (
 
 export const fetchPost = async (
   id: string
-): Promise<{ post: Post; answer: Answer }> => {
+): Promise<{ post: Post; answer: string }> => {
   try {
     const response = await fetch(`${API_URL}/post/${id}`);
     if (!response.ok) {

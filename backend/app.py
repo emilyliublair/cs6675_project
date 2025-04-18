@@ -237,5 +237,114 @@ def benchmark_compare():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/benchmark/throughput', methods=['GET'])
+def benchmark_throughput():
+    try:
+        # Get parameters for benchmarking
+        num_calls = int(request.args.get('num_calls', 3))
+        model = request.args.get('model', 'chatgpt')
+        question = request.args.get('question', "in lab3 how can I find the end of the parent's user stack?")
+        
+        # Run single-threaded benchmark
+        single_start = time.time()
+        single_end = single_start + 10
+        single_request_count = 0
+        single_success_count = 0
+        single_fail_count = 0
+        single_results = []
+        
+        while time.time() < single_end:
+            call_start = time.time()
+
+            try:
+                response = intake_question(question, model)
+                single_success_count += 1
+
+                call_end = time.time()
+                single_results.append({
+                    'response_snippet': response[:50] + "...",
+                    'time_taken': call_end - call_start
+                })
+            except Exception as e:
+                single_fail_count += 1
+                
+            single_request_count += 1
+            
+            
+        single_total = single_end - single_start
+        single_rps = single_request_count / single_total
+
+        
+        # Run multi-threaded benchmark------------------------
+        multi_start = time.time()
+        
+        # Define the function to run in each thread
+        def run_intake():
+            call_start = time.time()
+            response = intake_question(question, model)
+            call_end = time.time()
+            
+            return {
+                'response_snippet': response[:50] + "...",
+                'time_taken': call_end - call_start
+            }
+        
+        # Execute calls in parallel
+        futures = []
+        for _ in range(num_calls):
+            future = thread_pool.submit(run_intake)
+            futures.append(future)
+        
+        # Wait for all to complete and collect results
+        multi_results = []
+        for future in futures:
+            multi_results.append(future.result())
+        
+        multi_end = time.time()
+        multi_total = multi_end - multi_start
+        
+        # Calculate statistics
+        single_times = [r['time_taken'] for r in single_results]
+        multi_times = [r['time_taken'] for r in multi_results]
+        
+        # Calculate improvement percentage
+        improvement = ((single_total - multi_total) / single_total) * 100
+        
+        # Return comparison results
+        comparison = {
+            'single_threaded': {
+                'total_time': single_total,
+                'average_time': sum(single_times) / len(single_times),
+                'min_time': min(single_times),
+                'max_time': max(single_times),
+                
+                'total_requests': single_request_count,
+                'successes': single_success_count,
+                'failures': single_fail_count,
+                'requests_per_second': single_rps
+            },
+            'multi_threaded': {
+                'total_time': multi_total,
+                'average_time': sum(multi_times) / len(multi_times),
+                'min_time': min(multi_times),
+                'max_time': max(multi_times),
+                
+                'total_requests': multi_request_count,
+                'successes': multi_success_count,
+                'failures': multi_fail_count,
+                'requests_per_second': multi_rps
+            },
+            'improvement_percentage': improvement,
+            'parameters': {
+                'num_calls': num_calls,
+                'model': model,
+                'question': question
+            }
+        }
+        
+        return jsonify(comparison)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8001, debug=True, threaded=True)

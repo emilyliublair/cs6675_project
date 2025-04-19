@@ -26,6 +26,37 @@ def serialize_post(post):
         post['answer'] = str(post['answer'])
     return post
 
+def get_feedback_context():
+    """Get context from previous answers' feedback to improve future responses"""
+    try:
+        # Get the most recent answers with significant feedback
+        recent_answers = answers_collection.find({
+            "$or": [
+                {"upvotes": {"$gt": 0}},
+                {"downvotes": {"$gt": 0}}
+            ]
+        }).sort("publishDate", -1).limit(5)
+        
+        feedback_context = []
+        for answer in recent_answers:
+            if answer.get('upvotes', 0) > answer.get('downvotes', 0):
+                feedback_context.append({
+                    "type": "positive",
+                    "description": answer.get('description', ''),
+                    "feedback": "This answer was well-received by users"
+                })
+            elif answer.get('downvotes', 0) > answer.get('upvotes', 0):
+                feedback_context.append({
+                    "type": "negative",
+                    "description": answer.get('description', ''),
+                    "feedback": "This answer was not well-received by users"
+                })
+        
+        return feedback_context
+    except Exception as e:
+        print(f"Error getting feedback context: {str(e)}")
+        return []
+
 # Routes
 @app.route('/')
 def root():
@@ -45,14 +76,24 @@ def create_post():
         post_data = request.json
         post_data["publishDate"] = datetime.now()
 
-        # Generate AI answer
-        llm_response = intake_question(post_data['description'], "chatgpt")
+        # Get feedback context from previous answers
+        feedback_context = get_feedback_context()
         
-        # Create answer document
+        # Generate AI answer with feedback context
+        llm_response = intake_question(
+            post_data['description'], 
+            "chatgpt",
+            feedback_context=feedback_context
+        )
+        
+        # Create answer document with vote counts and feedback tracking
         answer_data = {
             "description": llm_response,
             "title": "AI-generated answer",
-            "publishDate": datetime.now()
+            "publishDate": datetime.now(),
+            "upvotes": 0,
+            "downvotes": 0,
+            "feedback_context": feedback_context  # Store the context used for this answer
         }
         
         # Insert answer first
@@ -86,6 +127,32 @@ def get_post(id):
             'post': serialize_post(post),
             'answer': serialize_post(answer)
         })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/answer/<id>/upvote', methods=['POST'])
+def upvote_answer(id):
+    try:
+        result = answers_collection.update_one(
+            {"_id": ObjectId(id)},
+            {"$inc": {"upvotes": 1}}
+        )
+        if result.modified_count == 0:
+            return jsonify({"error": "Answer not found"}), 404
+        return jsonify({"message": "Upvote successful"})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/answer/<id>/downvote', methods=['POST'])
+def downvote_answer(id):
+    try:
+        result = answers_collection.update_one(
+            {"_id": ObjectId(id)},
+            {"$inc": {"downvotes": 1}}
+        )
+        if result.modified_count == 0:
+            return jsonify({"error": "Answer not found"}), 404
+        return jsonify({"message": "Downvote successful"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

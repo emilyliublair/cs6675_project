@@ -1,4 +1,3 @@
-
 from dotenv import load_dotenv
 from init import connect_to_pinecone
 from openai import OpenAI
@@ -109,21 +108,36 @@ def ask_query(query, debug):
         print(f"Search failed: {e}")
         return []
 
-def generate_response(query, context_docs, model="chatgpt"):
+def generate_response(query, context_docs, model="chatgpt", feedback_context=None):
     context = "\n\n".join([f"Document {i+1}:\n{doc}" for i, doc in enumerate(context_docs)])
     
-    prompt = f""" You are an AI assistant for a computer science course. Use the following retrieved documents to answer the question. If you don't know the answer, just say that you don't know, don't try to make up an answer. Context:
-    {context}
-    Question: {query}
-    Answer:
-    """
+    # Add feedback context to the prompt if available
+    feedback_section = ""
+    if feedback_context and len(feedback_context) > 0:
+        feedback_section = "\n\nPrevious Feedback:\n"
+        for i, feedback in enumerate(feedback_context):
+            feedback_section += f"\nExample {i+1} ({feedback['type']}):\n"
+            feedback_section += f"Question: {feedback['description']}\n"
+            feedback_section += f"Feedback: {feedback['feedback']}\n"
+    
+    prompt = f"""You are an AI assistant for a computer science course. Use the following retrieved documents to answer the question. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+Context:
+{context}
+{feedback_section}
+
+Question: {query}
+
+Please provide a clear, concise, and accurate answer. Consider the feedback from previous answers to improve your response quality.
+Answer:
+"""
     
     # Select the appropriate model and generate response
     if model == "chatgpt":
         response = openAI_client.chat.completions.create(
             model="gpt-3.5-turbo",  
             messages=[
-                {"role": "system", "content": "You are a helpful assistant for a computer science course."},
+                {"role": "system", "content": "You are a helpful assistant for a computer science course. Your goal is to provide accurate, clear, and helpful answers based on the provided context and previous feedback."},
                 {"role": "user", "content": prompt}
             ],
             temperature=0.1,
@@ -136,7 +150,7 @@ def generate_response(query, context_docs, model="chatgpt"):
             model="claude-3-5-sonnet-20240620",
             max_tokens=1000,
             temperature=0.1,
-            system="You are a helpful assistant for a computer science course.",
+            system="You are a helpful assistant for a computer science course. Your goal is to provide accurate, clear, and helpful answers based on the provided context and previous feedback.",
             messages=[
                 {"role": "user", "content": prompt}
             ]
@@ -146,14 +160,9 @@ def generate_response(query, context_docs, model="chatgpt"):
     else:
         raise ValueError(f"Unsupported model: {model}. Please choose from 'gpt-3.5-turbo', 'gpt-4', or 'claude-3-sonnet'.")
 
-
-
-def intake_question(query, model):
+def intake_question(query, model, feedback_context=None):
     context = ask_query(query, False)
-    return generate_response(query, context, model)
-
-
-
+    return generate_response(query, context, model, feedback_context)
 
 def combine_responses(query):
     chatgpt_response = intake_question(query, "chatgpt")

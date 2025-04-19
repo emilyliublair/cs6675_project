@@ -1,14 +1,16 @@
 export interface Post {
-  _id?: string;
+  _id: string;
   title: string;
   description: string;
-  name: string;
-  publishDate: Date;
+  publishDate: string;
+  answer?: string;
 }
 
 export interface Answer {
-  _id?: string;
+  _id: string;
   title: string;
   description: string;
-  publishDate: Date;
+  publishDate: string;
+  upvotes: number;
+  downvotes: number;
 }

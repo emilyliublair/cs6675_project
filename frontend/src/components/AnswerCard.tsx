@@ -1,4 +1,6 @@
-export default function AnswerCard({ answer }: { answer: string }) {
+import { Answer } from "@/@types/type";
+
+export default function AnswerCard({ answer }: { answer: Answer }) {
   return (
     <div className="card mb-4">
       <div className="flex items-start space-x-4">
@@ -10,7 +12,7 @@ export default function AnswerCard({ answer }: { answer: string }) {
 
         <div className="flex-1">
           <h3 className="text-lg font-semibold text-gray-800 mb-1">Answer</h3>
-          <p className="text-gray-600 mb-2">{answer}</p>
+          <p className="text-gray-600 mb-2">{answer.description}</p>
 
           <div className="flex items-center text-sm text-gray-500">
             <span className="font-medium text-gray-700">

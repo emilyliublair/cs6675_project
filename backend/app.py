@@ -11,14 +11,19 @@ app = Flask(__name__)
 CORS(app)
 
 # MongoDB connection
-posts_collection = connect_to_mongo()
+posts_collection = connect_to_mongo("posts")
+answers_collection = connect_to_mongo("answers")
 
 # Create a thread pool executor
 thread_pool = ThreadPoolExecutor(max_workers=4)  # Adjust number of workers as needed
 
 # Helper function to convert MongoDB ObjectId to string
 def serialize_post(post):
+    if post is None:
+        return None
     post['_id'] = str(post['_id'])
+    if 'answer' in post and post['answer']:
+        post['answer'] = str(post['answer'])
     return post
 
 # Routes
@@ -34,29 +39,56 @@ def get_posts():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route('/posts', methods=['POST'])
+@app.route('/post', methods=['POST'])
 def create_post():
     try:
         post_data = request.json
         post_data["publishDate"] = datetime.now()
+
+        # Generate AI answer
+        llm_response = intake_question(post_data['description'], "chatgpt")
         
+        # Create answer document
+        answer_data = {
+            "description": llm_response,
+            "title": "AI-generated answer",
+            "publishDate": datetime.now()
+        }
+        
+        # Insert answer first
+        answer_result = answers_collection.insert_one(answer_data)
+        
+        # Link answer to post
+        post_data["answer"] = answer_result.inserted_id
+        
+        # Insert post
         result = posts_collection.insert_one(post_data)
-        
         post_data["_id"] = str(result.inserted_id)
-        return jsonify(post_data)
+        
+        return jsonify(serialize_post(post_data))
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     
 @app.route('/post/<id>', methods=['GET', 'OPTIONS'])
 def get_post(id):
     try:
-        result = posts_collection.find_one(filter=ObjectId(id))
+        # Find the post
+        post = posts_collection.find_one({"_id": ObjectId(id)})
+        if not post:
+            return jsonify({"error": "Post not found"}), 404
         
-        llm_response = intake_question(result['description'], "chatgpt")
+        # Find the associated answer if it exists
+        answer = None
+        if 'answer' in post and post['answer']:
+            answer = answers_collection.find_one({"_id": post['answer']})
         
-        return jsonify({'post': serialize_post(result), 'answer': llm_response})
+        return jsonify({
+            'post': serialize_post(post),
+            'answer': serialize_post(answer)
+        })
     except Exception as e:
-        return jsonify({"error": str(e)}), 500  
+        return jsonify({"error": str(e)}), 500
+
 # Benchmark endpoints
 @app.route('/benchmark/single', methods=['GET'])
 def benchmark_single():

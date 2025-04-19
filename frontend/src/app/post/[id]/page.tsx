@@ -1,6 +1,6 @@
 "use client";
 
-import { Post } from "@/@types/type";
+import { Answer, Post } from "@/@types/type";
 import AnswerCard from "@/components/AnswerCard";
 import QuestionCard from "@/components/QuestionCard";
 import { fetchPost } from "@/utils/api";
@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 type PostDetail = {
   post: Post;
-  answer: string;
+  answer: Answer;
 };
 
 export default function PostDetails({

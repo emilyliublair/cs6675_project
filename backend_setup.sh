@@ -9,5 +9,7 @@ else
     echo "Virtual environment already exists."
 fi
 
+# only for mac
+source ./env/bin/activate
 pip install -r requirements.txt
 python app.py

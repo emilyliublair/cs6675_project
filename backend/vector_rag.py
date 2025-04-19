@@ -108,29 +108,6 @@ def ask_query(query, debug):
     except PineconeApiException as e:
         print(f"Search failed: {e}")
         return []
-    
-# def generate_response(query, context_docs):
-#     # Prepare context from retrieved documents
-#     context = "\n\n".join([f"Document {i+1}:\n{doc}" for i, doc in enumerate(context_docs)])
-    
-#     # Create prompt with context and query
-#     prompt = f""" You are an AI assistant for a computer science course. Use the following retrieved documents to answer the question. If you don't know the answer, just say that you don't know, don't try to make up an answer. Context:
-#     {context}
-#     Question: {query}
-#     Answer:
-#     """
-#     # Call OpenAI API
-#     response = client.chat.completions.create(
-#         model="gpt-3.5-turbo",  
-#         messages=[
-#             {"role": "system", "content": "You are a helpful assistant for a computer science course."},
-#             {"role": "user", "content": prompt}
-#         ],
-#         temperature=0.3,
-#         max_tokens=500
-#     )
-    
-#     return response.choices[0].message.content
 
 def generate_response(query, context_docs, model="chatgpt"):
     context = "\n\n".join([f"Document {i+1}:\n{doc}" for i, doc in enumerate(context_docs)])
@@ -200,41 +177,41 @@ openAI_client = OpenAI(api_key=openai_api_key)
 claude_api_key = os.getenv("CLAUDE_API_KEY")
 anthropic_client = Anthropic(api_key = claude_api_key)
 
-# Create a dense index with integrated embedding
-index_name = "dense-index"
-if not pc.has_index(index_name):
-    pc.create_index_for_model(
-        name=index_name,
-        cloud="aws",
-        region="us-east-1",
-        embed={
-            "model":"llama-text-embed-v2",
-            "field_map":{"text": "chunk_text"}
-        }
-    )
+# # Create a dense index with integrated embedding
+index_name = "piazzahut-index"
+# if not pc.has_index(index_name):
+#     pc.create_index_for_model(
+#         name=index_name,
+#         cloud="aws",
+#         region="us-east-1",
+#         embed={
+#             "model":"llama-text-embed-v2",
+#             "field_map":{"text": "chunk_text"}
+#         }
+#     )
 
-# print("created index")
+# # print("created index")
 
-# # Variables for parsing
-num_docs = 0
-labs  = ["lab0", "lab1", "lab2", "lab3"]
-records = []
+# # # Variables for parsing
+# num_docs = 0
+# labs  = ["lab0", "lab1", "lab2", "lab3"]
+# records = []
 
-for lab in labs:
-    cur_parsed = process_lab_files(f"../data/{lab}")
-    cur_raw_docs = format_for_rag(cur_parsed, lab)
-    records.extend(cur_raw_docs)
+# for lab in labs:
+#     cur_parsed = process_lab_files(f"../data/{lab}")
+#     cur_raw_docs = format_for_rag(cur_parsed, lab)
+#     records.extend(cur_raw_docs)
 
-print("Proccesed ", num_docs, "documents")
+# print("Proccesed ", num_docs, "documents")
 
 
-batch_size = 96
+# batch_size = 96
 dense_index = pc.Index(index_name)
-for i in range(0, len(records), batch_size):
-    batch = records[i:i+batch_size]
-    dense_index.upsert_records("example-namespace", batch)
+# for i in range(0, len(records), batch_size):
+#     batch = records[i:i+batch_size]
+#     dense_index.upsert_records("example-namespace", batch)
 
-stats = dense_index.describe_index_stats()
+# stats = dense_index.describe_index_stats()
 
 print("Done setup of vector rag")
 

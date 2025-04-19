@@ -7,6 +7,8 @@ export interface Post {
 }
 
 export interface Answer {
+  _id?: string;
   title: string;
   description: string;
+  publishDate: Date;
 }

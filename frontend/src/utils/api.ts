@@ -1,4 +1,4 @@
-import { Post } from "@/@types/type";
+import { Answer, Post } from "@/@types/type";
 
 const API_URL = "http://localhost:8001";
 
@@ -19,7 +19,7 @@ export const createPost = async (
   post: Omit<Post, "publishDate">
 ): Promise<Post> => {
   try {
-    const response = await fetch(`${API_URL}/posts`, {
+    const response = await fetch(`${API_URL}/post`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export const createPost = async (
 
 export const fetchPost = async (
   id: string
-): Promise<{ post: Post; answer: string }> => {
+): Promise<{ post: Post; answer: Answer }> => {
   try {
     const response = await fetch(`${API_URL}/post/${id}`);
     if (!response.ok) {

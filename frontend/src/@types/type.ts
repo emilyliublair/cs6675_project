@@ -1,5 +1,6 @@
 export interface Post {
   _id: string;
+  name: string;
   title: string;
   description: string;
   publishDate: string;
@@ -13,4 +14,7 @@ export interface Answer {
   publishDate: string;
   upvotes: number;
   downvotes: number;
+  edited?: boolean;
+  editedBy?: string;
+  editDate?: string;
 }

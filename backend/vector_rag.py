@@ -114,11 +114,15 @@ def generate_response(query, context_docs, model="chatgpt", feedback_context=Non
     # Add feedback context to the prompt if available
     feedback_section = ""
     if feedback_context and len(feedback_context) > 0:
-        feedback_section = "\n\nPrevious Feedback:\n"
+        feedback_section = "\n\nPrevious Feedback and Edits:\n"
         for i, feedback in enumerate(feedback_context):
             feedback_section += f"\nExample {i+1} ({feedback['type']}):\n"
             feedback_section += f"Question: {feedback['description']}\n"
             feedback_section += f"Feedback: {feedback['feedback']}\n"
+            
+            # Add specific guidance for edited answers
+            if feedback['type'] == 'edited':
+                feedback_section += "Note: This answer was improved by a teacher. Use similar clarity and accuracy in your response.\n"
     
     prompt = f"""You are an AI assistant for a computer science course. Use the following retrieved documents to answer the question. If you don't know the answer, just say that you don't know, don't try to make up an answer.
 
@@ -128,7 +132,12 @@ Context:
 
 Question: {query}
 
-Please provide a clear, concise, and accurate answer. Consider the feedback from previous answers to improve your response quality.
+Please provide a clear, concise, and accurate answer. Consider the feedback from previous answers and teacher edits to improve your response quality. Pay special attention to:
+1. Clarity of explanation
+2. Technical accuracy
+3. Structure and organization
+4. Use of examples where appropriate
+
 Answer:
 """
     
@@ -137,7 +146,7 @@ Answer:
         response = openAI_client.chat.completions.create(
             model="gpt-3.5-turbo",  
             messages=[
-                {"role": "system", "content": "You are a helpful assistant for a computer science course. Your goal is to provide accurate, clear, and helpful answers based on the provided context and previous feedback."},
+                {"role": "system", "content": "You are a helpful assistant for a computer science course. Your goal is to provide accurate, clear, and helpful answers based on the provided context and previous feedback. Pay special attention to teacher-edited answers as they represent the gold standard for quality."},
                 {"role": "user", "content": prompt}
             ],
             temperature=0.1,
@@ -150,7 +159,7 @@ Answer:
             model="claude-3-5-sonnet-20240620",
             max_tokens=1000,
             temperature=0.1,
-            system="You are a helpful assistant for a computer science course. Your goal is to provide accurate, clear, and helpful answers based on the provided context and previous feedback.",
+            system="You are a helpful assistant for a computer science course. Your goal is to provide accurate, clear, and helpful answers based on the provided context and previous feedback. Pay special attention to teacher-edited answers as they represent the gold standard for quality.",
             messages=[
                 {"role": "user", "content": prompt}
             ]

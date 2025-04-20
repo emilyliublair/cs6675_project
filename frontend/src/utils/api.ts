@@ -16,7 +16,7 @@ export const fetchPosts = async (): Promise<Post[]> => {
 };
 
 export const createPost = async (
-  post: Omit<Post, "publishDate">
+  post: Omit<Post, "publishDate" | "_id">
 ): Promise<Post> => {
   try {
     const response = await fetch(`${API_URL}/post`, {

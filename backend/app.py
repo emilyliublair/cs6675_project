@@ -27,13 +27,14 @@ def serialize_post(post):
     return post
 
 def get_feedback_context():
-    """Get context from previous answers' feedback to improve future responses"""
+    """Get context from previous answers' feedback and edits to improve future responses"""
     try:
-        # Get the most recent answers with significant feedback
+        # Get the most recent answers with significant feedback or edits
         recent_answers = answers_collection.find({
             "$or": [
                 {"upvotes": {"$gt": 0}},
-                {"downvotes": {"$gt": 0}}
+                {"downvotes": {"$gt": 0}},
+                {"edited": True}
             ]
         }).sort("publishDate", -1).limit(5)
         
@@ -50,6 +51,12 @@ def get_feedback_context():
                     "type": "negative",
                     "description": answer.get('description', ''),
                     "feedback": "This answer was not well-received by users"
+                })
+            elif answer.get('edited', False):
+                feedback_context.append({
+                    "type": "edited",
+                    "description": answer.get('description', ''),
+                    "feedback": f"This answer was edited by {answer.get('editedBy', 'Teacher')} to improve clarity and accuracy"
                 })
         
         return feedback_context
@@ -153,6 +160,25 @@ def downvote_answer(id):
         if result.modified_count == 0:
             return jsonify({"error": "Answer not found"}), 404
         return jsonify({"message": "Downvote successful"})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/answer/<id>/edit', methods=['POST'])
+def edit_answer(id):
+    try:
+        answer_data = request.json
+        result = answers_collection.update_one(
+            {"_id": ObjectId(id)},
+            {"$set": {
+                "description": answer_data["description"],
+                "edited": True,
+                "editedBy": answer_data.get("editedBy", "Teacher"),
+                "editDate": datetime.now()
+            }}
+        )
+        if result.modified_count == 0:
+            return jsonify({"error": "Answer not found"}), 404
+        return jsonify({"message": "Answer updated successfully"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

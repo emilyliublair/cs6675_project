@@ -42,9 +42,16 @@ const Home = () => {
       {showAddPost && <PostForm toggleView={toggleAddView} />}
       <div className="space-y-4">
         {posts.map((currPost: Post, idx: number) => {
-          return <div     onClick={() => {
-            window.location.href = `/post/${currPost._id}`;
-          }}><QuestionCard key={idx} {...currPost} /></div>;
+          return (
+            <div
+              key={idx}
+              onClick={() => {
+                window.location.href = `/post/${currPost._id}`;
+              }}
+            >
+              <QuestionCard key={idx} {...currPost} />
+            </div>
+          );
         })}
       </div>
     </div>

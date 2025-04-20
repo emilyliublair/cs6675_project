@@ -212,7 +212,7 @@ index_name = "piazzahut-index"
 
 # # # Variables for parsing
 # num_docs = 0
-# labs  = ["lab0", "lab1", "lab2", "lab3"]
+# labs  = ["lab4", "midterm"]
 # records = []
 
 # for lab in labs:

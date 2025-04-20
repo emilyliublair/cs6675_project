@@ -1,3 +1,4 @@
+import { GraduationCap } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,6 +14,13 @@ const Sidebar = () => {
           >
             <Image src={"/icons/home.svg"} alt="" height={24} width={24} />
             <span>Home</span>
+          </Link>
+          <Link
+            href="/teacher"
+            className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100 text-gray-700"
+          >
+            <GraduationCap />
+            <span>Teacher View</span>
           </Link>
         </nav>
       </div>

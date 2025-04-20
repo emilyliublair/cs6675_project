@@ -7,12 +7,12 @@ from pinecone import Pinecone
 load_dotenv()
 
 
-def connect_to_mongo():
+def connect_to_mongo(collection = "posts"):
     try:
         client = MongoClient(os.getenv("MONGODB_URI"))
         db = client["piazzahut"]
-        posts_collection = db["posts"]
-        return posts_collection
+        col = db[collection]
+        return col
     except ConnectionFailure as e:
         print(f"Could not connect to MongoDB: {e}")
 

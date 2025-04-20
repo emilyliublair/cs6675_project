@@ -1,4 +1,3 @@
-
 from dotenv import load_dotenv
 from init import connect_to_pinecone
 from openai import OpenAI
@@ -108,45 +107,46 @@ def ask_query(query, debug):
     except PineconeApiException as e:
         print(f"Search failed: {e}")
         return []
-    
-# def generate_response(query, context_docs):
-#     # Prepare context from retrieved documents
-#     context = "\n\n".join([f"Document {i+1}:\n{doc}" for i, doc in enumerate(context_docs)])
-    
-#     # Create prompt with context and query
-#     prompt = f""" You are an AI assistant for a computer science course. Use the following retrieved documents to answer the question. If you don't know the answer, just say that you don't know, don't try to make up an answer. Context:
-#     {context}
-#     Question: {query}
-#     Answer:
-#     """
-#     # Call OpenAI API
-#     response = client.chat.completions.create(
-#         model="gpt-3.5-turbo",  
-#         messages=[
-#             {"role": "system", "content": "You are a helpful assistant for a computer science course."},
-#             {"role": "user", "content": prompt}
-#         ],
-#         temperature=0.3,
-#         max_tokens=500
-#     )
-    
-#     return response.choices[0].message.content
 
-def generate_response(query, context_docs, model="chatgpt"):
+def generate_response(query, context_docs, model="chatgpt", feedback_context=None):
     context = "\n\n".join([f"Document {i+1}:\n{doc}" for i, doc in enumerate(context_docs)])
     
-    prompt = f""" You are an AI assistant for a computer science course. Use the following retrieved documents to answer the question. If you don't know the answer, just say that you don't know, don't try to make up an answer. Context:
-    {context}
-    Question: {query}
-    Answer:
-    """
+    # Add feedback context to the prompt if available
+    feedback_section = ""
+    if feedback_context and len(feedback_context) > 0:
+        feedback_section = "\n\nPrevious Feedback and Edits:\n"
+        for i, feedback in enumerate(feedback_context):
+            feedback_section += f"\nExample {i+1} ({feedback['type']}):\n"
+            feedback_section += f"Question: {feedback['description']}\n"
+            feedback_section += f"Feedback: {feedback['feedback']}\n"
+            
+            # Add specific guidance for edited answers
+            if feedback['type'] == 'edited':
+                feedback_section += "Note: This answer was improved by a teacher. Use similar clarity and accuracy in your response.\n"
+    
+    prompt = f"""You are an AI assistant for a computer science course. Use the following retrieved documents to answer the question. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+Context:
+{context}
+{feedback_section}
+
+Question: {query}
+
+Please provide a clear, concise, and accurate answer. Consider the feedback from previous answers and teacher edits to improve your response quality. Pay special attention to:
+1. Clarity of explanation
+2. Technical accuracy
+3. Structure and organization
+4. Use of examples where appropriate
+
+Answer:
+"""
     
     # Select the appropriate model and generate response
     if model == "chatgpt":
         response = openAI_client.chat.completions.create(
             model="gpt-3.5-turbo",  
             messages=[
-                {"role": "system", "content": "You are a helpful assistant for a computer science course."},
+                {"role": "system", "content": "You are a helpful assistant for a computer science course. Your goal is to provide accurate, clear, and helpful answers based on the provided context and previous feedback. Pay special attention to teacher-edited answers as they represent the gold standard for quality."},
                 {"role": "user", "content": prompt}
             ],
             temperature=0.1,
@@ -159,7 +159,7 @@ def generate_response(query, context_docs, model="chatgpt"):
             model="claude-3-5-sonnet-20240620",
             max_tokens=1000,
             temperature=0.1,
-            system="You are a helpful assistant for a computer science course.",
+            system="You are a helpful assistant for a computer science course. Your goal is to provide accurate, clear, and helpful answers based on the provided context and previous feedback. Pay special attention to teacher-edited answers as they represent the gold standard for quality.",
             messages=[
                 {"role": "user", "content": prompt}
             ]
@@ -169,14 +169,9 @@ def generate_response(query, context_docs, model="chatgpt"):
     else:
         raise ValueError(f"Unsupported model: {model}. Please choose from 'gpt-3.5-turbo', 'gpt-4', or 'claude-3-sonnet'.")
 
-
-
-def intake_question(query, model):
+def intake_question(query, model, feedback_context=None):
     context = ask_query(query, False)
-    return generate_response(query, context, model)
-
-
-
+    return generate_response(query, context, model, feedback_context)
 
 def combine_responses(query):
     chatgpt_response = intake_question(query, "chatgpt")
@@ -200,41 +195,41 @@ openAI_client = OpenAI(api_key=openai_api_key)
 claude_api_key = os.getenv("CLAUDE_API_KEY")
 anthropic_client = Anthropic(api_key = claude_api_key)
 
-# Create a dense index with integrated embedding
-index_name = "dense-index"
-if not pc.has_index(index_name):
-    pc.create_index_for_model(
-        name=index_name,
-        cloud="aws",
-        region="us-east-1",
-        embed={
-            "model":"llama-text-embed-v2",
-            "field_map":{"text": "chunk_text"}
-        }
-    )
+# # Create a dense index with integrated embedding
+index_name = "piazzahut-index"
+# if not pc.has_index(index_name):
+#     pc.create_index_for_model(
+#         name=index_name,
+#         cloud="aws",
+#         region="us-east-1",
+#         embed={
+#             "model":"llama-text-embed-v2",
+#             "field_map":{"text": "chunk_text"}
+#         }
+#     )
 
-# print("created index")
+# # print("created index")
 
-# # Variables for parsing
-num_docs = 0
-labs  = ["lab0", "lab1", "lab2", "lab3"]
-records = []
+# # # Variables for parsing
+# num_docs = 0
+# labs  = ["lab0", "lab1", "lab2", "lab3"]
+# records = []
 
-for lab in labs:
-    cur_parsed = process_lab_files(f"../data/{lab}")
-    cur_raw_docs = format_for_rag(cur_parsed, lab)
-    records.extend(cur_raw_docs)
+# for lab in labs:
+#     cur_parsed = process_lab_files(f"../data/{lab}")
+#     cur_raw_docs = format_for_rag(cur_parsed, lab)
+#     records.extend(cur_raw_docs)
 
-print("Proccesed ", num_docs, "documents")
+# print("Proccesed ", num_docs, "documents")
 
 
-batch_size = 96
+# batch_size = 96
 dense_index = pc.Index(index_name)
-for i in range(0, len(records), batch_size):
-    batch = records[i:i+batch_size]
-    dense_index.upsert_records("example-namespace", batch)
+# for i in range(0, len(records), batch_size):
+#     batch = records[i:i+batch_size]
+#     dense_index.upsert_records("example-namespace", batch)
 
-stats = dense_index.describe_index_stats()
+# stats = dense_index.describe_index_stats()
 
 print("Done setup of vector rag")
 

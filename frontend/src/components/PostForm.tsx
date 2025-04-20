@@ -18,10 +18,11 @@ export default function PostForm({ toggleView }: PostFormProps) {
     description: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    createPost(formData);
+    const post = await createPost(formData);
+    window.location.href = `/post/${post._id}`;
 
     toggleView();
   };

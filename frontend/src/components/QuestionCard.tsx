@@ -3,9 +3,8 @@ import { Post } from "@/@types/type";
 export default function QuestionCard({
   title,
   description,
-  name,
   publishDate,
-  _id,
+  name,
 }: Post) {
   const formatDate = (date: Date) => {
     return new Date(date).toLocaleDateString("en-US", {
@@ -20,9 +19,6 @@ export default function QuestionCard({
   return (
     <div
       className="card mb-4 hover:cursor-pointer"
-      onClick={() => {
-        window.location.href = `/post/${_id}`;
-      }}
     >
       <div className="flex items-start space-x-4">
         <div className="flex-shrink-0">
@@ -40,7 +36,7 @@ export default function QuestionCard({
           <div className="flex items-center text-sm text-gray-500">
             <span className="font-medium text-gray-700">{name}</span>
             <span className="mx-2">•</span>
-            <span>{formatDate(publishDate)}</span>
+            <span>{formatDate(new Date(publishDate))}</span>
           </div>
         </div>
       </div>

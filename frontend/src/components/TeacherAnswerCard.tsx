@@ -1,6 +1,7 @@
 import { Answer } from "@/@types/type";
 import { ThumbsDown, ThumbsUp, Edit2, Save, X } from "lucide-react";
 import { useState } from "react";
+import RelevantDocuments from "./RelevantDocuments";
 
 export default function TeacherAnswerCard({ answer }: { answer: Answer }) {
   const [upvotes, setUpvotes] = useState<number>(answer.upvotes || 0);
@@ -148,6 +149,10 @@ export default function TeacherAnswerCard({ answer }: { answer: Answer }) {
               </button>
             </div>
           </div>
+
+          {!isEditing && answer.relevant_documents && (
+            <RelevantDocuments documents={answer.relevant_documents} />
+          )}
         </div>
       </div>
     </div>

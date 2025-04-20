@@ -17,4 +17,5 @@ export interface Answer {
   edited?: boolean;
   editedBy?: string;
   editDate?: string;
+  relevant_documents?: string[];
 }

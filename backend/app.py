@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from datetime import datetime
 from bson import ObjectId
-from vector_rag import intake_question
+from vector_rag import intake_question, ask_query, generate_response
 from init import connect_to_mongo
 from concurrent.futures import ThreadPoolExecutor
 import time
@@ -86,9 +86,11 @@ def create_post():
         # Get feedback context from previous answers
         feedback_context = get_feedback_context()
         
-        # Generate AI answer with feedback context
-        llm_response = intake_question(
+        # Generate AI answer with feedback context and get relevant documents
+        context_docs = ask_query(post_data['description'], False)
+        llm_response = generate_response(
             post_data['description'], 
+            context_docs,
             "chatgpt",
             feedback_context=feedback_context
         )
@@ -100,7 +102,8 @@ def create_post():
             "publishDate": datetime.now(),
             "upvotes": 0,
             "downvotes": 0,
-            "feedback_context": feedback_context  # Store the context used for this answer
+            "feedback_context": feedback_context,  # Store the context used for this answer
+            "relevant_documents": context_docs  # Store the relevant documents
         }
         
         # Insert answer first

@@ -1,0 +1,12 @@
+Question: 
+    size not updated properly after implementing part 4I implemented all of the functionality for part 4 and ran the logic with a TA, but for some reason when I ls my file size is incorrect. I assume this is a problem with my iappend, but I'm not sure how to go about fixing it since everything logically seems right line by line?$ ls.              1 1 512..             1 1 512init           2 2 50228README         2 3 2170sh             2 4 57964ls             2 5 51692test_sha256    2 6 51624test_aes256    2 7 51260part1          2 8 50044part2          2 9 52528part4          2 10 496688MB_file       2 11 488967MB_file       2 12 48896console        3 13 0The 8MB and 7MB files are way too small for what they are.Plus, when I try to open them in a user test, it fails. Any hints as to what could be causing the issue?lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @678_f1Anonymous Beaker1 week agoI'd also recommend revisiting the lectures from this class and resources online about how Linux handles users (ie the shadow file stuff)1
+    

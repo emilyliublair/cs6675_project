@@ -1,0 +1,12 @@
+Question: 
+    Make Failure On SubmissionCurrently when submitting, I get a make error despite being able to build locally in both release and debug mode and implementing (what I believe) to be necessary for the system call stubs. I wrote a userspace program to test the stubs for setscheduler, clone, waitpid, park, setpark, unpark, and waitinfo and I am able to call each system call from the userspace program. I am lost as to what else could cause the autograder to fail during make. Is there something that I am missing?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

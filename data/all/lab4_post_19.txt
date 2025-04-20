@@ -1,0 +1,12 @@
+Question: 
+    Do we need to modify FSSIZE in param.h?It is currently limited to 1000 which can't store even 1 large file. What is the minimum increase required to pass autograder? i was thinking about 20k because ~16k is needed just for 1 large file.lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

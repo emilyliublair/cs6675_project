@@ -1,12 +1,12 @@
 Question: 
-    FIFO preemption clarificationIf a FIFO process is currently running and another FIFO process with the same priority but earlier initial creation time becomes available (e.g. after finishing sleeping), should the currently running process be preempted?Currently failing some tests including test 9 and I'm wondering whether this is the issue - my current code does preempt in this case.lab3
+    
 
     Student Answer: 
     
 
     Instructor Answer: 
-    Yes, if another FIFO proc with earlier queue position becomes available (hence being the highest priority process assuming all have equal priorirty), we will yield the current process and allow this new proc to run.
+    You’re not missing anything :) that is all thread_wait needs to do
 
     Followup Discussions:
-    
+    @485_f1Joshua Patrick Forden4 weeks agoYou also need to sanitize that the pid is positive and return the joined thread's pid.Basically a syscall wrapper for waitpid() but it seems to make the userspace threading library we're implementing more coherent overall.1Anonymous Mouse4 weeks agoi did the pid sanitization in sys_waitpid so yeah its a pretty empty function i guess.1Anonymous Calc3 weeks agoWhen they say return the joined thread's pid, is that the thread that is waiting or the thread that has completed.0@485_f2Shourik Banerjee4 weeks agoI was confused about this too thanks for making this thread0
     

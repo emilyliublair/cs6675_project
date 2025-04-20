@@ -1,0 +1,12 @@
+Question: 
+    Zero Filled Page AllocationThe lab 2 guide says that "All zero-initialized virtual pages should share read-only access to a single physical zero-page, that is never written." Does this mean each process is allocated a static zero filled page that will never change. So if a process only needs 2 pages but it needs to write to them, it will actually be allocated 3 pages but one is zero filled and cannot be written to?If this is the case, when we allocate this zero-filled page, do we need to call lab2_pgzero when initially creating this page.lab2
+
+    Student Answer: 
+    I could be wrong but I think there can be a single zero page across all processes. This is in-line with multiple processes referencing copied physical pages, all processes can reference the one and only zero page until they need to write to it.~ An instructor (Sukrit Kumar) endorsed this answer ~
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

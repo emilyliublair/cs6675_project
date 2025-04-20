@@ -1,0 +1,12 @@
+Question: 
+    New Processes and PreemptionFrom what I understand the default scheduler/priority for a process is RR and priority 0. Because of this, wouldn't the new process always have the lowest priority hence meaning we wouldn't have to preempt? We would only have to preempt if this got changed by setscheduler()?lab3
+
+    Student Answer: 
+    You can set a child process's priorities via the parent. For my test cases, I always set the parent to be the highest priority, and they wake up to set a child priority then go to sleep.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

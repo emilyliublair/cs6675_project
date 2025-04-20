@@ -1,0 +1,12 @@
+Question: 
+    exam 1 practice questions posted on CanvasHey everyone,I know a lot of you haven't had a ton of experience with systems design classes and have been anxiously waiting for the practice exam questions to be posted. Wait no further, for it has been done! Please find the exam 1 practice exam posted under Files->exam->exam1.We will be going over them in class during the second lecture of your section this week, but I encourage you to NOT wait until then! The best way to prepare will be to attempt the test before lecture, in its entirety before you come to class.Enjoy!ATmidterm
+
+    Student Answer: 
+    Yeah that is it I believe. In an 8 bit system, if you are addressing a low level address like 00000001, then your index into the page directory and the page table are most likely going to be all zeros. But if you are addressing a high address, like the stack, then your indexes into these structures will be different, and therefore will need to point to a different page table and a different physical page.
+
+    Instructor Answer: 
+    yes, we don't just coalesce PTEs by packing them into as few PTPs as possible. Every single PTE corresponds to a specific Virtual Frame Number (VFN). If your application is using virtual memory sparsely sprinkled throughout your virtual address space, it could happen that it will sparsely use PTEs sprinkled across many PTPs at the last level.
+
+    Followup Discussions:
+    
+    

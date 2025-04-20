@@ -1,12 +1,12 @@
 Question: 
-    Failing test #35Does anybody have any idea why test #35 would fail, its the only test from part 5 that I am failing but I can't figure out why.lab3
+    Autograder Failed to Execute CorrectlyThis happened twice today and I can't submit can I please get some help on what to do?lab3
 
     Student Answer: 
-    Test #35 tests the lost wakeup problem. Even if a normal setpark-unpark-park sequence works, your state machine still might not be correct (happened to me; took hours figuring out why I was failing).Try the sequence below:Thread1:Setparkwait 50setparkwait 25parkexitThread 2:wait 25unparkexit
+    
 
     Instructor Answer: 
     
 
     Followup Discussions:
-    @406_f1Anonymous Gear3 weeks agoSo if you call setpark twice you shouldn't necessarily remove any lost wakeup that occurred since the previous setpark call?0Tianyi Yu3 weeks agoYup and that was the problem for me that caused me to fail #35. Treat this thing as a state machine and account for all state transitions then you should be fine.1Anonymous Poet1 week agoDid you find your solution to this? i tried the sequence above and it seems to work fine but I still fail 35.0Anonymous Gear1 week agoThis ended up being the issue with mine, maybe try making a state diagram, that helped me figure out the transitions0Anonymous Poet1 week agoHmm interesting. I drew a diagram and I have 3 outbound edges from each state (for park, setpark, and unpark). I only have 1 outbound edge from the PARKED state though (since if a thread is parked, you cant call unpark on it or setpark).0Anonymous Poet1 week agoDid you make sure that the second setpark was on the same channel? What state do you move to if the second setpark is on a different channel?1@406_f2Shourik Banerjee6 days agoHow do you wait 50 other than sleeping?1Nathan Prashant Duggal6 days agoPretty sure wait 50 is referring to sleep(50)0Shourik Banerjee6 days agoYeah initially I thought you weren't allowed to use sleep with parking but then I realized additional modifications are needed so you can do both.0
+    @447_f1David M Nuthakki1 month agoOk so I got it to work this time but it ate 2 of our submissions which wasn't our fault, can we please get these back?0
     

@@ -1,0 +1,12 @@
+Question: 
+    root user creationIn the doc, it mentionsBy default, there should exist a root user with username ofroot and password of `admin. This user will maintain the uid of 0 and will not have to be created by manual entry.`Does this mean the root login should be created when making the filesystem image, or after booting inside of init_hook?lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

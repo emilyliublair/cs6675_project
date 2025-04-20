@@ -1,0 +1,12 @@
+Question: 
+    I feel serverly mislead about the examThe way we were repeatedly told to understand the topics and how we were to be tested on them was not well reflected on the exam.midterm
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @405_f1Tianyi Yu1 month agoAs you said, the TLB contains mappings from virtual (linear) addresses to physical addresses, so it takes in the address after segmentation. If we disable paging we know linear address = physical address, so there is no more need for TLB.0
+    

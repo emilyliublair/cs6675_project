@@ -1,0 +1,12 @@
+Question: 
+    Autograder says make failureI can be sure that the code runs smoothly locally, why would the autograder fail to make it? I did use scripts/submit.sh and used the outputted zip to submit to autograder. I did the exact same thing yesterday and got points on the autograder.Can a TA please check what's going on?Edit:successful build with autograder failing screenshotslab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @245_f1Anonymous Poet2 months agoWhat exactly do you mean by too early? As for TLB, I'm invalidating it whenever a page fault occurs and there only 1 process reference to it (thus only write flag change),  and in copyuvm when the parent and child pte flags are changed to read.0Tanush Prathi2 months agoWhen page faulting, you should copy the page before updating the PTE, and the source should a kernel address.1
+    

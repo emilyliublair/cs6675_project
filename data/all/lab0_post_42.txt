@@ -1,0 +1,12 @@
+Question: 
+    If you're using Windows, always run git inside WSLIf you’re using Windows, whenever you clone xv6 or pull changes that we make, always use Git from inside a WSL terminal (instead of the Windows command prompt or Git Bash). Doing this will avoid errors like “cannot find /bin/bash\r” when you try to run scripts/docker.sh.If you’ve already cloned xv6 and you’re receiving these errors, then the easiest fix is to delete the xv6 folder on your computer and clone it again from within WSL.lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

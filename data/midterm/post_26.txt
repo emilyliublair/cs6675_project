@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    As the followup messages correctly pointed out, it was mentioned in class that the exam will in fact be cumulative. I am a little confused about the question on the list of topics -- all topics we covered during lecture. They are easily accessible by looking at the course schedule here:https://github.gatech.edu/pages/cs3210-spring2025/course/schedule/Basically, it's the same list of topics we covered for exam 1 plus the new set of topics covered after exam 1, enumerated below:securityfile systemsatomicity and ordering in file systemsDistributed systemsPutting these topic lists together, by referring to slide 4 oflec15in SecC, we thus arrive at the following comprehensive list of topics to be covered on exam 2:isolation, protectionkernel organizationVMMinterrupts, concurrency, schedulinguser and kernel threadingOS and networkingsecurityfile systemsatomicity and orderingdistributed systemsHow to best prepare for the final (asked/discussed in class -- please refer to the lecture recording for SecC lec24. Please note that I recorded lectures starting with lec07 -- they're ALL accessible under Canvas->Media Gallery. I encourage you to watch through these video recordings. I personally frequently drop "this could be a good exam question" hints throughout my lectures. I pause and emphasize various important things during lecture. All of that is for _you_ to help prepare for the exam.Hope this helps!AT
+
+    Followup Discussions:
+    1 endorsed followup comment@707_f1Anonymous Comp5 days agoI thought it was cumulative?~ An instructor (Alexey Tumanov) thinks this is a good comment ~1@707_f2Alexey Tumanov5 days agoplease also refer to@709good comment0@707_f3Anonymous Gear4 days agoFor security, do we need to know all of the different topics that were covered in the various lab week 11 presentations. Since labs covered different topics are we expected to review each video or will the exam not cover these topics?1Alexey Tumanov4 days agoThe TAs covered some common material and then forked to cover a set of enrichment topics they prepared for the students.  I would focus on the lecture content + the supervised lab material that wascommonacrossallsections.Thanks for bringing this up.good comment1
+    

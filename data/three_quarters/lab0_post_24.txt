@@ -1,0 +1,12 @@
+Question: 
+    Expected output for part 1Is part 1 supposed to print out "Hello World" or "Hello World!" or is it not that deep?lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

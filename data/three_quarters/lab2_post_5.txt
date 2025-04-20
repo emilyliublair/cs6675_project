@@ -1,0 +1,12 @@
+Question: 
+    Passing all testcases except 6 and 8I'm passing all testcases except 6 and 8, and I am also passing all the usertests. For test case 6, I am timing out and for testcase 8, it gave the wrong output. I am stuck on where to go from here.lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @320_f1Anonymous Beaker2 months agoI asked a TA and he said we would only need to lock when reading from/writing to a shared resource. The actual use of the value can be outside a critical section.0Anonymous Comp2 months agoHmm I've gotten different information from a TA.0
+    

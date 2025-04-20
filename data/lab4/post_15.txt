@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @686_f1Anonymous Mouse7 days agowhat perms are you checking for in chmod and chown? we only check if it's root or owner0Anonymous Atom6 days agoyes, we’re checking the same thing0Anonymous Mouse6 days agois this the only test you're failing? we seem to have the same permission checks in the other functions :/0Anonymous Atom5 days agoyes, this is the only test we’re failing.0
+    

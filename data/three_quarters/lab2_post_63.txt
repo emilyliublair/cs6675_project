@@ -1,0 +1,12 @@
+Question: 
+    Extra PGTRAP printout on lsDoes anyone else get an additional PGTRAP printout after you implement COW and run the ls command? Normally the shell would return to just “$” but now there is a PGTRAP since the shell is a new process. It looks like this:$ PGTRAP: err: 0x7, va = 0x19a0Just want to make sure that nothing is wrong since it looks a bit weird.lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @228_f1Anonymous Gear2 months agoAlso this isn't super related but how do you change the number of CPUs that xv6 emulates so that I can test for concurrency issues?0Anonymous Mouse2 months agonot sure if this may help but you could look at NCPU from param.h0Rohan Natansh Bafna2 months agoI wouldn’t encourage testing this way as concurrency issues are fundamentally undeterministic; testing will never ensure that you do not have a concurrency issue. I recommend going through the code manually and trying to prove, mathematically, that your code will be data race free. (This is hard, but you will get (or should have gotten) practice in lecture working through concurrent code, and we’ll have something to help you with that in supervised lab soon :) )But if you do want to test in practice, you will need to copy the xv6-qemu script from the lab3 branch of the repo, and replacescripts/xv6-qemuwith it. Then pass the flag-c <n>toxv6-qemuto run withncpus, e.g., to run with 4 cpus, run./xv6-qemu -c 4.good comment0
+    

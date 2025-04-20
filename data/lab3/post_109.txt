@@ -1,12 +1,12 @@
 Question: 
-    Long time to run autograderI realize there's quite a few test cases, but how long is it supposed to take the autograder to run? It's been running for over half an hour and hasn't timed out yet. Thanks!lab3
+    
 
     Student Answer: 
-    I found that sometimes it took over 30 minutes. Annoying, but I think it'll get better as we implement more of the lab. The reason for the timeouts is that we haven't implemented many parts and they all time out.~ An instructor (Elton Leander Pinto) endorsed this answer ~
+    Test #35 tests the lost wakeup problem. Even if a normal setpark-unpark-park sequence works, your state machine still might not be correct (happened to me; took hours figuring out why I was failing).Try the sequence below:Thread1:Setparkwait 50setparkwait 25parkexitThread 2:wait 25unparkexit
 
     Instructor Answer: 
-    If a lot of your tests hardfault, then yep it'll take a while unfortunately. Let me see if I can try reducing the timeout per test.~ An instructor (Alexey Tumanov) endorsed this answer ~
+    
 
     Followup Discussions:
-    
+    @406_f1Anonymous Gear1 month agoSo if you call setpark twice you shouldn't necessarily remove any lost wakeup that occurred since the previous setpark call?0Tianyi Yu1 month agoYup and that was the problem for me that caused me to fail #35. Treat this thing as a state machine and account for all state transitions then you should be fine.1Anonymous Poet3 weeks agoDid you find your solution to this? i tried the sequence above and it seems to work fine but I still fail 35.0Anonymous Gear3 weeks agoThis ended up being the issue with mine, maybe try making a state diagram, that helped me figure out the transitions0Anonymous Poet3 weeks agoHmm interesting. I drew a diagram and I have 3 outbound edges from each state (for park, setpark, and unpark). I only have 1 outbound edge from the PARKED state though (since if a thread is parked, you cant call unpark on it or setpark).0Anonymous Poet3 weeks agoDid you make sure that the second setpark was on the same channel? What state do you move to if the second setpark is on a different channel?1@406_f2Shourik Banerjee3 weeks agoHow do you wait 50 other than sleeping?1Nathan Prashant Duggal3 weeks agoPretty sure wait 50 is referring to sleep(50)0Shourik Banerjee3 weeks agoYeah initially I thought you weren't allowed to use sleep with parking but then I realized additional modifications are needed so you can do both.0
     

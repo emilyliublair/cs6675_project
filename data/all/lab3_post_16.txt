@@ -1,0 +1,12 @@
+Question: 
+    Extra Credit time measurements off-by-one?If a process starts and ends within the same timeslice (i.e. before the timer interrupts), is the execution time 1 or 0? If we count it as 1 then sometimes the response time != execution + wait + io, but otherwise, having an execution time of 0 doesn’t seem right.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    That would not be necessary, since what we care about is time spent on the CPU not necessary time spent in exec.
+
+    Followup Discussions:
+    @588_f1Anonymous Mouse3 weeks agoNo I mean do we reset execution time after we call exec to execute a different program?0Anonymous Mouse3 weeks agoSorry I meant creation time0Andrej Vrtanoski3 weeks agoPlacing the creation time at fork is sufficient, as that is technically the time the process is created.good comment0
+    

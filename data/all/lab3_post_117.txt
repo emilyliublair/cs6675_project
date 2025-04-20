@@ -1,0 +1,12 @@
+Question: 
+    Priority of new children processesIn part 1, should we always assume that when a child is created, its priority should be higher than its parent? Does this mean we have to change the child's priority in exec or fork?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    You only copy the stack of the direct parentFrom bullet (1), if you only copy the stack of the direct parent, there is information from the process that called clone() that tells you how to find the start of the parent's stack.stack_size can be greater than 4K. and yes
+
+    Followup Discussions:
+    
+    

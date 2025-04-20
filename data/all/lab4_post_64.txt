@@ -1,0 +1,12 @@
+Question: 
+    Parts 2-3 ClarificationIf a user process attempts to create a file that already exists but it is neither root nor the owner, should the syscall return -1? Is this still true if the file is readable/writable by all users?If a user process opened an existing file but later lose write access to it, does this mean it can never close the file and the underlying inode?Should we only allow a user process to link/unlink an inodenewto an inodeoldif the process has read and write access to theoldandnew's parent directory?Is there an upperbound of users that our login system has to support? What should we do if we reach the limit?Do usernames consist of only lower case letters [a-z]?lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

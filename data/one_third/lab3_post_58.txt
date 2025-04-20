@@ -1,0 +1,12 @@
+Question: 
+    Parked StateWhen we park, should we be using the SLEEPING state that has already been made, or should we make a new state specifically for parking? In other words, do we want wakeup1 to be able to wake up a parked process and do we want unpark to be able to wake up a sleeping process?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

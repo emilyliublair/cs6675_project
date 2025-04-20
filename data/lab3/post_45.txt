@@ -1,5 +1,5 @@
 Question: 
-    Part 4: Questions on Spinlock ImplementationHey, I've drafted my implementation for spinlock_init, spinlock_acquire, and spinlock_release (based closely on the kernel implementation in spinlock.c, which is what Alexa hinted at during OH yesterday). I had a couple questions around my implementation.In spinlock_acquire, I make sure that the calling thread doesn't already hold the lock and in spinlock_release, I make sure that the opposite is true before executing my logic. But in spinlock_init, I'm confused at how to check if the spinlock has already been initialized? This is so that we don't end up re-initializing it. Post@396mentioned that you needed to do this, but I didn't know how.In spinlock.c, you guys use functions like atomic_store_explicit vs. atomic_store. I was confused about the difference between these functions, as I couldn't find function definitions anywhere. Is there any way to get these function definitions in the codebase in order to evaluate their differences? Do you have any insight on which would be best to use in our case? For context, I'm using the non-explicit functions right now.As an aside, function definitions would also be helpful to know what the functions return on success and failure. Or are we to assume that they return 0 on success and -1 on failure? This would be helpful in implementing my "spinning" functonality in spinlock_acquire.Thanks in advance!lab3
+    
 
     Student Answer: 
     For part 2, use this as a resourcehttps://en.cppreference.com/w/c/header/stdatomicThe explicit functions allow you to specify a memory ordering while the non-explicit use sequential memory ordering.
@@ -8,5 +8,5 @@ Question:
     
 
     Followup Discussions:
-    @535_f1Varoon Sai Kodithala6 days agoThat makes sense, ty for the tip!Also, we were able to pass the test cases here without using the explicit definition. For those still working on this problem, we were able to check that spinlock_init wasn't re-initializing a spinlock by adding a property to the spinlock structure and iniitalizing it during spinlock_init (though I don't believe the test cases even check for this).1
+    @535_f1Varoon Sai Kodithala3 weeks agoThat makes sense, ty for the tip!Also, we were able to pass the test cases here without using the explicit definition. For those still working on this problem, we were able to check that spinlock_init wasn't re-initializing a spinlock by adding a property to the spinlock structure and iniitalizing it during spinlock_init (though I don't believe the test cases even check for this).1
     

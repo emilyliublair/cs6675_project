@@ -1,0 +1,12 @@
+Question: 
+    Referring to xv6/lab code during exam?Are we allowed to browse and refer to our (locally saved) code from labs 1-4 during the exam? E.g. looking up a particular data structure, functionality/implementation of a particular syscall, etc.midtermlogistics
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    posted
+
+    Followup Discussions:
+    
+    

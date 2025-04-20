@@ -1,0 +1,12 @@
+Question: 
+    How to break in init.c?GDB seems to not allow me to break in init.c. When I do `b init.c:23` to break within the loop it says it isn't defined and if I say yes to trigger it on future library load it still never triggers. Is there a way to solve this?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    I don’t think you’ll ever need that extra functionality, but feel free to do so if you wish.
+
+    Followup Discussions:
+    
+    

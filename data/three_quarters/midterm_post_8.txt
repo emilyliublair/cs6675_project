@@ -1,0 +1,12 @@
+Question: 
+    Flushing and checksumWhy does adding checksum allow for group commit, why couldnt we do this previously?midterm
+
+    Student Answer: 
+    If we had an OS that performed page swaps and each data block was twice the page size, we would have to access each of those blocks approximately twice more often. This could lead to inferior performance on writes to either page on that block because we would have to copy-and-update the whole block, even though we will never be changing more than half of it, so disk time would be consumed on wasteful operations that we wouldn’t need.
+
+    Instructor Answer: 
+    because you're swapping at the granularity of a single page, so if your clock algorithm is swapping out a 4KB frame of memory, it will have two options:either waste 8KB of storage to store the 4KB frame (unlikely, very wasteful), orcoalesce multiple frames into one block, which requires a read, modify, write, operation -- more overhead, more prone to data and metadata corruption, affects isolation (for the neighboring frame on the block) to some extent.
+
+    Followup Discussions:
+    
+    

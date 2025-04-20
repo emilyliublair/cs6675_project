@@ -1,0 +1,12 @@
+Question: 
+    Unpark return valueIf a process has called setpark on the chan then unpark changes the state of the process to the lost wakeup state, I assume unpark should return but should it return 0 because no processes were worken up or 1 because one process was made so it wouldn't sleep?lab3
+
+    Student Answer: 
+    You should return 1. This helped us pass test case 35 today!~ An instructor (Pau Sum) endorsed this answer ~
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @504_f1Anonymous Atom4 weeks agoNot sure if this is related but I think you should only unpark one process that has called setpark on the same channel, instead of every one of them, else unpark is technically waking up more than one process.We just don't want the wake up signal to be lost so it just has to be received by at most one process. The signal should not be broadcasted.I return 0 for back to back setpark calls and I'm able to pass test 35.0@504_f2Nathan Prashant Duggal3 weeks agoCan you give some additional detail on what we can look for to find similar problems to what you experienced?1
+    

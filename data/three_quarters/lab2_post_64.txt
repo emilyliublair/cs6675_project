@@ -1,0 +1,12 @@
+Question: 
+    Sbrk and mallocI've noticed that calling malloc in a user space program will immediately try and write to that page and therefore cause a page fault and page zero. Is it ok for this to happen or should malloc still point to the zero page until the user tries to write to it?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Run the fork test with gdb and add a breakpoint in the trap handler. Once you reach an unexpected trap, you can run this gdb command to see which line of code caused this page fault.list *tf->eipIt's common in this lab to incorrectly access memory in the kernel (incorrectly dereferencing, V2P translations, etc), which would cause a page fault, so this can show you where that happens.If the gdb command does not display anything, then the page fault is coming from a user space address.
+
+    Followup Discussions:
+    @226_f1David M Nuthakki2 months agoHow exactly could I see these in the console? Would you just add print statements?0Andrew Boeger2 months agoYeah or gdb if it's before your kernel is properly setup, which it looks like you are good on that.1David M Nuthakki2 months agoFor some reason my first va is off as well, did this happen to you as well before you fixed the cascading page faults?0Andrew Boeger2 months agoWhat fixed it for me was realizing that kalloc returns a virtual address, not physical0David M Nuthakki2 months agoGotcha, thanks I’ll look into that when I get back to my computer. Thanks for the help!1
+    

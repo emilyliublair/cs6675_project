@@ -1,12 +1,12 @@
 Question: 
-    Looking for PartnerHey y'all I'm looking for a partner to work on the future labs with.  I'm a 5th year CmpE student with threads in DSSD/Sysarch. If anyone is interested in being partners my email isdfolger6@gatech.eduThanksEdit: partner foundlab2lab3lab4logistics
+    
 
     Student Answer: 
     
 
     Instructor Answer: 
-    
+    Higher priority processes always take priority over lower priority processes, even if they were just scheduled.
 
     Followup Discussions:
-    
+    @362_f1Anonymous Atom1 month agoSo in that case do we literally just let Round Robin only give the highest priority process CPU time?0Ved Thiru1 month agoYes; any other solution and you would effectively be providing the high-priority process with the same priority as a lower-priority process.good comment0Anonymous Atom1 month agoOk great, def got confused at office hours earlier this week then!0
     

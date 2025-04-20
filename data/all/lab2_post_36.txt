@@ -1,0 +1,12 @@
+Question: 
+    `usertests` isn't running as expected (stops early)This is my output whenever I run `usertests` in my console (the file is unchanged from the repo).From my analysis of the code it looks like it's stopping early because I don't even see "usertests starting", but I step through it in GDB and see no issues. Is there a reason why this might be happening?Also might be worth noting that many of my tests time out in Gradescope (tests 2-11, to be specific). I was running usertests.c in an effort to help diagnose why I'm getting timeouts. Any advice here would be helpful.lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

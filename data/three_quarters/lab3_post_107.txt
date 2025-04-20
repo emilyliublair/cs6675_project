@@ -1,0 +1,12 @@
+Question: 
+    FIFO ClarificationShould the arrival time used in FIFO depend on the creation time (ticks value) of the process, or the most recent ticks value any time the process becomes runnable? (On yield, etc.)lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    By undefined we mean that your code is not expected to handle this case. We will not test for it.
+
+    Followup Discussions:
+    
+    

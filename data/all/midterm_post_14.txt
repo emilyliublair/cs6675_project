@@ -1,0 +1,12 @@
+Question: 
+    Review Lecture SlidesHi,Will the Lecture Slides from Today's Review be posted soon? I would like to use them for my studying. Thanks!midtermlogistics
+
+    Student Answer: 
+    Yeah, I think your guess is right. Flipping just one bit in the checksum will cause the first entry and thus the whole log to be invalid, and the bitflip is atomic~ An instructor (Alexey Tumanov) endorsed this answer ~
+
+    Instructor Answer: 
+    yes, the answer to your original question is, correct, any write to the checksum block that succeeds in any way will change it, thus invalidating it.
+
+    Followup Discussions:
+    @727_f1Anonymous Calc3 days agoAs a follow up to this, wouldn't writing anything to the log after the merge then overwrite this first entry and commit. But if we never changed the other entries in the log and the first is now valid again, we basically have a full log again because the rest of the entries are valid. Is there something I'm missing here? Or does it act sort of like a linked list, so by breaking the first link, you can no longer access the other log entries.0Alexey Tumanov3 days agoThe best way to clear up this thinking is : think of a scenario where the first entry was just a single block write, and a new entry -- a 1000 block write. You wouldn't be able to fit it "in place" of the first entry, right? This simple thought exercise will convince you that the situation you're describing won't happen.good comment1
+    

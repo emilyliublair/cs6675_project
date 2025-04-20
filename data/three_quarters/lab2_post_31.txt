@@ -1,0 +1,12 @@
+Question: 
+    Processes init twice with CoW implementation?Currently my group's implementation is most of the way there with our CoW implementation. However, we are getting some strange behavior. Both on boot and when trying to run forktest, the processes will display "init: ...." once, then encounter a zombie and try again. I've stepped through this with GDB and am unsure of what could be causing it. Are there common issues we aren't considering?lab2
+
+    Student Answer: 
+    Any chance you’re killing init somehow and making shell a zombie?
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @280_f1Anonymous Poet2 months agoYep that was exactly what was happening. Didn't think about that when I wrote the tests, but that was in fact the issue. I'm fairly confident my error has something to do with sbrk being called in certain circumstances. I sbrked a lot of memory, wrote to it, forked, sbrked more memory, wrote again, and the test passes. Just sorta at a loss on what I'm doing wrong here.0
+    

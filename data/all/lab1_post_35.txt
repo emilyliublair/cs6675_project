@@ -1,0 +1,12 @@
+Question: 
+    What does valid return address from stab info mean?When it says that stab info cannot always find a valid return address I was a bit confused because I thought stab info gives the function address. I was wondering if this was supposed to say a valid start of function may not be found or what it meant by the valid return address may not be found?lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    stdlib.h is a header file provided by your host OS (that's why it's in /usr/include, not the xv6 directory tree). Don't include it; xv6 is compiled freestanding, which means you can't use header files or libraries from your host OS.I saw that there’s amalloc()andfree()inulib.cbut I assume I’m not supposed to use it since that’s for user programs?Yes, these functions ultimately call sbrk, which is a system call that changes the size of the current user process; they won't help you allocate memory for the kernel even if you did call them.What should I do instead?You don't need to dynamically allocate memory for this lab, or for any of the labs in this course. Everything you need to do can (and really should) be done using static allocations, whether that's on the stack or in globally defined variables.
+
+    Followup Discussions:
+    
+    

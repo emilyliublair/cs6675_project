@@ -1,0 +1,12 @@
+Question: 
+    What guarantee do we have that single lines of code in C are atomic?This might be a stupid question, but when our C code is compiled into more fine grained assembly instructions, is there a guarantee that we won't switch during these assembly instructions. I guess a concrete case in which this would be problematic is when you are checking for some condition in an if statement, and during the execution of the assembly of that if statement we context switch out to some other code that modifies some shared resource we are checking.midterm
+
+    Student Answer: 
+    Here's the quiz in the meantime, these should all be correct:
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @718_f1Anonymous Comp4 days agoAwesome, thank you!1
+    

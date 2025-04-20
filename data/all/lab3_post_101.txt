@@ -1,0 +1,12 @@
+Question: 
+    Tests 11-12, 16-18 Timeout/HardfaultI am getting timeouts/hardfaults on test cases 11-12 and 16-18, does anyone have the same problem? How can I go about debugging for this?Edit: am able to pass 11, 12, 16 after making sure that the user stack is copied and modified correctly.Still hardfaulting on 17 and 18. Things that I've considered/tested:checking that the threads within the same group are sharing memory space (global variables), cwd, and open filesnot freeing the page directory unless the exiting thread is the thread group ownercloning 253 timesvalidating clone inputs (address and stack size)creating a new thread group whenever a process calls fork() or exec()lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

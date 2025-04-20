@@ -1,12 +1,12 @@
 Question: 
-    Thread Exclusion Promises does the kernel make with regard to threadsIs it the kernel's job to ensure exclusion when making changes to the pgdir for example? In lab I was told that when two processes are writing to the same file it can interleave, so what is and is not allowed to overlap with regard to the shared resources.lab3
+    What is meant by "undefined"In the lab readme, it says “If the owner of a thread group terminates before the other threads in the group, the behavior for those threads is undefined.”A few questions:What does undefined mean in this case?Is this similar to a parent process exiting before a child w/ fork and how the child then becomes a zombie?Should we turn the undefined thread into a zombie process?Consider the case where process 1 calls clone(), so now there is a process 2 in the ptable (the cloned thread). If clone is called on process 2, who would be the thread group owner for this process 2. Would it be P1 or P2?lab3
 
     Student Answer: 
-    
+    By undefined I'm pretty sure that means they just don't test for it and you don't need to worry about it.For question 4: Its thread group owner should be process 1, however its direct parent should still be process 2. This is important for recursive cloning and thread_wait.~ An instructor (Elton Leander Pinto) endorsed this answer ~
 
     Instructor Answer: 
-    I may not have been precise enough when I said that writes and reads can interleave; individual reads and writes still need to be atomic (the kernel locks the underlying inode or pipe), but there’s no built-in mechanism to enforce an ordering between multiple reads/writes if two processes have opened the same file. From the kernel’s perspective, nothing about the files will end up incoherent because of this (e.g. the size always matches the amount of data written), but the user processes might observe corrupted data inside the files; it is their responsibility to synchronize appropriately so that this doesn’t happen.The kernel must ensure that concurrent reading or modification of shared resources never leave said resource in an incoherent state (that the kernel cares about). For instance, sbrk() must be completely atomic because if it weren’t and two threads sbrk()ed at the same time, then the size field of the process struct might not match the number of allocated pages, which is an invariant that the kernel assumes is true. But if two processes write to the same address at the same time, causing a data race, nothing about that can affect the kernel, so we allow it and leave it up to the user processes to synchronize.
+    By undefined we mean that your code is not expected to handle this case. We will not test for it.
 
     Followup Discussions:
-    @376_f1Alexey Tumanov3 weeks agowe're going to cover atomicity and ordering in file systems after spring break. It's a conceptually challenging topic, because, as I mentioned in class (and also echoed by Rohan's answer above), atomicity is relative, not absolute. We will study this in more detail in the context of file systems and making file system state mutation -- atomic.Stay tuned.good comment0
+    
     

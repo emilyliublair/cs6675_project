@@ -8,5 +8,5 @@ Question:
     That would not be necessary, since what we care about is time spent on the CPU not necessary time spent in exec.
 
     Followup Discussions:
-    @588_f1Anonymous Mouse4 days agoNo I mean do we reset execution time after we call exec to execute a different program?0Anonymous Mouse4 days agoSorry I meant creation time0Andrej Vrtanoski4 days agoPlacing the creation time at fork is sufficient, as that is technically the time the process is created.good comment0
+    @588_f1Anonymous Mouse3 weeks agoNo I mean do we reset execution time after we call exec to execute a different program?0Anonymous Mouse3 weeks agoSorry I meant creation time0Andrej Vrtanoski3 weeks agoPlacing the creation time at fork is sufficient, as that is technically the time the process is created.good comment0
     

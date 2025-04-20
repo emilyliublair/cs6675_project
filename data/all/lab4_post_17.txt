@@ -1,0 +1,12 @@
+Question: 
+    Test #32Anyone have tips on passing #32? Not sure what's going wrong here...lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    This is a design decision, you can take any approach as long as it is secure.
+
+    Followup Discussions:
+    
+    

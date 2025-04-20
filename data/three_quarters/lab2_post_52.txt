@@ -1,0 +1,12 @@
+Question: 
+    Getting a trap error 0 somehow?Above is a picture of what I'm getting. Not sure why I'm getting a trap 0, and it happens for a virtual address that previously page faulted. I don't know which function in my code could be causing it, but I do know that this copied page at 57279 was created after a page fault due to trying to write to the 0 page.This happens during booting before I can even get to running any programs.lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Have you tried building it locally with release mode?
+
+    Followup Discussions:
+    @246_f1Anonymous Poet2 months agoThank you for the response. I have resolved the issue. I think I was suppressing warnings locally but it freaked out the autograder.0
+    

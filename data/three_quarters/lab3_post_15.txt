@@ -1,0 +1,12 @@
+Question: 
+    Late Days for Part 1 Extra CreditIs it okay to use the late days for the part 1 extra credit?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    We are discretizing time into ticks so such rounding errors are possible. You should aim to round up, so your execution time would be 1 in that scenario. Off by one errors are inevitable by how we are measuring and discretizing time.You may also mention this in your write up, when analyzing the different algorithms.
+
+    Followup Discussions:
+    @590_f1Joshua Wang3 weeks agoDo we need to analyze the execution / io / wait time in the report as well? Or just the response time?0
+    

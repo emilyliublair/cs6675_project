@@ -1,0 +1,12 @@
+Question: 
+    test case 30After finishing all parts, test case 30 is the only failing (Incorrect output). Has anyone had the same issue/could anyone give some inspiration as to what I might be overlooking or missing in my implementation?lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @646_f1Anonymous Comp2 weeks agoOne thing I think it might be from checking Piazza is that apparently we need checks within exec.c which I haven’t implemented yet. I am trying to do it right now but I am getting weird compiler errors when trying to access parts of the inode struct0Anonymous Comp2 weeks agoWait I fixed it I just wasn’t including “fs.h” lol (still haven’t submitted yet)0Anonymous Scale2 weeks agowhy do we need checks i exec.c? it just relies on namei for checking read permissions which should be protected.0Anonymous Atom2 weeks agowe didn't have any checks in exec.c and we were able to pass all the tests in part 2 except for test 10. a couple user tests could be creating a test directory as a non root, chdir into that test dir, and then essentially just trying to read/write/remove files with different levels of permissions and seeing if those act as they should? it might be something small that's causing everything to not pass?0Andrew Boeger1 week agoAny luck? Still basically hardstuck on those test cases.0Anonymous Atom1 week agonot sure if this is of help, but we had an issue of forgetting to update ilock and that fixed some permission stuff for us. and yes checks in exec.c should be added to get test 100
+    

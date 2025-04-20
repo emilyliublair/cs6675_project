@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    Treat the newline character as any other character.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

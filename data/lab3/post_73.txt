@@ -1,12 +1,12 @@
 Question: 
-    Triple Fault for Clone when sharing files (sometimes)Currently, I have a version of clone that runs about 90% of the time. We are using locks for a shared file data structure. However, sometimes, when running local tests involving clone, a triple fault occurs. This only occurs sometimes.lab3
+    
 
     Student Answer: 
-    Are you using waitpid? If not is it possible that the parent thread is exiting and freeing the kstack causing the os to reboot or triple fault?
+    Threads have shared memory and the stack is included in that. Threads are allowed to access each other stacks (though it probably is not a good idea).
 
     Instructor Answer: 
     
 
     Followup Discussions:
-    @451_f1Anonymous Atom3 weeks agoIt has something to do with the fact that a process or its parent modifies priority such that it should become the new process to run. Make sure you preempt when a new process becomes the best one.0Erel Ozen3 weeks agoI thought this was test case 9?0Rohan Bansal3 weeks agoI think:Test case 9 checks whether the current process has had its priority decreased (and if a better process should preempt it).Test case 5 checks whether the modified process's priority is now greater than the current process (and so preempt the current process).~ An instructor (Elton Leander Pinto) thinks this is a good comment ~1
+    
     

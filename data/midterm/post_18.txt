@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    well, the user-space stack switching would only be done within the same virtual address space of a process. The stacks managed here would be for the multiple threads of execution that co-exist within the same VA space of the same process. So all of this is operating within the same trust domain.Of course switching control between processes should induce a context switch. Otherwise you'd be in trouble with isolation, yes.
+
+    Followup Discussions:
+    
+    

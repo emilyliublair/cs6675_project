@@ -1,0 +1,14 @@
+Question: 
+    Generating Random SaltHow random does our salt have to be? Is it sufficient to just generate a pseudo-random number like in the code from usertest.c:unsignedlongrandstate =1;unsignedintrand(){
+randstate = randstate *1664525+1013904223;returnrandstate;
+}run code snippetVisit Manage Class to disable runnable code snippets×Otherwise, how would we generate a cryptographically secure random number for the saltlab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    The maximum file size should be at least 8MB; anything above is fine
+
+    Followup Discussions:
+    
+    

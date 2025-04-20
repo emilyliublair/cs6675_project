@@ -1,0 +1,12 @@
+Question: 
+    How well do we need to clean the stack* that the user provides?What happens if the new stack* for clone is pointing to the guard page? Should we allow the process to crash / get killed via a trap or should clone fail and return -1lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Resolved
+
+    Followup Discussions:
+    @436_f1Rohan Natansh Bafna1 month agoDid you forget or add a brace somewhere when you modified proc.h?good comment0Varoon Sai Kodithala1 month agoI don't think so, but I added braces to all of the provided code where they were missing and the compilation issue was fixed. Weird.0Varoon Sai Kodithala1 month agoIt was in sysfile.c, syscall.c, and fs.c.0
+    

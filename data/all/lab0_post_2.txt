@@ -1,0 +1,12 @@
+Question: 
+    movl    $(V2P_WO(entrypgdir)), %cr3  VS %eaxIn entry.S when we are transferring the physical address of entrypgdir into %cr3, why is the done like (1), instead of (2). What benefit do we get from the extra line? I tried version 2 and xv6 still runs fine it seems.(1):"movl    $(V2P_WO(entrypgdir)), %eaxmovl    %eax, %cr3"(2): "  movl    $(V2P_WO(entrypgdir)), %cr3"lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Yep, this is fine
+
+    Followup Discussions:
+    
+    

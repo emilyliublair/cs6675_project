@@ -1,0 +1,12 @@
+Question: 
+    Autograder Timing OutThe autograder timed out after 45ish minutes - what do we do in this case?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Going through ptable is fine.
+
+    Followup Discussions:
+    @573_f1Anonymous Scale3 weeks agoUpdate: we passed more tests by having more checks within mutex and cond. It appears like 39-41 check for return -1.3
+    

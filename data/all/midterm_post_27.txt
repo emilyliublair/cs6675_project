@@ -1,0 +1,12 @@
+Question: 
+    Exam 2 PrepHi, is there anything we should direct our attention to for test prep for this week? Like a practice exam or topics list? From just questions in class I've gathered its on Security to Distributed Systems, but I've seen nothing official and wanted to spend the weekend studying. Thank you!!midtermlogistics
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @705_f1Anonymous Calc5 days agoWell you have to store the salts somewhere as well. A lot of encryption algorithms use a key for encryption, so the different encryption would be done via providing a different key.0Ashwin Amitabh Mudaliar5 days agoThe salts are stored but they are of little use - you've already storedhash(salt+password), and it is very unlikely that a rainbow table entry exists for this salt + password combination. On your implementation, forgive me if I'm incorrect, but you'd have to store the key as well right?0
+    

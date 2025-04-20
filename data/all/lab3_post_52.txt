@@ -1,0 +1,12 @@
+Question: 
+    thread test case questionWhat is the 'Thread IO blocking' in test case 26 referring to? Is it about locking shared resources like files or something else?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Data races should be avoided if it violates correctness properties ofthe kernel.For example, in chdir. If you don't prevent the data race, then the kernel could end up in a state where the cached inode is in an inconsistent state (double free, double dup, depends on the order of execution).
+
+    Followup Discussions:
+    @520_f1Nathan Prashant Duggal3 weeks agoElton for specifically chdir I don't understand how that's possible. The entirety of sys_chdir is wrapped in a begin_op/end_op, so wouldn't all accesses to the cwd be atomized anyways? What do you mean by the cached inode?0
+    

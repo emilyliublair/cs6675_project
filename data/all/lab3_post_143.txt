@@ -1,0 +1,12 @@
+Question: 
+    Lab 3 build IssuesWhen compiling in debug mode and adding all the user-space programs into the cmake file, the build fails due to being unable to create the filesystem image. How would this be fixed?Error:User-programs compiledlab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    You pointed this out, but just putting here for completeness:Run all FIFO processes before RR processesTie break FIFO/RR with priority value
+
+    Followup Discussions:
+    @338_f1Anonymous Calc4 weeks agowhere does the custom scheduler fit in this hierarchy? Is it all FIFO, then all RR, then custom?0
+    

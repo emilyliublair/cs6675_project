@@ -1,0 +1,12 @@
+Question: 
+    Part 2, test case 11,12,13Anyone has insight on test case 11-13? I've passed others but these.  Thanks!lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    I’m assuming we shouldn’t though because if one thead closes the file then it should remove the file entirely assuming there are no other process outside the threadgroup which access it which won’t happen if the ref count is higher than 1.This logic is correct. Semantically speaking, they share the “same” reference.
+
+    Followup Discussions:
+    @379_f1Anonymous Atom1 month agoSo similarly does this mean we should not call idup on cwd because cwd is shared across the thread group?0Rohan Natansh Bafna1 month agoYes.good comment2
+    

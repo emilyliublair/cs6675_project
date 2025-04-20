@@ -1,0 +1,12 @@
+Question: 
+    fork-exec questionwhats the deal with the whole fork-exec thing. If Im planning on making a new process entirely why copy everything from the current process to the newly made one just to overwrite with exec. Am I missing something?lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    The extra credit assignment can be solved without needed to add additional system calls. I would suggest looking into the kernel code and how the kernel handles allocation of new processes, maybe it might give you a hint towards the limit for the number of processes.
+
+    Followup Discussions:
+    @66_f1Loading...3 months agoThanks for clarifying. Small follow up: does the solution need to involve actively creating as many processes as possible at runtime, or can it be something as simple as getting a constant from somewhere like a header file and using that?0Andrej Vrtanoski3 months agoYour program should stress test the process capacity in xv6, you cannot simply hard code your answer. It is an extra credit question after all. Use the constant to just verify your solution is close to the limit, since you can't exactly hit the limit.good comment1
+    

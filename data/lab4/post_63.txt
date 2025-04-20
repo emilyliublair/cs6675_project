@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @611_f1Anonymous Mouse2 weeks agoDid you ever figure out the answers to questions 1-3?0Anonymous Atom2 weeks agoWe only need to check for file permissions when we are making changes to an inode (ie R/W). So for 1-3 consider what inode(s) we are changing, and what permission(s) is required.0Anonymous Mouse2 weeks agofor link/unlink, do we need to check if the inode itself is writeable? since for both link and unlink, we end up modifying the inode's reference bits.0Anonymous Atom2 weeks agoYou only need to check for file permissions if you are reading from or writing to what is stored inside an inode. Reference bits are not part of an inode’s content so no if that’s what you’re only modifying.undo helpful1
+    

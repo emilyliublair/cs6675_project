@@ -1,0 +1,12 @@
+Question: 
+    thread createI know this is very last minute, but can anyone give me the general way of thinking about thread_create? ive been stuck on it for some time now and i think i might be going in the wrong direction.I know you're supposed to malloc then clone, but when i call clone i get a panic (even though i pass all the clone tests)lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Yes—just make sure that all accesses to these variables are atomic.
+
+    Followup Discussions:
+    
+    

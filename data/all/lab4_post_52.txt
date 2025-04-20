@@ -1,0 +1,12 @@
+Question: 
+    test case 15I'm only failing test case 15 after implementing parts 1 and 2. Does anyone know what this tests for?lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @637_f1Anonymous Poet2 weeks agoalready handle that,  if not owner or root and not readable it doesn't have perms to access it0Nathan Prashant Duggal2 weeks agoFor me fixing chdir made me pass 131Anonymous Comp2 weeks agoDoes it need write access or is read enough?0Joshua Sampson2 weeks agoread is enough, we just want to make sure we're able to read from the directory, we arent actually writing anything to it1@637_f2Anonymous Beaker2 weeks agoAny progress on this? I am also failing (hard faulting) 13 after trying to fix chdir0Anonymous Poet2 weeks agonope sadly, but for me im just getting incorrect output. make sure any accesses to the inode is after the ilock() call and make sure your error handling is correct i.e. any necessary calls needed before return -1.0Anonymous Poet2 weeks agoended up fixing the issue, for me I was not end_op()'ing in a chmod fail case and inside of namex my owner permissions check was incorrect0
+    

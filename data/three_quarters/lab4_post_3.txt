@@ -1,0 +1,12 @@
+Question: 
+    Lecture 24 user space file persistence exampleIn lecture 24, the example given for persisting a write to a file has the metadata change being persisted to the log before the block write, but I thought you had to write to the data block before persisting the metadata change in the log in an ordered log system.midtermlab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

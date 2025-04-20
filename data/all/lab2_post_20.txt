@@ -1,0 +1,12 @@
+Question: 
+    ./forktest-xv6-qemu output matches expected COW output but not passing any gradescope test casesI've implemented Copy on Write and it seems to work as the forktest output matches the expected output exactly. However, all of my gradescope test cases say incorrect output except for 9 and 11-13 which timeout.lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @302_f1Anonymous Calc2 months agoI just allocd a zero page and saved the ppn for that in my kmem and initialized this page during the main init process and passed the auto grader cases. Is that not what we're supposed to do?0@302_f2Anonymous Gear2 months agoI passed the autograder by memseting the initial 0 zero page. I was told by a TA that you are not supposed to call lab2_pgzero on the global zero page, but I don't know if it actually affects the autograder.2
+    

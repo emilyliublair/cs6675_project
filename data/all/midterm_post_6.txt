@@ -1,0 +1,12 @@
+Question: 
+    TLB Flushes With M:1 TreadingWould having M:1 threading result in zero TLB flushes or just fewer? From my understanding, having only one kernel thread would mean that the OS only sees one address space so the TLB entries remain valid across user-level thread switches. Can a user thread change a TLB entry without the other user threads knowing?midterm
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    oh,  it's similar with memory -- writing 512B of zeros is expensive. Also, it's just another write -- subject to all the reordering and crash consistency issues we talked about. But even if we do come up with some low level mechanisms that make it atomic, it would still add overhead and slow down disk performance.
+
+    Followup Discussions:
+    
+    

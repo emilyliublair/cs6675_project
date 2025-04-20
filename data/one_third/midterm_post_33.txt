@@ -1,0 +1,12 @@
+Question: 
+    Can we use other paper textbooks for exam?Am I allowed to bring and reference one of the suggested textbooks from the syllabus during the exam (not the xv6 book)? I have a physical copy.midtermlogistics
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @407_f1Alexey Tumanov1 month agoHi Luke, can we please defer discussion of the midterm until after the other section has taken it. So, for now, I made your post private. But I'm happy to change it after tomorrow afternoon, if you'd like.Thanks,ATgood comment1
+    

@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    iunlockput is the same as calling iunlock and iput in sequence. When we're done with a reference to an inode, we should call iput on it at some point so that the reference can be freed if possible instead of staying in cache. Some places in sysfile.c use just iunlock instead of iunlockput when they need to call iput separately or later in execution. For example, sys_link does not initially call iunlockput for ip because it may unlock the same reference upon an issue with the dp inode and decrement ip->nlink before returning. sys_open does not use iunlockput because the ip reference is a member of the fd struct that it returns to the user, so we want to keep that reference until the file is closed~ An instructor (Rohan Natansh Bafna) endorsed this answer ~
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,15 @@
+Question: 
+    Tests in Limits.c are dependent on each other$ limits 
+Maximum Memory Size: 0x0000
+Maximum Number of Files Per Directory: 0
+Maximum Number of Processes: 0If you keep running malloc in limits, the OS will eventually run out of memory. Will this not affect the ability to later calculate the number of files per directory (since we are already out of memory), or are we expected to free all the memory we allocated in the first step before proceeding.lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    We’re hand grading it, it doesn’t matter lol
+
+    Followup Discussions:
+    @38_f1David M Nuthakki3 months agoSweet thanks!0
+    

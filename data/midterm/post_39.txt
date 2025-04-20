@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    This is asking how many operations are involved inonly the walkportion. Accessing data is not part of the page table walk.~ An instructor (Alexey Tumanov) endorsed this answer ~
+
+    Followup Discussions:
+    
+    

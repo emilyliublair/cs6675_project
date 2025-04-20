@@ -1,12 +1,12 @@
 Question: 
-    Clone stack parameterIs the passed in parameter the lowest address of the new stack. So stack + stack_size should be the bottom of the new stack? Or is it passed in as the highest address, so stack is equal to the bottom of the stack?lab3
+    
 
     Student Answer: 
     
 
     Instructor Answer: 
-    It’s the lowest address of the stack.
+    
 
     Followup Discussions:
-    @383_f1Anonymous Gear3 weeks agoOk that makes sense, but when I am traversing the stack I keep finding the value 9 at the bottom, is this a valid ebp or does this value indicate the end of the stack0Rohan Natansh Bafna3 weeks agoAre you traversing the new stack that was passed in by the user?good comment0Anonymous Gear3 weeks agoNo I'm going through the trap frame ebps from the current process0Rohan Natansh Bafna3 weeks agoOk, that’s right, just making sure.The number 9 doesn’t denote anything in particular and isn’t a valid ebp (they all have to point to the stack).good comment0Anonymous Gear3 weeks agoOk, but how do we know when an ebp is outside of the stack, do we just check if it's less than our esp since that should be the lowest address in the stack?0Anonymous Gear3 weeks agoOr could we just detect anytime the next ebp is less than the current ebp, since that means we are no longer travelling up the stack?0Anonymous Gear3 weeks agoNvm, I looked at the return addresses and there is a dummy return address placed at the bottom of the stack.0Anonymous Poet3 weeks agoHow do you know it’s a dummy address? I see a 0x3fa8 but I’m not sure why it would be there.0Rohan Natansh Bafna3 weeks agoIt’s not 0x3fa8. Check exec(); that’s where the initial user stack is created.good comment1
+    @432_f1Anonymous Mouse1 month agoI'm also hard faulting on 17 and 18 :(0@432_f2Anonymous Gear1 month agoAny progress on this? I am only hardfauilting 17 😦0@432_f3Anonymous Scale1 month agoNot 100% sure but I asked a TA and they recommended stress testing. We managed to pass both tests after removing yield() from the end of fork() and clone().0Anonymous Gear1 month agowhy were you ever calling yield() after fork and clone? lol0Anonymous Scale1 month agoI think I had it in there to test something else and forgot to remove it ☹️0
     

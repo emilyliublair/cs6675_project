@@ -1,0 +1,13 @@
+Question: 
+    Page Table AllocationHi! As I was reviewing exam 1, I was stuck on why there was more than 1 page table when all of the pages could have fit into one page table. I understand now that it is because the stack is located in higher memory, so its page table would be different than the page table for the lower memory addressed code and data. Is this the only reason that pages would be split between different page tables even when they could technically all fit into 1?midterm
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @737_f1Anonymous Calc2 days agoSo this essentially mean we won't get any TLB flushes, right?1Anonymous Comp2 days agoAt that point it depends on the kernel scheduler. We will never have the need to do a TLB flush if there is only one kernel thread, but:
+if the kernel scheduler is Round-Robin and preempts the kernel thread to look for other processes to schedule, it will flush the TLB when switching to the scheduler context, then flush again when switching back to the same thread that was just running. We need those TLB flushes when going to scheduler context because the kernel’s virtual address space is different than the process’s.If it’s a FIFO scheduler that is never preempted, then no TLB flushes.1
+    

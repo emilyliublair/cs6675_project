@@ -1,0 +1,17 @@
+Question: 
+    free_stack_and_exit scheduler modeMy partner and I are working on Part 3, and we noticed this comment in free_stack_and_exit.S:/*
+ * Frees the stack and calls exit() safely.
+ *
+ * PRECONDITION: The thread should be in the lowest-priority RR scheduler mode
+ * before calling this function
+ */run code snippetVisit Manage Class to disable runnable code snippets×However, there is no mention of this in the README, and another student mentioned that a TA told them to ignore this in office hours. Is this something that we should be worrying about, or can we ignore this?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @553_f1Loading...3 weeks agoI'm in a similar situation; failing 28-32 which are thread addr space and error/security1Loading...3 weeks agoI fixed it so now I only get a race on test case 17, and fail test case 31. I think the way I was locking before a file interrupt caused a deadlock, but when I tried to switch to sleeplocks a lot of things didn't do so hot.0@553_f2Anonymous Poet3 weeks agoWe are also in a similar situation with failing 29, if you get any insight please let us know and we will be sure to do the same if we find anything out!0Yash Vardhan3 weeks agoI'm also only failing 29, did you figure anything out0Anonymous Poet3 weeks agonot yet no, will reply if i find anything0Anonymous Calc3 weeks agoAll I can say so far is that changing my approach to manually propagate the shared resources (instead of always referencing the owner) didn't work, I'm still failing 29. Will keep you updated if I find anything0Yash Vardhan3 weeks agoYep same0Anonymous Beaker3 weeks agoSame... ensured that threads do not maintain their own copies but instead access shared resources. Not hardfaulting, but just have incorrect outputs0
+    

@@ -1,0 +1,12 @@
+Question: 
+    "zombie!" on forkexecI am getting "zombie!" printed in terminal when testing forkexec.c. Is this because my parent process is not waiting for the child to finish? Is it expected that the parent always waits?lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Yes, that message comes from the kernel.
+
+    Followup Discussions:
+    @25_f1Tianyi Yu3 months agoThe memory size is supposed to be non-zero right0Andrej Vrtanoski3 months agoYes the size of memory should be > 0, the string 0x00000000 is just a placeholder value.good comment0
+    

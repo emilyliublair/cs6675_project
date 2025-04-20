@@ -1,0 +1,24 @@
+Question: 
+    Cannot do `./xv6-qemu -m`I am trying to start xv6 with more memory, which has worked in previous labs, but when I do it in this lab I get the following error:Does anyone have any idea why this is happening?lab4
+
+    Student Answer: 
+    Doesn’t seem like there is an option to set RAM size in this lab.Partial content ofxv6-qemufor referencewhiletrue;docase"$1"in-h|-\?|--help)
+      print_helpexit0
+      ;;
+    -v|--verbose)
+      VERBOSE=trueshift;;
+    -c|--num-cpus)
+      CPUS="$2"shift2
+      ;;
+    -g|--gdb)
+      GDB="-S -gdb tcp::26000"shift;;
+    --)shiftbreak;;
+    *)echo"Unrecognized option$1"print_helpexit1
+      ;;esacdonerun code snippetVisit Manage Class to disable runnable code snippets×I’m seeing if you can override it by changing the “MEMORY” variable directly inxv6-qemu, but it does not seem to be working.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Memory size: xv6-qemu defaults to allocating 512 megabytes to the emulated PC; you can see this by reading the script. You should be able to change this number with the -m flag.Number of files: this is actually bounded by the total number of free inodes that exist on disk. (Recall that a file in Unixlike systems is represented by a single inode, which stores metadata and points to the datablocks holding the file contents.) The disk filesystem is created in tools/mkfs.c, so you can check there to figure out how many inodes exist. (In particular, there is a macro in that file that gives you the exact number of inodes allocated by default.)Processes: Each process is represented by a struct proc in ptable, an array that is defined in kernel/src/proc.c, so the number of processes is bounded by the size of the table.Keep in mind that you will never reach any of these limits since other processes are running, other parts of the system are taking up memory, and other files exist on disk, but they provide an upper bound.
+
+    Followup Discussions:
+    
+    

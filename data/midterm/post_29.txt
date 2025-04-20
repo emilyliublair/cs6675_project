@@ -1,0 +1,12 @@
+Question: 
+    Exam 2 Distributed SystemsShould we expected to see distributed system questions on the exam next Wednesday considering we didn't go over it during class this week? Otherwise, are we learning the content the day before on Tuesday to be tested the next day? I do see the slides are up so I would like to know how much I should study the slides in preparation.midterm
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Thank you, Erin for your question. Will it help if I release a video recording of a distributed systems lecture on Monday? As I am attempting to prepare this class for exam 2, the choice I faced was to give ordering and atomicity a limited treatment last week, so that we get to Distributed Systems on Thursday OR give you full, detailed coverage of ordering and atomicity, focusing on students' complete understanding of this large module. It was a tradeoff, and I picked a Pareto-optimal point ;)I can offer the following options to alleviate your concern:I can try to release my last year's video recording of the distributed systems lecture today, Sun, 4/13I can release a newly recorded video of the distributed systems lecture, tomorrow, Mon, 4/14I can walk through distributed systems in person on Tuesday, 4/15We can drop Distributed Systems from the list of topics covered on exam 2. I will lecture on Distributed Systems on Thursday, 4/17 (AFTER exam2).What will be the most helpful?Thank you,ATUPDATE: option 1 above has already been executed.UPDATE 2: we're going with option 4: no distrib. systems on exam 2!
+
+    Followup Discussions:
+    @694_f1Anonymous Mouse4 days agoI think a newly recorded video of the distributed systems lecture would also be helpful, as I'm finding it incredibly difficult to study for a topic that hasn't been explicitly covered in lecture. Last year's recording is appreciated, but I still feel like we are at an unfair disadvantage being asked questions about distributed systems without actually having class time to learn about it because now, in addition to studying for the exam, we have to learn and understand entirely new content.0Alexey Tumanov2 days agoPlease see@709_f1good comment0
+    

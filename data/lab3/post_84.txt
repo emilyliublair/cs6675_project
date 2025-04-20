@@ -1,12 +1,12 @@
 Question: 
-    Spinlock as a fieldI am having some locking issues and think it might be how I instantiated/referenced the spinlocks I am trying to use. I stored the spinlock as a pointer in the proc struct and did initlock(lock ptr, name) to initialize it. When I try to acquire it doesnt happen even though there is no contention for the lock. I figure it has to do with how the lock is initalized/stored since only the ptr is global data. When I tried to store the lock as spinlock (struct spinlock lock;) I got error: field 'group_lock' has incomplete type. but it is declared asstruct spinlock group_lock; within the proc struct, I tried to include spinlock.h but it redefined the struct. Is there a way to fix this?lab3
+    Weird bug while trying to run user processesWhen I try to run user processes, for the first process I try running, I am gettingpid 4 sh: trap 13 err 0 on cpu 0 eip 0x56 addr 0x0--kill procI don't know what could be causing this, as trying to run user programs after this works as it should. However, if I start up a new shell this trap will always happen the first time I try to run any user test, including ones already written for me.Could it be something about a file descriptor closing when it should not be?lab3
 
     Student Answer: 
-    Add include guards in the spinlock.h header~ An instructor (Ved Thiru) endorsed this answer ~
+    Edited due to inaccuracies. Trap 13 is aGeneral Protection Exception (#GP). Page fault is interrupt 14.A lot of things can cause trap 13, as detailed in the SDM Volume 3, Chapter 7, Section 15. You’ll also find an explanation of how the error code works in said chapter. In general (for future references) I would set a breakpoint at the instruction in the user space program that generated the interrupt, and go from there.Previous answer:Trap 13 is a page fault, so I think it is probably related to an issue with the page tables or page directories.
 
     Instructor Answer: 
     
 
     Followup Discussions:
-    
+    @460_f1Shourik Banerjee1 month agoIs there a reason it only occurs on the first instruction?0Shourik Banerjee1 month agoAnother thing: is it an issue if I malloc 6000 bytes of space but clone will fail if the stacksize I pass is more than 5999?0Tanush Prathi1 month agoYou panic on the first instruction (probably because the pages are not setup correctly), so it can only occur on the first instruction0Tanush Prathi1 month agoThe clone should succeed if you malloc 6000 bytes and passed in 6000 as stack size.For any stack size higher, it should only fail if the memory beyond that is not allocated to the user program (ex: not present page). The kernel has no idea about the array boundaries, so if user passes a stack size that is larger than the allocated space, then it will just overflow into the same program's memory0Shourik Banerjee1 month agoHmm, interesting that there's a page issue considering I only free it in wait if the thread owner tries to free the page.0Shourik Banerjee4 weeks ago: I wasn't assigning the index to the table in fork properly, I was trying to access the table before setting the index.1
     

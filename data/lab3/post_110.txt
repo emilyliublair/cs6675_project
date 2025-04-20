@@ -1,12 +1,12 @@
 Question: 
-    Is it guaranteed that lower PID always means that a process (FIFO, high priority) is scheduled firstFor example, we had a maximum of 256 PIDS. Assume we have 256 processes running and process #5 exits. Will the next spawned process be pid == 5? In that case lower PID would not always mean the process came first.lab3
+    
 
     Student Answer: 
-    There are a maximum of 256 concurrent processes which is different than 256 PIDs. A pid can be any positive int.allocproc() will show how pids can chosen~ An instructor (Ved Thiru) endorsed this answer ~
+    We should return 1 and not go to sleep.
 
     Instructor Answer: 
     
 
     Followup Discussions:
-    
+    @403_f1Anonymous Beaker1 month agoAlso if unpark finds 0 processes sleeping on the channel, is that a failure which should return -1, or should it just return 0 since it woke up zero processes0Tianyi Yu1 month agoShould just be 00
     

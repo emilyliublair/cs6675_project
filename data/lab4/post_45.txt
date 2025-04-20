@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    1. sys_fstat takes in a file as an argument. You will only have a valid file if it was opened using another syscall like sys_open. You can see how this works in user/src/ls.c. This means sys_open should handle the permissions.2. Yes3. Not sure where this would apply. Feel free to follow up below.
+
+    Followup Discussions:
+    
+    

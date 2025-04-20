@@ -1,0 +1,12 @@
+Question: 
+    TLB Flush on Pure Segmentation?If we have an OS implementation where we disable paging, do we still need to flush TLB on context switches? I understand that TLB without paging is unnecessary to begin with, so do we even need to care about the TLB in this context?midterm
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Nope - no xv6 specific details are needed to complete Exam 1.
+
+    Followup Discussions:
+    
+    

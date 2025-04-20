@@ -1,0 +1,12 @@
+Question: 
+    Any tips for testcase 35?I have heard that this is testing the lost wakeup problem. I have tried:simple setpark, unpark, park test (does not get stuck)the sequence mentioned in@406(does not get stuck)seemingly complete state machineQuestions:If park sees that setpark was called, and then unpark was called before park, should it return -1 or 0?If you do setpark back to back, should you return 0 or -1?what is the expected behaiour if no calls to setpark are made and unpark is called before park? should we sleep or remember the earlier unpark and immediately return?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Done
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Stab_info takes in an address and gives back a struct containing metadata of whatever function contains that address. Sometimes that metadata might not exist, like if a function was inlined or if the address you passed in was part of an assembly function rather than a C function. The portion of the README you cited just tells you how to handle the case when stab_info fails.
+
+    Followup Discussions:
+    @98_f1Anonymous Scale3 months agoSo basically when the stab_info returns a non-zero would signal that the metadata doesn't exist?0Rohan Natansh Bafna3 months agoYeahgood comment0
+    

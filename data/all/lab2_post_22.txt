@@ -1,0 +1,12 @@
+Question: 
+    about kalloc and kfreein kfree(char *v), is v a virtual or physical address? from my understanding kalloc returns a physical address (allocates one page of physical memory), so from my understanding v should be a physical address, but in kfree() it has "V2P(v)", so maybe my understanding is completely off.lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @298_f1Anonymous Beaker2 months agoThank you, quick question:Am I supposed to be getting these pagetraps after running the tests? I am getting this on all of my tests despite them saying "OK"0Anonymous Comp2 months agono, I did not get any page traps after the fork test. maybe this is worth investigating?0Anonymous Comp2 months agoit seems like you are getting a page fault on a non present page. this might be something you need to handle in trap.c ?0Anonymous Beaker2 months agoHolyyy ok bet thank you so much I think thats a huge problem. Like I literally can't even try running ls without getting a page fault so I'll try to see what the issue is. Thanks!0Anonymous Comp2 months agogood luck 🙏 i hope this helps with some more test cases!0Rohit Hari2 months agoI am confused why thePGTRAP: err: 0x7, va = 0x19a0wont show up. It shows up for me and seems correct.To parse the command sh forks, which should make the page not writable for sh then after the child exits it accesses the value with a userspace memset. Is there anything I am missing about the expected behavior?1Anonymous Beaker2 months agoIt's still showing up for me as well after fixing the issue for the trap of code 5. Is this ok or am I supposed to make sure this doesn't show up as well?0Anonymous Scale2 months agoTrap code of 5 showed up for me when I was improperly allocating the code/data page so that might be something to look at.0Anonymous Beaker2 months agoI fixed trap code 5, do you havePGTRAP: err: 0x7, va = 0x19a0at the end as well?0Anonymous Comp2 months agoafterfork test okmy output immediately goes to the bigdir test, but if you are only running fork test, then yea after all the tests are completed I havePGTRAP: err: 0x7, va = 0x19a00Anonymous Scale2 months agoYes that should be correct at the end.1
+    

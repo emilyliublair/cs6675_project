@@ -1,0 +1,12 @@
+Question: 
+    Mismatch between setpark and park chansConsider the case:setpark(CHANNEL 1);unpark(CHANNEL 1);// at this point, you should be in some type of lost wake up statepark(CHANNEL 2);now, the park is for a different channel. should you go to sleep, or ignore the park even though it is for a different channel?There are dozens of other permutations of this problem as well:setpark(CHANNEL 1);unpark(CHANNEL 1);setpark(CHANNEL 2);Should the second setpark remember the unpark, even if it was a different channel?Questions:1) Will the test cases (specifically 35) check for these changing channels?2) If so, the instructions do not mention how to handle these cases.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Yes new thread/ processes should be Round Robin with priority 0. How do we allocate new processes? Maybe set the default there
+
+    Followup Discussions:
+    @511_f1Anonymous Calc3 weeks agoDoes scheduler implementation affect cases 27-30? I'm having the same issue with the locks as well.0
+    

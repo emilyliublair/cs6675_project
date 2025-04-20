@@ -1,0 +1,12 @@
+Question: 
+    mov vs movlDoes it matter whether I use mov vs movl in my assembly? I tried both of them and I don't seem to see any difference in my output. I see fromherethat the size of the data item is normally inferred from the assembly code. Is it okay to use either?edit: I mean movw instead of movllab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    That’s correct.Some more context: most  (if not all) x86 architectures are little endian. Also, most modern systems are little endian because with pointer to some piece of data you can access a smaller type without any additional logic.
+
+    Followup Discussions:
+    
+    

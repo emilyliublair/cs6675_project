@@ -1,0 +1,12 @@
+Question: 
+    Clarification on PermissionsIf a process opens a file, then it's uid changes such that it doesn't have access to the file, what is the expected behavior? Should reads and writes fail?Also does having PROT_R or PROT_W set mean that non owners can access the file or can't access the file?lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

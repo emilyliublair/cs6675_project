@@ -1,0 +1,12 @@
+Question: 
+    Inconsistent Testcase 17I have implemented all parts and have been able to get a 100 on the autograder, but my testcase 17 only works sometimes.I think the reason for this is a data race between some shared resources. Since this is a clone limit test, I have tried cloning to failre many times which seems to work well. Additionally:Verified that threads have shared global variablesKeep a copy of their own local variablesAdded locks in most system calls that I thought needed themCan I get some information on what might be causing my data race?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Setpark->unpark sets the process to a lost wakeup state. If you setpark again, it should go back to an intending to sleep state. If you actually park after that, the process should go to sleep
+
+    Followup Discussions:
+    @537_f1Anonymous Calc3 weeks agoi have another related question. if you just straight up call park and nothing else, should you expect the process to just sleep and never come back?0Pau Sum3 weeks agoIf t1 parks and t2 unparks t1, assuming that t1 had enough time to go to sleep, t2 should be able to wake up t1. If t1 did not fully go to sleep yet and t2 tries to wake it up, you have a lost wakeup problem.But to actually answer your question, if you just call park and nothing else, the thread should sleep. It could be woken up by another thread that calls unpark, it could not. Depends on if you got unlucky and got lost wakeup issue. Hope that helps!good comment1
+    

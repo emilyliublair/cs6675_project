@@ -1,0 +1,12 @@
+Question: 
+    Language ServerWhat setup are you all using to edit code? Is anyone using NeoVim? If so, has anyone gotten their LSP to work? I've tried using CCLS and Clang. Neither is working. Seems to be an issue with my build commands.logistics
+
+    Student Answer: 
+    I recently got clangd set up to the point where I can do stuff without everything yelling at me lol.What kind of issues are you facing?
+
+    Instructor Answer: 
+    Can you try re-uploading? It was probably a glitch
+
+    Followup Discussions:
+    @57_f1Anonymous Calc3 months agoI have tried multiple times, I get the same error0Varun Mehrotra3 months agoCan you try a different browser?good comment0Anonymous Calc3 months agoStill got the same error, but I just uploaded the 4 user space files I completed and it worked. Is that alright for the submission?0Varun Mehrotra3 months agoYeah for this lab, you only need to upload the user programs.good comment0
+    

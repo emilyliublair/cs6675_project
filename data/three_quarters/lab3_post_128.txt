@@ -1,0 +1,12 @@
+Question: 
+    Is it guaranteed that lower PID always means that a process (FIFO, high priority) is scheduled firstFor example, we had a maximum of 256 PIDS. Assume we have 256 processes running and process #5 exits. Will the next spawned process be pid == 5? In that case lower PID would not always mean the process came first.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

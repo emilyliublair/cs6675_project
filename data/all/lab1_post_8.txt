@@ -1,0 +1,12 @@
+Question: 
+    Autograder Make FailureI finished the backtrace part of the lab and got full credit for those parts. After working on part 3 for a while and a few wrong submissions, I believe I've gotten to a point where my code seems to run properly and testing with different memory amounts seems to give me correct outputs. However, I've tried submitting twice and I've gotten a "make failure" message both times and I'm not sure why that is.lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    That type field looks like the lower dword of an address. I think the address of the e820 record you have is off by 4 bytes.You’re right about the type field, it will always be between 1 and 5.
+
+    Followup Discussions:
+    
+    

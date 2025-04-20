@@ -1,0 +1,12 @@
+Question: 
+    Cond_Signal and FilesCouple questions.For shared resources, do we need a lock around modifying the files themselves, or just modifying the array containing the file pointers (ofiles)?Do we return -1 if cond_signal doesn’t find any thread to wake up?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @535_f1Varoon Sai Kodithala3 weeks agoThat makes sense, ty for the tip!Also, we were able to pass the test cases here without using the explicit definition. For those still working on this problem, we were able to check that spinlock_init wasn't re-initializing a spinlock by adding a property to the spinlock structure and iniitalizing it during spinlock_init (though I don't believe the test cases even check for this).1
+    

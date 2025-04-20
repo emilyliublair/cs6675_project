@@ -1,0 +1,12 @@
+Question: 
+    Do we need to hash the username?1) title (i know this may be a design choice, but is hashed usernames graded? the system is still secure if you only hash the password.)2) additionally, do we need to use both aes and sha256? I only used sha to hash with a salt, I didnt find a use for aes in my design.lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Hashing a username doesn’t provide much security benefitNot necessarily, but justify why you made your choice in the design doc
+
+    Followup Discussions:
+    
+    

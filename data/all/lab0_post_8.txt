@@ -1,0 +1,12 @@
+Question: 
+    Are we allowed to write new syscalls?I'm currently working on the last extra credit question and, to the best of my knowledge, none of the syscalls provided by xv6 provide enough information for us to determine how many/which processes are currently running. Are we allowed to make our own new syscall to retrieve this information? Or do our code changes need to be limited to userspace only?lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    As long as you’ve verified that includes the 4 user programs, then it’s fine. However, you only really need to submit those 4 files.
+
+    Followup Discussions:
+    
+    

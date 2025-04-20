@@ -1,0 +1,13 @@
+Question: 
+    Handling Preemption on WakeupThe wakeup() function is always called with a lock acquired, so running the yield function on wakeup causes the panic("sched locks") because sched is called from yield. As far as I understand we must preempt in this case so how should we go about doing that? Not sure how this would work while still ensuring that we immediately switch to the new process thats runnable. All the potential solutions I can think of either delay the preemption to after the lock is held or create data races.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @498_f1Nathan Prashant Duggal3 weeks agoHow are you checking that the function is in user space? By checking if its less than kernbase?0Anonymous Atom3 weeks agoYep, exactly0Nathan Prashant Duggal3 weeks agoI've passd everything else but have never once passed 25. Have you gotten it to work?0Killian Patrick Vetter3 weeks agotry mallocing and cloning until malloc fails. This revealed an error for me to debug.0Nathan Prashant Duggal3 weeks agoThanks for the tip, looks like I wasn't sanitizing my clone inputs enough. However I still fail 25, can you give me any more specifics about the test you used? Mine basically just looks likefor(256times) {stack=malloc(0x100000)
+       pid = clone(stack,4096)if(pid !=0)break}run code snippetVisit Manage Class to disable runnable code snippets×0Killian Patrick Vetter3 weeks agotry waiting on some of the clones then create even more clones. Go until malloc returns 00Nathan Prashant Duggal3 weeks agoThis was very helpful, thank you. For anyone else stuck on 25, it tests for memory leaks in your clone() implementation. Go through a bunch of consecutive clones and make sure the number of kallocs line up with the number of kfrees.2@498_f2Anonymous Calc3 weeks agoAre you getting a timeout or incorrect output? Mine always times out and I'm not sure why. Also failing 37 which feels like it could be connected0
+    

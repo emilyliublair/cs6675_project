@@ -1,0 +1,12 @@
+Question: 
+    CMake errorI filled in helloworld.c, and then I ran this command to remake so I could test it. I'm confused about this error though. Could I get some help?lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,12 @@
+Question: 
+    pgzero and pgcopy clarificationYou are not expected to call lab2_pgcopy or lab2_pgzero for the initial page of the first process created by the kernel (in kernel/src/inituvm.c), or for any kernel data-pages (e.g. va > KERNBASE).If the kernel is writing to a non-writable page and we get a page fault, should we be using memset/memmove or is this a case we would want to kill the process?lab2
+
+    Student Answer: 
+    You’re getting error 5. That means your code page was probably overwritten to all 0s. Does your kfree free pages with multiple references?
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @284_f1Anonymous Poet2 months agoWe only free pages when the number of references is 1 or at least that's what we think.0Shourik Banerjee2 months agoDo you eagerly allocate the code page?0Anonymous Poet2 months agoWould we do that in allocuvm?0Shourik Banerjee2 months agoSort of: there are a couple spots in our code where we allocuvm but it should be eagerly allocated instead of lazily allocated. You can do it in allocuvm, or you can use another method, there are a few ways to do it.1David M Nuthakki2 months agoI would suggest making 2 functions. One of them should be the original allocuvm we were given and another one that's run in the case of 0 page stuff.0
+    

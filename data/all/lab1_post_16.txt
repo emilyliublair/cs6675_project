@@ -1,0 +1,12 @@
+Question: 
+    GDB not in executable format: file format not recognized errorHi, I tried running kernel's main.c in GDB but have been getting the error "not in executable format: file format not recognized". How can I fix this? Thankslab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    One thing to be careful about: being able to boot successfully does not mean that your solution is correct. It just means that your phystop calculation routine doesn’t cause a seg fault.For further verification, you can do the following:Check that your value of PHYSTOP in virtual address space is in the same ball-park as -m. So, if you set -m 2G, then your PHYSTOP value must be close to 2GUse the user-space program you wrote in Lab 0 to find the maximum amount of memory a process can allocate with your change. Does this match what you expect, based off your reading of the xv6 memory map (Figure2-2, xv6 manual)?
+
+    Followup Discussions:
+    @135_f1Anonymous Scale3 months agoJust a follow up for students who run into issues: just because one hex value is greater than another does not necessarily mean that the code sees that value as greater than the other because printing out the hex value ignores the sign of the integer.0Elton Leander Pinto3 months agoBasically, be careful about integer overflow 😃 Use gdb to see if you have an overflow.good comment1
+    

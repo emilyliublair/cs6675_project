@@ -1,0 +1,12 @@
+Question: 
+    I/O time in Lab 3 Extra Credit schedinfoFor the extra credit, What does the time spent waiting for and executing I/O (io_timecomponent of theschedinfostruct) mean? Is it the ticks spent by a process in the SLEEPING state?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Resolved
+
+    Followup Discussions:
+    
+    

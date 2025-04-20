@@ -1,0 +1,12 @@
+Question: 
+    ialloc: no inodes when attempting to run usertests after lazy zero implementationI am able to get the expected output from running./forktest-xv6-qemuand I am passing two autograder tests, but when I attempt to runusertestswhich first callsopen("usertests.ran", 0)I am getting aialloc: no inodespanic.usertestsis the first thing I am running after booting up xv6 so I should have a bunch of free inodes. I was able to pass all tests (execpt formem()andpreempt()) before implementing lazy zero page.lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

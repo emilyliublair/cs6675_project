@@ -1,0 +1,12 @@
+Question: 
+    Expensive memory operations in spinlock?Will we be penalized for performing expensive memory operations (e.g. memset, lab2_pgcopy/pgzero) within a spinlock if it is possible to ensure correct mutual exclusion in a more optimal way (i.e. performing those operations outside the spinlocked part)?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

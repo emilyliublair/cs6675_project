@@ -1,0 +1,23 @@
+Question: 
+    Test cases 20, 22So far I've ensured:Usernames/passwords/uids persist between xv6 bootsUsers can use any characters for their usernames/passwordsUsernames/passwords can up to 98 characters long (looks like `gets` only ever takes in 98 characters, not sure why)There can be at max 0xFFFF usersNo file descriptors were left open during the login processNothing was printed to the console during the login process outside of login.cEverything seems to work locally, so I'm pretty stumped. Would love to hear if anyone else has any ideas or advicelab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @641_f1Anonymous Atom2 weeks agowere you able to figure this out? also only stuck on test case 100Tianyi Yu2 weeks agoYou can see my comment above. Deleting the permission checks in readi and write allowed me to pass the case.0Anonymous Atom2 weeks agoI removed perm checks in readi and writei, as well as checks in dirlookup and dirlink that I had previously so that basically all my checks are in sysfile, but am still failing the test case. do you have any additional pointers/hints?0Anonymous Comp2 weeks agomake sure that because you removed your check inside of dirlookup, you have a check inside of namex0Anonymous Atom2 weeks agoyep, my only check for perms in fs.c is in namex.0Tianyi Yu2 weeks agoIn what functions are you checking for permissions in sysfile.c?0Anonymous Atom2 weeks agosys_link, sys_unlink, create, sys_open, and sys_chdir. in addition to that i have checks in exec.c and file.c (for filewrite and fileread)2Tianyi Yu2 weeks agoPerhaps lose the checks in file.c. I'm not entirely sure, but this seems to be the only discrepancy between your implementation and mine.1Anonymous Atom2 weeks agodang yea that fixed it for me. thanks sm!0Tianyi Yu2 weeks agoglad I helped0Anonymous Helix2 weeks agoWhat checks do you have inside exec.c?0Anonymous Helix2 weeks agoI guess a better question is when determining if I can execute a file, I’m assuming I’d only need read permissions. Is this true or do I need write permissions as well?0Anonymous Atom2 weeks agojust read perms1Anonymous Helix2 weeks ago[ 46%] Building C object kernel/CMakeFiles/kernelobjs.dir/src/exec.c.o
+In file included from /xv6/kernel/src/exec.c:10:
+/xv6/kernel/include/file.h:23:20: error: field ‘lock’ has incomplete type
+23 |   struct sleeplock lock; // protects everything below here
+|                    ^~~~
+/xv6/kernel/include/file.h:33:14: error: ‘NDIRECT’ undeclared here (not in a function)
+33 |   uint addrs[NDIRECT + 1];
+|              ^~~~~~~
+make[2]: *** [kernel/CMakeFiles/kernelobjs.dir/build.make:160: kernel/CMakeFiles/kernelobjs.dir/src/exec.c.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:314: kernel/CMakeFiles/kernelobjs.dir/all] Error 2
+make: *** [Makefile:91: all] Error 2
+root:/xv6/build#0Loading...2 weeks agoyou need to include the header files that define those data typesfor example, to fix the incomplete type for field "lock" include the sleeplock.h header file, make sure to do this for each type that might be defined in a different header file.0Varoon Sai Kodithala2 weeks agoWeird. We tried that and now get the following error:error: redefinition of 'struct sleeplock'This seems easily solvable by implementing headerguards, but we do that and then get more cascading redefinition errors. Is this a known bug?0Loading...1 week agoI found that including in this exact order solved that issue:#include "fs.h"#include "spinlock.h"#include "sleeplock.h"#include "file.h"0
+    

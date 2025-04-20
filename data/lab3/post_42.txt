@@ -1,5 +1,5 @@
 Question: 
-    Inconsistent Testcase 17I have implemented all parts and have been able to get a 100 on the autograder, but my testcase 17 only works sometimes.I think the reason for this is a data race between some shared resources. Since this is a clone limit test, I have tried cloning to failre many times which seems to work well. Additionally:Verified that threads have shared global variablesKeep a copy of their own local variablesAdded locks in most system calls that I thought needed themCan I get some information on what might be causing my data race?lab3
+    Are we allowed to post our test cases?lab3
 
     Student Answer: 
     

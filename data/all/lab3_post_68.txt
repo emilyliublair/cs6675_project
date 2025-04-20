@@ -1,0 +1,12 @@
+Question: 
+    Previous week's lab slides and recordingWhere are the video recordings and the presentation slides from the most recent lab before spring break? They discussed tips with implementing Parts 5 and 6 for Lab 3 and it would be helpful to have access to them.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @488_f1Anonymous Atom4 weeks agoSame here, tried everything I can think of but all it does is burn through my submissions.0Anonymous Comp3 weeks agoI ended up fixing the issue by just continuing to work on the lab and implementing setpark/park/unpark. I had the stubs set up before to return -1 so maybe that was causing my issue? I'm sorry I don't know what really fixed it.0
+    

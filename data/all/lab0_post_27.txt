@@ -1,0 +1,12 @@
+Question: 
+    Where is the xv6 manual?lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

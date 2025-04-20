@@ -1,0 +1,12 @@
+Question: 
+    Seg fault at 0x1000c _start of Entry.SWhenever I try to run gdb on the kernel i get a seg fault on0x0010000c in ?? ()which i believe is _start from Entry.S.Could this be from changes made to bootasm.S when implementing part 3 or would it be a problem with backtrace.c because I'm only failing test 1-3 and test 7 with timeout/hardfault?lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    This happens when the kernel fails to boot. QEMU will try to reboot it indefinitely.I would say use gdb to step through your phystop calculation routine, and then inspect its value. It should give you an idea of why. The student comment below could be one potential cause of the issue (but there are others).
+
+    Followup Discussions:
+    1 endorsed followup comment@160_f1Anonymous Atom3 months agoI had the same issue, but it had to do with how I was passing the total usable memory to the kernel. XV6 can only use 2GB of memory, so passing a value higher than this to the kernel could be causing your instance to hang.~ An instructor (Elton Leander Pinto) thinks this is a good comment ~2
+    

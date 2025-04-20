@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    From the xv6 manual^xv6 does not use segmentation for memory management. That is precisely why it creates an identity mapping as you said so that the logical address just passes through the segmentation hardware as is to produce the linear address.
+
+    Followup Discussions:
+    
+    

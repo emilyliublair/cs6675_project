@@ -1,0 +1,12 @@
+Question: 
+    iunlockput(ip) when to useWhen checking permissions, if they fail, should we use iunlockput(ip) or iunlock(ip)? I've been hearing different things, so I was wondering when I'd want to use one or the other.lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    One common mishap that comes with implementing large file support is mishandling what happens when a file is garbage collected and its blocks are freed. You might want to check into that and write some tests that repeatedly create and delete files to see if deletion works properly and doesn’t waste blocks.
+
+    Followup Discussions:
+    @660_f1Anonymous Calc1 week agodid you make sure ur inode and dinode structs are still the same structure?0Anonymous Beaker1 week agoI did change my inode and dinode structs between Part 2 and Part 4, however they are still identical in number of bytes compared to before. If you mean between inode and dinode specifically, they are still the same structure with the same variables.0Anonymous Calc1 week agohmm im not sure then :/ i don't think it's related to test 32, though. from what i've seen, test 32 checks if you can support large file systems upon initialization0@660_f2Anonymous Beaker1 week agoI tried to write a test case where I limited my total File Blocks to around 16500 to only support just above 8 MB of total file space before writing and deleting a single 8 MB file 10 times and it seemed to pass correctly. All 10 seemed to write correctly and also delete correctly without any error or balloc out of blocks (I have print statements whenever a block is allocated and deallocated and I could match up the exact blocks that are allocated and deallocated).0
+    

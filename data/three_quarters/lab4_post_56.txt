@@ -1,0 +1,21 @@
+Question: 
+    Are setuid and getuid syscalls?/**
+ * Sets the uid of the current process
+ * 
+ *@paramuid The uid to change to. Valid ranges are 0x0 - 0xFFFF
+ *@returns0 on success, -1 on failure
+ */intsetuid(int);/**
+ * Gets the uid of the currently running process.
+ *
+ *@returnsThe current process's uid.
+ */intgetuid(void);run code snippetVisit Manage Class to disable runnable code snippets×lab4
+
+    Student Answer: 
+    Yes~ An instructor (Rohan Natansh Bafna) endorsed this answer ~
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

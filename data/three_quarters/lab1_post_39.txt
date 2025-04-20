@@ -1,0 +1,12 @@
+Question: 
+    What exactly needs to be printed in backtrace?When I use stabinfo to get the function name, I get mpmain:f(0,3)Am I just supposed to print mpmain or am I supposed to print the whole thing (mpmain:f(0,3)) for each line?lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

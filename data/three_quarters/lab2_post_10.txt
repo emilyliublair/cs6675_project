@@ -1,0 +1,12 @@
+Question: 
+    Autograder Failed to Execute CorrectlyIs this a fault with my code or something that's wrong with the autograder's end? Will this take up a submission?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @314_f1Anonymous Comp2 months agoHave you found a solution to this? I am getting the same thing.0Anonymous Atom2 months agoWe were able to pass all the test cases on gradescope with the trap 13 that kills the process thing0
+    

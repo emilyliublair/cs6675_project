@@ -1,0 +1,12 @@
+Question: 
+    Can I kalloc space for a thread group lock?or will the kalloc mess up behavior of the testcases?The current conundrum:can't include spinlock in proc struct due to circular dependenciesvs.suspecting that kallocing for the spinlock in proc.c has changed the behavior of the test caseReasons for suspicion:I have a submission passing everything except #31, which failed because of the thread group lock issue. I then added a spinlock pointer in the proc struct and found I couldn't initialize it in allocproc without shell crashing, so I had to kalloc out the space for the pointer and then initialize the lock. I then added just acquire and release statements for the lock in respective files. After this, the submission passes everything except #25, which is an incorrect output. Considering that if I made a mistake in acquiring and releasing the locks, it would likely end up in a deadlock, I believe the kalloc is the only thing I changed in my implementation that may cause an incorrect output. I have checked the diffs of the files to make sure all implementation changes were listed above.lab3
+
+    Student Answer: 
+    It should be an added one. You can use SCHED_OTHER defined in sched.h for this new policy.~ An instructor (Rohan Natansh Bafna) endorsed this answer ~
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

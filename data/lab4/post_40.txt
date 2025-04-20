@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    What I've done is basically read until you can't anymore, then write.~ An instructor (Rohan Natansh Bafna) endorsed this answer ~
+
+    Instructor Answer: 
+    If you want, you can add in a seek syscall to change the file offset :)But Tianyi’s answer works well enough
+
+    Followup Discussions:
+    @655_f1Tanush Prathi1 week agoYou can also add an append flag to open0
+    

@@ -1,0 +1,23 @@
+Question: 
+    
+
+    Student Answer: 
+    My experience with test 10 is that you should not check permissions on the inode level in readi and writei.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @641_f1Anonymous Atom2 weeks agowere you able to figure this out? also only stuck on test case 100Tianyi Yu1 week agoYou can see my comment above. Deleting the permission checks in readi and write allowed me to pass the case.0Anonymous Atom1 week agoI removed perm checks in readi and writei, as well as checks in dirlookup and dirlink that I had previously so that basically all my checks are in sysfile, but am still failing the test case. do you have any additional pointers/hints?0Anonymous Comp1 week agomake sure that because you removed your check inside of dirlookup, you have a check inside of namex0Anonymous Atom1 week agoyep, my only check for perms in fs.c is in namex.0Tianyi Yu1 week agoIn what functions are you checking for permissions in sysfile.c?0Anonymous Atom1 week agosys_link, sys_unlink, create, sys_open, and sys_chdir. in addition to that i have checks in exec.c and file.c (for filewrite and fileread)2Tianyi Yu1 week agoPerhaps lose the checks in file.c. I'm not entirely sure, but this seems to be the only discrepancy between your implementation and mine.1Anonymous Atom1 week agodang yea that fixed it for me. thanks sm!0Tianyi Yu1 week agoglad I helped0Anonymous Helix1 week agoWhat checks do you have inside exec.c?0Anonymous Helix1 week agoI guess a better question is when determining if I can execute a file, I’m assuming I’d only need read permissions. Is this true or do I need write permissions as well?0Anonymous Atom1 week agojust read perms1Anonymous Helix1 week ago[ 46%] Building C object kernel/CMakeFiles/kernelobjs.dir/src/exec.c.o
+In file included from /xv6/kernel/src/exec.c:10:
+/xv6/kernel/include/file.h:23:20: error: field ‘lock’ has incomplete type
+23 |   struct sleeplock lock; // protects everything below here
+|                    ^~~~
+/xv6/kernel/include/file.h:33:14: error: ‘NDIRECT’ undeclared here (not in a function)
+33 |   uint addrs[NDIRECT + 1];
+|              ^~~~~~~
+make[2]: *** [kernel/CMakeFiles/kernelobjs.dir/build.make:160: kernel/CMakeFiles/kernelobjs.dir/src/exec.c.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:314: kernel/CMakeFiles/kernelobjs.dir/all] Error 2
+make: *** [Makefile:91: all] Error 2
+root:/xv6/build#0Joshua Sampson1 week agoyou need to include the header files that define those data typesfor example, to fix the incomplete type for field "lock" include the sleeplock.h header file, make sure to do this for each type that might be defined in a different header file.0Varoon Sai Kodithala1 week agoWeird. We tried that and now get the following error:error: redefinition of 'struct sleeplock'This seems easily solvable by implementing headerguards, but we do that and then get more cascading redefinition errors. Is this a known bug?0Jason Elin Mo1 week agoI found that including in this exact order solved that issue:#include "fs.h"#include "spinlock.h"#include "sleeplock.h"#include "file.h"0
+    

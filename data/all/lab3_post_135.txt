@@ -1,0 +1,12 @@
+Question: 
+    Changing priority and/or policy of childrenpid - the pid of the process to change priority (a process may only change the scheduler of themselves, or their direct children)^ From the readme. So, if we call setscheduler on a parent process, we only change the policy of its child process, not its priority as well, right?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @351_f1Tianyi Yu2 months agoI see someone else is modifying the student answer, so I'll put my response here.Remember that in Lab 1 backtrace, we were able to walk up the stack using ebp & esp? That same information should be available to you in the trap frame during the syscall. Of course, now the clone needs to handle the stack copying in kstack, but the catch is that ebps are still pointing to points in the parent stack frame if you just copy the whole thing over to the new kstack location.2Anonymous Comp2 months agoOk that makes sense, so the passed in stack pointer is supposed to be the new kernel stack, and not the user stack, correct?0Tianyi Yu2 months agoActually no. The passed-in pointer is the place to put your user stack, but you actually need to modify the kernel-translated addresses of the space. To my understanding, when the kernel accesses user memory, it always translates it using uva2ka found in vm.c. That's why we need to perform the address translation as well and modify the stack in kernel space.1Anonymous Atom1 month agoI'm confused. Does this mean we are copying the parent's kstack as the new thread's user stack? Aren't kernel stack and user stack different?0Anonymous Calc1 month agoAfaik we’re copying the parent’s user stack to the new thread’s user stack. It’s possible to deduce where the parent’s user stack is through what’s available to you from a system call.0
+    

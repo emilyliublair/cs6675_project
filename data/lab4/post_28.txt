@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    You can look at init.c to see how it launches the shell. What you do in login should be very similar~ An instructor (Rohan Natansh Bafna) endorsed this answer ~
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @670_f1Anonymous Calc1 week agoYes, you should exec it0
+    

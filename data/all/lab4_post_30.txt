@@ -1,0 +1,12 @@
+Question: 
+    Login TrapWhen running login-xv6-qemu, the root user is properly created, and when I type root as username, does_user_exist() properly returns 0 (because it finds the root username in the passwd file), and it returns -1 if I type anything else. But immediately after, trap 13 or 14 is raised, the process is killed, and the login.c main() function restarts. I am then prompted with "xv6 login: " again. How would this be happening if does_user_exist() is returning properly? Does it have to do with accessing the shadow file? I'm always accessing it with UID 0, so this should be allowed.lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

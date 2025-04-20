@@ -1,0 +1,12 @@
+Question: 
+    Looping Over All Page DirectoriesI noticed this caveat in the lab2 instructions:"You may not waste excess memory unnecessarily, or perform particularly computationally inefficient activities (like scanning all page tables of all processes on page fault)."And I was wondering if this was referring to checking every pagedirectoryto check if any other processes are referencing a faulting page.If so, I'm wondering why this is considered computationally inefficient. Sure, it's a lot of memory acccesses, but since it's a fixed size (64) and occurs on some page faults which I imagine are already somewhat rare, that seems like a fair tradeoff for having almost 0 additional memory overhead. I also can't think of a better way to do this, so if this is disallowed then I would appreciate any pointers in the right direction.lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @191_f1Rohan Natansh Bafna2 months agoAnd you can runfile kernel/kernelto switch back to the kernel’s symbol table.good comment1@191_f2Andrew Boeger2 months agoIs there a way to adjust the make file to have both kernel and user source files embedded with debug symbols? Obviously it's quite tricky to debug if once you move between Kernel/User you lose all debugging.0Rohan Natansh Bafna2 months agoThere is probably some way to merge two the symbol tables of two already-linked ELF files together but if you do so you’ll end up with conflicts between symbols in each of the ELF files. That would be a fun project to do if you want to learn more about the ELF spec, but personally I would not touch whatever you come up with with a 10 foot pole because it would inevitably be, like, VERY cursed.Gdb supports some scripting functionality IIRC, so you could create a script that switches to the appropriate ELF file and registers the breakpoints you want. I don’t know of any better way to deal with this issue though.good comment0
+    

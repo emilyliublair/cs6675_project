@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @276_f1Shourik Banerjee2 months agoYou need to handle it, I had the same error too. This is an example of when the kernel is trying to write to a user page.0Anonymous Beaker2 months agoThis did not work.0Shourik Banerjee2 months agoHow are you handling it?0Anonymous Beaker2 months agoBasically the same way as with error 0x7 except I don't save the trap frame to the process.0Shourik Banerjee2 months agoDo you handle the page faults inside of default? Or does it have its own switch case?0Anonymous Beaker2 months agoits own switch0Shourik Banerjee2 months agoDo you make sure to break at the end? That's the only thing I can think of. See if you can trace it and gdb and see why it doesn't go inside the switch statement.0Anonymous Beaker2 months agoyeah. its the exact same code as by 0x7 page fault err handler.0Shourik Banerjee2 months agoMy only suggestion is trace it in GDB and see why it ends up in the default statement.0
+    

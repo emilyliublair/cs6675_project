@@ -1,0 +1,12 @@
+Question: 
+    Lab 3 Part 3 Threads Test Case 24 (and 31)I'm currently passing all test cases for Clone + Threads except for the Threads test case 24 (and also 31). I'm not exactly sure what's wrong since I walked through my thread_create and thread_wait with a TA who confirmed that my implementation was correct. During my test as well, I couldn't find anything that seemed to be wrong either. Are there any tips or hints as to what it's testing beyond just the "general testing" description or what might mess it up?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    I reran it for you
+
+    Followup Discussions:
+    @531_f1Anonymous Comp3 weeks agoCan my teammate and I get ours rerun please as well because it's been running for 35 mins?0
+    

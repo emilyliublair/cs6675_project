@@ -1,0 +1,12 @@
+Question: 
+    Grading for lab0Since there is no autograder for lab 0, are we basically being graded on if our output is same/similar to those in the lab instructions and if we are using appropriate system calls?lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @41_f1Loading...3 months agoAn easy way to do this is to fork, calculate the maximum memory size, and then exit the forked process, which will allow the kernel to reclaim all the memory it allocated.This will result in a “different” value compared to running the memory test individually, as the single fork allocation prevents one more allocation from being made. Would this be ok?An alternative solution if not using sbrk would be to calculate the limits on processes first, then calculate the limits on memory.0
+    

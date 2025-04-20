@@ -1,12 +1,12 @@
 Question: 
-    Errors coming from indentation mistakes in provided codeHi, I'm getting a bunch of errors tagged with `-Werror=misleading-indentation` from the provided code (see below)TThis doesn't seem to be coming from code that I edited, but rather code that was provided. However, I'm only sseeing these errors now after messing with my proc struct in proc.h. Not sure where this is coming from/how to debug so wanted to see if anyone else was having this problem or the TAs could help.lab3
+    Do we need implemented other parts before implementing part 4, 5, and 6?I'm trying to create a work plan between me and my partner and I wonder if there are certain part need to be done before others?lab3
 
     Student Answer: 
-    
+    Logically, you probably want to do parts 2 and 3 first so that you can test what you implement in parts 4, 5, and 6.
 
     Instructor Answer: 
-    Resolved
+    
 
     Followup Discussions:
-    @436_f1Rohan Natansh Bafna3 weeks agoDid you forget or add a brace somewhere when you modified proc.h?good comment0Varoon Sai Kodithala3 weeks agoI don't think so, but I added braces to all of the provided code where they were missing and the compilation issue was fixed. Weird.0Varoon Sai Kodithala3 weeks agoIt was in sysfile.c, syscall.c, and fs.c.0
+    
     

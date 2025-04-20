@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    With disk algorithms we want to minimize the travel time of the disk (how many rotations it has to perform in order to reach the data block). Many disk algorithms (like SCAN) will end up noticing that these writes are all close together, so as the head goes to 49, it notices there are writes pending to 47 and 48, so it will just perform the write. Note that if the head is traveling in the reverse direction (monotonically decreasing), we would perform the writes as 49, 48, 47.
+
+    Instructor Answer: 
+    the higher level point here was that the ordering of disk writes will be optimized in some way that makes sense for the storage medium. So, for rotating storage media, we discussed that sequential reads and writes will have higher performance. In this case, you can achieve sequentiality either by ordering the writes in increasing or decreasing order, and then placing the write to block 2 before or after.But, again, the intent of this example was meant to demonstrate that block writes can be reordered across writes from multiple files, and the only way we can impose some kind of order at this level of the stack is with the FLUSH -- the only ordering mechanism we were provided with.
+
+    Followup Discussions:
+    
+    

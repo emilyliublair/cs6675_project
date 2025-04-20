@@ -1,0 +1,12 @@
+Question: 
+    Failing tests 8/9Have most of part 2 working, but failing these tests. Any tips for what I should be testing for?lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

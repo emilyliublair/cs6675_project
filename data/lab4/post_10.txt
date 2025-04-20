@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    If you haven't, maybe try increasing FSSIZE to above the normal amount (you'll need to do this for Part 4 anyways)? I think I had an error like that for Part 3.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @692_f1Anonymous Scale7 days agoI calculated a reasonable FSSIZE (~20000) and tried re-ran the autograder, but it didn’t work. Can’t really waste autograder submissions now so I’ll have to come back to this later. Ty tho!0Erel Ozen6 days agoTry a higher FSSIZE, 20000, only allows for one 8 MB file.0
+    

@@ -1,0 +1,12 @@
+Question: 
+    Why do we ever need to call lab2_pagezero more than once?From forktest_expected_complete.out:!TESTSTART!PGTRAP: err: 0x7, va = 0x2fc4PGCOPY: 0x2000PGTRAP: err: 0x7, va = 0x2fc4PGZERO: 0x0PGZERO: 0x2000Since all virtual zeroed pages should point to the exact same physical page, why is PGZERO being called twice here? Would it not just call PGZERO once and have both virtual pages point to the one physical page that was zeroed?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Sure, just make sure the names are unique if you do so of course
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,12 @@
+Question: 
+    QEMU frozen at boot when giving it more than 2G of RAMI’m running into this strange bug where whenever I tell QEMU to boot with 2GB or more RAM using the-moption, it just gets stuck on “Booting from Hard Disk…” indefinitely. Any value under 2GB does not trigger the issue, and my code is running fine - a correct value is detected for any amount of RAM I throw at it. Could this be a bug in qemu or Docker?lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Have you tried compiling with release mode enabled?
+
+    Followup Discussions:
+    @158_f1Anonymous Beaker3 months agoThat worked, thank you so much!0
+    

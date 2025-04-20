@@ -1,0 +1,12 @@
+Question: 
+    Spinlock requirementsDoes the userspace spinlock need to ensure that a thread won’t be starved while trying to acquire the lock, or is it sufficient to ensure mutual exclusion?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @527_f1Killian Patrick Vetter3 weeks agoWhat is the thread about test case #35 you are referring to?0Anonymous Calc3 weeks ago@406This is the primary one, but there are more I referenced which you can find by searching 35 in the search bar.0
+    

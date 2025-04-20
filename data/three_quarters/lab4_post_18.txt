@@ -1,0 +1,12 @@
+Question: 
+    Login EncryptionWhen we login a user are we required to decrypt the encrypted password and compare or are we allowed to encrypt the inputted password and check if the encryption matches?lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Yes, you need to modify it for the reason you stated. It should be enough to support at least one 8MB file. You might also want to investigate how many blocks are used when xv6 boots.
+
+    Followup Discussions:
+    
+    

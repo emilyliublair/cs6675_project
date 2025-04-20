@@ -1,0 +1,12 @@
+Question: 
+    Test 16 and 17 hardfaulting after Part 4I've implemented Part 4 to a point where I've been able to pass all test cases except for Test 32, but doing so caused my Test 16 and 17 outputs to begin hardfaulting on Gradescope. Are there any hints or insights into what could be possibly causing this? Would Test 32 be related to it? It's always said "make failure" and in another Piazza post, it seems to be tied to initial files rather than something like perms.4/10 UPDATE: I've figured out the issue. The problem wasn't with my implementation of large files or allocation/persistence issues, it was because my FSSIZE was too large and that somehow broke 16 and 17. I originally had it as 1 million but changing it to 100k fixed the issue.lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

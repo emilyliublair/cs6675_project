@@ -1,8 +1,8 @@
 Question: 
-    Using uva2ka in cloneShould we be using uva2ka within the clone function in order to get the user addresses? For instance, if I want to copy the user stack to the new stack pointer, should I first call uva2ka on the passed in stack pointer in order to get the kernel address for it?lab3
+    
 
     Student Answer: 
-    
+    Add include guards in the spinlock.h header~ An instructor (Ved Thiru) endorsed this answer ~
 
     Instructor Answer: 
     

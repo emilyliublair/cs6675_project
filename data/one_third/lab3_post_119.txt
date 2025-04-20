@@ -1,0 +1,12 @@
+Question: 
+    Using uva2ka in cloneShould we be using uva2ka within the clone function in order to get the user addresses? For instance, if I want to copy the user stack to the new stack pointer, should I first call uva2ka on the passed in stack pointer in order to get the kernel address for it?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    It’s the lowest address of the stack.
+
+    Followup Discussions:
+    @383_f1Anonymous Gear1 month agoOk that makes sense, but when I am traversing the stack I keep finding the value 9 at the bottom, is this a valid ebp or does this value indicate the end of the stack0Rohan Natansh Bafna1 month agoAre you traversing the new stack that was passed in by the user?good comment0Anonymous Gear1 month agoNo I'm going through the trap frame ebps from the current process0Rohan Natansh Bafna1 month agoOk, that’s right, just making sure.The number 9 doesn’t denote anything in particular and isn’t a valid ebp (they all have to point to the stack).good comment0Anonymous Gear1 month agoOk, but how do we know when an ebp is outside of the stack, do we just check if it's less than our esp since that should be the lowest address in the stack?0Anonymous Gear1 month agoOr could we just detect anytime the next ebp is less than the current ebp, since that means we are no longer travelling up the stack?0Anonymous Gear1 month agoNvm, I looked at the return addresses and there is a dummy return address placed at the bottom of the stack.0Anonymous Poet1 month agoHow do you know it’s a dummy address? I see a 0x3fa8 but I’m not sure why it would be there.0Rohan Natansh Bafna1 month agoIt’s not 0x3fa8. Check exec(); that’s where the initial user stack is created.good comment1
+    

@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    Not sure if this is your issue, but link and unlink only cares about the permissions of the directory and not the file since you are only modifying the directory not the file.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @675_f1Anonymous Poet1 week agoYeah currently, we are only checking the dp, not the ip. I don't think link or unlink is the issue.0Rohit Hari7 days agoDid you figure out anything about this? I'm also missing test case 17. I've finished part 4 and get no issues with part 4.0Anonymous Helix6 days agoWere you able to figure out what the issue was? I'm also failing test 17.0
+    

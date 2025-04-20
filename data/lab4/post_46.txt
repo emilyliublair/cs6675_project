@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @647_f1Anonymous Helix1 week agoStuck on the same test case - please let me know if you make any progress. For what it's worth, I was passing this case before I implemented get_free_blocks, so it might be something to do with that - either get_free_blocks itself or the fact that our design choice is wrong and is causing bad metrics to be calculated0@647_f2Anonymous Comp1 week agoSame here, only failing this test case0@647_f3Anonymous Comp1 week agoJust passed it, it was because the blocks weren’t freed up correctly. Look over itrunc.2Anonymous Gear1 week agoThanks a lot!0
+    

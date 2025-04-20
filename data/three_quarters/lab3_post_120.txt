@@ -1,0 +1,12 @@
+Question: 
+    Clone stack parameterIs the passed in parameter the lowest address of the new stack. So stack + stack_size should be the bottom of the new stack? Or is it passed in as the highest address, so stack is equal to the bottom of the stack?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Wait() should also wait for child threads.
+
+    Followup Discussions:
+    
+    

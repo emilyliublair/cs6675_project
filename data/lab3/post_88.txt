@@ -1,12 +1,12 @@
 Question: 
-    Is waitpid() required to pass 1-21?It is listed under part 2, but the rubric says it isn’t tested until test 37.lab3
+    
 
     Student Answer: 
-    yes <---- not true btw
+    
 
     Instructor Answer: 
-    You need to have the waitpid syscall defined, i.e., it should be possible tocompilea call to waitpid() from user space. If you don’t do this, you will get a make failure and the autograder will not give any results.But we don’t test waitpid outside of test 37.
+    I see that you're passing the test-case now with your latest submission.
 
     Followup Discussions:
-    @428_f1Anonymous Helix3 weeks agoOk so you can still pass 1-21 without a correct waitpid() implementation?0Rohan Natansh Bafna3 weeks agoYesgood comment0
+    @453_f1Anonymous Poet3 weeks agoDid you figure out what was wrong with it by any chance? That's the last part I have to finish before being done with parts 1 and 2, I'm trying to work on part 3 but the TA told me to finish out 1 and 2 before trying to do it.0Anonymous Beaker3 weeks agoDid you use argptr? I was using that function incorrectly, when i fixed it I passed 211
     

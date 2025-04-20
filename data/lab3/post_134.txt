@@ -1,0 +1,12 @@
+Question: 
+    Changing priority and/or policy of childrenpid - the pid of the process to change priority (a process may only change the scheduler of themselves, or their direct children)^ From the readme. So, if we call setscheduler on a parent process, we only change the policy of its child process, not its priority as well, right?lab3
+
+    Student Answer: 
+    No, you can do both.~ An instructor (Sukrit Kumar) endorsed this answer ~
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    It’s ok to change FSSIZE
+
+    Followup Discussions:
+    @635_f1Anonymous Beaker1 week agoWill the autograder fail if this size is too large?0Anonymous Calc1 week agoFrom my experience, my test 16 and 17 would hardfault when my FSSIZE was set too high (like 1 million). I'm not sure if this was the exact cause for it to break, but I think I can assume that a large FSSIZE has the potential to break the autograder.2
+    

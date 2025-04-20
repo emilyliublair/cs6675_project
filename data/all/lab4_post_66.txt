@@ -1,0 +1,12 @@
+Question: 
+    Test 17Does anyone know what the clone limit tests are checking for? I have tried passing in wrong pointers, multiple clones, running out of memory, etc. Not sure what 17 is looking for as I pass everything else.lab4lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

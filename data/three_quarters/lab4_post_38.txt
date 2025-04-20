@@ -1,0 +1,12 @@
+Question: 
+    LoginWhen we create a new user, should we exit out and make the user renter their information, or do we just log them in?Asking for the case where we have more input than MAX_FILE_SIZE, and so the buffered input is then used for the password.lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Nothing, same as any other inode
+
+    Followup Discussions:
+    
+    

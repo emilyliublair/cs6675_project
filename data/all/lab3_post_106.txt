@@ -1,0 +1,12 @@
+Question: 
+    Is waitpid() required to pass 1-21?It is listed under part 2, but the rubric says it isn’t tested until test 37.lab3
+
+    Student Answer: 
+    yes <---- not true btw
+
+    Instructor Answer: 
+    Original entry time to the system~ An instructor (Alexey Tumanov) endorsed this answer ~
+
+    Followup Discussions:
+    
+    

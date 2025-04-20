@@ -1,0 +1,12 @@
+Question: 
+    Clarifications on disk operationsAs I'm studying for the exam, I wanted to clarify some things about disk reads/writes:From my understanding, the disk provides an interface for you to read, write, and flush blocks of data (going off of lecture 22, slide 4), which we expose to the user via our file system such that it feels like they're writing bytes of data. Is this accurate?We aren't guaranteed atomicity or ordering by our disk firmware during reads/writes. This is because reads and writes can be reordered by the firmware. Our mechanism for keeping some ordering is through flushing.Atomicity, however, isn't guaranteed in any case because at any point during a read or write, our system can crash which results in data being partially written to disk.Let me know if I'm missing or misinterpreting anything here. Thanks!midterm
+
+    Student Answer: 
+    This seems correct to me, however, I believe we do not expose flush to the user. Instead, what the user has access to is fsync().
+
+    Instructor Answer: 
+    no, that's not entirely correct, especially your last bullet.The point of the last 3 lectures IS, in fact, to ensure atomicity if/when faced with a crash at any give point during disk operations. Remember that atomicity means that we either persist the entire entry or none of it. Logging and shadowing give us the ordering and atomicity that ensures crash consistency.The first part is correct. Your interface to the disk is a block read, block write, and a flush. Block operations can be reordered, unless there's a flush. Flush ensures that all pending block writes persist to disk. Then we need to correct the rest of your first bullet point. We don't expose this interface to the user.
+
+    Followup Discussions:
+    1 endorsed followup comment@726_f1Varoon Sai Kodithala2 days agoAh, I see. This makes sense. My question was more around what's given to us by the disk firmware itself. To clarify, the firmware itself doesn't provide any notion of atomicity or ordering. This is implemented by us, the user, via logging and shadowing.~ An instructor (Alexey Tumanov) thinks this is a good comment ~1Alexey Tumanov2 days agoyes, that's right. We ( i.e. the kernel FS and, separately, a POSIX application) implements crash consistency on top of the disk interface which has neither atomicity nor ordering.good comment1Varoon Sai Kodithala2 days agoThank you!0
+    

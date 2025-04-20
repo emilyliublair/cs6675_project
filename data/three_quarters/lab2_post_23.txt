@@ -1,0 +1,12 @@
+Question: 
+    Passing all most of usertests but not the gradescopeHi, so I am failing test cases 2,3,4 and 8,9,10. I am passing all of the tests in usertests.c except for preempt (supposed to fail) and mem is running forever so I have no idea how to use it. What would you suggest to figure out what is wrong with the remaining cases?lab2
+
+    Student Answer: 
+    I would make sure you are correctly killing the process in your trap handler for things that shouldn't be happening (i.e. page faulting on a read, pde not being present, etc.) and that you understand what's going on in exec.c, you have to think about the lazy vs eagerly allocating there. Also think about what happens if you deallocate and free, what happens if that page has more than one reference?Also, mem and preempt are supposed to not succeed, so you don't need to worry about that!
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

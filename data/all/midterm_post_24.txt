@@ -1,0 +1,12 @@
+Question: 
+    Directory Entry ConfusionHey,First off, I think the sound is broken on this:https://canvasgatechtest.kaf.kaltura.com/media/CS3210+Elton+FS2+lecture/1_e3z2f27j/365641032I planned to look back on this lecture because I was a little bit confused but I couldn't hear anything.I just had a question on the number of directory entries: If I'm understanding things right, a directory inode simply has a pointer to a block on disk which holds an array of dirents, each of size 16B (2B for the inum and 14B for file name?). So, a 512B block could hold 32 dirents, and wouldn't be limited to just 13.Why do the slides say xv6 can only support 13 dirents? It seems like a weird constraint that doesn't offer much in terms of simplicity purposes, unless I'm missing something.Thanks for the help!P.S. Also, if there's sound for that recording it would be much appreciatedmidterm
+
+    Student Answer: 
+    With disk algorithms we want to minimize the travel time of the disk (how many rotations it has to perform in order to reach the data block). Many disk algorithms (like SCAN) will end up noticing that these writes are all close together, so as the head goes to 49, it notices there are writes pending to 47 and 48, so it will just perform the write. Note that if the head is traveling in the reverse direction (monotonically decreasing), we would perform the writes as 49, 48, 47.
+
+    Instructor Answer: 
+    the higher level point here was that the ordering of disk writes will be optimized in some way that makes sense for the storage medium. So, for rotating storage media, we discussed that sequential reads and writes will have higher performance. In this case, you can achieve sequentiality either by ordering the writes in increasing or decreasing order, and then placing the write to block 2 before or after.But, again, the intent of this example was meant to demonstrate that block writes can be reordered across writes from multiple files, and the only way we can impose some kind of order at this level of the stack is with the FLUSH -- the only ordering mechanism we were provided with.
+
+    Followup Discussions:
+    
+    

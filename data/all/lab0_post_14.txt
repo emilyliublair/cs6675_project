@@ -1,0 +1,12 @@
+Question: 
+    Verifying outputs in limits.cHow could I go about verifying that I have around the correct value for my outputs? Specifically, in working with the limits.c user-space program, how can I verify that my outputs/calculations for maximum memory size, files per directory, and max number of processes are correct?lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

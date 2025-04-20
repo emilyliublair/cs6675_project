@@ -1,0 +1,12 @@
+Question: 
+    Cannot Print to Shell after Changing UIDFrom my understanding, shell is represented an inode, and by default is owned by root and does not have its read or write permissions set. So, in my test cases, if I change the uid of a process, I can no longer write to shell. Is this the expected behavior or am I misunderstanding something?lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Persistence is already implemented within xv6. Since xv6 uses a logged filesystem, we need to examine both how operations on inodes are performed as well as how these operations interact with the underlying log. Operations on inodes can be found infs.c, with functions such as ialloc, iupdate, etc. to create/update/manage inodes. For logging, you’ll notice that anytime an operation is performed on an inode or the buffer cache, the section in which those operations happen are wrapped in calls tobegin_op()andend_op(), which represents the begging and end of a logged segment.I recommend reading chapter 6 in the xv6 manual because it covers how this all works pretty well.But TLDR; as long as you follow the convention for performing FS operations that you see when reading around the xv6 code, then those operations will be persistent.
+
+    Followup Discussions:
+    
+    

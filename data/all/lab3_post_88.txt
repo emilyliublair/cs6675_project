@@ -1,0 +1,12 @@
+Question: 
+    FIFO preemption clarificationIf a FIFO process is currently running and another FIFO process with the same priority but earlier initial creation time becomes available (e.g. after finishing sleeping), should the currently running process be preempted?Currently failing some tests including test 9 and I'm wondering whether this is the issue - my current code does preempt in this case.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    I see that you're passing the test-case now with your latest submission.
+
+    Followup Discussions:
+    @453_f1Anonymous Poet4 weeks agoDid you figure out what was wrong with it by any chance? That's the last part I have to finish before being done with parts 1 and 2, I'm trying to work on part 3 but the TA told me to finish out 1 and 2 before trying to do it.0Anonymous Beaker3 weeks agoDid you use argptr? I was using that function incorrectly, when i fixed it I passed 211
+    

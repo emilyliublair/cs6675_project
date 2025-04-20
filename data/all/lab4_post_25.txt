@@ -1,0 +1,12 @@
+Question: 
+    Report Stats QuestionThe first time I call report stats I always see the number of free blocks reported as 0 because the call to get_free_blocks only happens at the end of that function. Is that expected behavior?lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

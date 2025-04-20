@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    no, that would not be an acceptable answer.In this question, we're looking for you to identify the fact that there's a data race and which lines of code create a data race. I think what you're trying to do is come up with an interleaving that would lead to bad state. We discussed in the lecture how the behavior of a non-DRF code is undefined, because its sequential consistency is not guaranteed.This is where the answer can stop.
+
+    Followup Discussions:
+    @372_f1Anonymous Atom1 month agoI'm still somewhat confused about where the data race occurs in this piece of code. Does it have to do with us not actually executing the first check first when the code is executed because we don't have the guaranteed atomicity of the critical section? Thanks0Alexey Tumanov1 month agothe data race occurs by the definition of the data race, which is having two unordered accesses to the shared variable, with at least one of them being a write. Even though your write to p is in the critical section, your first read from p is outside of the critical section and, therefore, unordered. Please refer to slide 31 of Section C lec17 slide deck cs3210-lec17-2025_03_06.pdf. It shows which lines of code constitute a data race.good comment1
+    

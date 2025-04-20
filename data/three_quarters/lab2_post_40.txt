@@ -1,0 +1,12 @@
+Question: 
+    How to get pgdir given a virtual addressWhen we're dealing with the page fault, we can use rcr2 to get the virtual address but how do we get the current process's page directory?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @266_f1Ranjani Rajeswari Koushik2 months agoworked! thanks0
+    

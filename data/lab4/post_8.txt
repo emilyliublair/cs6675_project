@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    I modified balloc to account for multiple bitmap blocks.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @696_f1Anonymous Helix6 days agoI did this, and now I can make correctly locally with many large files, however, the autograder still gives me a make error. Does anyone know if the make error is due to make actually failing, or if the output of make doesn't match the expected outcome (due to prints or something).1Cagin Uz6 days agoTest case 32 has to do with iappend. You need account for double indirectness in iappend (the structure is pretty similar to how it already does singly indirect).0
+    

@@ -1,0 +1,21 @@
+Question: 
+    login-xv6-qemu not loadingApologies if this is obvious, but when Imakeand run./login-xv6-qemu, xv6 freezes beforelogin_init.cbegins to run as shown below:SeaBIOS (version 1.15.0-1)
+
+
+iPXE (https://ipxe.org) 00:03.0 CA00 PCI2.10 PnP PMM+1FF8B4A0+1FECB4A0 CA00
+                                                                               
+
+
+Booting from Hard Disk..xv6...
+cpu0: starting 0
+sb: size 1000 nblocks 941 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58For context, I have passed all tests for Part 1 and Part 2 (1-17) along with unintentionally passing tests 18,20,24,25. I have also rungdbwithlogin_init.cset as the file, andlogin-xv6-qemudoes not reach the file before freezing.xv6-qemuworks perfectly fine though.lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

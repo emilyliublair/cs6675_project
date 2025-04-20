@@ -1,0 +1,12 @@
+Question: 
+    How to read the e820 recordsHi, if one of my e820 records started at 0x0544, how would I read it? From my understanding, the fields would be as seen below based on the gdb inspection:physical address: 0x1000000020000000length: 0x0000000000000100type: 0x1fee0000apic3: 0x00000000(gdb) x/6wx 0x05440x544: 0x00000002 0x00000001 0x00100000 0x000000000x554: 0x1fee0000 0x00000000But that doesn't seem right, since the type should be between the values of 1-5. Am I interpreting it correctly? Especially for the 8 byte fields, since I read that it should be little endian.lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Yes, it’s ok to use either. If you take a look at bootblock.asm (which is a disassembly of the bootblock, so not necessarily the same as the original assembly file) you should see that they both assemble to the same instruction, if you are referring to a 32 bit register. (If you are referring to a 16-bit register, like %ax instead of %eax, you’ll see that mov gets turned into movw instead of movl).
+
+    Followup Discussions:
+    
+    

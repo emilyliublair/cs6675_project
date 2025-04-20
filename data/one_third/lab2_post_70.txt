@@ -1,0 +1,12 @@
+Question: 
+    How to read cr3?I can read cr2 with rcr2 but there is no function to read cr3. I want to read cr3 to get the address of the page directory when there is a page fault. Is this necessary / should I define the function myself?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    What have you thought of so far?
+
+    Followup Discussions:
+    @217_f1Anonymous Helix2 months agoI think file descriptors are stored in user space memory, so all related syscalls (open(), close(), pipe(), dup()) in addition to read?0Tianyi Yu2 months agoI don’t think close() would belong to that group, but you are on the right track0
+    

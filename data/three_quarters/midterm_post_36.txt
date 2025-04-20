@@ -1,0 +1,12 @@
+Question: 
+    Do we need to know xv6-specific details for the midterm?In-class, it was mentioned that we would not get questions specifically about the implementation of xv6, but one of the midterm practice questions (4b) requires this. I am looking for clarity on this matter.Thank you in advance!midterm
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Static (i.e. non-interactive),offlinecontent is allowed on your laptop. With that said, in cases where it may be hard to distinguish whether your word document is online or offline, it's best if you generate a PDF and use PDFs instead. Otherwise, this may attract a proctor's attention. No use of internet other than to access your canvas quiz is allowed.
+
+    Followup Discussions:
+    
+    

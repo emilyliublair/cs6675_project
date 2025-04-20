@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    hey, I understand your confusion, please recall the lecture on logical vs physical permissions. Please note that in this case we're "abusing" the PTE_P bit and are using it to mean something other than really_present, right? So you'd need to have metadata to keep track of the logical really_present state , per frame. In your case, when the read happens on a frame with PTE_P==0, you do the following:if (frame->really_present) {frame->accessed = 1;frame->PTE_P = 1 ;}
+
+    Followup Discussions:
+    @377_f1Alexey Tumanov1 month agoit is very important to keep in mind what the logical and physical permissions are and what they mean, for this class. Often times we're using physical permission bits to have a different semantic meaning.good comment0@377_f2Anonymous Calc1 month agoWhat is the point of having the PTE_P flag mirror the accessed bit in this case? At least from my understanding, couldn’t all this be done with the accessed bit in the PTE.ie. When memory is full and we need to bring in a new page a page fault occurs which causes:The clock algorithm iterates through the circular list of pages starting at the eviction candidate (which is the page after the most-recently evicted page)As it iterates through the page list one of two things happen:The page has its accessed bit set. In this case, the accessed bit for that page is set back to 0 and it continues iterating.The page has its accessed bit cleared which in this case causes a trap which then evicts the page, and brings in the new page to take its place with a referenced bit set to 1.After the algorithm has finished, the new eviction candidate is the one that came right after the page that was just evicted in the page list.Why can't we just use the accessed bit only to determine whether or not we need to trap? What is the purpose of having the PTE_P shadow the accessed bit.0
+    

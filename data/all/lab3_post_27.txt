@@ -1,0 +1,12 @@
+Question: 
+    Locking cwd before using it in iputOur current implementation uses cwd as a shared resource. We always lock before any references to cwd. However, if we lock before using cwd in the iput call during exit, it creates a sched lock issue when running workload.c. I believe it has something to do with iput going to sleep which goes into sched, meaning that it holds the sharedresourcelock in sched (the extra lock).Are we required to lock cwd when calling iput? My worry is that if we leave it unlocked, then a data race could occur. However, if we leave it locked, it causes the aforementioned sched lock panic.Edit: If anyone is having an issue see@568lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    You have an extra lock held when you enter sched(), when you should have freed all of your locks except for the ptable lock.One thing you might consider doing is printing out the name of each lock when you acquire and release it. Just keep in mind that, because cprintf calls acquire and release on cons.lock itself, you should make sure not to print out the name when the lock being acquired/release is cons.lock. Once you have a log of when each lock is acquired and released, you can figure out which lock is being acquired and then not released by the time you get the panic, which should help narrow down what you need to look for to debug this.Another thing you can do is try deleting parts of workload.c in order to construct a minimal working example of a program that causes this panic to happen.
+
+    Followup Discussions:
+    @568_f1Shourik Banerjee3 weeks agoIt seems to be an issue with locking our shared resource cwd before calling iput when we are exiting. Is that something we're allowed to leave unlocked? Feels a little risky.2Rohan Natansh Bafna3 weeks agoWhen you’re exiting, no other threads should be running (since we say that the behavior is defined only if the thread group owner exits after all of its children exit). So it should be fine.good comment0Shourik Banerjee3 weeks agoDoes this mean we do not need to lock anything in exit then regarding the shared resources?0Rohan Natansh Bafna3 weeks agoIf you are the thread group owner, yesgood comment1
+    

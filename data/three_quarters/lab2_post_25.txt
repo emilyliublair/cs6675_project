@@ -1,0 +1,12 @@
+Question: 
+    Passing Test Case 11We're passing every test case except for test 11. Does anyone happen to have any insights? We are considering lazy allocating vs eagerly allocating in exec.c and killing the process for various different error handling in our trap handler. We're thinking this test may be due to COW, but we aren't sure of what else to consider :( Any pointers will be super helpful!lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @291_f1Anonymous Poet2 months agoI think theoretically you shouldn't have to. Maybe it's something with your logic for freeing pages that causes problems unless you have ref counts?0Anonymous Scale2 months agoYea i'm thinking the same thing. It works with the autograder so im not really sure what the problem is but I'll try to debug stuff.0
+    

@@ -1,0 +1,12 @@
+Question: 
+    Part 5-6 Clarification1. Ifcond_signal()wakes a sleeping thread but the mutex is still held by some other thread, incond_wait()should we put the thread back to sleep and return -1? Or should we try waking up other threads waiting on the same conditional variable and return 0 if any of the threads can acquire the mutex it waits on?2. Should we allow a thread to callsetpark()on multiple channels?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    The user process is responsible for allocating memory to pass to clone. The new stack should be present in the region [stack, stack+stack_size), and the bottom of the stack should be at the highest address in the region (stack+stack_size).You shouldn’t add the size of the parent stack to stack_size. Stack_size just tells you how much space the user has allocated for the new thread’s stack. If there isn’t enough space to copy over the stack, you should fail.Your plan seems good to me.
+
+    Followup Discussions:
+    
+    

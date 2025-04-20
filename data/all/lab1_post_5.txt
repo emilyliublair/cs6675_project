@@ -1,0 +1,12 @@
+Question: 
+    What outputs do tests 4-7 look atI’m having trouble figuring out why tests 4-7 are giving the “incorrect output” error, since when testing locally it seems to give the correct numbere. Some hints on where to look would be appreciated!lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @161_f1Rohan Natansh Bafna3 months agoCan you send a screenshot of what happens in gdb when you get the segfault?good comment0Anonymous Mouse3 months ago0Rohan Natansh Bafna3 months agoHow did you run gdb? Did you typegdb /xv6/build/kernel/kernel?You need to debug your OS through qemu; the instructions for doing so are athttps://github.gatech.edu/cs3210-spring2025/xv6/tree/lab0?tab=readme-ov-file#debugging-user-space-programs. Just don’t run thefilecommand if you want to debug kernel space.good comment0Anonymous Mouse3 months agoI started qemu with the -g flag and in a separate terminal I attached the docker instance and ran gdb in /xv6/build0Rohan Natansh Bafna3 months agoOkay, it looks like gdb somehow got misconfigured on your container. If you run the commandecho add-auto-load-safe-path /xv6/build/.gdbinit >/root/.gdbinitfrom within Docker, then gdb should work properly. Although, to be safe I would just close both Docker terminals and reopen them. This will create a fresh container from the Docker image we provide you and should reset gdb’s configuration.good comment0
+    

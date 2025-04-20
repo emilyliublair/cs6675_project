@@ -1,0 +1,12 @@
+Question: 
+    park return -1 casesin park, i only return -1 if chan is 0 bc we dont sleep on channel 0, in setpark return -1 if chan is 0 for same reason as park, and unpark return -1 if chan is 0 because we are not asleep if we are on channel 0.are there any other cases where I should be returning -1 within these three syscalls?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Like the comments say, you should be able to park without first setparking, and that should put you to sleep on channel chan.
+
+    Followup Discussions:
+    @595_f1Emma Lawton3 weeks agoare you dependent on setpark?0Anonymous Atom3 weeks agohmm, as in if my implementation right now relies on setpark, and without setpark being introduced in a sequence of park and unpark calls, certain fields and conditions might be inaccurate?0Emma Lawton3 weeks agoYep exactly what I was getting at0@595_f2Anonymous Helix3 weeks agoMake sure you can do the sequence park unpark as you shouldn't need to setpark in order to unpark.0
+    

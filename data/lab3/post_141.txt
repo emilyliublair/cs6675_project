@@ -1,0 +1,20 @@
+Question: 
+    systest.c from lab slides todayI was wondering if anyone had the systest.c that was used to test the syscall that was made today during the lab's demo ?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    user/src/systest.c#include"user.h"intmain(intargc,char*argv[]){if(parentn(3) >=0) {printf(1,"success\n");
+	}else{printf(1,"error\n");
+	}exit();
+}run code snippetVisit Manage Class to disable runnable code snippets×kernel/src/sysproc.cintsys_parentn(void)
+{intn;if(argint(0, &n) <0){return-1;
+	}for(inti =0; i < n; i++){
+    	cprintf("%s\n", myproc()->parent->name);
+	}return0;
+}run code snippetVisit Manage Class to disable runnable code snippets×
+
+    Followup Discussions:
+    
+    

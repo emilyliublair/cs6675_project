@@ -1,0 +1,12 @@
+Question: 
+    TA Office Hours Virtual 01/21Hey everyone,Hope y’all had a good long weekend. Since GT has moved to modified operations due to the weather, the TAs will be hosting all OH virtually. You can find our Zoom invites below:Varun (11am-12pm):https://gatech.zoom.us/j/99044119808Sukrit (12:30pm-1:30pm):https://gatech.zoom.us/j/6101215409?pwd=SPUXHaDD3mQGQFTaMz5fd1Sfsmva9E.1Alexa (4pm-6pm):https://gatech.zoom.us/j/95759195154See you all virtually and stay safe!logistics~ An instructor (Alexey Tumanov) endorsed this note ~
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @709_f1Alexey Tumanov3 days agoDear class,The decision has been made that Distributed Systems willNOTbe covered by exam 2. The list of study topics has been updated accordingly.Hope this helps as you prepare.Best of luck to you.ATgood comment0@709_f2Tianyi Yu3 days agoI have a concern that Exam 2 is quite long, and there's no way my laptop can last 3 hours even if I come fully charged. Will there be any accommodations for charging at the Supervised Lab classrooms?0Alexey Tumanov3 days agocan you please bring a power extension cord with you? There are some wall outlets, but they're limited. Power extension cords or power strips will help with that. If you have any other suggestions, please let the course staff know.Thanks.good comment0Tianyi Yu3 days agoSure, I can bring an extension cord with me.~ An instructor (Alexey Tumanov) thinks this is a good comment ~1Alexey Tumanov3 days agothanks!Note that the classrooms have the same issue. So, there's no difference between the supervised labs and classrooms in this regard. In both cases we need to find some way of sharing the wall outlets, in case charging your laptop will be needed.good comment0Alexey Tumanov3 days agoanother thing I will strongly encourage is to close all applications except a SINGLE browser window with the exam 2 quiz. Everything else -- all of your notes, etc, should be downloaded LOCALLY or be in physical form. Recall that this is a CLOSED Internet exam. This should also help with your battery life. Hint: using GenAI locally is very power-hungry, will drain your battery fast, don't do it. I am hoping that a single browser window with the exam 2 quiz should let your battery last for 2.5hrs.good comment1Anonymous Comp2 days agoI’ll be bringing a 5000 watt diesel generator to the Skiles 170 section. It has 4 outlets so you’re welcome to use one.2
+    

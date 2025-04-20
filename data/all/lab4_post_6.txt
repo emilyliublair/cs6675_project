@@ -1,0 +1,12 @@
+Question: 
+    Test 28Would anyone happen to know what test 28 is checking for? This is the only test I’m failing (getting incorrect output); I’ve modified bmap to allocate blocks properly and have tested creating a large file and then deleting it, which works. I have also modified iappend in mkfs.c to handle large files that are initially in the filesystem properly. I’m fairly certain my get_free_blocks implementation is also correct.lab4
+
+    Student Answer: 
+    I was passing everything but test case 28 when I had everything except for get_free_blocks implemented. This means test 28 is the ONLY testcase that looks at get_free_blocks and I assume it doesn't thoroughly test other mechanisms. I cannot guarantee it, but my best guess is your mistake is in get_free_blocks — especially since you're passing everything else. If you haven't already, take a look at balloc for inspiration on implementing get_free_blocks.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

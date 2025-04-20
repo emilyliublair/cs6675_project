@@ -1,0 +1,12 @@
+Question: 
+    New file default permissions?What should the permissions of a newly created file or directory be? Read-only, read/write, or nothing at all (so that only the owner can access it)?I'm currently testing my code by logging in as one user, creating a dummy file (echo foo > foofile), and then logging in as another user and trying to read that file (cat foofile). I'm unsure about what the intended behavior is here.lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    It’s talking about all the files that are created when xv6 is built. If you examine user/Sources.cmake you’ll see a command that runs tools/mkfs to prepopulate the user disk image with a collection of files (normally all the user programs and README, as well as the root directory itself). These should default to being readable and writable for all users.
+
+    Followup Discussions:
+    @656_f1Anonymous Calc1 week agoIs console supposed to be included in those files or is that created afterwards? I tried running ls with my new user and it said "ls: cannot stat ./console".0Rohan Natansh Bafna1 week agoConsole is created afterwards (you can see it being created in /init)good comment0
+    

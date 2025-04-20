@@ -1,0 +1,12 @@
+Question: 
+    Inode Address Calculation - Lecture 20From the slides we see the following address calculation for an inodeBut why do we only do 2*512 instead of 4*512? Don't we have to skip over the bootblock, superblock, and the 2 log blocks? Does this assume that logging is disabled and inodes begin as the third block?midterm
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    well, the user-space stack switching would only be done within the same virtual address space of a process. The stacks managed here would be for the multiple threads of execution that co-exist within the same VA space of the same process. So all of this is operating within the same trust domain.Of course switching control between processes should induce a context switch. Otherwise you'd be in trouble with isolation, yes.
+
+    Followup Discussions:
+    
+    

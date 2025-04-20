@@ -1,0 +1,12 @@
+Question: 
+    Question on pollingI'm trying to understand this example from the lecture slides on system calls, interrupts, and exceptions.From my understanding, in an implementation that uses interrupts, incoming network packets would result in software interrupts that become a bottleneck to CPU cores because they're constantly switching to and from kernel space to process them.The solution presented seems to limit this by "busy waiting" on one CPU, and continuously polling for the arrival of packets. When a packet is received, it's immediately processed without a context switch on that CPU. From here, it gets a little fuzzy for me.I'm assuming that we have a user thread with application logic exists to process the new network event. In our new model, how does that user thread/application logic interact with the event? Thanks!midterm
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Solutions to midterm practice problems will be discussed during the second lecture of this week.Update: now that we discussed this in class, the proposed answer would _not_ be sufficient. The question is asking how to efficiently track the accessed state. Tracking this state requires understanding state transitions, what causes them, and how each of the state transitions happens (or what triggers those state transitions). This should lead to figuring out how available permission bits can be used to track "accessed" state.
+
+    Followup Discussions:
+    
+    

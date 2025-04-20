@@ -1,12 +1,12 @@
 Question: 
-    User stack backtracingTo help find a valid stack size for clone(), I'm doing a backtrace of the user stack to find where the 0xffffffff base pointer is. The issue is when manually doing a user stack backtrace by running sys-call, and breakpointing it in gdb, when I manually go back ebps from tf->ebp, I'm reaching an unreachable user space virutal memory address that I can't access before the *ebp = 0xffffffff.  In my specific case, the original tf-ebp = 0x2f8a, then the x/xw 0x2f8a = 0x3fa8, but when try to dereference the address of 0x3fa8 which should be a bp, the 0x3000 page seems to be non-accessible.lab3
+    Make Failure On SubmissionCurrently when submitting, I get a make error despite being able to build locally in both release and debug mode and implementing (what I believe) to be necessary for the system call stubs. I wrote a userspace program to test the stubs for setscheduler, clone, waitpid, park, setpark, unpark, and waitinfo and I am able to call each system call from the userspace program. I am lost as to what else could cause the autograder to fail during make. Is there something that I am missing?lab3
 
     Student Answer: 
-    0xffffffff is not the base pointer rather it is the fake return address placed in the stack within exec. The calling convention tells you where the return address is relative to the base pointer
+    
 
     Instructor Answer: 
     
 
     Followup Discussions:
-    
+    @488_f1Anonymous Atom3 weeks agoSame here, tried everything I can think of but all it does is burn through my submissions.0Anonymous Comp3 weeks agoI ended up fixing the issue by just continuing to work on the lab and implementing setpark/park/unpark. I had the stubs set up before to return -1 so maybe that was causing my issue? I'm sorry I don't know what really fixed it.0
     

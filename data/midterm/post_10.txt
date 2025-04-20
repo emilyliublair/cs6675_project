@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    I believe that fsync in an ordered journal will basically cause a prefix log merge. Where anything up to and including the change you are syncing will be merged. So if the writes are f1 then f2, you will need to merge f1 and f2. But if the writes are f2 and then f1, you would only need to merge the f2 changes.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

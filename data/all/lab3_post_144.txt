@@ -1,0 +1,12 @@
+Question: 
+    Scheduler ClarificationIn the lab readme it says:PrioritiesNow that we've specified the basics of FIFO and RR scheduling, we'll specify our priority policy.Each process has both a scheduler policy and priority. When each of your schedulers are selecting a process, the scheduler should obey the following rules:FIFO policy processes always run before RR policy processes.Higher priority values correspond to higher logical priority.A process will not be scheduled if a higher priority process is runnable.If two processes share priority, then they will run in scheduler order (as specified in the scheduler specification).When a new process becomes runnable, if it should run before the current process, your scheduler should immediately preempt the currently running process and schedule it (with one exception, in "Nit")From this, I am thinking that we always schedule FIFO processes before RR processes, but it also says "A process will not be scheduled if a higher priority process is runnable." What if a round robin process has a higher priority than that of a FIFO process? Do we avoid scheduling the FIFO process until the round robin process is no longer runnable? Or should we just run the FIFO process first and only worry about RR policy after?EDIT: Nevermind I didn't read the part above it my badFIFO always has higher priority oopslab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    yes.
+
+    Followup Discussions:
+    1 endorsed followup comment@337_f1Loading...2 months agoIf you or anyone else is still looking, I'd love to get a partner as well!~ An instructor (Alexey Tumanov) thinks this is a good comment ~1Loading...2 months agoHey, not sure if I’m too late but I’m also looking for a partner!1Loading...2 months agoHey! Email me at sborg3@gatech.edu0Loading...2 months agoHey, sorry someone messaged me yesterday already :(0
+    

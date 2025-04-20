@@ -1,0 +1,12 @@
+Question: 
+    Testing backtraceBecause we are writing backtrace.c in the kernel, I know to test it we have to write a user space program. I am wondering how to actually do this however. Would we add backtrace as a new syscall, or is there another preferred method?lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    This is a limitation of OS development in general. There is no stdio to import; the OS itself is responsible for creating a standard library, and xv6 doesn’t create one.The xv6 kernel does expose some (nonstandard) console I/O functions; check the console subsystem in console.c to learn what they are and how to use them.
+
+    Followup Discussions:
+    @77_f1Anonymous Calc3 months agoThat makes sense. Console.c does import stdio.h but I imagine we should only use the functions exposed to us.0Rohan Natansh Bafna3 months agoMy mistake, it looks like stdio.h was added in a change made for labs 1-4 that was never ported to lab 0. Yes, in lab 1 and onwards stdio.h does exist in xv6, and you’re free to include it if you wish.Just keep in mind that this isn’t the same stdio.h as in standard C. In general you are allowed to use any part of xv6 that already exists.good comment2
+    

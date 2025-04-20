@@ -1,0 +1,12 @@
+Question: 
+    What perms are needed for unlink@648Establishes that only read perms are needed for a file referenced in link. Does unlink need both read/write perms to the file itself in addition to read/write perms to the parent directory inode?lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    I think as long as you make sure that the salts are globally unique across user's and aren't the same for diff users you should be good. You can try calling the function above for different usernames/uids and see if the outputs are different for each ?
+
+    Followup Discussions:
+    
+    

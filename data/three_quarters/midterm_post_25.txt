@@ -1,0 +1,12 @@
+Question: 
+    Clarification of Ordering read/writesOn the lecture video (04/03 at around 35 minutes) it's mentioned that without the flush, we expect the underlying low level system software to actually order them as follows: 47, 48, 49 and then 2 may be before or after (both possibilities are likely). Why is this? I know that the disk gives us the write block interface, but this doesn't guarantee ordering, so why would we expect 47,48, 49 to happen all consecutively?midterm
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    good question, sorry for confusion. Yes, entries are counted from zero on this slide.Here's a way to think about it:Replace 8000 with byte 1, what do you get? You get floor(1/BSIZE) = 0 --> zero'th block, corresponding to zeroth direct pointer.Replace 8000 with byte 512, what do you get? Floor(512/BSIZE) = 1 --> 1st block, corresponding to 1st entry (counting from zero).For 8000: floor(8000/BSIZE) = 15th block (counting from zero).yes, 3rd entry is also counting from zero.When in doubt, try other, much simpler values to validate your thinking. Remember boundary condition testing.
+
+    Followup Discussions:
+    @710_f1Anonymous Scale5 days agoThanks for the response.That doesn’t seem to make sense to me – the ith physical block would contain bits 512(i-1) to 512(i) - 1. For instance the first physical block would contain bits 0 through 511, the second would contain bits 512 through 1023, and thus the 15th would contain bits 7168 to 7679. Thus we would want the 16th physical block.In my response I did consider indexing the blocks starting at zero. In that case, my question remains the same.0Anonymous Poet5 days agoOh then I think you might be right about the 0th entry thing.0Anonymous Scale5 days agoOk thanks for the 2nd perspective I appreciate it!0
+    

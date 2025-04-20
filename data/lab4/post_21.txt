@@ -1,0 +1,12 @@
+Question: 
+    Confused on Log InHello all I am somewhat lost on where to start with the login system. Any general tips on where to look for info or inspiration? Thankslab4
+
+    Student Answer: 
+    If you look atlogic.clogin_lib.clogin_init.cyou should see the basic flow of how xv6 runs the login process, the rest involves creating your own file system for managing usernames and their passwords.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @678_f1Anonymous Beaker1 week agoI'd also recommend revisiting the lectures from this class and resources online about how Linux handles users (ie the shadow file stuff)1
+    

@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    Running into the same thing, but I changed itrunc. Let me know if anyone has a solution.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @687_f1Anonymous Poet1 week agoHmm interesting. the only other places i touched were bmap in fs.c and iappend in mkfs. wbu?0Varoon Sai Kodithala1 week agoSame!0Anonymous Poet1 week agoi fixed it, my iappend was cooked.0Varoon Sai Kodithala7 days agoYeah it was our bmap, had a really stupid C error. Nothing logical.0@687_f2Anonymous Calc1 week agoIt's either an issue in bmap or iappend. Could be both.1
+    

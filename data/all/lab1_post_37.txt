@@ -1,0 +1,12 @@
+Question: 
+    Part 3 ClarityReading the description for Part 3 - some of the wording confuses me. From my understanding, the booting process goes BIOS -> Bootloader -> Kernel Code. Each step is one-way, as in you are taking non-returnable jumps to new sections of memory and/or CPU cofigs.Part 3 talks about making calls to Bootloader/BIOS from Kernel, but does that code space still exist? From my understanding, everything here is a one-way.Are we "calling" to BIOS in Part 3 or are we inserting code/dataduringBIOS that will become reachable from Kernel code later in the boot process? More directly, is my assumption that after BIOS/Bootloader is finished, you will never be able to call functions from that code again - correct? Thanks!lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    I'm not 100% sure, but the most likely scenario is that another process is executing, so the instructions in memory don't line up with the executable file that gdb has loaded, causing gdb to be confused. Since the addresses here are all very low, it's pretty likely that the address you set a breakpoint at is used by a different process to store code as well.When you press enter after typing a command into the shell, the shell forks, runs some code, and then calls exec to start running the command you entered. Gdb probably caught that breakpoint in that child process before it exec'd callstack.Since this lab is almost entirely kernel code, and backtrace is a kernel-space function, I recommend you examine the kernel instead of user processes; you won't have to deal with issue then.
+
+    Followup Discussions:
+    
+    

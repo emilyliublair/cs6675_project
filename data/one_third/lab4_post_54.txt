@@ -1,0 +1,12 @@
+Question: 
+    Readi and Writei confusionSo I added logic within readi so that at the very beginning it will check to see if the current process has the permissions needed to carry out a read (current process has uid of 0 OR current process is the owner of the inode OR the inode has read permissions on). If not, it will return -1 before doing any actual logic. I have done the same for writei but now my user test is breaking.My user test is making a file while the userid is 0 and printing a message that it is successfully created. I then change the uid and then create another file and print a similar message. After making the change to readi but before making the change to writei, this is what it looks like:After I added the logic for iwrite, my console isn't being written to anymore after I change the uid to 10:Is this intended behavior? My guess that writing to the console is probably using writei in some way, and after I change the uid of the current running process I no longer have the needed permissions to write to the inode that represents the console. Should I explicitly allow any writes to the console's inode or is my logic flawed?Thanks!lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    It’s ok to change FSSIZE
+
+    Followup Discussions:
+    @635_f1Anonymous Beaker1 week agoWill the autograder fail if this size is too large?0Anonymous Calc1 week agoFrom my experience, my test 16 and 17 would hardfault when my FSSIZE was set too high (like 1 million). I'm not sure if this was the exact cause for it to break, but I think I can assume that a large FSSIZE has the potential to break the autograder.2
+    

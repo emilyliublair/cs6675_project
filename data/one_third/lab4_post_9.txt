@@ -1,0 +1,12 @@
+Question: 
+    Cannot make with large files, failing Test 32I am currently failing only Test 32 due to a make failure. I am trying to recreate this locally by booting with a few large files, but I am getting the following make failure. Has anyone experienced this or know what functions to look at? For reference, my FSSIZE is high (> 50,000).lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

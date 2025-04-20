@@ -1,0 +1,12 @@
+Question: 
+    User stack backtracingTo help find a valid stack size for clone(), I'm doing a backtrace of the user stack to find where the 0xffffffff base pointer is. The issue is when manually doing a user stack backtrace by running sys-call, and breakpointing it in gdb, when I manually go back ebps from tf->ebp, I'm reaching an unreachable user space virutal memory address that I can't access before the *ebp = 0xffffffff.  In my specific case, the original tf-ebp = 0x2f8a, then the x/xw 0x2f8a = 0x3fa8, but when try to dereference the address of 0x3fa8 which should be a bp, the 0x3000 page seems to be non-accessible.lab3
+
+    Student Answer: 
+    0xffffffff is not the base pointer rather it is the fake return address placed in the stack within exec. The calling convention tells you where the return address is relative to the base pointer
+
+    Instructor Answer: 
+    Take a look at@456. It's hard for me to guide you in the right direction without any context.
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,12 @@
+Question: 
+    Copying stack for CloneI'm struggling to understand this note in clone:NOTE: Clone sets up its stack to be logically equivalent to its parents, however it cannot just memcpy the stack. What do you know about stacks that limits you from doing this (think back to lab1's backtrace)? How must clone adjust?Is this referring to the user stack of the process, if so, how does the kernel access the user stack since only kstack is saved within the proc struct? Should the entire stack be copied or should only stack_size be copied to the new stack? Any help understanding this part of clone would be very helpful.lab3
+
+    Student Answer: 
+    I had the same behavior as you. Are you checking if you are yielding when your current running process's priority has been lowered and a more suitable process is runnable?
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @348_f1Anonymous Atom2 months agoOh the priority of the process can change?0Tianyi Yu2 months agoYeah through setscheduler?0Anonymous Atom2 months agoI see ok I was under the assumption that once you set a process's priority it's unchanging0
+    

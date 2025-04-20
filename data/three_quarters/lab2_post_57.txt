@@ -1,0 +1,21 @@
+Question: 
+    mycpu(), copyuvm(), lab2_pgcopy(), forktest.c1.#0  panic (s=0x801089aa "unknown apicid\n") at /xv6/kernel/src/console.c:123#1  0x80104e0a in mycpu () at /xv6/kernel/src/proc.c:52#2  0x80105c8d in pushcli () at /xv6/kernel/src/spinlock.c:108#3  0x80105af7 in acquire (lk=0x8014a280 <ref_lock>) at /xv6/kernel/src/spinlock.c:29#4  0x801036f4 in kfree (v=0x8014f000 "") at /xv6/kernel/src/kalloc.c:78#5  0x80103695 in freerange (vstart=0x8014e120, vend=0x80400000) at /xv6/kernel/src/kalloc.c:63#6  0x80103648 in kinit1 (vstart=0x8014e120, vend=0x80400000) at /xv6/kernel/src/kalloc.c:47#7  0x801043dd in main () at /xv6/kernel/src/main.c:22run code snippetVisit Manage Class to disable runnable code snippets×I am stuck at the boot process after adding a spinlock. I am doing acquire() and release() but it seems that it's stuck at acquire(0 and never reaches release(). I don't understand what the error message is trying to tell me.apicid = lapicid();// APIC IDs are not guaranteed to be contiguous. Maybe we should have// a reverse map, or reserve a register to store &cpus[i].for(i =0; i < ncpu; ++i) {if(cpus[i].apicid == apicid)return&cpus[i];
+  }
+  panic("unknown apicid\n");run code snippetVisit Manage Class to disable runnable code snippets×It seems that mycpu() couldn't find the current local apic id? But why? Is it related to the fact that acquire() disable interrupts? How should I handle this?2.copyuvm(pde_t *pgdir, uint sz)
+{
+  ..
+  for(i = 0; i < sz; i += PGSIZE){
+    ...
+  }
+  ..
+}If I am understanding this correctly, we always starting from virtual address 0 when copying the page table of a parent process. But we don't know if virtual address 0 is mapped by this parent process, no? Why aren't we looping through the parent's page table instead and mapping each entry?3.Does the argument "user_va" of lab2_pgcopy() and lab2_pgzero() correspond to the virtual address of the user process that caused the page fault? I stepped through my code with gdb but I can't seem to find the expected value of forktest.4.Is there a way for me to step through forktest.c with gdb?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @237_f1Rohan Natansh Bafna2 months agoThis sounds like an X/Y problem (https://xyproblem.info/) to me. What exactly are you trying to accomplish by doing this? (And why  are you trying to interpret address 0 as a PTE?)good comment0Shourik Banerjee2 months agoYeah I was 0 allocating incorrectly. I don't know if I've fixed the problem (I think I have because I can't think of a way my new solution breaks), but now I trap with error code 0 which I don't know why it happens.0
+    

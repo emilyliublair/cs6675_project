@@ -1,0 +1,12 @@
+Question: 
+    kfree and pages with multiple referencesGiven that we want to perform a copy on write operation, we have multiple processes that might point to the same page at the same time. When one of these processes calls exit(), there follows several functions called that I observed through gdb: deallocuvm, freevm, and kfree. I noticed that kfree is taking the page and making it available to be allocated by kalloc; however, would it be correct to assume that if other processes are using this page, that freeing it would be a mistake?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    I’m a bit confused. What errors are you getting?
+
+    Followup Discussions:
+    @201_f1Anonymous Calc2 months agoIts saying that I am getting issues with the defs.h and mmu.h file (when I have included them into my extra files). Specifically in mmu.h its saying all of the types such as uint are not defined and in defs.h its saying other types aren't defined like the first line "struct buf;" is erroring.0Rohan Natansh Bafna2 months agoYou’ll need to also include the header files where those types are defined—I think that’s types.h.good comment1Anonymous Calc2 months agoI see I tried to include types.h in both of those file separately but got different errors there. So generally, if I want to include those two files, I should include types.h first before mmu and defs.0Rohan Natansh Bafna2 months agoYes.good comment0Anonymous Comp2 months agocould you explain why it is also necessary to include types.h, and why it must be included first from a compiler and linker perspective? im still rly confused about this. thanks!0
+    

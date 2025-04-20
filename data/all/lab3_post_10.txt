@@ -1,0 +1,12 @@
+Question: 
+    Test 29 Hard FaultingI'm only failing Test 29 and I'm not sure what the reason could be. I've tried propagating the changes, I've set everything to reference the owner across all the files including sysfile, syscall, and vm. Does anyone have any suggestions/has encountered the same problem?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    we'll see :)I'd like to see where the class distribution is when everything except the final is in.AT
+
+    Followup Discussions:
+    @598_f1Anonymous Calc3 weeks agowe must have the same friend11
+    

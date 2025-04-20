@@ -1,0 +1,12 @@
+Question: 
+    Test Case 5Does anyone know what test case 5 tests for? I pass every other scheduling test except for this. I've written user space tests that test for FIFO/Round ordering, priority ordering for FIFO, priority ordering for Round Robin with preemption and maintaining a queue, immediate preemption following setscheduler, and multicore scheduling.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    What if the stack pointer passed in to clone is a kernel space pointer? Do you check for that?Also, are you verifying that the user stack passed in is valid? For example, think about how a user space process could get the kernel to dereference a kernel space pointer stored on its stack.
+
+    Followup Discussions:
+    @448_f1Andrew Boeger1 month agoI've seen discussions about memory it "absolutely cannot be in" and people mention Kernel space, but why would you check for that? It should instantly page fault of out that and die.The whole point of page faults is that you don't care if someone tries to pass around a Kernel address, you block access at the trap/PTE level - not the function level.EDIT: I thought about passing in a kernel space ptr as the stack ptr in clone(), which the sys_call handles at the kernel level, so it wouldn't trigger a trap.0
+    

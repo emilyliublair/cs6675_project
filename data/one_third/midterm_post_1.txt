@@ -1,0 +1,12 @@
+Question: 
+    Chapter 1 NotesChapter_1.pdfhopefully these helpmidterm
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @418_f1Anonymous Beaker1 month agoHi, how were answers evaluated/was there a rubric used for question 1?4Alexey Tumanov1 month agoall points deducted should be detailed in the comment section for each of the subquestions. Sometimes, students don't notice this. In that case, please try to expand the comment field.good comment0Anonymous Comp1 month agowhat’s the CIOS bonus looking like these days… ?3@418_f2Anonymous Calc1 month agoWill we be able to request regrades? Thanks!2Alexey Tumanov1 month agothe regrade policy is defined in the syllabus here :https://github.gatech.edu/pages/cs3210-spring2025/course/syllabus/and applies to exam1 as well, yes.good comment0
+    

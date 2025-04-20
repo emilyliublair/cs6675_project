@@ -1,0 +1,12 @@
+Question: 
+    Err 0x5 questionPreviously in copy-on-write we booted correctly without getting a 0x5 error. After implementing lazy zero we think it is now trying to read the guard page for some reason. Any pointers?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    You will need to implement (stubs for) all of the syscalls in the Lab 3 spec for the autograder to compile your submission successfully.
+
+    Followup Discussions:
+    @332_f1Tianyi Yu2 months agoSounds good, by the way, there is no local testing available at all?0Elton Leander Pinto2 months agoWe do not provide any tests for Lab 3. You will have to write them on your own.good comment0Tianyi Yu2 months agoThank you! Can the autograder also be configured to run for more than 10 minutes for this lab? I'm currently gettingYour submission timed out. It took longer than 600 seconds to run.which is a time limit from Gradescope that Rohan disabled in lab2. Could you also run my submission again after extending the time limit?0
+    

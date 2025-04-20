@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    The TLB is still needed for segmentation because we want a fast way to get a mapping from virtual addresses to physical addresses. Segmentation still has virtual addresses with a base and offset. The base and offset would be used for the TLB.Note that we still have translations because we need to fetch from the Global Descriptor Table the correct base.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @405_f1Tianyi Yu1 month agoAs you said, the TLB contains mappings from virtual (linear) addresses to physical addresses, so it takes in the address after segmentation. If we disable paging we know linear address = physical address, so there is no more need for TLB.0
+    

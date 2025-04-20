@@ -1,0 +1,12 @@
+Question: 
+    Maximum number of usersDo we need to support a usecase with 2^16 users (range of uid)? Or is it sufficient to support a smaller number of users than this. Asking because the login data becomes quite large to support this many users.lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @666_f1Nathan Prashant Duggal1 week agoThe autograder tests don't test at all for unlink/link, but I'm pretty sure for correctness sake you should check perms for unlink and link.2@666_f2Cagin Uz1 week agoThe permissions that must be set for link and unlink are not entirely clear to me but I think they are as follows:For link: read for the old file path/inode (as Alexa in@648said) and r+w for the new parent directory (the read comes from sys_link -> dirlink -> dirlookup which reads inside the directory).For unlink: read+write for the parent directory (since the file link will be deleted we must have write privileges to the parent and we need read privileges because we go inside the parent — however since we do not modify nor read the contents of the creature we are unlinking, I don't think we need read or write privileges to the file itself).1Nathan Prashant Duggal1 week agoSure that's a fair view of things, but considering that unlink is our only real way of "deleting" files, I think it's pretty silly that a user without read or write perms to a file can literally just delete the file off the disk as long as they have write perms to the directory.1Cagin Uz1 week agoThis is a valid concern and it comes down to deciding whether removing a file counts as writing to it. I did, however, just test it on Ubuntu 24.04 and it permits you to remove files you do not have read or write privileges to without sudo (albeit it does ask you to confirm if you want to do delete a write protected file).Perhaps this is why they do not test for link/unlink in the autograder. It seems open to interpretation so I imagine as long as we have some protection that makes sense we will get credit for protecting link/unlink.0
+    

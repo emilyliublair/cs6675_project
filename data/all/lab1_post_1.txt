@@ -1,0 +1,12 @@
+Question: 
+    Stdio ImportI know for lab0 we weren't allowed to import stdio. Are we allowed to for lab1?lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Have you tested your backtrace locally?
+
+    Followup Discussions:
+    @176_f1Anonymous Beaker2 months agoI tested it locally and it worked. For some reason everytime I submit I get a make error which I dont have locally0Elton Leander Pinto2 months agoHmm backtrace.c was not added to Sources.cmake. That’s why the autograder is failing.Where have you tested backtrace? If you insert a call to backtrace in any file (likemain.c), thebuildshould fail.good comment0Anonymous Beaker2 months agoWhoops I kept taking that line out when I went to submit. Thank you!~ An instructor (Elton Leander Pinto) thinks this is a good comment ~1
+    

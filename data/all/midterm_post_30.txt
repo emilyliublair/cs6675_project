@@ -1,0 +1,12 @@
+Question: 
+    Exam 2 Distributed SystemsShould we expected to see distributed system questions on the exam next Wednesday considering we didn't go over it during class this week? Otherwise, are we learning the content the day before on Tuesday to be tested the next day? I do see the slides are up so I would like to know how much I should study the slides in preparation.midterm
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Yes, we will be getting grades back to you before the midpoint~ An instructor (Alexey Tumanov) endorsed this answer ~
+
+    Followup Discussions:
+    
+    

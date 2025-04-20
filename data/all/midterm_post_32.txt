@@ -1,0 +1,12 @@
+Question: 
+    Will the exam require downloading spyware?Hi. HonorLock doesn’t work for my arch+os. Does the test require it or something similar?midterm
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    yup, all static content is allowed.
+
+    Followup Discussions:
+    
+    

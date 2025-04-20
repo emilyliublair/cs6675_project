@@ -1,0 +1,12 @@
+Question: 
+    question on advice and hints. (kernal access a user-space page)"The kernel may sometimes access a user-space page on the user's behalf (can you think of when?). You should handle these instances gracefully."I cannot figure out when this happens, nor do I understand how to handle this instance.lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @216_f1Elton Leander Pinto2 months agoWhat do you mean by “kernel syscall” exactly?good comment0Elton Leander Pinto2 months agoRemember that the syscall is the interfaceuserspaceuses to request the kernel to do something on their behalf.good comment0
+    

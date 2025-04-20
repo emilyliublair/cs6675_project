@@ -1,0 +1,12 @@
+Question: 
+    Temporary File for Part 1It says that we have to make a temporary file, does this imply we should delete the file before exiting helloworld.c?lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Yes, you can add a constant factor. Make sure you follow the instructions in the README:You must comment your code to explain how you have reached your final calculation.
+
+    Followup Discussions:
+    
+    

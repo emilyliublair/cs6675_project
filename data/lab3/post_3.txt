@@ -8,5 +8,5 @@ Question:
     
 
     Followup Discussions:
-    @621_f1Anonymous Poet19 hours agocan you explain why since 0x0 is valid memory?0Anonymous Gear19 hours agoidk2
+    @621_f1Anonymous Poet2 weeks agocan you explain why since 0x0 is valid memory?0Anonymous Gear2 weeks agoidk3
     

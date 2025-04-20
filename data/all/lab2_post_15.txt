@@ -1,0 +1,12 @@
+Question: 
+    Failing Test cases 9 and 10Hi there, so I'm failing test cases 9 and 10. I'm a little confused because I was passing these earlier back when I had just part 1 finished but after adding zero paging I don't know why it's failing now. I was at office hours all day today but due to the amount of other people here I wasn't able to get any guidance. Any help would be greatly appreciated, thanks!lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @309_f1Anonymous Comp2 months agoTest case 9 has to do with reaching limits of memory as kallocing a page in the trap handler will fail. Not sure about 10.0Anonymous Helix2 months agowould I panic or just exit the process in this case?0Shourik Banerjee2 months agoKill the process0Anonymous Helix2 months agoWithin the trap.c file I am checking to see whenever I do kalloc if it returns 0. If it does I kill the process and then I break. Is this enough? I already had this code but am not passing 9 or 100Anonymous Atom2 months agoI'm in the same situation -- have you found anything?0Anonymous Comp2 months agoAre you properly invalidating the TLB?0
+    

@@ -1,0 +1,12 @@
+Question: 
+    Test 26 + 27Does anyone know what testcase 26 and 27 test for or have any hints or tips or tricks? Anything helps :)lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @701_f1Anonymous Poet6 days agoThanks! You were right – there was a small logic error inget_free_blocksthat we fixed to pass the test.0
+    

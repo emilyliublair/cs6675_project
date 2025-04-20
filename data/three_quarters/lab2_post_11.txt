@@ -1,0 +1,12 @@
+Question: 
+    General Protection Trap on UIO UsertestI seem to be getting this General Protection trap on the UIO test within the usertests file. The test does seem to pass, but I'm not sure if this trap is expected or not. Has anyone else seen this?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

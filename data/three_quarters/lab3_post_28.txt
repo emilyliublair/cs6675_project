@@ -1,0 +1,12 @@
+Question: 
+    Sched locks panic in when running workload (only with Round Robin Processes)I have no idea why this occurs since the scheduler I have passes all the test cases in gradescope. It seems to go from waitinfo() -> sleep() -> sched() -> panic. At first I thought it might be a waitinfo issue but the same behavior occurs if I use wait instead. It only happens with round robin and seemingly only in workload.cWhat could possibly be causing this issue?It appears to have something to do with the scheduler_tasks array in workload but not sure how to debug this.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    In xv6, IO time can be considered as the time that is taken to wait and execute IO resources, and since sleep is used to handle this in xv6 than this would be a valid approach. IO time is not the main focus of the extra credit assignment so getting an approximation for this should be sufficient.
+
+    Followup Discussions:
+    
+    

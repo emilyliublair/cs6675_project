@@ -1,0 +1,12 @@
+Question: 
+    Security lab repoHere is the repo for the binary exploitation section of today's lab:https://github.gatech.edu/cs3210-spring2025/security-lablogistics
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    I've requested the guest speaker to share slides for the Security 2 lecture several times. I'll post them as soon as they become available. I reminded Prof. Specter about this again, earlier today.
+
+    Followup Discussions:
+    @614_f1Alexey Tumanov2 weeks agoboth security lecture slide decks from Prof. Michael Specter are now posted.good comment0
+    

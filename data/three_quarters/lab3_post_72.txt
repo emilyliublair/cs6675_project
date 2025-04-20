@@ -1,0 +1,12 @@
+Question: 
+    Is it guaranteed that the parent will wait for the child thread in userspace?For the userspace thread_create() function, if the parent thread exits before the child thread, it will cause a crash as the shared pgdir will be deleted.For this reason, is it garunteed that thread_wait() will safely be used in all test cases to ensure this does not happen, or should I make my kernel more robust.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

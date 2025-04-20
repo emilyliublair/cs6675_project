@@ -1,0 +1,12 @@
+Question: 
+    Questions about test casesHey folks,To better assist you, when you make a post asking about a failing test case, pleaseinclude a list of things you have already tested. It is difficult for the TAs to guess what's wrong with your code; there is so much missing context. The more context you provide, the better.The test cases are hidden because part of the learning objective is to learn how to think about and write tests. We understand that it is difficult; no class prior to this has you do this.But trust me, this is a very important skill to develop. In industry (and even academia), you will not have access to an oracle (which happens to be the autograder in this course) that tells you if your implementation is correct. You have to test and verify it yourself. It's a natural forcing function to get you to think deeply about your design.Best,Eltonlogistics~ An instructor (Alexey Tumanov) endorsed this note ~
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @739_f1Alexey Tumanov1 day agoupdate: the talk will not be recorded.good comment0@739_f2Alexey Tumanov24 hours agoREMINDER: Scaling all-flash storage arrays with HW/SW co-design talk by the Pure Storage Technical Director is starting in a few minutes!The guest lecture will NOT be recorded.Hope you can make it.good comment0@739_f3Alexey Tumanov19 hours agoPlease feel free to chime in with feedback on the talk, or you can also send it directly to me via email. I'm considering including this guest lecture to follow after the FS module in future years as well. So if there's anything that could have been improved about the guest talk, it will be good to know.I feel it ties FS and Distributed Systems really well.good comment0Alexey Tumanov19 hours agoWhiteboard capture of some takeaways from the talk:FS+DistribSys-CS3210spr25-Pure.jpeggood comment0
+    

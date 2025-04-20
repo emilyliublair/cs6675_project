@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    We did not check for any special characters in username or password and passed all of the part 3 test cases. We do have a check for the length of the password though.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @691_f1Anonymous Beaker7 days agowhat is the maximum length that should be allowed?0Anonymous Comp7 days ago#define MAX_INPUT_SIZE (100)is in login.h0Anonymous Beaker7 days agoI see, I am checking in all of my login_lib.c (create_user, does_user_exist, login_user) to make sure the username and password are < MAX_INPUT_SIZE, but when I input 101 characters into username it says "User not found. Create with a password: $" and then I can do ls and other commands, only good thing is I noticed uid != 0 in this case. Anything else I should look at?0Anonymous Comp6 days agoI only had one check for the max input length in create user. I also only checked for the password length not the username. Make sure you are accounting for the salt size as well. My check was like [ if(password length + salt size > max input){  return -1 }  else {hash password and return 0} ] in a helper function that generated the hash.0Anonymous Beaker6 days agoah ok got it, I'm a little confused though because the get_input function is only filling up the buffer for that max_input size, so currently theres no way for the password / username to be larger than that size, so how do we deal with it?0Anonymous Comp6 days agoOh I didn’t see that. Yeah then idk if you have to check the input size. I’m not sure.0
+    

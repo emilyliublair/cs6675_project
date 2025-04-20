@@ -1,0 +1,12 @@
+Question: 
+    thread_create()1. Should a thread's stack be of the same size as the default stack size of a process?2. On success, doesthread_create()return the pid of the created thread only after the thread finishes running?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @468_f1Sukrit Kumar4 weeks agoAre you making sure you don't yield a FIFO process on timer interupts ?good comment0Anonymous Atom4 weeks agoYes, I only yield for RR.0Sukrit Kumar4 weeks agoCan you add another check after the timer interupt yield if condition to check if there is a better runnable proc available and yileding the current proc is the best proc and the current one aren't the same ?good comment0Anonymous Atom4 weeks agoI added that at the end of setscheduler after we set the priority and policy of the chosen process. Should I move that to the timer interrupt instead? I feel like the only thing we should be checking for timer interrupt yields is if there is another runnable RR process of equal priority. If the other RR processes have less priority, then we shouldn't yield.0Anonymous Helix4 weeks agoRunning into this too, did you ever figure out what is neccesary in the timer interrupt (other than not yielding fifo processes)0
+    

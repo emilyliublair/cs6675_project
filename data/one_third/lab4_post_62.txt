@@ -1,0 +1,12 @@
+Question: 
+    Persist on RebootI see for part 2 we are supposed to persist changes on restart. I understand that means when we restart the computer it should keep the changes. Can we get some guidance on how to go about making sure the changes we make to an iNode persist or does it automatically already do it please?lab4
+
+    Student Answer: 
+    Fixed, I forgot to zero out a buffer in my login which caused a password mismatch. Thank you Elton, Varun, and Rohan!!!
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @617_f1Tianyi Yu2 weeks agoHelp...0
+    

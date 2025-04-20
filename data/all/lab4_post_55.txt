@@ -1,0 +1,12 @@
+Question: 
+    Part 4 FSSIZEAre we allowed to modify the value of FSSIZE for part 4, currently it's set at 1000 blocks, but this doesn't even create enough space for a 8MB file in the FS. So I'm assuming it's ok to increase this value to something larger in order to create more FS blocks but I want to double check in case this creates autograder issues.lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

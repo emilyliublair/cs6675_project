@@ -1,0 +1,12 @@
+Question: 
+    Is it possible to use your late days for lab3 extra credit early submission?Is there anyway to use your late days for the early submission, such that if you submit a day after the early submission deadline, you will use up 1 late day but will still get the extra credit for the late submission.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @390_f1Loading...1 month agoNot quite, look at:Default BehaviorAll processes should default toSCHED_RRwith a priority of 00Anonymous Poet1 month agoBut logically, when a child is made, shouldn't it immediately be in priority?0Loading...1 month agoNot quite sure your reasoning, but I see potential risk of starvation with that logic, so I would not think so.0
+    

@@ -1,0 +1,12 @@
+Question: 
+    im getting the correct values from the call however it is not the amount of memory i put inwhen I run my program and I check the value of the phystop and the program and I am reading the e820 call correctly however the call gives me more bytes then i actually have which is strange and i don't know what to do because I cant pass the tests because of it but the value it does give me is pretty close to what it should be.lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    I took a look at your most recent submission and it seems like you were able to get it to not timeout.
+
+    Followup Discussions:
+    
+    

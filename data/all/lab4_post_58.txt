@@ -1,0 +1,12 @@
+Question: 
+    Login username restrictionsAre there any restrictions for the passed in username during login functions, like they won't be more than X characters or can't include number etc.lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Marking as resolved in follow-up
+
+    Followup Discussions:
+    1 endorsed followup comment@631_f1Anonymous Helix2 weeks agoA dinode is the data structure representing the inode on disk, whereas inode represents an in-memory inode. If you take a look at existing file operations in sysfile if they change inode fields they update a reference to the inode and then call iupdate, which updates the dinode with any changes and adds the block to the log to be written to disk upon commit.~ An instructor (Sukrit Kumar) thinks this is a good comment ~4Anonymous Gear2 weeks agoWould you make the inode also have owner and perms fields as well? Right now only the dinode has these fields so I was planning on adding these fields to the inode as well and then updating them within the iupdate function0Anonymous Helix2 weeks agoYep I made it match the dinode. Be sure to also look at mkfs to make sure you give the new fields the right default values.2Anonymous Mouse1 week agoI'm confused by where to look in mkfs. I may just be missing something.0
+    

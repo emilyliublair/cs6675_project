@@ -1,0 +1,12 @@
+Question: 
+    Test Case 17Does anyone know what test case 17 is about? Currently I'm getting wrong output for only test case 17. I've only finished part 2 so far. To try and fix it, I changed my create() to check for write instead of read and write, and I also changed my link and unlink to do the same.lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

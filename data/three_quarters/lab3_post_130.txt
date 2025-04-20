@@ -1,0 +1,12 @@
+Question: 
+    Thread Create calling functionI'm trying to call the passed in function for thread create by just usingstart_routine(arg);However, this is causing an error when trying to run make There is not much error output when I call make, it just saysmake[2]: *** [user/CMakeFiles/makeuserfs.dir/build.make:87: user/fs.img] Error 1make[2]: *** Deleting file 'user/fs.img'make[1]: *** [CMakeFiles/Makefile2:808: user/CMakeFiles/makeuserfs.dir/all] Error 2make: *** [Makefile:91: all] Error 2Is there a different way that you are supposed to call the passed in function or is there something else that I may be missing?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

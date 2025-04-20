@@ -8,5 +8,5 @@ Question:
     
 
     Followup Discussions:
-    @534_f1Shourik Banerjee5 days agoPotentially resolved? I used ticks to determine ready time but re-reading the lab spec it appears that ticks tracks the number of time quantums that have passed.So this means that if two FIFO processes are added one after another but in the same time quantum, there is a chance that the incorrect one would get picked since they have the same ticks but their actually ready times should be different.0
+    @534_f1Shourik Banerjee3 weeks agoPotentially resolved? I used ticks to determine ready time but re-reading the lab spec it appears that ticks tracks the number of time quantums that have passed.So this means that if two FIFO processes are added one after another but in the same time quantum, there is a chance that the incorrect one would get picked since they have the same ticks but their actually ready times should be different.0
     

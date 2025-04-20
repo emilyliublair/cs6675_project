@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Solutions to midterm practice problems will be discussed during the second lecture of this week.Update: now that we discussed this in class, the proposed answer would _not_ be sufficient. The question is asking how to efficiently track the accessed state. Tracking this state requires understanding state transitions, what causes them, and how each of the state transitions happens (or what triggers those state transitions). This should lead to figuring out how available permission bits can be used to track "accessed" state.
+
+    Followup Discussions:
+    
+    

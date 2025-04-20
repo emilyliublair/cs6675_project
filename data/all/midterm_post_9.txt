@@ -1,0 +1,12 @@
+Question: 
+    Exam 2 review lecture, mem/data block sizes and swappingIt was noted that mem page size == file data block size due to swapping, this makes sense for the most part, but why is this better than file data block size = 2 * mem page size? What are the implications on swapping in this case?midterm~ An instructor (Alexey Tumanov) endorsed this question ~
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Samantha, did you check under Canvas->Files? It was posted yesterday.
+
+    Followup Discussions:
+    @732_f1Anonymous Comp2 days agoAhh yes, seems like I forgot to refresh my tab...0Alexey Tumanov2 days agono worries.good comment1
+    

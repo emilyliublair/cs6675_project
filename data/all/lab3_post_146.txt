@@ -1,0 +1,12 @@
+Question: 
+    Autograder make failure, but local release mode worksAs the title states, I have no trouble compiling locally with the Release flag but the autograder still gives me a make failure. Can someone look into my submission?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    good catch, lab spec corrected. Only one gradescope assignment for lab3. The checkpoint bonus will be calculated by the autograder script based on the percentage of tests 1-21 passed by the deadline (per the updated spec).I will make an announcement about this in class. So stay tuned.
+
+    Followup Discussions:
+    
+    

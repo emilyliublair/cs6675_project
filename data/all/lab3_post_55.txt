@@ -1,0 +1,12 @@
+Question: 
+    Highest memory location in user stack.I am trying to debug my clone and was curious as to if the address housing 0xffffffff is the highest address in the user stack or if there are slots above this. Thank youlab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @513_f1Nathan Prashant Duggal3 weeks agoIm wondering about this as well0
+    

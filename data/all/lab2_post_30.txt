@@ -1,0 +1,14 @@
+Question: 
+    Understanding Expected output for forktestPGTRAP: err: 0x7, va = 0x2f6c
+PGCOPY: 0x2000
+PGTRAP: err: 0x7, va = 0x2f60Forktest's expected output for COW has several accesses that look like this with a PGTRAP->PGCOPY->PGTRAP. Why does the second PGTRAP occur? Shouldn't the PGCOPY prevent there from being an issue for the process to access the memory?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    If you kill init, the kernel panics; there’s probably some memory corruption that’s causing init to print the zombie! line mistakenly and jump to the beginning of the function.If it is memory corruption then there’s a logic error in your code, and that can be pretty variable, so I would suggest logging all of the things you do you in your implementation and using what you see as a starting point to figure out what went wrong; then you can use gdb to step through the relevant code and narrow down what happened. Feel free to come to office hours as well.
+
+    Followup Discussions:
+    
+    

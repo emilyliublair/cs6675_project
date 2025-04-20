@@ -1,0 +1,12 @@
+Question: 
+    exam1 grades releasedGreetings everyone,The course staff has achieved an incredible feat of completing grading the exam within 24hrs of the last section taking it, which is absolutely incredible. Kudos to the team.I'm happy to report that we've just released the grades for exam1. The grades you see on canvas and the statistics below are_after_the distribution shift adjustment, and are therefore final.Here are the overall class stats:Please find the class distribution below as well.Please stay tuned for the "midterm decompress" scheduled as the very first lecture after Spring Break, when we will discuss the exam questions, what we did with the distribution, etc.Hope this is helpful. We worked hard to get this to you before the semester midpoint, which is today,Wed Mar 12 16:00ET.Sincerely,ATmidterm
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @418_f1Anonymous Beaker1 month agoHi, how were answers evaluated/was there a rubric used for question 1?4Alexey Tumanov1 month agoall points deducted should be detailed in the comment section for each of the subquestions. Sometimes, students don't notice this. In that case, please try to expand the comment field.good comment0Anonymous Comp1 month agowhat’s the CIOS bonus looking like these days… ?3@418_f2Anonymous Calc1 month agoWill we be able to request regrades? Thanks!2Alexey Tumanov1 month agothe regrade policy is defined in the syllabus here :https://github.gatech.edu/pages/cs3210-spring2025/course/syllabus/and applies to exam1 as well, yes.good comment0
+    

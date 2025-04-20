@@ -1,0 +1,12 @@
+Question: 
+    Spinlock as a fieldI am having some locking issues and think it might be how I instantiated/referenced the spinlocks I am trying to use. I stored the spinlock as a pointer in the proc struct and did initlock(lock ptr, name) to initialize it. When I try to acquire it doesnt happen even though there is no contention for the lock. I figure it has to do with how the lock is initalized/stored since only the ptr is global data. When I tried to store the lock as spinlock (struct spinlock lock;) I got error: field 'group_lock' has incomplete type. but it is declared asstruct spinlock group_lock; within the proc struct, I tried to include spinlock.h but it redefined the struct. Is there a way to fix this?lab3
+
+    Student Answer: 
+    Add include guards in the spinlock.h header~ An instructor (Ved Thiru) endorsed this answer ~
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @432_f1Anonymous Mouse1 month agoI'm also hard faulting on 17 and 18 :(0@432_f2Anonymous Gear1 month agoAny progress on this? I am only hardfauilting 17 😦0@432_f3Anonymous Scale1 month agoNot 100% sure but I asked a TA and they recommended stress testing. We managed to pass both tests after removing yield() from the end of fork() and clone().0Anonymous Gear1 month agowhy were you ever calling yield() after fork and clone? lol0Anonymous Scale1 month agoI think I had it in there to test something else and forgot to remove it ☹️0
+    

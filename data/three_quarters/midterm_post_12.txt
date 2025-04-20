@@ -1,0 +1,12 @@
+Question: 
+    Log commit clarificationI just need a bit of clarification involving how the actual write process works for a log system which I'm kind of confused about.In a log-based implementation of the file system, when does the actual file data that the write() operation is targeting get updated? Does this happen after the entry in the log is committed or is something that is only done when the log is full, in which the log merge process is when the data actually gets written to (meaning commit just indicates the journal entry write is finished)?Also, is it possible that there are actually 3 write transactions to disk per file write request? Once for the Entry in the log, then once for the commit section of the log and then the final one that updates the actual file on the disk?Thanks!midterm
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    it's not disallowed by the instructions, as long as you're referring to a LOCAL, cloned copy of the code.
+
+    Followup Discussions:
+    
+    

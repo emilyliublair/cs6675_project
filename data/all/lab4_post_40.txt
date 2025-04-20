@@ -1,0 +1,12 @@
+Question: 
+    Pt 2 ClarificationWhen it states, "By default, when the build system creates the disk imageuser/fs.imgthat xv6 will use in the build directory, all files should be owned by root and both readable and writeable for any user", which files is it talking about? Should any user have read/write access to everything in the root directory like the userspace files?lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    If you want, you can add in a seek syscall to change the file offset :)But Tianyi’s answer works well enough
+
+    Followup Discussions:
+    @655_f1Tanush Prathi1 week agoYou can also add an append flag to open0
+    

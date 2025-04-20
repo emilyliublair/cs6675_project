@@ -1,0 +1,12 @@
+Question: 
+    Tips for Debugging backtrace()Do you have any tips for debugging backtrace()? I don't have any errors locally, but my solutions doesn't pass the autograder. I understand the goal of the autograder is to not be a debugger, but what are some strategies I can use locally to validate my solution?Thank you!lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    You’re right –printfandechoare part of a user-space library that implement file printing for any user program. Luckily, kernel-space also has its own function to print to the console calledcprintf. You can use this function anywhere and find its declaration inkernel/src/console.c. This function is built specifically for printing to the console (hence the “c”), so you don’t need to pass in a file descriptor as you would with user space’sprintf.
+
+    Followup Discussions:
+    @81_f1Anonymous Mouse3 months agoI see thatstdio.hcontains declarations for bothcprintfandfprintf, with the latter looking like theprintfthat a user program calls. I’m wondering why a kernel program can callcprintf, but notfprintf? I can see thatfprintfdoes not have a definition, at least none that vscode can find. But if so, why include this declaration at all?0Anonymous Mouse3 months agoI’m also a bit confused about howprintfin user space is implemented. I assumed it would make a sys call which would reachprintfmtor something similar, but from the source code I only see a call made towrite, which also seems to not have a visible definition.Basically, what’s the general flow of data when a user program callsprintf?0
+    

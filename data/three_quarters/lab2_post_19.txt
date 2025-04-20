@@ -1,0 +1,12 @@
+Question: 
+    Getting a random PGTRAP at va 0x19a0 after every commandWhenever I run a command like `ls` or `usertets`, I get this random PGTRAP after my output prints. I debugged this a little with GDB and it looks like it's from an attempted write to the guard page (0x19a0 maps to the guard page). I do prevent the guard page from being written in `trap.c`, but wondering if this condition should ever even be reached in a working process? Is this PGTRAP normal or an indication that I'm doing something wrong. Thanks!lab2
+
+    Student Answer: 
+    I have this as well, don’t worry about it.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @303_f1Tianyi Yu2 months agoDo not call lab2_pgzero when zeroing out the zero page, and check if you are killing user processes if they try to access unmapped/kernel memory, etc.0
+    

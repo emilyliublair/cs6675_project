@@ -1,0 +1,16 @@
+Question: 
+    What direction is the "top of the function stack"Backtrace:
+   <0xaddress0> [top_of_stack_function_name]+offs1
+   <0xaddress1> [next_function_in_stack_name]+offs2
+   ...
+   <0xaddressN> [last_function_in_stack]+offsNIs the top of the stack the most recently called function, or the least recently called function? I.e what should print first with the backtrace function?lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @133_f1Rohan Natansh Bafna3 months agoSee alsohttps://github.gatech.edu/cs3210-spring2025/xv6/tree/lab0?tab=readme-ov-file#debugging-user-space-programswhere we discuss this in more detailgood comment0@133_f2Anonymous Comp3 months agoI'm running it from inside the container using the VSCode setup that someone else posted about. I believe it should be working from inside there or should I avoid using it.0Anonymous Comp3 months agonvm got it!0
+    

@@ -1,0 +1,12 @@
+Question: 
+    GDB IssuesI'm trying to use GDB for debugging purposes but running xv6 with the -g flag just leaves me stuck on this:COMMAND: qemu-system-i386 -nographic -drive file=user/fs.img,index=1,media=disk,format=raw -drive file=xv6.img,index=0,media=disk,format=raw -smp 1 -m 512 -S -gdb tcp::26000Is there something wrong with my setup or another problem?lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    This is great! We should definitely add this to the course wiki come the end of the semester.
+
+    Followup Discussions:
+    
+    

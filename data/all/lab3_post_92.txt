@@ -1,0 +1,12 @@
+Question: 
+    Failing 19-21I am passing all the other clone test cases but failing the security ones. I have already checked in stack is null, if the stack size is large enough to hold the parents stack and if allocproc fails. I am checking this in proc.c. I am only allocproc if the inputs are valid. I am not sure what else to do.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @447_f1David M Nuthakki1 month agoOk so I got it to work this time but it ate 2 of our submissions which wasn't our fault, can we please get these back?0
+    

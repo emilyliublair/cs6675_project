@@ -1,0 +1,12 @@
+Question: 
+    Should clone call filedup on open files?Since all filedup does is increase the ref counter of the passed in file if we don't call it during clone then the ref counter might be incorrect. I'm assuming we shouldn't though because if one thead closes the file then it should remove the file entirely assuming there are no other process outside the threadgroup which access it which won't happen if the ref count is higher than 1.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @378_f1Anonymous Beaker1 month agoOh you're so right round robin doesn't yield anymore. Thank you so much!0Anonymous Scale1 month agoTianyi Yu:  🐐🐐1
+    

@@ -1,0 +1,12 @@
+Question: 
+    Test Case 38!Hey guys,Hope that none of you run into this error, but I wanted to document my teammate and I's struggle. We were only failing test case 38 and it was not an issue with our conditional variables. It was a specific behavior in park that we missed in our testing. After some debugging and referencing a specific thread about test case 35 and the sequence setpid, unpark, setpark, park, we finally passed 38 and all of the park tests!I really hope this helps someone!lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Tests I/O operations across parent and child for pipes when blocking. Locking shared resources is graded separately.
+
+    Followup Discussions:
+    
+    

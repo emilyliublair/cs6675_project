@@ -1,0 +1,12 @@
+Question: 
+    Launching shell on loginWhen the username and passwords match I call setuid and next want to launch shell. I see that login shouldn’t return if successful so this launch would need to happen in the function. I am not sure how to, is it like calling exec(shell) or smth?lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    This looks like some sort of undefined behavior in your implementation. I don’t think we can help you much without actually seeing your code. Make sure you are not overflowing any buffers or accessing invalid regions of memory.
+
+    Followup Discussions:
+    @669_f1Anonymous Calc1 week agoI'm also running into this issue... any progress?0
+    

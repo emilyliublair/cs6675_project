@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    The reason for 3 to be ordered before {4,5} is because the second write operation could be performed on the same block of data that was mutated in the first write operation. Op 4 is a copy, it must copy from the right block. If the shadow bit flip (op 3) hasn't happened yet, Op 4 could end up reading from stale data, instead of updated data. Thus, you want to make sure that op 3 and op 4 are ordered. It's very simple.
+
+    Followup Discussions:
+    @715_f1Sebastian Tyler Morgenstern3 days ago@Alexey TumanovThanks for the response -- that's what I thought you said in lecture and that was confusing to me. From what I understand, we're talking about disk persistency here, right? It very clearly orders 3->{4,5} with a flush, so I'd assume so. But, as long as there's no crash, on copy (4), it would just access the data stored in the buffer/memory written by the first step if it hasn't already been persisted to disk (and if it has been, then we don't have an issue either); in this context, I could understand using locks on the shadow bit for a block or a block itself in buffer (so if a current write, without immediate persistence, is occurring, there wouldn't be a race condition on the shadow bit or associated data), but I can't understand the Read-After-Write from a persistency and crash recovery angle.I feel like this flush ordering still makes sense, but for the reason that we don't want concurrent writes to both of a block's underlying blocks; rather, if {1,2} copied from say block 16 to block 17, we don't want to start overwriting block 16 on {4,5} without having the shadow bit persisted to disk to show that block 17 is the new current on 3?With all of that, I am still curious about writing to different logical blocks as well; I think you would still need the flush in between any shadow bit flip and writing to another block for basic ordering reasons. Consider the classic example from lecture where metadata is changed with the data -- without that flush, in the event of a crash, the metadata (and its corresponding shadow bit) could be written first, leading to undefined behavior, potentially even pointing to another user's SSH key; or the other way around, where a data block is allocated first with no pointer to it causing a disk leak. At the very least, you'd need some guaranteed ordering between 3 and 6 right?Sorry I'm completely off track, I just wanted to make sure I was understanding this correctly.0
+    

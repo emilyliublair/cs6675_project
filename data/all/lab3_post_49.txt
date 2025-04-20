@@ -1,0 +1,12 @@
+Question: 
+    Autograder timeoutMy submission has been running in the autograder for almost 30 minutes. I figure one of the testcases is stick in a loop or something but I have never had the autograder run this long before. When I previously had hard fault or timeout issues the autograder usually ended after 7-8 minutes. Has the timeout been extended or is this a glitch?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    By starved do you mean a user thread tried to acquire a spinlock but never does because another thread that has the lock never releases? This livelock is an issue of the userland programmer. It should be sufficient to ensure mutual exclusion.
+
+    Followup Discussions:
+    
+    

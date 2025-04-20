@@ -1,0 +1,12 @@
+Question: 
+    part 3 constraints questionconstraints on username / password length? Any characters I should test for? I currently don't allow for ':' and '\n' but I read another post that mentioned to treat the newline character like any other character for a username, which is throwing me off. If so, why is it ok in a username but not a password?lab4
+
+    Student Answer: 
+    Treat the newline character as any other character.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

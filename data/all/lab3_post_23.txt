@@ -1,0 +1,12 @@
+Question: 
+    Extra Credit Improvement RequirementsIs there any margin that the extra credit scheduler has to be better than RR and FIFO by, or is it just better at all (with a detailed writeup) will earn the credit?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    For me, using the search feature in VSCode to look across all uses of shared variables is the best at identifying missed locking. As far as mutex correctness is concerned, consider all possible interleaving of instructions to the mutex acquire and release in order to identify atomicity issues, as covered in lab (since for example after checking a particular resource is held, the process might be switched out and when returned to the sameplace, the resource might no longer be held).
+
+    Followup Discussions:
+    
+    

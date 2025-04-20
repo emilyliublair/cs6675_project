@@ -1,0 +1,12 @@
+Question: 
+    malloc throwing a page faultCurrently testing the threading library. The test program I wrote attempts to create 128 child threads and then waits for each one of them at the end. My approach to creating threads is tomalloca fixed amount of memory at a time for the child stack.The bug is that at seemingly random points in the process of creating threads,mallocgenerates a page fault with error code0x7:pid 3 tth: trap 14 err 7 on cpu 0 eip 0x671 addr 0x87240ff3--kill procThe instruction that generated the fault is81    p->s.size = nunits;I don’t exactly understand how malloc works tbh, so I’m at a loss on where to start. Any hints/suggestions would be welcomed.P.S. Would it make sense to usesbrkinstead ofmallocin this one? I’ve usedmallocin all past labs, which was why it was my go-to here.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @505_f1Nathan Prashant Duggal3 weeks agoThe spec says these syscalls should only return 0 or -1 right? Are you referring to -1 here?Nevermind I’m illiterate0Nathan Prashant Duggal3 weeks agoOk adding this return value also fixed 33 for me. Weird tests.0
+    

@@ -1,0 +1,12 @@
+Question: 
+    Locking file system operationsI'm currently working on maintaining atomicity for individual file system read/write operations. Since we use argfd to check whether the process has the file open, I am assuming we need to keep this atomic with the read/write to ensure that another process in the same thread group doesn't close the file after argfd.I'm having issues with with sleeps in filewrite from end_op and writei, but if I release the lock and re-acquire, I keep running into panics. Am I approaching this the right way in terms of needing to hold a lock for file system reads/writes or overcomplicating it?lab3
+
+    Student Answer: 
+    I (not OP) solved this by making sure I correctly handle creating a thread from within a thread.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @602_f1Anonymous Calc3 weeks agoI'm facing the same issue - please let me know if you make any progress!0Anonymous Atom3 weeks agoI haven't been able to make any practice, did you figure anything out?0Anonymous Calc3 weeks agoJust discussed it with a TA at office hours and it turns out that it's most likely to do with creating a thread inside a thread. My code currently doesn't handle this case properly. Hopefully you have the same issue0
+    

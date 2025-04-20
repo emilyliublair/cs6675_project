@@ -1,0 +1,12 @@
+Question: 
+    Helpful macro for printing only in Debug modeYou won't need to comment out debugging prints with this ONE WEIRD TRICK!I've seen some of you in office hours not pass tests because you forgot to comment out debugging prints.Since the autograder compiles your submission in Release mode, it is possible to write a macro that is only substituted with cprintf in Debug mode:#ifNDEBUG#definedebug_cprintf(...)#else#definedebug_cprintf(...) cprintf(__VA_ARGS__)#endifrun code snippetVisit Manage Class to disable runnable code snippets×If you use a macro like this you won't have to remember to comment out debugging prints before submitting.lab2lab3lab4~ An instructor (Rohan Natansh Bafna) endorsed this note ~
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @704_f1Anonymous Atom5 days agoI understand that we don't need to worry about the kernel level logging in the user space application, but why do we need to enforce an ordering of writing to the log before actually writing to the file?0Alexey Tumanov4 days agoJustin,That's the whole point of the log, right? We want to log the intended write to the log before actually writing it to the intended destination. The write to the file is not guaranteed to be crash consistent. For instance, a write to the file could be corrupted due to a crash. Writing an entry with a checksum to the log first ensures the atomicity of this write. Then, if the file write fails, we could recover from the log.good comment0
+    

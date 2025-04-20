@@ -1,12 +1,12 @@
 Question: 
-    Is it possible to use your late days for lab3 extra credit early submission?Is there anyway to use your late days for the early submission, such that if you submit a day after the early submission deadline, you will use up 1 late day but will still get the extra credit for the late submission.lab3
+    Errors coming from indentation mistakes in provided codeHi, I'm getting a bunch of errors tagged with `-Werror=misleading-indentation` from the provided code (see below)TThis doesn't seem to be coming from code that I edited, but rather code that was provided. However, I'm only sseeing these errors now after messing with my proc struct in proc.h. Not sure where this is coming from/how to debug so wanted to see if anyone else was having this problem or the TAs could help.lab3
 
     Student Answer: 
     
 
     Instructor Answer: 
-    Late days will not be consumed. The checkpoint is a hard deadline.~ An instructor (Alexey Tumanov) endorsed this answer ~
+    Resolved
 
     Followup Discussions:
-    @392_f1Alexey Tumanov3 weeks agoit doesn't make sense to use your late days for the checkpoint.(1) your checkpoint is not all or nothing, i.e. your checkpoint bonus will be calculated based on the fraction of tests 1-21 you were able to complete in the latest submission before the checkpoint deadline.(2) counting late days is actually logistically complicated for the course staff, even more so when the checkpoint is NOT a separate gradescope assignment.good comment0
+    @436_f1Rohan Natansh Bafna1 month agoDid you forget or add a brace somewhere when you modified proc.h?good comment0Varoon Sai Kodithala1 month agoI don't think so, but I added braces to all of the provided code where they were missing and the compilation issue was fixed. Weird.0Varoon Sai Kodithala1 month agoIt was in sysfile.c, syscall.c, and fs.c.0
     

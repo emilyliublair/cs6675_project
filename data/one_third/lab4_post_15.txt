@@ -1,0 +1,12 @@
+Question: 
+    XV6 hangs on bootup after implementing part 4I implemented part 4 and also edited mfks, and now xv6 gets stuck when loading, it just prints these lines:Booting from Hard Disk..xv6...cpu0: starting 0sb: size 32768 nblocks 32701 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58In GDB, these functions keep getting called:#1  0x80105fcc in pushcli () at /xv6/kernel/src/spinlock.c:108#2  0x80105140 in myproc () at /xv6/kernel/src/proc.c:61#3  0x8010633f in fetchint (addr=11172, ip=0x8dfbcec0) at /xv6/kernel/src/syscall.c:20#4  0x80107346 in sys_exec () at /xv6/kernel/src/sysfile.c:471#5  0x801064e3 in syscall () at /xv6/kernel/src/syscall.c:153#6  0x80107ad4 in trap (tf=0x8dfbcfb4) at /xv6/kernel/src/trap.c:43#7  0x8010005e in alltraps () at /xv6/kernel/src/asm/trapasm.S:20#8  0x8dfbcfb4 in ?? ()Did anyone else run into something similar? I have not changed itrunc if that matters (I assumed system would still boot without it).lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @686_f1Anonymous Mouse1 week agowhat perms are you checking for in chmod and chown? we only check if it's root or owner0Anonymous Atom1 week agoyes, we’re checking the same thing0Anonymous Mouse1 week agois this the only test you're failing? we seem to have the same permission checks in the other functions :/0Anonymous Atom6 days agoyes, this is the only test we’re failing.0
+    

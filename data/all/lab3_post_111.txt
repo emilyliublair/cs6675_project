@@ -1,0 +1,12 @@
+Question: 
+    Part 5 lostwakeupIf a process calls setpart and then a wakeup occurs for that channel in between that and the process calling park, should we just immediately return 0 and not go to sleep.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Have you tried building in release mode?
+
+    Followup Discussions:
+    @398_f1Anonymous Atom1 month agoYep, it successfully builds in release mode too locally. Just to confirm, we set the release mode flag by calling before running make?cmake .. -DCMAKE_BUILD_TYPE=Release0Elton Leander Pinto1 month agoHave you tested clone locally?good comment0Anonymous Atom1 month agoNot yet, I haven't done part 2 yet. Do I need to implement it to test part 1?0Anonymous Atom1 month agoFixed this, the solution is to ensure you are adding the stubbed syscalls to the userspace as well.0Anonymous Comp1 month agoCan you explain what the fix was? I'm getting this same issue and I can't tell why. Do we need to do anything in /user besides adding the syscall prototypes in user.h and using the macro in usys.S to make the user-space wrapper for the syscall? I tried writing my own userspace program that uses setscheduler and waitpid and that compiles fine in release mode, so I don't really understand why i'm getting make failure still on gradescope.0Loading...4 weeks agoDid you ever resolve the issue?0Anonymous Atom4 weeks agoDid you stub waitinfo?0Anonymous Helix3 weeks agoIs there a solution to this issue that was found?0Anonymous Comp3 weeks agoFor me, the issue was that I was missing a stub for the clone syscall. I thought I had made stubs for all of them but I simply missed clone. Just make sure you have stubs for every single syscall in the whole lab -- the test cases are trying to compile userspace calls to all of the syscalls used in the lab, so if you don't have a stub for one of the syscalls, it will fail to compile.0
+    

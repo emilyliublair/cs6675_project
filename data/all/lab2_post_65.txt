@@ -1,0 +1,12 @@
+Question: 
+    How to find error from TestsI am getting the following error when I am running forktest. Does anyone have any advice on how to go about figuring out what is wrong?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

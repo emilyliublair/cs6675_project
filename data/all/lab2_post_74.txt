@@ -1,0 +1,12 @@
+Question: 
+    Gradescope timeoutWhat should I do in this situation?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @212_f1Anonymous Beaker2 months agowhy do we disable lazy zero initialization on user stack pages?0Elton Leander Pinto2 months agoQuoting the spec:You are expected to minimize the costs of operations. Operations costs include page-faults (100s of cycles) and copies (1000s-10000s of cycles). You should always prefer an additional page-fault to an unneeded copy.Another thing to keep in mind is how likely is it that the user stack page is written to.Remember that lazy-zeroing is an optimization that isde-dedupping zero pages that are only ever read from; it gives us the most benefit for those pages.Now, given this, compare the costs of these two scenarios.Lazy-zero enabled on user stack pageLazy-zero disabled on user stack pagegood comment0Anonymous Calc2 months agoOk so since we basically always end up writing to the stack afterwards, its worth it to allocate right away?0Elton Leander Pinto2 months agoWhy would that be the case?good comment0Anonymous Calc2 months agoI think because we will have to allocate a new zero page anyway when we preform a write so we save 1 page fault.~ An instructor (Elton Leander Pinto) thinks this is a good comment ~1Elton Leander Pinto2 months agoThere you go!good comment0
+    

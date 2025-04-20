@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Access checks should only occur when you open the file. If you have a file open and the inode permissions or your permissions change, your access to the file should not be changed. (This is a feature; it allows you to selectively allow access to files by opening the files and then setuid’ing, and is how all processes are able to read to and write from /console even though its perms are 0.)
+
+    Followup Discussions:
+    @640_f1Anonymous Scale2 weeks agoPROT_R being set means non-owners can read. PROT_W means non-owners can write.0
+    

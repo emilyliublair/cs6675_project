@@ -1,0 +1,12 @@
+Question: 
+    Waitpid on grandchildrenCan waitpid() be called on grandchildren? If a process calls clone to create a child, which then calls clone, can the original process call waitpid on the grandchild?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @583_f1Shourik Banerjee3 weeks agoThe case referenced in the post you linked actually is setpark->unpark->setpark->park. This should result in the process not sleeping.0
+    

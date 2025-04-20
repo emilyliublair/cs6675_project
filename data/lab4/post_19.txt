@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    Have you tried running like usertests when signed in? Do you have appropriate permissions or are you prevented from executing code leading to faults? Does it fail correctly or does it like hang?
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

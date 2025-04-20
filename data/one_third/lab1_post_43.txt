@@ -1,0 +1,12 @@
+Question: 
+    PrintingHow can we print the backtrace if there's no printf or echo exposed in kernel space?lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    eip_fn_addr refers to the address of the start of the function (i.e. the value of the instruction pointer – eip – when the function is called).
+
+    Followup Discussions:
+    
+    

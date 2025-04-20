@@ -1,0 +1,15 @@
+Question: 
+    xv6 dev env for arm64 linuxHi, I’m an arm64 linux user having problems running xv6. It appears viasudo docker inspect jackwolfard/cs3210:latest | grep Archthat there are amd64 assumptions in the linux docker image. Hence I’m getting incompatible shared object errors. Did the docker image change in the last few days? I got it to work in lab last week, perhaps the x86-ness is local to the xv6-qemu and I’m running commands in the wrong order?Could someone verify whether this restriction is new as of last Wednesday and whether an arm64 linux user would need to emu an general x86 machine to emulate the xv6 one? TyMore output for context:λ  xv6 git:(lab0) sudo ./scripts/docker.sh
+Starting xv6 container
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+/bin/bash: error while loading shared libraries: libtinfo.so.5: failed to map segment from shared objectlab0
+
+    Student Answer: 
+    Problem: not that the image changed (hasnt in 3yrs), I think its bc i updated my os which has newer ncurses shared libraries that what the docker binary expects, and symlinking the old ones didnt workSolution: ssh into cheap fly.io arm64 vps built from cs3210 dockerfile withCMD ["sleep", "infinity"]tldr: ignore this unless your a student with the same niche problem
+
+    Instructor Answer: 
+    Both are valid for allocating memory. However malloc will allocate more memory than is needed as it requires additional metadata to build its freelist, so take this into consideration.Regardless of whichever approach, using sbrk(0) should return the size of the processes address space (sys_sbrk in kernel/src/sysproc.c)
+
+    Followup Discussions:
+    
+    

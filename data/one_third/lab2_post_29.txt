@@ -1,0 +1,12 @@
+Question: 
+    Forktest works but regular boot doesn'tHas anyone encountered the situation where the forktest works as expected but when you boot normally the following trap just occurs infinitely?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

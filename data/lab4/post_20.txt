@@ -1,0 +1,12 @@
+Question: 
+    Failing all login test cases after implementationHello,My teammate and I are still failing all test cases for logins with a hard fault and we are unsure of what could be causing this.we have persistent user logins, a built-in root user, and file permissions hold between users. All of the login cases on the autograder are hard faulting despite all of our local tests working. Does anyone have any insight that could help?lab4
+
+    Student Answer: 
+    we fixed it by a combination of a couple of things, not sure what did it-Increasing the total space on the disk by way more than you think you needmake sure your inode and dinode struct matches with the new large file implementation you didmake sure your bmap is correctly using the block number
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @679_f1Anonymous Gear6 days agoexact same issue for us, can't find the issue yet. Is your test #12 also failing by chance?0
+    

@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    It was the case for me, too. I had that error until I implemented large file support correctly.
+
+    Instructor Answer: 
+    Can you build a copy of xv6 which contains large files in the initial filesystem?
+
+    Followup Discussions:
+    @629_f1Anonymous Gear1 week agoI've implemented what I think is required for Part 4 and I've been able to pass all of Part 4's testcases except for Test 32, which is still giving me a "make failure" error message. Any insights into what might cause this to happen or what might be wrong with my implementation?0Anonymous Helix1 week agodid you figure anything out?0Anonymous Gear1 week agoNope, it's still failing for me.0Anonymous Mouse1 week agoNot sure if I had the same issue as me. I would just go through the file that works with the initial filesystem and check all the methods and make sure they will all work with your new implementation. Since I missed one area and that was causing the make failure for me.0Anonymous Helix1 week agoah yes, thank you so much!0Anonymous Gear1 week agoDid you end up changing mkfs.c for this? I think I changed what does the initial files to include my large files but 32 is still a make failure.0Anonymous Helix1 week agoyea changing iappend is what fixed it for me. although, in my first submission i had a very small mistake in my conditionals that caused another make failure. once i fixed it though, we were able to get the test passing.1Anonymous Comp1 week agoi have changed iappend, bmap, and itrunc. are there any other places I should look at? my system is getting stuck booting :/0Anonymous Helix7 days agothose are the only three i changed :/ is 32 the only test you're failing?0Nathan Prashant Duggal7 days agoMine is getting stuck on the mkfs balloc. balloc asserts that your system has used less than 4096 data blocks (around 2MB) because the bitmap is only a single block, and only has used bits for 8*512 = 4096 blocks. I would think we would have to change this to support 8MB files, but sounds like you didnt?0Anonymous Helix6 days agohmm yea i didn't modify balloc at all, it was only those three functions0
+    

@@ -1,0 +1,12 @@
+Question: 
+    Trap at 0x2fdc on initI always have this extra trap at 0x2fdc. I believe that if it is indeed a write, then this should be the expected behavior (2fdc should be lazy-zero initialized and thus should cause a pgfault with error code 7). But I can't find what caused the write at 2fdc anywhere in the kernel and it is not in the expected output. Can someone help me with this?lab2
+
+    Student Answer: 
+    This is resolved through disabling lazy zero initialization on user stack pages.
+
+    Instructor Answer: 
+    the va corresponds to a memory location in the stack itself and not in the guard page. Remember that the stack grows downwards so the 0x1000-0x2000 space would be corresponding to the stack and 0x0000 till 0x1000 to the guard page in this case
+
+    Followup Discussions:
+    
+    

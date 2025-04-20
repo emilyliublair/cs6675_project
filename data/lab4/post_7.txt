@@ -1,0 +1,12 @@
+Question: 
+    Test Case 29, 31, 33Hi I am failing (hardfault/timeout) tcs 29, 31, and 33. If anyone has any advice or knows what these test that would be amazing. Thank you!lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @699_f1Yirou Wang6 days agoIs your build up-to-date with the source file? And did you setfileto the file that’s being executed?0Anonymous Atom6 days agoFile was set in that GDB session. The build was also made immediately before the session.0@699_f2Anonymous Atom6 days agoUpdate: I discovered that trying to implement part 4 caused this weird issue. It was a problem with my new file system.0
+    

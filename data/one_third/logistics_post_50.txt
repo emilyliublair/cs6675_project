@@ -1,0 +1,12 @@
+Question: 
+    reminder : no class Tue Jan 21 per scheduleGreetings everyone,I hope you're all staying warm and safe during this weather. I just wanted to post a reminder for my section C students that we will haveNO CLASStomorrow, Tuesday, Jan 21 to stay in sync with Section D which held no class today in observance of the MLK Holiday.For the most up-to-date tentative schedule, please refer to :https://github.gatech.edu/pages/cs3210-spring2025/course/schedule/Your next class related activity resumes on Wed, Jan 22 with Section D lecture and the regularly scheduled supervised labsby default. If and only if Georgia Tech decides to _extend_ their modified operations to Wed, we will issue a separate communication on our Wednesday Jan 22 plans.Thanks and please be warm Atlanta!ATlogistics
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,12 @@
+Question: 
+    Autograder make failureI successfully tested my backtrace implementation in the local environment, and it compiled without any issues in both debug and release modes. However, when I attempt to submit my work, I keep getting make failure from the autograder. I did not include the backtrace functionality in kernel/main.c, instead, I implemented it as a syscall and added a test class in user space. What could be the issue?lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Instead of testing through user space, I would highly recommend keeping the backtrace endpoint where it was defined and test it solely in the kernel. The autograder expects the backtrace functionality to be available precisely how we defined it for you by default (i.e. it expects it as a kernel-level function, not a syscall).
+
+    Followup Discussions:
+    @120_f1Anonymous Beaker3 months agoI thought I had pulled but I guess I didn't and it is working now. Thanks!0
+    

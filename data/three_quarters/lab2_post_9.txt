@@ -1,0 +1,38 @@
+Question: 
+    Confusion about fork() and wait()I’m getting this weird bug where the process that wasfork()ed in wouldn’t realize it was the child (value returned byfork()is never 0, despite the trap frame being correctly changed to say0foreaxof the new process).It would go on towait()for its child to return, butwait()would return immediately with a return value of0.I have no clue whywait()would return 0… or why the child process seems to never be run, despite itsproccontaining the right values. I suspect the stack may be corrupted but I don’t see how.Here’s a trace of the debug output. I made it so it prints “init (pid): am child” when thepidreturned byfork()is0, and as you can see that never happens.BootingfromHard Disk..xv6...
+epinit: PPN0xdfff000(PFN57087)
+cpu0: starting0sb: size1000nblocks941ninodes200nlog30logstart2inodestart32bmap start58exec: /initPGZERO:0x0PGZERO:0x1000PGZERO:0x2000init: starting sh
+fork: From'init'(1)init(1): spawned child2pgflt: at0x8010005e,init(2) upon0x2fc8(0xdf76fc8)
+PGCOPY:0x2fc8init(2): unexpected child0(waitingon2)
+zombie!init: starting sh
+fork: From'init'(2)init(2): spawned child3pgflt: at0x8010005e,init(3) upon0x2fc8(0xdf75fc8)
+PGCOPY:0x2fc8init(3): unexpected child0(waitingon3)
+zombie!init: starting sh
+fork: From'init'(3)init(3): spawned child4pgflt: at0x8010005e,init(4) upon0x2fc8(0xdf31fc8)
+PGCOPY:0x2fc8init(4): unexpected child0(waitingon4)
+zombie!init: starting sh
+fork: From'init'(4)init(4): spawned child5pgflt: at0x8010005e,init(5) upon0x2fc8(0xdeedfc8)
+PGCOPY:0x2fc8init(5): unexpected child0(waitingon5)
+zombie!init: starting sh
+... repeats until runsoutof proc slots ...init: starting sh
+fork: From'init'(64)init(64): spawned child-1init: fork failed
+wait: Killing off64pgflt: at0x80104d57,init(63) upon0xa(0xdf7900a)
+PGCOPY:0xawait: Killing off63pgflt: at0x80104d57,init(62) upon0xa(0xdf7900a)
+PGCOPY:0xawait: Killing off62pgflt: at0x80104d57,init(61) upon0xa(0xdf7900a)
+PGCOPY:0xawait: Killing off61pgflt: at0x80104d57,init(60) upon0xa(0xdf7900a)
+PGCOPY:0xawait: Killing off60pgflt: at0x80104d57,init(59) upon0xa(0xdf7900a)
+PGCOPY:0xawait: Killing off59pgflt: at0x10,init(58) upon0xa(0xdf7900a)
+PGCOPY:0xawait: Killing off58pgflt: at0x80104d57,init(57) upon0xa(0xdf7900a)
+PGCOPY:0xawait: Killing off57pgflt: at0x80104d57,init(56) upon0xa(0xdf7900a)
+... repeats until all processes killed ...
+lapicid0: panic:initexiting801052858010756f8010005e0000000run code snippetVisit Manage Class to disable runnable code snippets×lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Something wrong with the autograder. If you get this, make a private post and a TA will rerun it.
+
+    Followup Discussions:
+    
+    

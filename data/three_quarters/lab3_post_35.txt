@@ -1,0 +1,12 @@
+Question: 
+    Failing tests 29 and 31Title - I'm especially curious about why I'm failing 29 (and not 27/28/30), since I haven't heard of anyone else failing specifically that case and not any other thread error/security tests.My current approach is to replace all references to shared resources in the proc struct (pgdir, sz, ofile, cwd) throughout the codebase with references to those resources in the thread group owner, so that the owner serves as a single source of truth for their values. I have replaced all instances of p->pgdir with p->owner->pgdir, p->sz with p->owner->sz and so on. Has anyone else successfully used this method? Are there any nuances I could be missing?I've written (and am passing) test cases checking for propagation of all these shared resources across threads in the same group, so I'm confused about where the issue lies.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Doesn't matter
+
+    Followup Discussions:
+    
+    

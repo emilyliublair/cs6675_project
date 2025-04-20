@@ -1,0 +1,12 @@
+Question: 
+    Is it OK if my limits prints out allocuvm out of memory before the memory limit?Is it OK if my limits command prints out "allocuvm out of memory" before the"Maximum Memory Size: 0x00000000"?lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    exec runs a program on your computer. That is, it instructs the kernel to replace the current process with code form a file on your computer that you specify and pass in the command line arguments that you specify. In particular, the arguments are all strings. You can see examples of how exec is used in the source code for sh; see also read the Linux man page for exec and the discussion of exec in pages 9-11 of the xv6 bookTo be clear, printf is not a program and you can't execute it with exec. Just call it as you would normally call a C function.
+
+    Followup Discussions:
+    
+    

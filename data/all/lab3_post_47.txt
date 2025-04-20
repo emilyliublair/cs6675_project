@@ -1,0 +1,12 @@
+Question: 
+    Weird bug where Test Case 7 occasionally doesn't pass the autograderI was wondering if there is any particular behavior that causes this inconsistency. I'm pretty sure the scheduler implementation is correct because it passes 7 about 9/10 times we submit on gradescope. I was wondering if it was a potential locking issue, but as far as I know we didn't need to use our own locks for scheduler (only ptable which I'm pretty sure is correct).lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @532_f1Anonymous Comp3 weeks agodid you figure out what the issue was for 24? im failing the exact same two cases from clone + threading.0
+    

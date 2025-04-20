@@ -1,0 +1,12 @@
+Question: 
+    where is initcode.S?titlelab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @75_f1Loading...3 months agoSince helloworld creates a file, then if you already created the maximum files in a directory, you will immediately hit a panic when you run helloworld after limits. You can either close/clean up files to free-up Inodes.0Anonymous Scale3 months agoYep that makes a lot of sense. Is there a command that I can use to (I'm thinking like rm) to clear out fs.img?0Loading...3 months agoIt was explained to me in Lab that you can actually comment out your logic for creating files and just leave a hardcoded answer (found via your logic) as a print statement - They just glance at the logic and final answer as proof.0Rohan Natansh Bafna3 months agoYou can rm fs.img and then run make again to regenerate itgood comment0
+    

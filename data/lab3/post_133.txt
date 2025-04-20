@@ -1,0 +1,12 @@
+Question: 
+    Part 5 Nits: Should mutex still function without setpark()?If a user decides not to use setpark(), should you return a -1 (error out), or should the park/unpark mechanism still function properly?If the second case is the desired behavior, wouldn't setpark be unnecessary?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    If a user doesn’t use setpark(), then park() and unpark() should still function properly (i.e. they should put a process to sleep and wake it up), but the lost wakeup problem might happen.
+
+    Followup Discussions:
+    
+    

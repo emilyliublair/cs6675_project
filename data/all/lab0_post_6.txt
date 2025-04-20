@@ -1,0 +1,12 @@
+Question: 
+    helloworld running into panicI've implemented limits.c with the extra credit and I'm getting numbers for max processes and max files per dir that make sense. But when I go to run helloworld now, I run into the same panic as the one that happens at the end of max files. Is this expected behavior? If not, what should I be looking to resolve?lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    great question! And you're going to fix this in lab2 by adding COW support.
+
+    Followup Discussions:
+    @70_f1Rohan Natansh Bafna3 months agoTo add on, if you’re interested, this StackOverflow answer (as well as the article it links to on the history of Unix) gives some good historical context on how the fork-exec model developed:https://unix.stackexchange.com/a/136673In a nutshell, fork and exec were originally thought of and implemented independently in Unix, and the design was propagated through its successors. Before copy-on-write forking was implemented, there were other system calls that combined the functionalities of the two efficiently, but I don’t think they’re used much anymoregood comment1
+    

@@ -1,5 +1,5 @@
 Question: 
-    thread test case questionWhat is the 'Thread IO blocking' in test case 26 referring to? Is it about locking shared resources like files or something else?lab3
+    
 
     Student Answer: 
     

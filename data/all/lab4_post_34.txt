@@ -1,0 +1,12 @@
+Question: 
+    Approximate Larger File Size?On the specifications for Part 4, it says that file sizes up to 8MB must be supported. However, in order to keep the size of inode/dinode struct the same also as specified in Part 4, there need to be (X amount of direct blocks) on top of the (added blocks that increase the size to 8MB).Is it okay for the file size to be 8MB plus ~a few KB for these direct blocks?lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    I would suggest opening a gdb session and then pressing Ctrl-C in gdb when xv6 starts to hang. This will pause execution and show exactly where xv6 is hanging.
+
+    Followup Discussions:
+    
+    

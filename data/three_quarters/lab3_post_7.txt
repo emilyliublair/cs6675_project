@@ -1,0 +1,12 @@
+Question: 
+    Waitinfo fails test 7After implementing waitinfo, I now fail test 7 (pass all other test). My locking order is ptable.lock then tickslock (consistently, to avoid deadlocking). I saw@534has the same issue. Has anyone else had this issue?Additionally, we’re using a priority queue and not relying on ticks for FCFS.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

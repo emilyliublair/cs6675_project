@@ -1,12 +1,12 @@
 Question: 
-    Advice on Thread Error/Security Test Cases 27-30If you are stuck on the Thread Error/Security test cases 27-30, here is some advice. I was in OH and learned that these cases are somewhat mislabeled. They are more related to ensuring thread group consistency when doing filesystem operations, e.g. changing the current working directory or opening/closing a file descriptor.lab3
+    Part 4 SpinlockDo we need to do cli and sti for spinlocks in userspace? Also, is it correct that we are keeping track of the pid instead of the cpu (as done by the kernel space spinlocks)? Thank you.lab3
 
     Student Answer: 
-    
+    User space does not have access to enabling and disabling interrupts.
 
     Instructor Answer: 
     
 
     Followup Discussions:
-    @462_f1Anonymous Gear2 weeks agoHey, I'm stuck on these exact test cases too and I'm just a bit lost on where to start. Wondering if you have any pointers just to get me moving in the right direction.I've made a couple changes to clone and got 26 and 28 to pass, but no other luck. Any help would be awesome thanks!0Anonymous Mouse2 weeks agoIf a thread does any of the following, you need to propagate the relevant changes to the entire thread group:modifying the file descriptor tablechanging working directorychanging the amount of memory allocated to the process (theszfield of theprocstruct needs to be consistent across all threads in a thread group)Think about how you could update all the threads in a thread group when one of those scenarios occur. Once you have that figured out, you should make sure you’re accounting for all the places where those changes could happen. When you’re propagating the changes, you should also make sure you use locks in the appropriate places.2Anonymous Scale2 weeks agoHey, I'm also stuck in the same test cases including 28. Wondering if you could point me in the right direction how you fixed 28, thanks!0Anonymous Gear2 weeks agoUnfortunately, we never failed 28. I have no clue why we passed it. I'm sorry dawg.0Anonymous Beaker1 week agoThanks for the advice, made some helper functions to do the work and i was able to pass 26-30.0Anonymous Poet1 week agoDo we need to actually propagate these changes for the cases to work or will it work if we just update the thread group owner and maintain a reference. I'm asking because thats how I'm doing it right now but it seems like thats not the way the test is written.0Anonymous Beaker1 week agoWell, for reference, i tried only updating the group owner but seems like that doesn't work, after i propagated those changes i was able to pass all of 26-300Anonymous Scale7 days agoDid you have timeout/hardfault or incorrect output when they failed?0Anonymous Beaker7 days agoincorrect output for 28 and hardfault for the rest0
+    
     

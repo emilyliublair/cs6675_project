@@ -1,0 +1,12 @@
+Question: 
+    gdb workflowWhat's the typical workflow to pair gdb with qemu? Currently I'm launching (docker -> ./xv6-qemu -g) then on a second terminal I'm doing (docker exec $docker_id$ sh) to get a shell open inside the already deployed docker instance, then launching gdb from that exec'd shell. Is there a better way then execing into docker containers from a second terminal?logistics
+
+    Student Answer: 
+    I've been following the directions in Lab 0 (https://github.gatech.edu/cs3210-spring2025/xv6/tree/lab0?tab=readme-ov-file#debugging-user-space-programs), which does the same thing with slightly different steps.~ An instructor (Rohan Natansh Bafna) endorsed this answer ~
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

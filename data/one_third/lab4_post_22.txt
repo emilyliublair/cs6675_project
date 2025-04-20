@@ -1,0 +1,12 @@
+Question: 
+    Confused on Log InHello all I am somewhat lost on where to start with the login system. Any general tips on where to look for info or inspiration? Thankslab4
+
+    Student Answer: 
+    It was 140 before modifications were made to lab4 (ie adding owner and permission to inode/dinode)
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

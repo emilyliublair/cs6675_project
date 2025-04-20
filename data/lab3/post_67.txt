@@ -1,12 +1,12 @@
 Question: 
-    Weird bug while trying to run user processesWhen I try to run user processes, for the first process I try running, I am gettingpid 4 sh: trap 13 err 0 on cpu 0 eip 0x56 addr 0x0--kill procI don't know what could be causing this, as trying to run user programs after this works as it should. However, if I start up a new shell this trap will always happen the first time I try to run any user test, including ones already written for me.Could it be something about a file descriptor closing when it should not be?lab3
+    Previous week's lab slides and recordingWhere are the video recordings and the presentation slides from the most recent lab before spring break? They discussed tips with implementing Parts 5 and 6 for Lab 3 and it would be helpful to have access to them.lab3
 
     Student Answer: 
-    Edited due to inaccuracies. Trap 13 is aGeneral Protection Exception (#GP). Page fault is interrupt 14.A lot of things can cause trap 13, as detailed in the SDM Volume 3, Chapter 7, Section 15. You’ll also find an explanation of how the error code works in said chapter. In general (for future references) I would set a breakpoint at the instruction in the user space program that generated the interrupt, and go from there.Previous answer:Trap 13 is a page fault, so I think it is probably related to an issue with the page tables or page directories.
+    
 
     Instructor Answer: 
     
 
     Followup Discussions:
-    @460_f1Shourik Banerjee2 weeks agoIs there a reason it only occurs on the first instruction?0Shourik Banerjee2 weeks agoAnother thing: is it an issue if I malloc 6000 bytes of space but clone will fail if the stacksize I pass is more than 5999?0Tanush Prathi2 weeks agoYou panic on the first instruction (probably because the pages are not setup correctly), so it can only occur on the first instruction0Tanush Prathi2 weeks agoThe clone should succeed if you malloc 6000 bytes and passed in 6000 as stack size.For any stack size higher, it should only fail if the memory beyond that is not allocated to the user program (ex: not present page). The kernel has no idea about the array boundaries, so if user passes a stack size that is larger than the allocated space, then it will just overflow into the same program's memory0Shourik Banerjee2 weeks agoHmm, interesting that there's a page issue considering I only free it in wait if the thread owner tries to free the page.0Shourik Banerjee2 weeks ago: I wasn't assigning the index to the table in fork properly, I was trying to access the table before setting the index.1
+    
     

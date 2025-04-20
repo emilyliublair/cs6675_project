@@ -1,5 +1,5 @@
 Question: 
-    Unpark return valueIf a process has called setpark on the chan then unpark changes the state of the process to the lost wakeup state, I assume unpark should return but should it return 0 because no processes were worken up or 1 because one process was made so it wouldn't sleep?lab3
+    
 
     Student Answer: 
     You should return 1. This helped us pass test case 35 today!~ An instructor (Pau Sum) endorsed this answer ~
@@ -8,5 +8,5 @@ Question:
     
 
     Followup Discussions:
-    @505_f1Nathan Prashant Duggal5 days agoThe spec says these syscalls should only return 0 or -1 right? Are you referring to -1 here?Nevermind I’m illiterate0Nathan Prashant Duggal5 days agoOk adding this return value also fixed 33 for me. Weird tests.0
+    @505_f1Nathan Prashant Duggal3 weeks agoThe spec says these syscalls should only return 0 or -1 right? Are you referring to -1 here?Nevermind I’m illiterate0Nathan Prashant Duggal3 weeks agoOk adding this return value also fixed 33 for me. Weird tests.0
     

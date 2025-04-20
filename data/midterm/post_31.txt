@@ -1,0 +1,12 @@
+Question: 
+    Will the exam require downloading spyware?Hi. HonorLock doesn’t work for my arch+os. Does the test require it or something similar?midterm
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    No it will not.
+
+    Followup Discussions:
+    @410_f1Alexey Tumanov1 month agoin junior and senior level classes we prefer to count on your academic honesty to a greater extent than in more junior classes.good comment3Anonymous Scale1 month agoWe appreciate that. I ask because I prefer not to boot operating systems that use Candy Crush as the init process.~ An instructor (Ved Thiru) thinks this is a good comment ~13
+    

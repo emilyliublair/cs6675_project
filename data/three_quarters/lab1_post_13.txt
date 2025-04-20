@@ -1,0 +1,12 @@
+Question: 
+    How to use gdb to test backtrace functionality?I have one terminal running ./xv6-qemu -g and another terminal attached to this docker container. I tried to set a breakpoint at backtrace and try to look into the registers but it says that there are no registers? I'm not sure what I'm doing wrong.lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

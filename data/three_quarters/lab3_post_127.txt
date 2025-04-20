@@ -1,0 +1,12 @@
+Question: 
+    Long time to run autograderI realize there's quite a few test cases, but how long is it supposed to take the autograder to run? It's been running for over half an hour and hasn't timed out yet. Thanks!lab3
+
+    Student Answer: 
+    I found that sometimes it took over 30 minutes. Annoying, but I think it'll get better as we implement more of the lab. The reason for the timeouts is that we haven't implemented many parts and they all time out.~ An instructor (Elton Leander Pinto) endorsed this answer ~
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

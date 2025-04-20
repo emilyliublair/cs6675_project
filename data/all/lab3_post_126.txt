@@ -1,0 +1,12 @@
+Question: 
+    Part 1, test case 6 and 9I'm failing these two test cases, does anyone know what the potential issue could be?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    If a lot of your tests hardfault, then yep it'll take a while unfortunately. Let me see if I can try reducing the timeout per test.~ An instructor (Alexey Tumanov) endorsed this answer ~
+
+    Followup Discussions:
+    
+    

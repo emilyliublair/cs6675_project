@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    I think checking the password to make sure it doesn't contain ':' and a '\n' character should be good enough
+
+    Followup Discussions:
+    @653_f1Anonymous Helix1 week agoIf you are not using ‘:’ as a delimiter in your login scheme, then does it matter if it is used?0Rohit Hari1 week agoAs an extention to this, if we use a scheme with only null as a delimiter is it fine to support all characters?0Sukrit Kumar1 week agoYes as long as the password/username doesn't contain whatever particular delimiter used you should be good. Make sure to check for not having newline '\n' characters regardless in both the casesgood comment0
+    

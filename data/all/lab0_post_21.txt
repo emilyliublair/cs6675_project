@@ -1,0 +1,12 @@
+Question: 
+    Determining number of processes outside limits.cIs it sufficient to add a constant factor (experimentally determined with procdump) to the number of processes spawned by the code to account for the system processes which are running alongside limits.c to calculate the maximum number of processes or do we need to somehow measure this experimentally? As far as I can find none of the exposed system calls provide process information.lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Yep, this lab is primarily testing your understanding of system calls and writing user-space programs (which will serve as a useful tool for debugging in future labs). While your output should reasonably reflect the “correct” answer provided by the lab instructions, you’ll mainly be evaluated on if you are using the system calls correctly and your overall logic for solving the problem. That being said, we won’t be treating your submissions as pseudocode and they should run end-to-end to produce the expected results in some way or another.
+
+    Followup Discussions:
+    
+    

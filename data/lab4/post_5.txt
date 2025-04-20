@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    I was passing everything but test case 28 when I had everything except for get_free_blocks implemented. This means test 28 is the ONLY testcase that looks at get_free_blocks and I assume it doesn't thoroughly test other mechanisms. I cannot guarantee it, but my best guess is your mistake is in get_free_blocks — especially since you're passing everything else. If you haven't already, take a look at balloc for inspiration on implementing get_free_blocks.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @701_f1Anonymous Poet6 days agoThanks! You were right – there was a small logic error inget_free_blocksthat we fixed to pass the test.0
+    

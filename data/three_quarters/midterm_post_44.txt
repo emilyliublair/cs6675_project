@@ -1,0 +1,12 @@
+Question: 
+    Midterm Practice QuestionWhat is the solution to this?Could you just say implementign write bit and access bit in software?midterm
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @336_f1Anonymous Helix2 months agoI think having the reference slides are still beneficial. However, there have been no lecture slides posted since the 13th. If possible, can the lecture slides we have covered be posted?0Alexey Tumanov2 months agothe 2/18 and 2/20 slides you're referring to in your post, Erel, have been posted.good comment1Anonymous Helix2 months agoThanks!~ An instructor (Alexey Tumanov) thinks this is a good comment ~1Alexey Tumanov2 months agoyou are welcome.good comment0@336_f2Anonymous Beaker2 months agoWill the boot process be explicitly covered in the exam? I didn’t see any reference to it in the exam slides from Thursday.0Alexey Tumanov2 months agoeverything that was covered during lecture and the corresponding slides up to and including the OS & Networking lecture should be considered in scope for exam 1.When I covered the list of topics in class, I specifically said , "the list of topics includes but not limited to" for that reason.good comment0
+    

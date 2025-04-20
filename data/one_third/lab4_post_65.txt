@@ -1,0 +1,21 @@
+Question: 
+    Updating children UIDIf process p1 currently has uid = 0, meaning it hasn't changed its uid from root yet, and then it calls fork which creates process p2 also with uid = 0, if p1 then changes its uid using setuid should this also update p2's uid or only p1's?lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Looks like you passed the test. Nice work :)
+
+    Followup Discussions:
+    @444_f1Anonymous Comp1 month agoHave you checked how the shared resource is handled?0Anonymous Atom1 month agowhat do you mean. what shared resource?0Anonymous Comp1 month agoCloned processes share several resources with their parent, namely:Virtual address space (shared memory)File descriptor tableCurrent working directory0Anonymous Atom1 month agoyeah all this is already protected.0@444_f2Anonymous Atom1 month ago“Looks like you passed the test. Nice work 😃”Uhh no I actually didnt pass itbasically i reran the same code without changed and it worked for some reason. Might be a concurrency problem / race condition so I would still appreciate tips.0Elton Leander Pinto1 month agoHave you written any tests that check if memory is being shared properly by threads?good comment0Anonymous Atom1 month agoYeah, both on the global and local scope. Both behave as expected. Is this test checking for memory stuff?0Elton Leander Pinto1 month agoWhat does your test look like?good comment0Anonymous Atom1 month ago“” this is not the real test, i have edited it to protect my solution / code. here is some psuedocodeish of what I am testing. “”intglobal_var =0;intmain(intargc,char* argv){intlocal_var =0;for(inti =0; i <50; i++)
+    {void*stack=malloc(4096);intres = clone(stack,4096);if(res ==0)
+        {
+            local_var +=1; 
+            global_var +=1;printf(1,"PID: %d, Local: %d, Global: %d\m", getpid(), local_var, global_int); 
+        }else{
+            wait(); 
+        }
+    }exit(); 
+}run code snippetVisit Manage Class to disable runnable code snippets×0Elton Leander Pinto1 month agoSo, this test doesn't verify that the change propagated over to the parent. You should try printing the value of these variables in the parent.good comment0Anonymous Atom1 month agoHmm interesting, thanks for the input I will check that. How is this a clone limit test though? I thought clone limit would mean like excess allocation or something.0Shourik Banerjee4 weeks agoShould the local variable change also be in the parent? I thought it was a stack variable so it shoudln't?0@444_f3Anonymous Helix4 weeks agoDid you figure out what was the problem? Having the same issue (timeout/hardfault)0Anonymous Atom4 weeks agoa long time ago it didnt work at all.we changed nothing. then it started working partially (sometimes).again, we changed nothing.  now it works every time.only thing we did was implement waitpid() and implement part 3. even though TA said waitpid() isnt required, just try implementing it. maybe itll work.0
+    

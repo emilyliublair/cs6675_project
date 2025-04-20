@@ -1,0 +1,12 @@
+Question: 
+    Is the most recent or the active submission the one graded?Which submission is the one that is graded for the labs, the active submission, or the most recent submission?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    waitpid should only work on children, I don't think the waitpid test checks for grandchildren. For waitpid make sure that the pid we're waiting on is a direct child (i.e currproc.pid == waiting_pid.parent)
+
+    Followup Discussions:
+    
+    

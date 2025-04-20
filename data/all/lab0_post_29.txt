@@ -1,0 +1,12 @@
+Question: 
+    Debugging with GDBI have written my code for helloworld.c and am trying to run/debug it with gdb. I followed the instructions on GitHub and it just said Continuing with no change. I have tried adding additional breakpoints but it doesn't do anything. When I try to use step or next it says it cannot find bounds of current function. I am not sure where to go from here.lab0
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    It’s nice to know, for good ol’ curiosity sake
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,12 @@
+Question: 
+    Seeing unexpected "zombie!" on forktest and the same page fault over and over againSee the screenshot from above. I've made it so "After COW" prints after my copy on write functionality completes in the trap handler. This is immediately followed by a break statement to exit the trap handler.For some reason, I'm immediately encountering a page fault after test1 starts and then seeing a "zombie!" in my console. It keeps restarting test1 after "zombie!" prints, and this continues indefinitely.Does anyone have any idea why this might be happening?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Done
+
+    Followup Discussions:
+    
+    

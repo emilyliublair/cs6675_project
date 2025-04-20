@@ -1,0 +1,12 @@
+Question: 
+    Weird bug while trying to run user processesWhen I try to run user processes, for the first process I try running, I am gettingpid 4 sh: trap 13 err 0 on cpu 0 eip 0x56 addr 0x0--kill procI don't know what could be causing this, as trying to run user programs after this works as it should. However, if I start up a new shell this trap will always happen the first time I try to run any user test, including ones already written for me.Could it be something about a file descriptor closing when it should not be?lab3
+
+    Student Answer: 
+    0xffffffff is not the base pointer rather it is the fake return address placed in the stack within exec. The calling convention tells you where the return address is relative to the base pointer
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

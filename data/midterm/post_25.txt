@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    EDIT:̶I̶ ̶t̶h̶i̶n̶k̶ ̶y̶o̶u̶ ̶w̶o̶u̶l̶d̶ ̶w̶a̶n̶t̶ ̶t̶h̶e̶ ̶1̶5̶t̶h̶ ̶b̶l̶o̶c̶k̶ ̶s̶i̶n̶c̶e̶ ̶b̶y̶t̶e̶ ̶8̶0̶0̶0̶ ̶w̶i̶l̶l̶ ̶b̶e̶ ̶c̶o̶n̶t̶a̶i̶n̶e̶d̶ ̶w̶i̶t̶h̶i̶n̶ ̶t̶h̶a̶t̶.̶ ̶I̶f̶ ̶y̶o̶u̶ ̶u̶s̶e̶ ̶t̶h̶e̶ ̶1̶6̶t̶h̶ ̶b̶l̶o̶c̶k̶ ̶y̶o̶u̶ ̶w̶o̶u̶l̶d̶ ̶b̶e̶ ̶p̶a̶s̶t̶ ̶8̶0̶0̶0̶.̶ ̶T̶h̶a̶t̶'̶s̶ ̶w̶h̶y̶ ̶w̶e̶ ̶f̶l̶o̶o̶r̶ ̶i̶t̶ ̶I̶ ̶t̶h̶i̶n̶k̶.̶  nvm
+
+    Instructor Answer: 
+    good question, sorry for confusion. Yes, entries are counted from zero on this slide.Here's a way to think about it:Replace 8000 with byte 1, what do you get? You get floor(1/BSIZE) = 0 --> zero'th block, corresponding to zeroth direct pointer.Replace 8000 with byte 512, what do you get? Floor(512/BSIZE) = 1 --> 1st block, corresponding to 1st entry (counting from zero).For 8000: floor(8000/BSIZE) = 15th block (counting from zero).yes, 3rd entry is also counting from zero.When in doubt, try other, much simpler values to validate your thinking. Remember boundary condition testing.
+
+    Followup Discussions:
+    @710_f1Anonymous Scale4 days agoThanks for the response.That doesn’t seem to make sense to me – the ith physical block would contain bits 512(i-1) to 512(i) - 1. For instance the first physical block would contain bits 0 through 511, the second would contain bits 512 through 1023, and thus the 15th would contain bits 7168 to 7679. Thus we would want the 16th physical block.In my response I did consider indexing the blocks starting at zero. In that case, my question remains the same.0Anonymous Poet4 days agoOh then I think you might be right about the 0th entry thing.0Anonymous Scale4 days agoOk thanks for the 2nd perspective I appreciate it!0
+    

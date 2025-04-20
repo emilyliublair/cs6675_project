@@ -1,0 +1,12 @@
+Question: 
+    Test Cases 6 and 9Does anyone know what test cases 6 and 9 are? So far I've tested that my code does the following:Current RR process preempts when I set another RR process to higher priorityCurrent RR process preempts when I decrease its priority to less than another runnable processCurrent RR process preempts when I change another process to FIFOCurrent FIFO process preempts when I increase another FIFO process's priorityCurrent FIFO process preempts when I set parent to FIFO with same priorityCases where it doesn't preempt such as when running process's priority stays higher, if the priority is the same, if current is FIFO and changing another to RRThe only thing I can think of is fixing the yield from the external timer interrupt for rr processes. Do we want to let a rr process with the highest priority keep running if there are other rr processes with lower priorities? Even if I fix that, there's 2 test cases that I'm failing so I'm not sure what the other one would be.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

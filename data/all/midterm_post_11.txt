@@ -1,0 +1,12 @@
+Question: 
+    Ordered Journal and fsync()Let's say we have something like this:write(f1, 2GB);write(f2, 1B);fsync(f2);The fsync() would trigger a merge of all changes (including f1) to disk, right?  So then, our dependency graph would look like: {D1, M1} → {C1 , D2, M2} → {C2}But is it possible that the writes can be reordered such that the write to f2 happens first? In that case, the dependency graph would look like: {D2, M2} → {C2 , D1, M1} → {C1}, but our fsync would only take a dependency on C2, so would we care about f1 changes?midterm
+
+    Student Answer: 
+    When the actual data block is updated depends on what type of logging you are doing. In a full log, the data blocks writes occur during log merge. In ordered logging, the data block writes occur first. Then the metadata is written to the log followed by a commit to the log.~ An instructor (Alexey Tumanov) endorsed this answer ~
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,12 @@
+Question: 
+    Practice Exam Q5aIn lecture we discussed how the most efficient solution would have the present bit mirror the access variable.Consider the following scenario. Suppose we have pages A, B, C in memory, with PTE_P = 1. The clock handle is at A. Now, a process tries to read from D, which has PTE_P = 0. This will trigger a page fault, that will invoke the clock algorithm to evict a page.Because PTE_P mirrors access, at the end of the algorithm, A would be evicted, with the state of the pages in memory now being D(PTE_P = 1), B (PTE_P = 0), C (PTE_P = 0).My question is: what should happen when the process tries to now read from B? This would trigger a page fault. But, how does the page fault handler know that B is already in memory? I guess we could run the clock algorithm again, but it would ultimately need to read B from disk (but B doesn't exist on disk because it was never evicted). Also, is the access variable a logical permission? Or does it actually exist somewhere in memory?midterm
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    no, that would not be an acceptable answer.In this question, we're looking for you to identify the fact that there's a data race and which lines of code create a data race. I think what you're trying to do is come up with an interleaving that would lead to bad state. We discussed in the lecture how the behavior of a non-DRF code is undefined, because its sequential consistency is not guaranteed.This is where the answer can stop.
+
+    Followup Discussions:
+    @372_f1Anonymous Atom1 month agoI'm still somewhat confused about where the data race occurs in this piece of code. Does it have to do with us not actually executing the first check first when the code is executed because we don't have the guaranteed atomicity of the critical section? Thanks0Alexey Tumanov1 month agothe data race occurs by the definition of the data race, which is having two unordered accesses to the shared variable, with at least one of them being a write. Even though your write to p is in the critical section, your first read from p is outside of the critical section and, therefore, unordered. Please refer to slide 31 of Section C lec17 slide deck cs3210-lec17-2025_03_06.pdf. It shows which lines of code constitute a data race.good comment1
+    

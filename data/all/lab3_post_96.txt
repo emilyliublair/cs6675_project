@@ -1,0 +1,12 @@
+Question: 
+    Checkpoint clarificationWill our checkpoint grade be calculated based on our best submission? If not, can we choose to activate an earlier submission on Gradescope, or will the checkpoint simply be based on our last submission no matter what? The reason I ask is that I want to be prepared and know what to do in case I have only one submission left before the deadline.Also, can we rest assured that our checkpoint grade will match exactly the one shown on Gradescope (i.e. based only on which testcases we're passing), or is there any kind of manual grading involved at this stage?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Answered in@440Edit: some more context – the user is allowed to make mistakeswith its own memory, so if the user program wants to mess itself up by passing in the guard page, then so be it. However, clone should gracefully handle the cases when the user may be trying to mess with memory that doesn’t belong to it.
+
+    Followup Discussions:
+    
+    

@@ -1,11 +1,11 @@
 Question: 
-    
+    When to yieldThe design requirements say that we need to yield:When a new process becomes runnable, if it should run before the current process, your scheduler should immediately preempt the currently running process and schedule it (with one exception, in "Nit").Does this mean we wait until the end of the time quanta regardless of scheduling algorithm the current process is using before we preempt?lab3
 
     Student Answer: 
-    
+    Not sure if I’m understanding your question correctly but that sentence means that you shouldimmediatelypreempt if a “better” process shows up (that is, donotwait until the end of the time quantum to callyield()).~ An instructor (Rohan Natansh Bafna) endorsed this answer ~
 
     Instructor Answer: 
-    You can activate a submission. The activated one will be used for gradingThe score that is displayed in the output will be your checkpoint score. No manual grading.~ An instructor (Alexey Tumanov) endorsed this answer ~
+    
 
     Followup Discussions:
     

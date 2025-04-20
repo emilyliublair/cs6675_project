@@ -1,0 +1,12 @@
+Question: 
+    guest speaker Thu 4/17 on distributed file systems IRL!Hey everyone,We are having a guest speaker tomorrow, Thu 4/17 presenting a talk. I encourage you to come and check it out. Note: I do not yet know if it's going to be recorded. The speaker is from industry, so she's trying to clear the recording part with the company lawyers.Who: Svitlana Tumanova, Technical Director, Pure StorageWhat: Scaling all-flash storage arrays with hw/sw co-designWhen: Thu 4/17, 14:00-15:00ETWhere: SST Weber III Classroom 2 (SecC usual location)Why: the speaker will talk about real file systems and real NVMe storage, co-designed for optimal performance, and how it's done.Title: Scaling all-flash storage arrays with hw/sw co-designAbstract:This presentation will outline how Pure Storage leverages hw/sw co-design to achieve a single architecture that delivers both high scale performance and large scale capacity. Key topics will include how to build a performant distributed file system, and how to use context to efficiently utilize underlying nand technology.SpeakerBio:Svitlana Tumanova is a Technical Director at Pure Storage. Svitlana has 15 years of experience in building large scale distributed and storage systems. Currently Svitlana is an acting performance area lead for Pure Storage’s unstructured data all-flash solutions, thinking through perf optimizations across the stack: from the protocol layer all the way to the drive. Prior to Pure Storage Svitlana worked on managed language OS development at Microsoft. Svitlana holds a Master of Science from the University of Toronto and Bachelor of Science from the University of Waterloo.-------Note: this won't be on the test ;) But should be fun!Hope you all get a good night of rest after your exam 2 and come refreshed to learn even MOAR Operating Systems!Cheers,ATlogistics~ An instructor (Pau Sum) endorsed this note ~
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

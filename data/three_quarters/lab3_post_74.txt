@@ -1,0 +1,12 @@
+Question: 
+    How to find the parent process user stack sizeTitle. For clone, I know how to get the top of the parent process user stack, but not about how to get the bottom of the stack/size of the user stack. I’ve seen some responses using the ebp of the call stack built by exec to find the size, but I think this fails to copy over the argc/argv parameters passed to the main function (which should be deeper in the stack than the ebp/return address). Is the information about the bottom of the stack already stored somewhere, or do I have to keep track of this manually?Another question is whether it is intended behavior for new threads to access the stack variables of the parent thread (via pointers), and how would the kernel detect this if this is not allowed?lab3
+
+    Student Answer: 
+    Threads have shared memory and the stack is included in that. Threads are allowed to access each other stacks (though it probably is not a good idea).
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,12 @@
+Question: 
+    Looking for Lab 3 PartnerHey,Due to unfortunate circumstances after the last exam, I no longer have a lab partner for Lab 3. If anyone is solo and open to teaming up, my email isrbansal66@gatech.edu.As a progress marker (if it helps), I am currently debugging my implementations of FIFO/RR for tomorrow's checkpoint.logistics~ An instructor (Ved Thiru) endorsed this question ~
+
+    Student Answer: 
+    Found a partner!
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

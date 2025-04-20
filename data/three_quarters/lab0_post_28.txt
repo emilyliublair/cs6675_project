@@ -1,0 +1,12 @@
+Question: 
+    [Lab0]: Part3 - limits.cHello! I am working on lab0 part 3 where we are trying to find the maximum number of memory that we have for page allocation. I was following the implementation detailed in the lab instructions and after waiting a bit i got my printout to print to the shell. But, I also got a printout of "allocuvm out of memory" is this the intended printout or am I doing something wrong?Screenshot_2025-01-13_at_3.47.43_PM.pnglab0
+
+    Student Answer: 
+    @25
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @32_f1Anonymous Poet3 months agoThat’s helpful, how do you call the user program in the other terminal?0Loading...3 months agojust run the name of it so in your case "helloworld" should run it0
+    

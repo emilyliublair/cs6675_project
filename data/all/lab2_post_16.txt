@@ -1,0 +1,12 @@
+Question: 
+    Running Usertests.cHow can I run usertest.c? Is it ran from inside xv6? When I run 'ls' inside xv6, I cannot see it, nor do I see a usertests executable in the build directory.lab2
+
+    Student Answer: 
+    Ended up figuring it out. You add usertests.c and echo.c to the CMakeLists.txt and make. When you ls, you should see it there now.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @306_f1Anonymous Atom2 months agoI am getting a hard fault for test 10..0@306_f2Ranjani Rajeswari Koushik2 months agoSame exact problem. TA's said it might be a guard page issue, not sure though.0
+    

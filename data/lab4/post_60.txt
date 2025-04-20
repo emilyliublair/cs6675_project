@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    nvm, I realized my misunderstanding
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @628_f1Anonymous Calc2 weeks agoI am currently having this issue too, what were you doing wrong?0Anonymous Atom2 weeks agobasically shell has inode of type T_DEV and I think u only want to apply the file permission stuff for inodes or type T_FILE or T_DIR (files and directories)2Anonymous Calc2 weeks agoOk sweet thank you so much that fixed it for me my console is working again0Anonymous Atom2 weeks agoidk if this is the intended functionality tho... just my guess0
+    

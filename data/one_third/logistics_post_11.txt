@@ -1,0 +1,12 @@
+Question: 
+    CIOS Bonus?Will there be a CIOS bonus for the class?logistics
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    1 endorsed followup comment@707_f1Anonymous Comp6 days agoI thought it was cumulative?~ An instructor (Alexey Tumanov) thinks this is a good comment ~1@707_f2Alexey Tumanov5 days agoplease also refer to@709good comment0@707_f3Anonymous Gear5 days agoFor security, do we need to know all of the different topics that were covered in the various lab week 11 presentations. Since labs covered different topics are we expected to review each video or will the exam not cover these topics?1Alexey Tumanov4 days agoThe TAs covered some common material and then forked to cover a set of enrichment topics they prepared for the students.  I would focus on the lecture content + the supervised lab material that wascommonacrossallsections.Thanks for bringing this up.good comment1
+    

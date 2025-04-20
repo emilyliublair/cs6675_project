@@ -1,0 +1,12 @@
+Question: 
+    Safe data block freeingIt seems like a good idea to clear out data blocks when they are freed, so that certain bugs, like during a crash, that could lead to improper access would more likely end with us reading zeroes than someone else’s old data. Why don’t we do this? Is this just too disk-intensive to implement?midterm
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    oh,  it's similar with memory -- writing 512B of zeros is expensive. Also, it's just another write -- subject to all the reordering and crash consistency issues we talked about. But even if we do come up with some low level mechanisms that make it atomic, it would still add overhead and slow down disk performance.
+
+    Followup Discussions:
+    
+    

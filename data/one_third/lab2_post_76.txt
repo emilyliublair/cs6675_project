@@ -1,0 +1,12 @@
+Question: 
+    Guard PageI'm slightly confused on the virtual address of the guard page. From looking at exec and studying the initial setup, it seems like0x0000 = data0x1000 = guard0x2000 = stackHowever, after forking, it's trapping on an attempted read of a 0x1*** address. Why would anything be attempting to read from there and do I need to handle that gracefully? This should just be getting the shell up and running, so I can't imagine I need to kill a process right now.lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @209_f1Anonymous Beaker2 months agoI'm getting the same issue, what did you do to fix this?0Anonymous Mouse2 months agoGetting into a boot loop could be caused by multiple things. For me specifically I think I accidentally called V2P on accident (calling V2P on a physical address) and some other bugs that I found in my code. I would recommend doing a little bit of both GDB and taking a step back and think high-level about your code as well as reading through and ensuring that you don't have typos. Sorry I couldn't be more helpful ;-;1
+    

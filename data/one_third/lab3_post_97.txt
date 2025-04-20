@@ -1,0 +1,12 @@
+Question: 
+    What happens if the address stack* for clone is allocated but not writable?lets say that stack* is a VA that has been allocated to the process. However, this VA could be a guard page which is unwritable (it could also be where the binary is located, or just non-empty chunks of memory in general).Should clone return -1 in these cases or should we allow the process to get killed by a fault handler?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Don’t overcomplicate the security checks you need to do here. For example, if it’s pointing to the guard page, the program will page fault and get killed anyway when it’s accessed. Just think about which sections of memory it absolutely cannot be in.
+
+    Followup Discussions:
+    
+    

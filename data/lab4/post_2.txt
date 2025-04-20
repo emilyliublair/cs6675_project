@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    ok, this is a good question that stems from confusing atomicity and ordering we provide at the file system (i.e. kernel) level and user-space level. The last part of lec24 basically asks the following question: can we achieve atomic persistence without making any assumptions about the lower level file system? Think of it this way, if you make no assumptions about the type of journaling your FS is doing, how would you enact atomic persistence with POSIX syscall interface? As a user application, you don't even know if the FS is doing writeback, ordered, or full journaling.It can be useful/instructive to think of the three different layers of the stack : you have your device interface with individual block writes at the bottom; you have the kernel-level file system (where we concern ourselves with journaling at the granularity of log entries); and we have the user-space POSIX syscall application level. We studied the latter by looking at three things:1. how does fsync interact with journaling inside the FS2. how can a POSIX application achieve atomic persistence (without making any assumptions about FS layer)3. how can we make this POSIX application achieve atomic persistence more efficiently, by decoupling ordering and durability primitives!If you haven't had a chance, please do watch lec24 video recording under Media Gallery.Hope this helps.AT
+
+    Followup Discussions:
+    @704_f1Anonymous Atom4 days agoI understand that we don't need to worry about the kernel level logging in the user space application, but why do we need to enforce an ordering of writing to the log before actually writing to the file?0Alexey Tumanov4 days agoJustin,That's the whole point of the log, right? We want to log the intended write to the log before actually writing it to the intended destination. The write to the file is not guaranteed to be crash consistent. For instance, a write to the file could be corrupted due to a crash. Writing an entry with a checksum to the log first ensures the atomicity of this write. Then, if the file write fails, we could recover from the log.good comment0
+    

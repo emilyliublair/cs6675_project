@@ -1,0 +1,12 @@
+Question: 
+    User Space Threading SecurityIn Lecture 14, Professor Tumanov mentions how user space threading is possible and how we can actually switch the stacks in user space. How is this secure? What if we set the stack pointer to point to some malicious stack. I get that the code we are running has to be malicious in nature, but aren't we greatly increasing its destructive capability by giving it direct access to all of the general purpose registers?midterm
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    At a high level, you’re correct (you can think of a single assembly instruction as an atomic unit of execution), but an if statement gets compiled into multiple assembly instructions, so those aren’t atomic. The caveat to this is that on some architectures a single assembly instruction could be translated into multiple machine code instructions, in which case those would not be “atomic”.~ An instructor (Alexey Tumanov) endorsed this answer ~
+
+    Followup Discussions:
+    1 endorsed followup comment@720_f1Rohan Natansh Bafna4 days agoYay, I get to plug Ross Cox’s article about memory models again!https://research.swtch.com/plmmRead this if you are really interested in the nitty gritty details of what atomicity actually means in the context of languages like C, it’s super fun. (Also far beyond what you are expected to know for the course, don’t worry about it being on the exam and maybe save it for after you’re done :))(Here is what I would answer if Varun didn’t beat me to it: no, not in the slightest. The only truly atomic operations are reads and writes to atomic variables and the atomic functions that C11 provides, and those are subject to some interesting constraints.)good comment1@720_f2Anonymous Comp4 days agoThis class made me question if anything in life is truly atomic~ An instructor (Alexey Tumanov) thinks this is a good comment ~1Rohan Natansh Bafna4 days agoOnce when I was taking the class, I got so paranoid about this in lecture that I asked if writing individual bits to disk was considered atomic. I remember Prof. Tumanov being slightly taken aback by that question.~ An instructor (Alexey Tumanov) thinks this is a good comment ~good comment1Alexey Tumanov4 days agoI remember that :'-)good comment0Alexey Tumanov3 days agoAshwin, this is a great line of thinking and you should keep thinking about that. Eventually, you'll realize that atomicity can only be understood asrelative, notabsolute.good comment0
+    

@@ -1,0 +1,12 @@
+Question: 
+    Manually Dereferencing EBP doesn't end up at 0xF00I'm not sure what the issue is but whenever I manually go through the $ebp pointer on gdb when backtrace gets called, it always ends up going to 0. It could be something I'm doing wrong but here is a screenshot of my gdb window.Thanks in advance!lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

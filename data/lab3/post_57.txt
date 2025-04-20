@@ -8,5 +8,5 @@ Question:
     
 
     Followup Discussions:
-    @509_f1Anonymous Poet7 days agoWhy would creating a new state not work? Is it because unpark should wake any sleeping process on a channel, regardless of if it was put to sleep by park or not? I think in that case, you could just check in unpark if the process on that channel is either asleep or in the new state to wake it up and it would be valid.0
+    @509_f1Anonymous Poet3 weeks agoWhy would creating a new state not work? Is it because unpark should wake any sleeping process on a channel, regardless of if it was put to sleep by park or not? I think in that case, you could just check in unpark if the process on that channel is either asleep or in the new state to wake it up and it would be valid.0
     

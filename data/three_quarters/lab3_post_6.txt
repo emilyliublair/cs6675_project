@@ -1,0 +1,12 @@
+Question: 
+    Atomic variablesCan we use non-atomic types (int, etc) with atomic instructions (atomic_store, etc) safely?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @610_f1Anonymous Gear3 weeks agoI'm pretty confident waitinfo is not used in test 7, did you modify anything with the scheduler for the extra credit? Maybe something in the queue while handling SCHED_OTHER?0Anonymous Mouse3 weeks agoYup, solved it by reverting back to my old implementation and adding it back little by little. Also, due to how sleep is written and used, I had to switch the lock order from ptable.lock -> tickslock to tickslock-> ptable.lock, or getting the ticks value (within locks) outside of ptable.lock.0
+    

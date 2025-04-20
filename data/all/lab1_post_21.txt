@@ -1,0 +1,12 @@
+Question: 
+    Do P2V_WO and V2P_WO do the same thing?I've been using both and they both seem to give me the same result according to GDB. They both add 0x80000000 to the address. Is this intentional, and are we required to use these functions for lab 1?For example, 0x7e000000 is translated to 0xfe000000 for both P2V_WO and V2P_WO.lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Instead of testing through user space, I would highly recommend keeping the backtrace endpoint where it was defined and test it solely in the kernel. The autograder expects the backtrace functionality to be available precisely how we defined it for you by default (i.e. it expects it as a kernel-level function, not a syscall).
+
+    Followup Discussions:
+    
+    

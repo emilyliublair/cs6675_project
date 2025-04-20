@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    When the actual data block is updated depends on what type of logging you are doing. In a full log, the data blocks writes occur during log merge. In ordered logging, the data block writes occur first. Then the metadata is written to the log followed by a commit to the log.~ An instructor (Alexey Tumanov) endorsed this answer ~
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

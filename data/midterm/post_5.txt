@@ -1,0 +1,13 @@
+Question: 
+    TLB Flushes With M:1 TreadingWould having M:1 threading result in zero TLB flushes or just fewer? From my understanding, having only one kernel thread would mean that the OS only sees one address space so the TLB entries remain valid across user-level thread switches. Can a user thread change a TLB entry without the other user threads knowing?midterm
+
+    Student Answer: 
+    If we only have one kernel thread with many user threads mapping to it, these user-thread switches would not result in a TLB flush. From the OS’s perspective, it is just running one thread, and the TLB is valid for the address space of all the user threads. It is up to the user process to separate out stacks between user threads and/or decide to block certain user threads from accessing certain parts of the process’s virtual memory.Not sure what you mean by your last question, but no – the user thread cannot directly change the TLB as it is fully controlled by the kernel (from the user perspective, it doesn’t even exist). One thread’s access patterns may change the TLB entries, but that’s not a problem. The TLB simply maps virtual to physical addresses, so these will be valid throughout the virtual address space, i.e. to other threads in the same process.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @737_f1Anonymous Calc1 day agoSo this essentially mean we won't get any TLB flushes, right?1Anonymous Comp1 day agoAt that point it depends on the kernel scheduler. We will never have the need to do a TLB flush if there is only one kernel thread, but:
+if the kernel scheduler is Round-Robin and preempts the kernel thread to look for other processes to schedule, it will flush the TLB when switching to the scheduler context, then flush again when switching back to the same thread that was just running. We need those TLB flushes when going to scheduler context because the kernel’s virtual address space is different than the process’s.If it’s a FIFO scheduler that is never preempted, then no TLB flushes.1
+    

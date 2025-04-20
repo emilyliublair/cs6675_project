@@ -1,0 +1,12 @@
+Question: 
+    Backtrace header file not being includedAdded #include "backtrace.h" to the top of the kernel file in which I want to call the backtrace function. However, when I call it, I get the following error:`undefined reference to `backtrace'`My backtrace C file includes backtrace.h. Does the header file also have to include something for it to be recognized?lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Everything you can run in the shell is auserprogram. However, you added backtrace to the kernel. This means if you are to test it, you can’t simply add it toSources.cmakeand attempt to run it, because it’s part of kernel code, not user programs. So, if you want to test it then you can include the backtrace header in various spots throughout the kernel and just run the kernel. If you’d like to test it from the shell, then add a call to backtrace within some system call, creates a user program that makes a call to that syscall, and the output should populate in the console when you run the program (don’t forget to add toSources.cmake).
+
+    Followup Discussions:
+    
+    

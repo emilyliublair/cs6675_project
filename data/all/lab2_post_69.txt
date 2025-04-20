@@ -1,0 +1,12 @@
+Question: 
+    TLB invalidate specificationsWhat param does the invlpg function accept? Is it a virtual address, and does it have to be left shifted to be 32 bits? Or is it the pte?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    You will have to define it yourself if you want to read cr3. xv6 doesn’t have a function defined for it.On whether its needed or not… think about and maybe even walk through how a virtual address gets converted to a physical address in paging. Can you extract the page directory given the faulting address (which is in cr2)?
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,12 @@
+Question: 
+    Part 4 SpinlockDo we need to do cli and sti for spinlocks in userspace? Also, is it correct that we are keeping track of the pid instead of the cpu (as done by the kernel space spinlocks)? Thank you.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,12 @@
+Question: 
+    Segmentation in Protected ModeAs far as I understand, real mode doesn't use the GDT but instead has predefined memory location in the segment registers and then calculates addresses with this formula: Physical Address=(Segment×16)+OffsetBut then, once we get to protected mode, we use the GDT, which gets initialized partially here:But based on this, all segments in the GDT just get mapped from the start of memory to the end of memory. Wouldn't this make segmentation in protected mode basically non-existent? Why do we even have it then?midterm
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    This is asking how many operations are involved inonly the walkportion. Accessing data is not part of the page table walk.~ An instructor (Alexey Tumanov) endorsed this answer ~
+
+    Followup Discussions:
+    
+    

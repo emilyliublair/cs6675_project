@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    yes, we'll cover the topic list in class. It should basically be everything up to and_excluding_security.Sometimes I span my lecture slides across two lectures, in which cases you will see that reflected in the name of the files shared on canvas. In cases like this, I prefer to share the slides after I'm done covering them, to avoid confusion.Any slides not actually covered, e.g., slides with code-snippets from xv6 are there for your reference. If you prefer me to cut them out andnotshare them, I can do that. Please let me know.Thanks,AT
+
+    Followup Discussions:
+    @336_f1Anonymous Helix2 months agoI think having the reference slides are still beneficial. However, there have been no lecture slides posted since the 13th. If possible, can the lecture slides we have covered be posted?0Alexey Tumanov2 months agothe 2/18 and 2/20 slides you're referring to in your post, Erel, have been posted.good comment1Anonymous Helix2 months agoThanks!~ An instructor (Alexey Tumanov) thinks this is a good comment ~1Alexey Tumanov2 months agoyou are welcome.good comment0@336_f2Anonymous Beaker2 months agoWill the boot process be explicitly covered in the exam? I didn’t see any reference to it in the exam slides from Thursday.0Alexey Tumanov2 months agoeverything that was covered during lecture and the corresponding slides up to and including the OS & Networking lecture should be considered in scope for exam 1.When I covered the list of topics in class, I specifically said , "the list of topics includes but not limited to" for that reason.good comment0
+    

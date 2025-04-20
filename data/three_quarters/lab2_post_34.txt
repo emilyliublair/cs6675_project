@@ -1,0 +1,12 @@
+Question: 
+    Page fault 0x3 error codeI have only implemented copy on write and I'm getting the 0x3 error code on a page access. Should I handle this somehow or is it indicative of an issue with my implementation? I get it when I run the fourfiles test case in usertests.c. I'm attached some examples of this with different print outs that might help. It seems like there are a number of instructions copying the same physical page which they refer to with the same virtual address. this should be fine however the last one in that sequence (pid = 3) is an 0x3 error instead of 0x7. If this isn't expected, any idea what might have caused this behaviour?Note: ignore the "panic acquire" in the screen shot with the physical addresses that is simply an artifact of the way I printed out the information.lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

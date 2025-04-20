@@ -1,0 +1,12 @@
+Question: 
+    Separate Checkpoint GradescopeReadme for Lab 3 says:On Gradescope you will find two assignments:Lab 3 - Checkpoint (Tests 1-21)Lab 3 (All tests)Currently I'm only seeing one assignment on the gradescope.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    5 submissions
+
+    Followup Discussions:
+    
+    

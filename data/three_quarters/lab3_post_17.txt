@@ -1,0 +1,12 @@
+Question: 
+    Part 1 EC- Execution TimeShould I reset execution time when the process execs?Edit: I mean creation time.lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Activate the submission you want us to grade
+
+    Followup Discussions:
+    @585_f1Anonymous Poet3 weeks agoif we submit after the deadline, but activate a submission from before the deadline, do we still get the late penalty?0Elton Leander Pinto3 weeks agoNo you will not get a late penalty for thatgood comment0
+    

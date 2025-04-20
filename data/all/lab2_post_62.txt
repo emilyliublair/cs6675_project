@@ -1,0 +1,12 @@
+Question: 
+    Forktest output very first line is not matchingFor forktest, my very first line itself is not matching the expected output which isn't making much sense to me since isn't everything before we get this first page trap supposed to be set up by the kernel?This is the expected output:xv6...console initcpu0: starting 0sb: size 1000 nblocks 941 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58PGZERO: 0x0PGZERO: 0x2000init: starting test1PGTRAP: err: 0x7, va = 0x2fccPGCOPY: 0x2000PGTRAP: err: 0x7, va = 0x2fccDoes anyone have advice on which file is wrong or how I can go about debugging this? Thanks!lab2
+
+    Student Answer: 
+    You are supposed to compare the output after a specific line, because initialization can produce different results.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

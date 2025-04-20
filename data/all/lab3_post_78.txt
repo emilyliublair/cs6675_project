@@ -1,0 +1,12 @@
+Question: 
+    Only failing AG Test 14 for cloneWe are passing all of the test cases for clone() besides 14. I've been testing a large batch of clones writing to a variable defined by a parent and getting page faults only when the parent tries to access that value after it's been written by a clone. I'm not sure if it is a race condition as it always occurs after the same clone writes to that var regardless of the core count passed to qemu (edit: it's def a race condition). I think that this is related to failing test 14 but I'm not totally sure. Any guidance on this would be greatly appreciated!lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

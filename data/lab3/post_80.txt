@@ -1,12 +1,12 @@
 Question: 
-    How well do we need to clean the stack* that the user provides?What happens if the new stack* for clone is pointing to the guard page? Should we allow the process to crash / get killed via a trap or should clone fail and return -1lab3
+    Test Cases 6 and 9Does anyone know what test cases 6 and 9 are? So far I've tested that my code does the following:Current RR process preempts when I set another RR process to higher priorityCurrent RR process preempts when I decrease its priority to less than another runnable processCurrent RR process preempts when I change another process to FIFOCurrent FIFO process preempts when I increase another FIFO process's priorityCurrent FIFO process preempts when I set parent to FIFO with same priorityCases where it doesn't preempt such as when running process's priority stays higher, if the priority is the same, if current is FIFO and changing another to RRThe only thing I can think of is fixing the yield from the external timer interrupt for rr processes. Do we want to let a rr process with the highest priority keep running if there are other rr processes with lower priorities? Even if I fix that, there's 2 test cases that I'm failing so I'm not sure what the other one would be.lab3
 
     Student Answer: 
     
 
     Instructor Answer: 
-    Don’t overcomplicate the security checks you need to do here. For example, if it’s pointing to the guard page, the program will page fault and get killed anyway when it’s accessed. Just think about which sections of memory it absolutely cannot be in.
+    
 
     Followup Discussions:
-    
+    @468_f1Sukrit Kumar4 weeks agoAre you making sure you don't yield a FIFO process on timer interupts ?good comment0Anonymous Atom4 weeks agoYes, I only yield for RR.0Sukrit Kumar4 weeks agoCan you add another check after the timer interupt yield if condition to check if there is a better runnable proc available and yileding the current proc is the best proc and the current one aren't the same ?good comment0Anonymous Atom4 weeks agoI added that at the end of setscheduler after we set the priority and policy of the chosen process. Should I move that to the timer interrupt instead? I feel like the only thing we should be checking for timer interrupt yields is if there is another runnable RR process of equal priority. If the other RR processes have less priority, then we shouldn't yield.0Anonymous Helix3 weeks agoRunning into this too, did you ever figure out what is neccesary in the timer interrupt (other than not yielding fifo processes)0
     

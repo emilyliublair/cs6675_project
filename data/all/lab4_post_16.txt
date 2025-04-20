@@ -1,0 +1,12 @@
+Question: 
+    Test #12Does anyone have tips on test #12? I’m passing everything else in part 2. Currently, I’m checking permissions in open, link, unlink, exec, create, namex, chmod, chown, and chdir.lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Check if building xv6 with a large file, and then subsequently performing operations on that file, works locally.
+
+    Followup Discussions:
+    @685_f1Anonymous Atom1 week agoHow do you build xv6 with a large file? Is there an argument you pass in?0Varun Mehrotra1 week agoThis just means one of the files that mkfs bundles into the file system image should be “large” (i.e. close to 8mb). So one example would be add a very large text file and add it to the relevant Sources.cmake so that this file gets put into the file system before boot.good comment2Nathan Prashant Duggal1 week agoI get a make failure for just test 32, do you have any advice on how to solve that?0Anonymous Calc1 week ago@629maybe this will help if you haven't seen it already?1Anonymous Poet7 days agoWere you able to figure this out I am currently getting a hardfault just on test 32.0Anonymous Atom7 days agoHaven't submitted yet, but I had to modify balloc and some superblock fields.0
+    

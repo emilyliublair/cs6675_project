@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Yes, you need to modify it for the reason you stated. It should be enough to support at least one 8MB file. You might also want to investigate how many blocks are used when xv6 boots.
+
+    Followup Discussions:
+    
+    

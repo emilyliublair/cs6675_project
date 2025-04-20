@@ -1,0 +1,12 @@
+Question: 
+    ./forktest-xv6-qemu matches perfectly but fail all test cases :(Has anyone else run into this issue? Everything on the test case matches, character by character (checked with a tool). But none of the auto grader tests pass.I think it may have to do with: lab2_pgcopy(void *dest, void *src, uint user_va).Is the user_va supposed to be page aligned in the printout? I am using the round down macro to align is since that is what I observed in the output.EDIT: COW / part 1 only is enough to pass a few on AGlab2
+
+    Student Answer: 
+    I think only if you have both features implemented will you start passing autograder tests.
+
+    Instructor Answer: 
+    Rendering markdown...
+
+    Followup Discussions:
+    
+    

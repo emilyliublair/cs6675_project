@@ -1,0 +1,12 @@
+Question: 
+    activating best submissionI want to try and add locks somewhere but am afraid it will break my implementation. if it does can I reactivate an old submission and be graded on that one instead?lab3logistics
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    What’s wrong with sleeping on channel 0?
+
+    Followup Discussions:
+    @596_f1Anonymous Atom3 weeks agoIn proc.h the comment for the chan field says the following:// If non-zero, sleeping on chanI assumed this means that zero is not a valid channel to be sleeping on?0
+    

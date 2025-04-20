@@ -1,0 +1,12 @@
+Question: 
+    What is the point of thread_wait()?Mine is just a 1 line wrapper around waitpid(), and it passed all thread library cases from 22-31 (multiple times to ensure I didn’t get lucky because of a race condition).Why not just call the syscall directly?  thread_create() at least provides some value by allocating a extra stack but thread_wait() does nothing. What am i missing?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @483_f1Joshua Patrick Forden4 weeks agoPt 2 spec: "If the owner of a thread group terminates before the other threads in the group, the behavior for those threads is undefined."The instructional team isn't testing for cases where parent exits before children so we don't have to worry about that.0Anonymous Mouse4 weeks agoYeah thats what I thought. thanks1
+    

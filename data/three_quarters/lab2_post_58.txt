@@ -1,0 +1,12 @@
+Question: 
+    How to use GDB to notify me when a certain address has it's value changed?I'm trying to watch when the value at (pte_t *) 0x0 is changed. However, I can't just use the watch command in gdb because that doesn't notify me when the value changes since there are points where the value clearly changes yet it doesn't notify me (tested through watching other variables and checking this address, different values at different points).Is there any way for me to track when this address is changed?lab2
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Why do you need an interrupt to cause the CoW logic to run? You’re in control of the kernel code—why not just copy the page when you need to manually?
+
+    Followup Discussions:
+    
+    

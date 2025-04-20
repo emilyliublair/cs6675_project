@@ -1,0 +1,12 @@
+Question: 
+    Is it okay to leave debug statements in the kernel code before running submit.sh?Do we need to take out debug statements (for example backtrace() calls in the kernel code) before running submit.sh and submitting to Gradescope?lab1
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @113_f1Anonymous Helix3 months agoYep, I saw that but that figure mentions address 0xFE000000 while the caption says 0xFE00000 (order of magnitude different). Is this a typo?1Anonymous Helix3 months agoAnd if it is a typo, which address is correct?0Nathan Prashant Duggal3 months ago0xFE000000 (6 zeros) is correct~ An instructor (Rohan Natansh Bafna) thinks this is a good comment ~3
+    

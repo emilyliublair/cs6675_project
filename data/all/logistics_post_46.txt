@@ -1,0 +1,12 @@
+Question: 
+    Varun's OH ChangingHello everyone,I will be changing my office hours to Tuesdays from 10:00am-11:30am. The course website will be updated shortly to reflect this.-Varunlogistics
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @106_f1Rohan Natansh Bafna3 months agoThat doc mentionsscripts/docker.sh --attach, which is just a wrapper for docker execgood comment1Andrew Boeger3 months agoDon't know how I missed this. Thanks.0
+    

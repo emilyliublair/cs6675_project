@@ -1,0 +1,12 @@
+Question: 
+    Removing a file permissionsIf you want to remove a file, do you need write permissions?lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

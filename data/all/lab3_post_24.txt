@@ -1,0 +1,12 @@
+Question: 
+    Handgrading Tips?Hi,Since the deadline is coming up for lab 3, I thought I'd ask if anyone has any specific tips on what to look out for regarding the handgraded portion of the lab. With so much code written, it's probably easy to miss stuff like locking a data structure.For example, should we be park/release the mutex atomically for conditional variables?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Have triggered a re-run
+
+    Followup Discussions:
+    
+    

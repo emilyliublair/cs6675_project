@@ -1,0 +1,12 @@
+Question: 
+    Test 16 and 17Does anyone know what tests 16 and 17 are checking for? Those are the only two I fail, with incorrect output. Here is a list of permissions that I currently check for:- in exec, I check if the file has read perms- in namex, I check if every directory traversed has read perms- in link, I check if the old file has read perms and the directory of the new file has read and write perms- in unlink, I check if the directory of the file has read and write perms- in create, I check if the directory has read and write perms- also in create, if the file already exists, i check if it has read perms- in open, I check if the perms match the requested mode (O_RDONLY, O_WRONLY, O_RDWR)- in chdir, I check if the directory has read permslab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,15 @@
+Question: 
+    Executable Files Disappeared in xv6I was working on Maximum Number of Files Per Directory, and the program crashed because the maximum number of files in the directory was exhausted. I terminated the program, but when I re-attached docker and ran my files again they would not execute.lab0
+
+    Student Answer: 
+    to reset your filesystem (which may or may not be a solution for your scenario) run "make clean" this is how i have been resetting my filesystem while trying to test maximum number of files in a dir (also specifically this is just removing the fs.img which i believe is your current entire file system)i think your actual root cause is that after the panic your OS might be in a bad state because of the overflow of files in that directory so resetting your filesystem should fix it~ An instructor (Rohan Natansh Bafna) endorsed this answer ~
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @48_f1Anonymous Calc3 months agoAfter commenting out the line that panics, can I modify that method to return 0 to signify the limit is reached?0Varun Mehrotra3 months agoDon’t worry about changing the kernel (you’ll be doing that enough in later labs). If it panics, then it’s okay because that’s the expected behavior. Just ensure you are keeping track of the number of files being created as you go so you can reach a final answer.good comment1Anonymous Calc3 months agoJust wanted to confirm so I can calculate the max files last and don't have to follow the order of the sample output (max memory -> max files -> max process)?$ limits 
+Maximum Memory Size: 0x0000
+Maximum Number of Files Per Directory: 0
+Maximum Number of Processes: 00Varun Mehrotra3 months agoYes, you can calculate the results in whatever order you’d like.good comment0
+    

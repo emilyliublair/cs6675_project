@@ -1,0 +1,12 @@
+Question: 
+    What is meant by "undefined"In the lab readme, it says “If the owner of a thread group terminates before the other threads in the group, the behavior for those threads is undefined.”A few questions:What does undefined mean in this case?Is this similar to a parent process exiting before a child w/ fork and how the child then becomes a zombie?Should we turn the undefined thread into a zombie process?Consider the case where process 1 calls clone(), so now there is a process 2 in the ptable (the cloned thread). If clone is called on process 2, who would be the thread group owner for this process 2. Would it be P1 or P2?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

@@ -1,0 +1,12 @@
+Question: 
+    [resolved] Anyone know why I can't step into this function?Currently working on part 3. Getting apanicwhen trying the root login. Not sure why I'munable to step into my does_user_exist. The screenshots are immediately before and afterstep. Does anyone know what might be causing this?Note: The code in these screenshots is the unmodified login.c source. None of my changes are visible.lab4
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @696_f1Anonymous Helix7 days agoI did this, and now I can make correctly locally with many large files, however, the autograder still gives me a make error. Does anyone know if the make error is due to make actually failing, or if the output of make doesn't match the expected outcome (due to prints or something).1Cagin Uz7 days agoTest case 32 has to do with iappend. You need account for double indirectness in iappend (the structure is pretty similar to how it already does singly indirect).0
+    

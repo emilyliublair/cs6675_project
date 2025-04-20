@@ -1,0 +1,12 @@
+Question: 
+    New Processes and PreemptionFrom what I understand the default scheduler/priority for a process is RR and priority 0. Because of this, wouldn't the new process always have the lowest priority hence meaning we wouldn't have to preempt? We would only have to preempt if this got changed by setscheduler()?lab3
+
+    Student Answer: 
+    The answer is no, you can't.I resolved the circular dependencies to not kalloc space for the lock, which passed the autograder.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    @345_f1Anonymous Helix4 weeks agoHow did you end up solving this without kallocing a lock and using that pointer for every thread in the thread group? If I have a spin lock directly in the proc struct (not a pointer) and I copy it when cloning, that won't be a reference to the same lock as the parent in the child thread right?0@345_f2Anonymous Comp3 weeks agoWhy cant you include a spinlock in the proc struct? we did that and it worked fine...0Anonymous Helix3 weeks agoI could be wrong but I'm pretty sure if you include a struct spinlock in proc struct and then try to copy that to another proc struct when cloning, you wouldn't actually be copying the same struct, so there would still be concurrency issues within the thread group. I'm thinking you have to store a (struct spinlock *) but not sure where to initialize the spin lock without kalloc()ing space for it.0Anonymous Comp3 weeks agook cool.why not just store a reference to the threadgroup leader in all processes (threadgroup leader can point to itself)then you can always reference the threadgroup leader's singular lock by referenceexample:structproc{structproc*group_leader;structspinlock;}run code snippetVisit Manage Class to disable runnable code snippets×access with p->group_leader->spinlock;On clone the group leader reference gets copied so the underlying spinlock is the same.1
+    

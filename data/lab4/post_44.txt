@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    I ran it with sudo outside of docker and it worked but this feels like a unsafe work around.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

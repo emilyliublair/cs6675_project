@@ -1,0 +1,12 @@
+Question: 
+    total number of blocks per file is wrong?currently the doc says:Currently, the file system in xv6 is designed such that the maximum file size is only 140 sectors/blocksbut in fs.h, NDIRECT is set to 11 and there are 512/4 = 128 indirect blocks, so why is it 140 and not 139?lab4
+
+    Student Answer: 
+    It was 140 before modifications were made to lab4 (ie adding owner and permission to inode/dinode)
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

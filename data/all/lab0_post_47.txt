@@ -1,0 +1,12 @@
+Question: 
+    Is there a %cr1 control register?In the appendix of the textbook it states that the control registers are %cr0, %cr2, %cr3, and %cr4. Is there just not a %cr1 register or is that a typo? If there isn't a %cr1 register, why?lab0
+
+    Student Answer: 
+    It’s intentional, interestingly. x86 reserves %cr1, seehttps://wiki.osdev.org/CPU_Registers_x86-64#Control_Registers. I don’t believe the “why” is publicly known, seehttps://www.pagetable.com/?p=364.~ An instructor (Elton Leander Pinto) endorsed this answer ~
+
+    Instructor Answer: 
+    We would like to take an opportunity to get-to-know more about you!Please submit your "notecard" containing the following:A recent picture of yourself (if comfortable giving it, no deduction if you do not), so we can identify you when we actually see you.Your preferred name, and a phonetic pronunciation of your name (pinyin or simplified Chinese are good for Chinese names)A quick description of why you are taking this course, and what you want out of it.A quick blurb about yourself, some of your likes or hobbies, something to help us get-to-know you.Please use the above as guidance from last year. We'll update the instructions on gradescope shortly, but it will mostly, if not completely, reflect the above. Thanks for the catch.
+
+    Followup Discussions:
+    @8_f1Elton Leander Pinto3 months agoI have created an assignment in Canvas that has a PDF containing these instructions. Apologies for the inconvenience!good comment0
+    

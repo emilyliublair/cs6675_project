@@ -1,0 +1,12 @@
+Question: 
+    inode pointer typesWhy not all singly direct? Why not all triply indirect? Why not a combination of singly direct and double indirect?These types of questions kinda confuse me because it seems an argument can be made for each.midterm
+
+    Student Answer: 
+    I might be wrong but in this example I think the log blocks were at the end of the disk
+
+    Instructor Answer: 
+    this assumes the log blocks are at the end. Yes, you're skipping the bootblock and superblock. Please refer to slide 25 of lec20.
+
+    Followup Discussions:
+    @723_f1Erel Ozen3 days agoOhh I see, I was just confused because the diagram on slide 26 shows the log blocks right after the super blockIf there is a question on this topic, will the location of the log be specified?0Alexey Tumanov3 days agoslide 26 shows how xv6 does it. If there's a question on the test, we'll make it clear which layout we're using.good comment1Erel Ozen3 days agoThanks!0
+    

@@ -1,0 +1,12 @@
+Question: 
+    Failing Test 11I've checked all of my file creating logic and checked for owner and perms everywhere I can think of. Are there any hints for what this case could be testing that I may have missed?lab4
+
+    Student Answer: 
+    either work you just need to make sure that read and write permissions are set if you choose to create the files while building the file system or in init_hook. i tried both and ended up in init_hook for my current implementation because it was easier to set file permissions.~ An instructor (Rohan Natansh Bafna) endorsed this answer ~
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

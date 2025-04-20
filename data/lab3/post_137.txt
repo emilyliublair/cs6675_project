@@ -1,0 +1,12 @@
+Question: 
+    
+
+    Student Answer: 
+    You can set a child process's priorities via the parent. For my test cases, I always set the parent to be the highest priority, and they wake up to set a child priority then go to sleep.
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

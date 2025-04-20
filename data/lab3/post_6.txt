@@ -8,5 +8,5 @@ Question:
     
 
     Followup Discussions:
-    @610_f1Anonymous Gear23 hours agoI'm pretty confident waitinfo is not used in test 7, did you modify anything with the scheduler for the extra credit? Maybe something in the queue while handling SCHED_OTHER?0Anonymous Mouse23 hours agoYup, solved it by reverting back to my old implementation and adding it back little by little. Also, due to how sleep is written and used, I had to switch the lock order from ptable.lock -> tickslock to tickslock-> ptable.lock, or getting the ticks value (within locks) outside of ptable.lock.0
+    @610_f1Anonymous Gear2 weeks agoI'm pretty confident waitinfo is not used in test 7, did you modify anything with the scheduler for the extra credit? Maybe something in the queue while handling SCHED_OTHER?0Anonymous Mouse2 weeks agoYup, solved it by reverting back to my old implementation and adding it back little by little. Also, due to how sleep is written and used, I had to switch the lock order from ptable.lock -> tickslock to tickslock-> ptable.lock, or getting the ticks value (within locks) outside of ptable.lock.0
     

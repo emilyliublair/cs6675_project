@@ -1,0 +1,12 @@
+Question: 
+    Pt 3 threads Error/Security/Address SpaceI've been working on the thread_create and thread_wait implementation and I'm passing all the general and I/O blocking cases, but I am failing every error/security case and the address space case.I'm wondering if anyone has any intuition that I may be missing.I'm guessing the error/security tests relate to different edge cases. I've checked the the function pointer in thread_create is not null and that he pid in thread_wait is non-negative, but I'm not sure if the problem lies in argument sanitization since the system calls clone() and waitpid() check the args in kernel-space.Also, what sort of behavior might we be checking relating to the thread address space? clone() handles the same page directory aspect in the kernel, but what do we need to do in the user space to enable this behavior for threads?Any advice is appreciated. Thanks!lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    Late days will not be consumed. The checkpoint is a hard deadline.~ An instructor (Alexey Tumanov) endorsed this answer ~
+
+    Followup Discussions:
+    @392_f1Alexey Tumanov1 month agoit doesn't make sense to use your late days for the checkpoint.(1) your checkpoint is not all or nothing, i.e. your checkpoint bonus will be calculated based on the fraction of tests 1-21 you were able to complete in the latest submission before the checkpoint deadline.(2) counting late days is actually logistically complicated for the course staff, even more so when the checkpoint is NOT a separate gradescope assignment.good comment0
+    

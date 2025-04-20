@@ -1,12 +1,12 @@
 Question: 
-    What is meant by "undefined"In the lab readme, it says “If the owner of a thread group terminates before the other threads in the group, the behavior for those threads is undefined.”A few questions:What does undefined mean in this case?Is this similar to a parent process exiting before a child w/ fork and how the child then becomes a zombie?Should we turn the undefined thread into a zombie process?Consider the case where process 1 calls clone(), so now there is a process 2 in the ptable (the cloned thread). If clone is called on process 2, who would be the thread group owner for this process 2. Would it be P1 or P2?lab3
+    Test Case 5Does anyone know what test case 5 tests for? I pass every other scheduling test except for this. I've written user space tests that test for FIFO/Round ordering, priority ordering for FIFO, priority ordering for Round Robin with preemption and maintaining a queue, immediate preemption following setscheduler, and multicore scheduling.lab3
 
     Student Answer: 
-    By undefined I'm pretty sure that means they just don't test for it and you don't need to worry about it.For question 4: Its thread group owner should be process 1, however its direct parent should still be process 2. This is important for recursive cloning and thread_wait.~ An instructor (Elton Leander Pinto) endorsed this answer ~
+    
 
     Instructor Answer: 
-    By undefined we mean that your code is not expected to handle this case. We will not test for it.
+    I see that you've passed the test now. Nice!
 
     Followup Discussions:
-    
+    @451_f1Anonymous Atom1 month agoIt has something to do with the fact that a process or its parent modifies priority such that it should become the new process to run. Make sure you preempt when a new process becomes the best one.0Erel Ozen1 month agoI thought this was test case 9?0Rohan Bansal1 month agoI think:Test case 9 checks whether the current process has had its priority decreased (and if a better process should preempt it).Test case 5 checks whether the modified process's priority is now greater than the current process (and so preempt the current process).~ An instructor (Elton Leander Pinto) thinks this is a good comment ~1
     

@@ -1,0 +1,12 @@
+Question: 
+    StackI'm struggling to understand what we need to do with the stack in clone(). Do we basically just copy the parent's stack and add that size to the passed in stack_size? Should the new thread's stack start there? If so, I thought we only allocated stack_size memory so what if we don't have enough memory? And when we're copying, would we just copy everything like normal but only change the ebp values since it's going to be at different addresses? My plan is to traverse the old parent's stack using the ebp's until we hit one where the return value is the fake address0xffffffff. While I'm traversing, I copy the stack and replace the ebp's with new ones. Would this be a valid approach?lab3
+
+    Student Answer: 
+    
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    

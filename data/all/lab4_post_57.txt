@@ -1,0 +1,12 @@
+Question: 
+    Lab 4 Part 1If a root changes it's uid, that means it looses root privileges right? It can no longer return to having a uid of 0?lab4
+
+    Student Answer: 
+    I don't think so, except that it has to be shorter than MAX_INPUT_SIZE
+
+    Instructor Answer: 
+    
+
+    Followup Discussions:
+    
+    
